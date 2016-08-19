@@ -1,0 +1,61 @@
+.--align-center { text-align: center; }
+
+.--align-right { text-align: right; }
+
+.--float-left { float: left; }
+
+.--float-right { float: right; }
+
+/* button */
+button, html input[type=button], input[type=reset], input[type=submit] { -webkit-appearance: button; cursor: pointer; }
+
+button[disabled], html input[disabled] { cursor: default; }
+
+button::-moz-focus-inner, input::-moz-focus-inner { border: 0; padding: 0; }
+
+/* blocks/button.style.begin */
+.btn { display: inline-block; border: 1px solid transparent; -webkit-border-radius: 0.3em; -moz-border-radius: 0.3em; -ms-border-radius: 0.3em; background: none; text-align: center; white-space: nowrap; vertical-align: middle; white-space: nowrap; -webkit-appearance: none; cursor: pointer; -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none; -ms-touch-action: manipulation; touch-action: manipulation; }
+
+.btn--theme-default { min-height: 1em; padding: 0; border-color: #e8e5e5; outline: 0; background-color: #fff; vertical-align: baseline; font-family: Arial, Helvetica, sans-serif; font-size: 1rem; color: #000; -webkit-tab-highlight-color: transparent; }
+.btn--theme-default:hover, .btn--theme-default:focus { background-color: rgba(0, 0, 0, 0.05); }
+.btn--theme-default:focus { border-color: olive; }
+
+.btn-theme-plain { border: none; }
+
+.btn[disabled], .btn--disabled { pointer-events: none; background-color: rgba(0, 0, 0, 0.08); color: #aaa; }
+
+.btn__txt { overflow: hidden; display: inline-block; text-overflow: ellipsis; vertical-align: top; }
+
+.btn--size-s { font-size: 0.8125rem; line-height: 1.5rem; }
+.btn--size-s .btn__txt { margin: 0 0.625rem; }
+
+.btn--size-m { font-size: 0.8125rem; line-height: 2em; }
+.btn--size-m .btn__txt { margin: 0 0.8125rem; }
+
+.btn--size-l { font-size: 0.9375rem; line-height: 2rem; }
+.btn--size-l .btn__txt { margin: 0 0.9375rem; }
+
+.btn--size-xl { font-size: 1.125rem; line-height: 2.375rem; }
+.btn--size-xl .btn__txt { margin: 0 1.125rem; }
+
+.btn--type-link { text-decoration: none; }
+
+input[data-role="button-toggle"] { position: absolute; left: -1000em; }
+
+input[data-role="button-toggle"]:hover + .btn, input[data-role="button-toggle"]:focus + .btn { background-color: rgba(0, 0, 0, 0.05); }
+
+input[data-role="button-toggle"]:focus + .btn { border-color: olive; }
+
+input[data-role="button-toggle"]:checked + .btn { background-color: yellow; border-color: orange; }
+
+.btn-group { overflow: hidden; }
+.--align-center .btn-group { display: inline-block; }
+
+.btn-group-radio { overflow: hidden; }
+.btn-group-radio .btn--theme-default { float: left; margin-left: -1px; }
+.btn-group-radio .btn--theme-default:not(:first-child):not(:last-child) { -webkit-border-radius: 0; -moz-border-radius: 0; -ms-border-radius: 0; }
+.btn-group-radio .btn--theme-default:first-child, .btn-group-radio .btn--theme-default:nth-of-type(1) { margin-left: 0; border-top-right-radius: 0 !important; border-bottom-right-radius: 0 !important; border-top-left-radius: 0.3em !important; border-bottom-left-radius: 0.3em !important; }
+.btn-group-radio .btn--theme-default:last-child { border-top-left-radius: 0; border-bottom-left-radius: 0; }
+.btn-group-radio .btn--theme-default:focus, .btn-group-radio input[data-role="button-toggle"]:focus + .btn--theme-default { position: relative; z-index: 1; }
+
+/*# sourceMappingURL=button.css.map */

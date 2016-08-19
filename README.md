@@ -14,10 +14,10 @@
 
 ### Button
 
-#### Block description
+#### Button description
 	Use the button block to control the size, state, and appearance of the button.
 
-#### Modifiers of the block
+#### Modifiers of the button
 
 - type modifier : link, submit
 - togglable modifier
