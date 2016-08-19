@@ -1,7 +1,7 @@
 # Components
 
 ## 코딩 기준 : BEM 
-	block-name__elem-name_mod-name
+	block-name__elem-name--mod-name
 
 ## Semantic UI 분류 
 1. Elements 
@@ -14,7 +14,7 @@
 
 ### Button
 
-#### Button description
+#### Block description
 	Use the button block to control the size, state, and appearance of the button.
 
 #### Modifiers of the button
@@ -47,5 +47,5 @@
 - semaitic-ui : http://semantic-ui.com/elements/button.html
 
 
-
-
+### 20일 작업 참조
+- https://web-design-weekly.com/2013/05/12/handy-sass-mixins/ 

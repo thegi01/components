@@ -68,10 +68,5 @@ h4 { margin-top: 8px; margin-bottom: 0; padding-top: 16px; border-bottom: solid 
 .ref { line-height: 32px; font-size: 12px; color: #666; }
 
 /* button */
-.btn { -webkit-border-radius: 0.3em; -moz-border-radius: 0.3em; border-radius: 0.3em; }
 
-.btn-group-radio .btn--theme-default:not(:nth-of-type(1)):not(:last-child) { -webkit-border-radius: 0; -moz-border-radius: 0; border-radius: 0; }
-.btn-group-radio .btn--theme-default:nth-of-type(1) { border-top-right-radius: 0; border-bottom-right-radius: 0; }
-.btn-group-radio .btn--theme-default:last-child { border-top-left-radius: 0; border-bottom-left-radius: 0; }
-
-/*# sourceMappingURL=button.css.map */
+/*# sourceMappingURL=button-ie.css.map */
