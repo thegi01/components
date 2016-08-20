@@ -46,6 +46,10 @@
 - BEM : https://en.bem.info/libs/bem-components/v3.0.0/desktop/button/
 - semaitic-ui : http://semantic-ui.com/elements/button.html
 
-
-### 20일 작업 참조
+### Sass 함수 참조
 - https://web-design-weekly.com/2013/05/12/handy-sass-mixins/ 
+
+
+### 알게 된 내용
+- ie 하위버전에서 --로 시작하는 클래스명은 인식하지 못한다.
+- sass 조건문에서 ''를 인식한다. 'true'와 true는 다르게 인식한다.

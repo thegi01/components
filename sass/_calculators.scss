@@ -16,7 +16,7 @@ $root-typesize : 16;
 /// @param {pixel} $px
 /// @param {pixel} $root-px [$root-typesize] - root typesize in pixels
 @function rem($px, $root-px: $root-typesize) {
-  @if $is-rem == 'true' {
+  @if $is-rem == true {
     @return #{$px / $root-px}rem;
   } @else {
      @return #{$px}px;

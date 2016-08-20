@@ -2,6 +2,13 @@
 // import
 @import "_calculators.scss";
 
+// Mixins 
+@mixin box-sizing($box-model) {
+    -webkit-box-sizing: $box-model; // Safari <= 5
+       -moz-box-sizing: $box-model; // Firefox <= 19
+            box-sizing: $box-model;
+}
+
 /* base */
 $font-family : Arial, Helvetica, sans-serif;
 .align-center {
@@ -34,7 +41,7 @@ $font-family : Arial, Helvetica, sans-serif;
 }
 
 // Set
-button,html input[type=button], input[type=reset], input[type=submit] {
+button, html input[type=button], input[type=reset], input[type=submit] {
     -webkit-appearance: button;
     -moz-appearance: button;
     cursor: pointer;
@@ -143,6 +150,13 @@ input[data-role="button-toggle"]:focus + .btn {
 input[data-role="button-toggle"]:checked + .btn {
     @include btn-pressed;
 }
+// button with icon
+.btn__icon-left {
+    margin-left : rem(13); margin-right: rem(-10);
+}
+.btn__icon-right {
+    margin-right : rem(13); margin-left: rem(-10);
+}
 // button gorup
 .btn-group {
     overflow: hidden;
@@ -179,7 +193,6 @@ h4 {
     overflow: hidden;
     clear: both;
     padding : 8px;
-    /*border-bottom: solid 1px #ccc;*/
 }
 .txt {
     font-size: 12px; color:#777;
@@ -188,4 +201,9 @@ h4 {
 .ref {
     line-height: 32px;
     font-size: 12px; color : #666;
+}
+.ico {
+    display : inline-block;
+    width : 10px; height: 10px; 
+    background-color: green;
 }
