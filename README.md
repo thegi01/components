@@ -22,6 +22,7 @@
 
 ### Grid
 - [바로가기](https://thegi01.github.io/components/grid.html)
+- 남은 작업 :ie8 media query 적용 여부
 
 
 *** 
@@ -35,8 +36,8 @@
 - [BEM] : https://en.bem.info/libs/bem-components/v3.0.0/desktop/button/
 - [semaitic-ui] : http://semantic-ui.com/elements/button.html
 - [materializecss] : http://materializecss.com/grid.html
-- http://uxmovement.com/wireframes/wireframe-effectively-on-the-new-improved-970-grid-system/
-- http://pflannery.github.io/oocss-skeleton.docpad/oocss/help/components.html#
+- [uxmovement] : http://uxmovement.com/wireframes/wireframe-effectively-on-the-new-improved-970-grid-system/
+- http://pflannery.github.io/oocss-skeleton.docpad/oocss/help/components.html
 
 ### Sass 함수 참조
 - https://web-design-weekly.com/2013/05/12/handy-sass-mixins/

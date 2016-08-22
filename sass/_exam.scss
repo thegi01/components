@@ -1,26 +1,26 @@
-.code-example {
+.code-exam {
 }
-.code-example__h3 {
+.code-exam__h3 {
     margin-top:32px; margin-bottom: 0;
     padding :8px;
     background-color: #f1f1f1;
 }
-.code-example__h4 {
+.code-exam__h4 {
     margin-top: 8px; margin-bottom: 0;
     padding-top : 16px;
     border-bottom : solid 1px #ccc;
 }
-.code-example-row {
+.code-exam-row {
     overflow: hidden;
     clear: both;
     padding : 8px;
 }
-.code-example__txt {
+.code-exam__txt {
     font-size: 12px; color:#777;
     line-height: 32px;
 }
 
-.grid-example {
+.exam-grid {
     .col {
         height : 50px;
         border: solid 1px #fff;
@@ -30,7 +30,7 @@
         vertical-align: middle;
     }
 }
-.grid-example-prefix {
+.exam-grid-prefix {
     margin:0; padding :0;
     font-size: 14px;
     li {
@@ -45,7 +45,7 @@
         border-bottom: solid 1px #fefefe;
     }
 }
-.col.grid-example__1 {
+.col.exam-grid__1 {
     height: 200px;
     div {
         margin : 10px;
@@ -57,7 +57,7 @@
         background-color:  #cad7de;
     }
 } 
-.col.grid-example__2 {
+.col.exam-grid__2 {
     height: 200px;
     div {
         margin : 10px;
