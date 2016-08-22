@@ -9,20 +9,21 @@
 3. Views
 4. Modules
 
-## Elements
+<!-- ## Elements -->
 
-### Blocks
+<!-- ### Blocks -->
 
 
-#### Button 
+### Button 
 - [바로가기](https://thegi01.github.io/components/button.html) 
 - 남은 작업 : 하위 버전 크로스 브라우징, 버튼 background-gradient 
 
 
 
-*** 
 
-#### Grids
+
+### Grids
+- [바로가기](https://thegi01.github.io/components/grid.html)
 
 
 *** 
