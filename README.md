@@ -9,37 +9,21 @@
 3. Views
 4. Modules
 
+## Elements
 
-## Block
+### Blocks
 
-### Button
+#### Button 
+- [바로가기](https://thegi01.github.io/components/button.html) 
+- 남은 작업 : 하위 버전 크로스 브라우징, 버튼 background-gradient 
 
-#### Block description
-	Use the button block to control the size, state, and appearance of the button.
-
-#### Modifiers of the button
-
-- type modifier : link, submit
-- togglable modifier
-- disabled modifier
-- focused modifier 
-- pressed modifier 
-- hovered modifier
-- theme modifier
-- size modifier : s, m, l, xl
-- view modifier : action, pseudo, plain
+### 알게 된 내용
+- ie 하위버전에서 --로 시작하는 클래스명은 인식하지 못한다.
+- sass 조건문에서 ''를 인식한다. 'true'와 true는 다르다.
 
 
-#### Custom fields of the block
+#### Grid
 
-- name field
-- val field
-- text field
-- url field
-- icon field
-- title field
-- id field
-- tabIndex field
 
 
 ### 참조
@@ -47,9 +31,4 @@
 - semaitic-ui : http://semantic-ui.com/elements/button.html
 
 ### Sass 함수 참조
-- https://web-design-weekly.com/2013/05/12/handy-sass-mixins/ 
-
-
-### 알게 된 내용
-- ie 하위버전에서 --로 시작하는 클래스명은 인식하지 못한다.
-- sass 조건문에서 ''를 인식한다. 'true'와 true는 다르게 인식한다.
+- https://web-design-weekly.com/2013/05/12/handy-sass-mixins/
