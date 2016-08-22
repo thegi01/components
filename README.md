@@ -3,11 +3,11 @@
 ## 코딩 기준 : BEM 
 	block-name__elem-name--mod-name
 
-## Semantic UI 분류 
+<!-- ## Semantic UI 분류 
 1. Elements 
 2. Collections
 3. Views
-4. Modules
+4. Modules -->
 
 <!-- ## Elements -->
 
@@ -20,9 +20,7 @@
 
 
 
-
-
-### Grids
+### Grid
 - [바로가기](https://thegi01.github.io/components/grid.html)
 
 
