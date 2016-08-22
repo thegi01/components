@@ -33,8 +33,11 @@
 - sass 조건문에서 ''를 인식한다. 'true'와 true는 다르다.
 
 ### 참조
-- BEM : https://en.bem.info/libs/bem-components/v3.0.0/desktop/button/
-- semaitic-ui : http://semantic-ui.com/elements/button.html
+- [BEM] : https://en.bem.info/libs/bem-components/v3.0.0/desktop/button/
+- [semaitic-ui] : http://semantic-ui.com/elements/button.html
+- [materializecss] : http://materializecss.com/grid.html
+- http://uxmovement.com/wireframes/wireframe-effectively-on-the-new-improved-970-grid-system/
+- http://pflannery.github.io/oocss-skeleton.docpad/oocss/help/components.html#
 
 ### Sass 함수 참조
 - https://web-design-weekly.com/2013/05/12/handy-sass-mixins/
