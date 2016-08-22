@@ -1,6 +1,6 @@
 /* grid.style.begin */
 
-@mixin gridWidth($prefix){
+@mixin grid-width($prefix){
     @for $i from 1 through 12 {
         $val : 12/$i;
         .#{$prefix}#{$i} {
@@ -18,14 +18,14 @@
         box-sizing : border-box;
     }
 
-    @include gridWidth('col.s');
+    @include grid-width('col.s');
 
     @media only screen and (min-width: 601px) {
-        @include gridWidth('col.m');
+        @include grid-width('col.m');
     }
 
     @media only screen and (min-width: 993px) {
-        @include gridWidth('col.l');
+        @include grid-width('col.l');
     }
 }
 
