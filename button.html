@@ -13,57 +13,27 @@
     <!--[if lte IE 8]>
         <link rel="stylesheet" href="css/page-button-ie.css">
     <![endif]-->
-    <style>
-	    h3 {
-	        margin-top:32px; margin-bottom: 0;
-	        padding :8px;
-	        background-color: #f1f1f1;
-	    }
-	    h4 {
-	        margin-top: 8px; margin-bottom: 0;
-	        padding-top : 16px;
-	        border-bottom : solid 1px #ccc;
-	    }
-	    .row {
-	        overflow: hidden;
-	        clear: both;
-	        padding : 8px;
-	    }
-	    .txt {
-	        font-size: 12px; color:#777;
-	        line-height: 32px;
-	    }
-	    .ref {
-	        line-height: 32px;
-	        font-size: 12px; color : #666;
-	    }
-	    .ico {
-	        display : inline-block;
-	        width : 10px; height: 10px; 
-	        background-color: green;
-	    }
-    </style>
 </head>
 <body>
 
-<div class="wrap">
-	<h1>Common Blocks : Button</h1>
-	<h2>Modifiers</h2>
+<div class="wrap code-example">
+	<h1 class="code-example__h1">Common Blocks : Button</h1>
+	<h2 class="code-example__h2">Modifiers</h2>
 
-	<h3>Type modifier</h3>
+	<h3 class="code-example__h3">Type modifier</h3>
 
-	<h4>Link-button</h4>
-	<div class="row">
-		<div class="txt">type modifier with link value</div>
+	<h4 class="code-example__h4">Link-button</h4>
+	<div class="code-example-row">
+		<div class="code-example__txt">type modifier with link value</div>
 		<div>
 			<a href="#href" class="btn btn--theme-default btn--size-m btn--type-link">
 				<span class="btn__txt">Button Type Link</span>
 			</a>
 		</div>
 	</div>
-	<h4>Form submit button</h4>
-	<div class="row">
-		<div class="txt">type modifier with submit value</div>
+	<h4 class="code-example__h4">Form submit button</h4>
+	<div class="code-example-row">
+		<div class="code-example__txt">type modifier with submit value</div>
 		<div>
 			<button type="submit" class="btn btn--theme-default btn--size-m">
 				<span class="btn__txt">Send data</span>
@@ -73,10 +43,10 @@
 
 
 
-	<h3>Togglable modifier</h3>
-	<h4>Toggle button : check</h4>
-	<div class="row">
-		<div class="txt">togglable modifier width check value</div>
+	<h3 class="code-example__h3">Togglable modifier</h3>
+	<h4 class="code-example__h4">Toggle button : check</h4>
+	<div class="code-example-row">
+		<div class="code-example__txt">togglable modifier width check value</div>
 		<div>
 			<input type="checkbox" name="btnToggle" id="btnToggle" data-role="button-toggle">
 			<label for="btnToggle" class="btn btn--theme-default btn--size-m" >
@@ -85,9 +55,9 @@
 		</div>
 	</div>
 
-	<h4>Toggle button : radio</h4>
-	<div class="row">
-		<div class="txt">togglable modifier width radio value</div>
+	<h4 class="code-example__h4">Toggle button : radio</h4>
+	<div class="code-example-row">
+		<div class="code-example__txt">togglable modifier width radio value</div>
 		<div>
 			<input type="radio" name="radioToggle" id="radioToggle1" data-role="button-toggle">
 			<label for="radioToggle1" class="btn btn--theme-default btn--size-m" >
@@ -100,9 +70,9 @@
 		</div>
 	</div>
 
-	<h3>Disabled modifier</h3>
-	<div class="row">
-		<div class="txt"></div>
+	<h3 class="code-example__h3">Disabled modifier</h3>
+	<div class="code-example-row">
+		<div class="code-example__txt"></div>
 		<button type="button" disabled="disabled" class="btn btn--theme-default btn--size-m">
 			<span class="btn__txt">Button : Disabled</span>
 		</button>
@@ -111,9 +81,9 @@
 		</button>
 	</div>
 
-	<h3>Pressed modifier</h3>
-	<div class="row">
-		<div class="txt"></div>
+	<h3 class="code-example__h3">Pressed modifier</h3>
+	<div class="code-example-row">
+		<div class="code-example__txt"></div>
 		<div>
 			<button type="button" aria-pressed="false" class="btn btn--theme-default btn--size-m" id="willPress">
 				<span class="btn__txt">Button pressed</span>
@@ -121,33 +91,33 @@
 		</div>
 	</div>
 
-	<h3>Size modifier</h3>
-	<div class="row">
-		<div class="txt">s</div>
+	<h3 class="code-example__h3">Size modifier</h3>
+	<div class="code-example-row">
+		<div class="code-example__txt">s</div>
 		<div>
 			<button type="button" class="btn btn--theme-default btn--size-s">
 				<span class="btn__txt">Size s</span>
 			</button>
 		</div>
 	</div>
-	<div class="row">
-		<div class="txt">m</div>
+	<div class="code-example-row">
+		<div class="code-example__txt">m</div>
 		<div>
 			<button type="button" class="btn btn--theme-default btn--size-m">
 				<span class="btn__txt">Size m</span>
 			</button>
 		</div>
 	</div>
-	<div class="row">
-		<div class="txt">l</div>
+	<div class="code-example-row">
+		<div class="code-example__txt">l</div>
 		<div>
 			<button type="button" class="btn btn--theme-default btn--size-l">
 				<span class="btn__txt">Size l</span>
 			</button>
 		</div>
 	</div>
-	<div class="row">
-		<div class="txt">m</div>
+	<div class="code-example-row">
+		<div class="code-example__txt">m</div>
 		<div>
 			<button type="button" class="btn btn--theme-default btn--size-xl">
 				<span class="btn__txt">Size xl</span>
@@ -155,19 +125,19 @@
 		</div>
 	</div>
 
-	<h3>Borderless modifier</h3>
-	<div class="row">
-		<div class="txt"></div>
+	<h3 class="code-example__h3">Borderless modifier</h3>
+	<div class="code-example-row">
+		<div class="code-example__txt"></div>
 		<div>
-			<button type="button" class="btn btn--theme-plain btn--size-m"> <!-- btn-view-plain -->
+			<button type="button" class="btn btn--view-plain btn--size-m">
 				<span class="btn__txt">Borderless Button</span>
 			</button>
 		</div>
 	</div>
 
-	<h3>Icon button</h3>
-	<div class="row">
-		<div class="txt"></div>
+	<h3 class="code-example__h3">Icon button</h3>
+	<div class="code-example-row">
+		<div class="code-example__txt"></div>
 		<button type="button" class="btn btn--theme-default btn--size-m">
 			<span class="ico ico-arr-prev btn__icon-left"></span>
 			<span class="btn__txt">Button with icon</span>
@@ -178,9 +148,9 @@
 		</button>
 	</div>
 
-	<h3>Button groups position</h3>
-	<div class="row">
-		<div class="txt">Button group > position-left</div>
+	<h3 class="code-example__h3">Button groups position</h3>
+	<div class="code-example-row">
+		<div class="code-example__txt">Button group > position-left</div>
 		<div class="btn-group--pos-left">
 			<button type="button" class="btn btn--theme-default btn--size-m">
 				<span class="btn__txt">First</span>
@@ -193,8 +163,8 @@
 			</button>
 		</div>
 	</div>
-	<div class="row">
-		<div class="txt">Button group > position-right</div>
+	<div class="code-example-row">
+		<div class="code-example__txt">Button group > position-right</div>
 		<div class="btn-group--pos-right">
 			<button type="button" class="btn btn--theme-default btn--size-m">
 				<span class="btn__txt">First</span>
@@ -207,8 +177,8 @@
 			</button>
 		</div>
 	</div>
-	<div class="row">
-		<div class="txt">Button group > position-both</div>
+	<div class="code-example-row">
+		<div class="code-example__txt">Button group > position-both</div>
 		<div class="btn-group--pos-left">
 			<button type="button" class="btn btn--theme-default btn--size-m">
 				<span class="btn__txt">Left 1</span>
@@ -229,8 +199,8 @@
 			</button>
 		</div>
 	</div>
-	<div class="row">
-		<div class="txt">Button group > position-center</div>
+	<div class="code-example-row">
+		<div class="code-example__txt">Button group > position-center</div>
 		<div class="btn-group--pos-center">
 			<button type="button" class="btn btn--theme-default btn--size-m">
 				<span class="btn__txt">First</span>
@@ -244,9 +214,9 @@
 		</div>
 	</div>
 
-	<h3>Button radio group</h3>
-	<div class="row">
-		<div class="txt">Radio button group</div>
+	<h3 class="code-example__h3">Button radio group</h3>
+	<div class="code-example-row">
+		<div class="code-example__txt">Radio button group</div>
 		<div class="btn-group-radio">
 			<input type="radio" name="radipGroup" id="radipGrou1" data-role="button-toggle">
 			<label for="radipGrou1" class="btn btn--theme-default btn--size-m" >

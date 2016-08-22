@@ -19,7 +19,7 @@
 			border-#{$pos1}-#{$pos2}-radius : $radius;
 	background-clip: padding-box;  /* stops bg color from leaking outside the border: */
 }
-
+    
 // button
 @mixin btn-hovered {
     background-color: #f1f1f1;
