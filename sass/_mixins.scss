@@ -1,0 +1,35 @@
+// box-sizing 
+@mixin box-sizing($box-model) {
+    -webkit-box-sizing: $box-model; // Safari <= 5
+       -moz-box-sizing: $box-model; // Firefox <= 19
+            box-sizing: $box-model;
+}
+
+// border-radius
+@mixin border-radius( $radius ){
+	-webkit-border-radius : $radius;
+	   -moz-border-radius : $radius;
+			border-radius : $radius;
+	background-clip: padding-box;  /* stops bg color from leaking outside the border: */
+}
+// border-radius-single
+@mixin border-radius-single( $pos1, $pos2, $radius ){
+	-webkit-border-#{$pos1}-#{$pos2}-radius : $radius;
+	   -moz-border-#{$pos1}-#{$pos2}-radius : $radius;
+			border-#{$pos1}-#{$pos2}-radius : $radius;
+	background-clip: padding-box;  /* stops bg color from leaking outside the border: */
+}
+
+// button
+@mixin btn-hovered {
+    background-color: #f1f1f1;
+}
+@mixin btn-focused {
+    background-color: #f2f2f2;
+    border-color: #bbb;
+    outline : 0;
+}
+@mixin btn-pressed {
+    background-color: yellow;
+    border-color : orange;
+}

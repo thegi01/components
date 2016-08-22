@@ -1,60 +1,6 @@
-
-// import
-@import "_calculators.scss";
-
-// Mixins 
-@mixin box-sizing($box-model) {
-    -webkit-box-sizing: $box-model; // Safari <= 5
-       -moz-box-sizing: $box-model; // Firefox <= 19
-            box-sizing: $box-model;
-}
-
-/* base */
-$font-family : Arial, Helvetica, sans-serif;
-.align-center {
-    text-align: center;
-}
-.align-right {
-    text-align: right;
-}
-.float-left {
-    float : left;
-}
-.float-right {
-    float : right;
-}
-
-/* button */
-
-// Mixins > button
-@mixin btn-hovered {
-    background-color: #f1f1f1;
-}
-@mixin btn-focused {
-    background-color: #f2f2f2;
-    border-color: #bbb;
-    outline : 0;
-}
-@mixin btn-pressed {
-    background-color: yellow;
-    border-color : orange;
-}
-
-// Set
-button, html input[type=button], input[type=reset], input[type=submit] {
-    -webkit-appearance: button;
-    -moz-appearance: button;
-    cursor: pointer;
-}
-button[disabled], html input[disabled] {
-    cursor: default;
-}
-button::-moz-focus-inner, input::-moz-focus-inner {
-    border: 0;
-    padding: 0
-}
-
 /* blocks/button.style.begin */
+$btn-radius : 0.3em;
+
 .btn {
     display: inline-block;
     border: 1px solid transparent; 
@@ -158,8 +104,14 @@ input[data-role="button-toggle"]:checked + .btn {
     margin-right : rem(13); margin-left: rem(-10);
 }
 // button gorup
-.btn-group {
-    overflow: hidden;
+.btn-group--pos-left {
+    float: left;
+}
+.btn-group--pos-right {
+    float: right;
+}
+.btn-group--pos-center {
+    text-align: center;
 }
 .btn-group-radio {
     overflow: hidden;
@@ -177,33 +129,25 @@ input[data-role="button-toggle"]:checked + .btn {
     }
 }
 
+@if $is-rem == true {
+    
+    .btn {
+        @include border-radius( $btn-radius );
+    }
 
-// temp 
-h3 {
-    margin-top:32px; margin-bottom: 0;
-    padding :8px;
-    background-color: #f1f1f1;
-}
-h4 {
-    margin-top: 8px; margin-bottom: 0;
-    padding-top : 16px;
-    border-bottom : solid 1px #ccc;
-}
-.row {
-    overflow: hidden;
-    clear: both;
-    padding : 8px;
-}
-.txt {
-    font-size: 12px; color:#777;
-    line-height: 32px;
-}
-.ref {
-    line-height: 32px;
-    font-size: 12px; color : #666;
-}
-.ico {
-    display : inline-block;
-    width : 10px; height: 10px; 
-    background-color: green;
+    // button gorup
+    .btn-group-radio {
+        .btn--theme-default:not(:nth-of-type(1)):not(:last-child) {
+            @include border-radius(0);
+        }    
+        .btn--theme-default:nth-of-type(1) {
+            @include border-radius-single(top, right, 0);
+            @include border-radius-single(bottom, right, 0);
+        }
+        .btn--theme-default:last-child {
+            @include border-radius-single(top, left, 0);
+            @include border-radius-single(bottom, left, 0);
+        }
+    }
+
 }

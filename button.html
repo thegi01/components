@@ -8,11 +8,41 @@
 	<meta name="googlebot" content="noindex,nofollow">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<!--[if (gt IE 8)|!(IE)]><!-->
-        <link rel="stylesheet" href="css/button.css">
+        <link rel="stylesheet" href="css/page-button.css">
     <!--<![endif]-->
     <!--[if lte IE 8]>
-        <link rel="stylesheet" href="css/button-ie.css">
+        <link rel="stylesheet" href="css/page-button-ie.css">
     <![endif]-->
+    <style>
+	    h3 {
+	        margin-top:32px; margin-bottom: 0;
+	        padding :8px;
+	        background-color: #f1f1f1;
+	    }
+	    h4 {
+	        margin-top: 8px; margin-bottom: 0;
+	        padding-top : 16px;
+	        border-bottom : solid 1px #ccc;
+	    }
+	    .row {
+	        overflow: hidden;
+	        clear: both;
+	        padding : 8px;
+	    }
+	    .txt {
+	        font-size: 12px; color:#777;
+	        line-height: 32px;
+	    }
+	    .ref {
+	        line-height: 32px;
+	        font-size: 12px; color : #666;
+	    }
+	    .ico {
+	        display : inline-block;
+	        width : 10px; height: 10px; 
+	        background-color: green;
+	    }
+    </style>
 </head>
 <body>
 
@@ -138,22 +168,20 @@
 	<h3>Icon button</h3>
 	<div class="row">
 		<div class="txt"></div>
-		<div>
-			<button type="button" class="btn btn--theme-default btn--size-m">
-				<span class="ico ico-arr-prev btn__icon-left"></span>
-				<span class="btn__txt">Button with icon</span>
-			</button>
-			<button type="button" class="btn btn--theme-default btn--size-m">
-				<span class="btn__txt">Button with icon</span>
-				<span class="ico ico-arr-next btn__icon-right"></span>
-			</button>
-		</div>
+		<button type="button" class="btn btn--theme-default btn--size-m">
+			<span class="ico ico-arr-prev btn__icon-left"></span>
+			<span class="btn__txt">Button with icon</span>
+		</button>
+		<button type="button" class="btn btn--theme-default btn--size-m">
+			<span class="btn__txt">Button with icon</span>
+			<span class="ico ico-arr-next btn__icon-right"></span>
+		</button>
 	</div>
 
-	<h3>Button groups</h3>
+	<h3>Button groups position</h3>
 	<div class="row">
-		<div class="txt">Button group</div>
-		<div class="btn-group">
+		<div class="txt">Button group > position-left</div>
+		<div class="btn-group--pos-left">
 			<button type="button" class="btn btn--theme-default btn--size-m">
 				<span class="btn__txt">First</span>
 			</button>
@@ -166,40 +194,22 @@
 		</div>
 	</div>
 	<div class="row">
-		<div class="txt">Button group > align-center</div>
-		<div class="align-center">
-			<div class="btn-group">
-				<button type="button" class="btn btn--theme-default btn--size-m">
-					<span class="btn__txt">First</span>
-				</button>
-				<button type="button" class="btn btn--theme-default btn--size-m">
-					<span class="btn__txt">Middle</span>
-				</button>
-				<button type="button" class="btn btn--theme-default btn--size-m">
-					<span class="btn__txt">Last</span>
-				</button>
-			</div>
+		<div class="txt">Button group > position-right</div>
+		<div class="btn-group--pos-right">
+			<button type="button" class="btn btn--theme-default btn--size-m">
+				<span class="btn__txt">First</span>
+			</button>
+			<button type="button" class="btn btn--theme-default btn--size-m">
+				<span class="btn__txt">Middle</span>
+			</button>
+			<button type="button" class="btn btn--theme-default btn--size-m">
+				<span class="btn__txt">Last</span>
+			</button>
 		</div>
 	</div>
 	<div class="row">
-		<div class="txt">Button group > align-right</div>
-		<div class="align-right">
-			<div class="btn-group">
-				<button type="button" class="btn btn--theme-default btn--size-m">
-					<span class="btn__txt">First</span>
-				</button>
-				<button type="button" class="btn btn--theme-default btn--size-m">
-					<span class="btn__txt">Middle</span>
-				</button>
-				<button type="button" class="btn btn--theme-default btn--size-m">
-					<span class="btn__txt">Last</span>
-				</button>
-			</div>
-		</div>
-	</div>
-	<div class="row">
-		<div class="txt">Button group > align-both</div>
-		<div class="btn-group float-left">
+		<div class="txt">Button group > position-both</div>
+		<div class="btn-group--pos-left">
 			<button type="button" class="btn btn--theme-default btn--size-m">
 				<span class="btn__txt">Left 1</span>
 			</button>
@@ -207,7 +217,7 @@
 				<span class="btn__txt">Left 2</span>
 			</button>
 		</div>
-		<div class="btn-group float-right">
+		<div class="btn-group--pos-right">
 			<button type="button" class="btn btn--theme-default btn--size-m">
 				<span class="btn__txt">Right 1</span>
 			</button>
@@ -219,6 +229,22 @@
 			</button>
 		</div>
 	</div>
+	<div class="row">
+		<div class="txt">Button group > position-center</div>
+		<div class="btn-group--pos-center">
+			<button type="button" class="btn btn--theme-default btn--size-m">
+				<span class="btn__txt">First</span>
+			</button>
+			<button type="button" class="btn btn--theme-default btn--size-m">
+				<span class="btn__txt">Middle</span>
+			</button>
+			<button type="button" class="btn btn--theme-default btn--size-m">
+				<span class="btn__txt">Last</span>
+			</button>
+		</div>
+	</div>
+
+	<h3>Button radio group</h3>
 	<div class="row">
 		<div class="txt">Radio button group</div>
 		<div class="btn-group-radio">
