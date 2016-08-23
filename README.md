@@ -15,14 +15,16 @@
 
 
 ### Button 
-- [바로가기](https://thegi01.github.io/components/button.html) 
-- 남은 작업 : 하위 버전 크로스 브라우징, 버튼 background-gradient 
-
-
+- [바로가기] : https://thegi01.github.io/components/button.html 
+- To do : 하위 버전 크로스 브라우징, 버튼 background-gradient 
 
 ### Grid
-- [바로가기](https://thegi01.github.io/components/grid.html)
-- 남은 작업 :ie8 media query 적용 여부
+- [바로가기] : https://thegi01.github.io/components/grid.html
+- To do : ie8 media query 적용 여부
+
+### Wire Frame
+- [바로가기] : https://thegi01.github.io/components/wireframe.html
+- Ing...
 
 
 *** 
