@@ -3,7 +3,7 @@
 @mixin grid-width($prefix){
     @for $i from 1 through 12 {
         $val : 12/$i;
-        .#{$prefix}#{$i} {
+        #{$prefix}#{$i} {
             width : 100%/$val;
         }
     } 
@@ -16,16 +16,15 @@
     .col {
         float: left;
         box-sizing : border-box;
-    }
+        @include grid-width('&.s');
 
-    @include grid-width('col.s');
+        @media only screen and (min-width: 601px) {
+            @include grid-width('&.m');
+        }
 
-    @media only screen and (min-width: 601px) {
-        @include grid-width('col.m');
-    }
-
-    @media only screen and (min-width: 993px) {
-        @include grid-width('col.l');
+         @media only screen and (min-width: 993px) {
+            @include grid-width('&.l');
+        }
     }
 }
 

@@ -1,3 +1,12 @@
+// base
+@mixin blind {
+    visibility:hidden; 
+    overflow:hidden; 
+    position:absolute; top:0; left:0; 
+    width:1px; height:1px; 
+    font:0/0 serif;
+}
+
 // box-sizing 
 @mixin box-sizing($box-model) {
     -webkit-box-sizing: $box-model; // Safari <= 5

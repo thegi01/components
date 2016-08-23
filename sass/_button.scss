@@ -1,6 +1,19 @@
 /* blocks/button.style.begin */
 $btn-radius : 0.3em;
 
+button, html input[type=button], input[type=reset], input[type=submit] {
+    -webkit-appearance: button;
+    -moz-appearance: button;
+    cursor: pointer;
+}
+button[disabled], html input[disabled] {
+    cursor: default;
+}
+button::-moz-focus-inner, input::-moz-focus-inner {
+    border: 0;
+    padding: 0
+}
+
 .btn {
     display: inline-block;
     border: 1px solid transparent; 
@@ -131,7 +144,7 @@ input[data-role="button-toggle"]:checked + .btn {
 
 @if $is-rem == true {
 
-    .btn {
+    .btn--theme-default {
         @include border-radius( $btn-radius );
     }
 
