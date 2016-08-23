@@ -71,6 +71,10 @@ input[data-role="button-toggle"]:checked + .btn { background-color: yellow; bord
 .btn-group-radio .btn--theme-default:last-child { border-top-left-radius: 0; border-bottom-left-radius: 0; }
 .btn-group-radio .btn--theme-default:focus, .btn-group-radio input[data-role="button-toggle"]:focus + .btn--theme-default { position: relative; z-index: 1; }
 
+.code-exam { padding: 10px 20px; }
+
+.code-exam__h2 { margin-top: 40px; margin-bottom: 30px; }
+
 .code-exam__h3 { margin-top: 32px; margin-bottom: 0; padding: 8px; background-color: #f1f1f1; }
 
 .code-exam__h4 { margin-top: 8px; margin-bottom: 0; padding-top: 16px; border-bottom: solid 1px #ccc; }

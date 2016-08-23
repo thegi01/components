@@ -54,6 +54,10 @@ legend, .blind { visibility: hidden; overflow: hidden; position: absolute; top: 
   .row .col.l11 { width: 91.66667%; }
   .row .col.l12 { width: 100%; } }
 
+.code-exam { padding: 0.625rem 1.25rem; }
+
+.code-exam__h2 { margin-top: 2.5rem; margin-bottom: 1.875rem; }
+
 .code-exam__h3 { margin-top: 32px; margin-bottom: 0; padding: 8px; background-color: #f1f1f1; }
 
 .code-exam__h4 { margin-top: 8px; margin-bottom: 0; padding-top: 16px; border-bottom: solid 1px #ccc; }
