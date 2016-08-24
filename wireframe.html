@@ -298,19 +298,16 @@
 
 <!-- javacript -->
 <script>
-var lnbAction = function(){
+var lnbListener = function(){
 	var cpnt = document.getElementById('lnb'),
 		dataCurrent = 'data-current',
-		idxNew = this.parentElement.getAttribute('data-idx'),
-		idxOld = cpnt.getAttribute(dataCurrent);
-	if( idxNew == idxOld ){
-		cpnt.setAttribute(dataCurrent, null);
-	} else {
-		cpnt.setAttribute(dataCurrent, idxNew);
-	};
+		current = cpnt.getAttribute(dataCurrent),
+		idx = this.parentElement.getAttribute('data-idx');
+	current = (idx == current) ? null : idx;
+	cpnt.setAttribute(dataCurrent, current);
 };
 for(var i=0 ; i<5 ; i++){
-	document.getElementById('lnbItem-' + i ).children[0].onclick = lnbAction;
+	document.getElementById('lnbItem-' + i ).children[0].onclick = lnbListener;
 };
 /*document.body.onclick = function(e){
 	if( e.target.parentElement.parentElement.parentElement != document.getElementById('lnb') )
