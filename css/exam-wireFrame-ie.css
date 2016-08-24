@@ -161,7 +161,7 @@ legend, .blind { visibility: hidden; overflow: hidden; position: absolute; top: 
 .page-main .themeCast-panel { margin-top: 15px; }
 .page-main .themeCast-panel .h3 { margin-left: 10px; }
 .page-main .themeCast-panel .thumb__img { height: 100px; }
-.page-main .shoppingCast .thumb__img { height: 130px; }
+.page-main .shoppingCast .thumb__img { height: 120px; }
 .page-main .columnBa-lst { overflow: hidden; }
 .page-main .columnBa-item { float: left; width: 33.33333333%; box-sizing: border-box; }
 .page-main .columnBa-item:not(:first-child) { border-left: solid 1px #ddd; }
