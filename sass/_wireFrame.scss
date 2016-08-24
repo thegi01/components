@@ -28,6 +28,7 @@ $wire-space : 10;
 
 /* wrap */
 .wrap {
+    position: relative;
     min-width: rem(320); max-width: rem(940);
     margin: 0 auto;
     padding : rem(10) rem(10) rem(20);

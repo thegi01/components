@@ -59,7 +59,7 @@ legend, .blind { visibility: hidden; overflow: hidden; position: absolute; top: 
 .wire--block { box-sizing: border-box; border: solid 1px #ddd; -webkit-border-radius: 3px; -moz-border-radius: 3px; border-radius: 3px; background-clip: padding-box; /* stops bg color from leaking outside the border: */ margin-top: 10px; }
 
 /* wrap */
-.wrap { min-width: 320px; max-width: 940px; margin: 0 auto; padding: 10px 10px 20px; box-sizing: border-box; background-color: #fff; }
+.wrap { position: relative; min-width: 320px; max-width: 940px; margin: 0 auto; padding: 10px 10px 20px; box-sizing: border-box; background-color: #fff; }
 
 .header:after, .container:after, .footer:after { content: ""; display: table; clear: both; }
 
