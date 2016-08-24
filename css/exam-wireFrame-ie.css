@@ -87,11 +87,13 @@ legend, .blind { visibility: hidden; overflow: hidden; position: absolute; top: 
 .lnb-item { float: left; width: 20%; }
 
 .lnb__a { display: block; padding: 10px 5px 5px; box-sizing: border-box; text-align: center; color: #666; text-decoration: none; }
-.lnb__a:hover, .lnb__a:focus { border-left: solid 1px #ddd; border-right: solid 1px #ddd; background-color: #f1f1f1; }
-.lnb-item:first-child .lnb__a:hover, .lnb-item:first-child .lnb__a:focus { border-left-color: #f1f1f1; }
-.lnb-item:last-child .lnb__a:hover, .lnb-item:last-child .lnb__a:focus { border-right-color: #f1f1f1; }
+.lnb[data-active="0"] .lnb-item[data-idx="0"] .lnb__a, .lnb[data-active="1"] .lnb-item[data-idx="1"] .lnb__a, .lnb[data-active="2"] .lnb-item[data-idx="2"] .lnb__a, .lnb[data-active="3"] .lnb-item[data-idx="3"] .lnb__a, .lnb[data-active="4"] .lnb-item[data-idx="4"] .lnb__a { border-left: solid 1px #ddd; border-right: solid 1px #ddd; background-color: #f1f1f1; }
+.lnb[data-active="0"] .lnb-item[data-idx="0"] .lnb__a { border-left-color: #f1f1f1; }
+.lnb[data-active="4"] .lnb-item[data-idx="4"] .lnb__a { border-right-color: #f1f1f1; }
 
-.lnb-item-lst { display: none; position: absolute; z-index: 100; width: 20%; padding: 10px 0; box-sizing: border-box; border: solid 1px #ddd; background-color: #f1f1f1; }
+.lnb-item-lst { display: none; position: absolute; z-index: 100; width: 20%; padding: 10px 0; box-sizing: border-box; border: solid 1px #ddd; background-color: #f1f1f1; /* &[data-visible="true"] { display: block;
+} */ }
+.lnb[data-active="0"] .lnb-item[data-idx="0"] .lnb-item-lst, .lnb[data-active="1"] .lnb-item[data-idx="1"] .lnb-item-lst, .lnb[data-active="2"] .lnb-item[data-idx="2"] .lnb-item-lst, .lnb[data-active="3"] .lnb-item[data-idx="3"] .lnb-item-lst, .lnb[data-active="4"] .lnb-item[data-idx="4"] .lnb-item-lst { display: block; }
 
 .lnb-item__a { display: block; padding-left: 20px; text-decoration: none; font-size: 14px; color: #666; line-height: 1.5; }
 .lnb-item__a:hover { text-decoration: underline; }
@@ -157,7 +159,7 @@ legend, .blind { visibility: hidden; overflow: hidden; position: absolute; top: 
 .page-main .today__btn-next { display: inline-block; }
 .page-main .ad { display: table; width: 100%; height: 100px; }
 .page-main .ad__img { display: table-cell; text-align: center; vertical-align: middle; color: #666; }
-.page-main .contents-2 .themeCast, .page-main .contents-2 .shoppingCast { min-height: 404px; }
+@media only screen and (min-width: 601px) { .page-main .contents-2 .themeCast, .page-main .contents-2 .shoppingCast { min-height: 404px; } }
 .page-main .themeCast-tab { overflow: hidden; }
 .page-main .themeCast-item { float: left; width: 16.666666%; border-bottom: solid 1px #ccc; box-sizing: border-box; background-color: #f1f1f1; }
 .page-main .themeCast-item__a { display: block; height: 36px; line-height: 36px; text-align: center; text-decoration: none; font-size: 12px; color: #666; }

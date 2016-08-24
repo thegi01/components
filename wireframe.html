@@ -30,9 +30,9 @@
 				<li class="gnb-item"><a href="#href" class="gnb__a">gnb 3</a></li>
 			</ul>
 		</div>
-		<div class="lnb wire--block">
+		<div class="lnb wire--block" id="lnb">
 			<ul class="lnb-lst">
-				<li class="lnb-item"><a href="#href" class="lnb__a">lnb 1</a>
+				<li class="lnb-item" data-idx="0"><a href="#href" class="lnb__a" id="lnbItem-0">lnb 1</a>
 					<ul class="lnb-item-lst">
 						<li class="lnb-item-item">
 							<a href="#href" class="lnb-item__a">lnb 1_1</a>
@@ -41,7 +41,7 @@
 						</li>
 					</ul>
 				</li>
-				<li class="lnb-item"><a href="#href" class="lnb__a">lnb 2</a>
+				<li class="lnb-item" data-idx="1"><a href="#href" class="lnb__a" id="lnbItem-1">lnb 2</a>
 					<ul class="lnb-item-lst">
 						<li class="lnb-item-item">
 							<a href="#href" class="lnb-item__a">lnb 2_1</a>
@@ -50,7 +50,7 @@
 						</li>
 					</ul>
 				</li>
-				<li class="lnb-item"><a href="#href" class="lnb__a">lnb 3</a>
+				<li class="lnb-item" data-idx="2"><a href="#href" class="lnb__a" id="lnbItem-2">lnb 3</a>
 					<ul class="lnb-item-lst">
 						<li class="lnb-item-item">
 							<a href="#href" class="lnb-item__a">lnb 3_1</a>
@@ -59,7 +59,7 @@
 						</li>
 					</ul>
 				</li>
-				<li class="lnb-item"><a href="#href" class="lnb__a">lnb 4</a>
+				<li class="lnb-item" data-idx="3"><a href="#href" class="lnb__a" id="lnbItem-3">lnb 4</a>
 					<ul class="lnb-item-lst">
 						<li class="lnb-item-item">
 							<a href="#href" class="lnb-item__a">lnb 4_1</a>
@@ -68,7 +68,7 @@
 						</li>
 					</ul>
 				</li>
-				<li class="lnb-item"><a href="#href" class="lnb__a">lnb 5</a>
+				<li class="lnb-item" data-idx="4"><a href="#href" class="lnb__a" id="lnbItem-4">lnb 5</a>
 					<ul class="lnb-item-lst">
 						<li class="lnb-item-item">
 							<a href="#href" class="lnb-item__a">lnb 5_1</a>
@@ -297,6 +297,22 @@
 <!-- //wrap -->
 
 <!-- javacript -->
+<script>
+var test = function(){
+	var el = this.nextElementSibling,
+		idx = this.parentElement.getAttribute('data-idx');
+	document.getElementById('lnb').setAttribute('data-active', idx);
+};
+for(var i=0 ; i<5 ; i++){
+	document.getElementById('lnbItem-' + i ).onclick = test;
+	// document.getElementById('lnbItem-' + i ).onmouseover = test;
+	// document.getElementById('lnbItem-' + i ).onfocus = test;
+};
+document.body.onclick = function(e){
+	if( e.target.parentElement.parentElement.parentElement != document.getElementById('lnb') )
+		document.getElementById('lnb').setAttribute('data-active', null);
+};
+</script>
 
 <!-- //javacript -->
 
