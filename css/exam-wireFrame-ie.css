@@ -176,7 +176,8 @@ legend, .blind { visibility: hidden; overflow: hidden; position: absolute; top: 
 .page-main .columnBa__a:hover { text-decoration: underline; }
 .page-main .footer { text-align: center; }
 .page-main .footer-lst { overflow: hidden; display: inline-block; margin-top: 5px; }
-.page-main .footer-item { float: left; }
+.page-main .footer-item { float: left; width: 33.333333%; }
+@media only screen and (min-width: 601px) { .page-main .footer-item { width: auto; } }
 .page-main .footer__a { display: block; padding: 5px 10px; text-decoration: none; font-size: 12px; color: #666; }
 .page-main .footer__a:hover { text-decoration: underline; }
 

@@ -419,6 +419,10 @@ $wire-space : 10;
     }
     .footer-item {
         float : left;
+        width : 33.333333%;
+        @media #{$media-m} {
+            width: auto;
+        }
     }
     .footer__a {
         display: block;
