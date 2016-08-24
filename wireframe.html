@@ -305,8 +305,6 @@ var test = function(){
 };
 for(var i=0 ; i<5 ; i++){
 	document.getElementById('lnbItem-' + i ).onclick = test;
-	// document.getElementById('lnbItem-' + i ).onmouseover = test;
-	// document.getElementById('lnbItem-' + i ).onfocus = test;
 };
 document.body.onclick = function(e){
 	if( e.target.parentElement.parentElement.parentElement != document.getElementById('lnb') )

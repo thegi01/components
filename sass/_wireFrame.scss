@@ -77,40 +77,42 @@ $wire-space : 10;
 }
 .lnb-item {
     float: left;
-    width: 20%;
+    width : 20%;
 }
 .lnb__a {
     display: block;
     padding : rem(10) rem(5) rem(5);
     box-sizing : border-box;
     text-align:center;
-    color: #666;  text-decoration: none;
+    color: #666; text-decoration: none;
     .lnb[data-active="0"] .lnb-item[data-idx="0"] &,
     .lnb[data-active="1"] .lnb-item[data-idx="1"] &,
     .lnb[data-active="2"] .lnb-item[data-idx="2"] &,
     .lnb[data-active="3"] .lnb-item[data-idx="3"] &,
     .lnb[data-active="4"] .lnb-item[data-idx="4"] &  {
         border-left : solid 1px #ddd; border-right : solid 1px #ddd;
-        background-color : #f1f1f1;
+        background-color : yellow;
     }
     .lnb[data-active="0"] .lnb-item[data-idx="0"] & {
-        border-left-color : #f1f1f1;
+        border-left-color : yellow;
     }
     .lnb[data-active="4"] .lnb-item[data-idx="4"] & {
-        border-right-color : #f1f1f1;
+        border-right-color : yellow;
     }
 }
 .lnb-item-lst {
     display: none;
-    position: absolute; z-index: 100;
-    width: 20%;
+    position: absolute; left:0; z-index: 100; 
+    width: 100%;
     padding: rem($wire-space) 0;
     box-sizing : border-box;
     border:solid 1px #ddd;
-    @include wire--fill;
-    /* &[data-visible="true"] {
-        display: block;
-    } */
+    background-color: yellow;
+    // @include wire--fill;
+    @media #{$media-m}{
+        left: auto;
+        width: 20%;
+    }
     .lnb[data-active="0"] .lnb-item[data-idx="0"] &,
     .lnb[data-active="1"] .lnb-item[data-idx="1"] &,
     .lnb[data-active="2"] .lnb-item[data-idx="2"] &,
