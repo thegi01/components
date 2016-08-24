@@ -1,5 +1,18 @@
 /* blocks/button.style.begin */
 $btn-radius : 0.3em;
+// button
+@mixin btn-hovered {
+    background-color: #f1f1f1;
+}
+@mixin btn-focused {
+    background-color: #f2f2f2;
+    border-color: #bbb;
+    outline : 0;
+}
+@mixin btn-pressed {
+    background-color: yellow;
+    border-color : orange;
+}
 
 button, html input[type=button], input[type=reset], input[type=submit] {
     -webkit-appearance: button;

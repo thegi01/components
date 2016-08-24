@@ -59,12 +59,12 @@ legend, .blind { visibility: hidden; overflow: hidden; position: absolute; top: 
 .wire--block { box-sizing: border-box; border: solid 1px #ddd; -webkit-border-radius: 0.1875rem; -moz-border-radius: 0.1875rem; border-radius: 0.1875rem; background-clip: padding-box; /* stops bg color from leaking outside the border: */ margin-top: 0.625rem; }
 
 /* wrap */
-.wrap { min-width: 20rem; max-width: 58.75rem; margin: 0 auto; padding: 0.625rem; box-sizing: border-box; background-color: #fff; }
+.wrap { min-width: 20rem; max-width: 58.75rem; margin: 0 auto; padding: 0.625rem 0.625rem 1.25rem; box-sizing: border-box; background-color: #fff; }
 
 .header:after, .container:after, .footer:after { content: ""; display: table; clear: both; }
 
 /* header */
-.header { overflow: hidden; position: relative; height: 5rem; }
+.header { height: 5rem; }
 
 .header-logo { float: left; }
 .header-logo .ico__logo { margin: 0; padding: 0.625rem 0; font-size: 1.5625rem; color: #111; }
@@ -80,16 +80,21 @@ legend, .blind { visibility: hidden; overflow: hidden; position: absolute; top: 
 .gnb__a:hover { text-decoration: underline; }
 
 /* header > lnb */
-.lnb { position: absolute; bottom: 0; left: 0; right: 0; }
+.lnb { position: absolute; top: 3.125rem; left: 0.625rem; right: 0.625rem; }
 
 .lnb-lst { overflow: hidden; margin: 0; padding: 0; }
 
-.lnb-item { float: left; width: 20%; text-align: center; }
+.lnb-item { float: left; width: 20%; }
 
-.lnb__a { display: block; padding: 0.625rem 0.3125rem 0.3125rem; color: #666; text-decoration: none; }
-.lnb__a:hover { background-color: #f1f1f1; }
+.lnb__a { display: block; padding: 0.625rem 0.3125rem 0.3125rem; box-sizing: border-box; text-align: center; color: #666; text-decoration: none; }
+.lnb__a:hover, .lnb__a:focus { border-left: solid 1px #ddd; border-right: solid 1px #ddd; background-color: #f1f1f1; }
+.lnb-item:first-child .lnb__a:hover, .lnb-item:first-child .lnb__a:focus { border-left-color: #f1f1f1; }
+.lnb-item:last-child .lnb__a:hover, .lnb-item:last-child .lnb__a:focus { border-right-color: #f1f1f1; }
 
-.lnb-item-lst { display: none; }
+.lnb-item-lst { display: none; position: absolute; z-index: 100; width: 20%; padding: 0.625rem 0; box-sizing: border-box; border: solid 1px #ddd; background-color: #f1f1f1; }
+
+.lnb-item__a { display: block; padding-left: 1.25rem; text-decoration: none; font-size: 0.875rem; color: #666; line-height: 1.5; }
+.lnb-item__a:hover { text-decoration: underline; }
 
 /* container */
 .container { clear: both; }
@@ -138,7 +143,7 @@ legend, .blind { visibility: hidden; overflow: hidden; position: absolute; top: 
 .page-main .today-top .today-next__a { display: inline-block; text-decoration: none; font-size: 0.6875rem; color: #666; }
 .page-main .today-top .today-next__a:hover { text-decoration: underline; }
 .page-main .today-lst { padding-top: 0.3125rem; font-size: 0.75rem; line-height: 1.5; }
-.page-main .today-item { overflow: hidden; width: 100%; white-space: nowrap; text-overflow: ellipsis; }
+.page-main .today-item { width: 100%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 .page-main .today__a-title { display: inline-block; margin-right: 0.3125rem; font-weight: bold; text-decoration: none; font-size: 0.75rem; color: #666; }
 .page-main .today__a-title:hover { text-decoration: underline; }
 .page-main .today__a { text-decoration: none; font-size: 0.75rem; color: #666; }
@@ -167,5 +172,10 @@ legend, .blind { visibility: hidden; overflow: hidden; position: absolute; top: 
 .page-main .columnBa-item:not(:first-child) { border-left: solid 1px #ddd; }
 .page-main .columnBa__a { display: block; height: 6.25rem; line-height: 6.25rem; vertical-align: middle; text-align: center; text-decoration: none; font-size: 0.75rem; color: #666; }
 .page-main .columnBa__a:hover { text-decoration: underline; }
+.page-main .footer { text-align: center; }
+.page-main .footer-lst { overflow: hidden; display: inline-block; margin-top: 0.3125rem; }
+.page-main .footer-item { float: left; }
+.page-main .footer__a { display: block; padding: 0.3125rem 0.625rem; text-decoration: none; font-size: 0.75rem; color: #666; }
+.page-main .footer__a:hover { text-decoration: underline; }
 
 /*# sourceMappingURL=exam-wireFrame.css.map */

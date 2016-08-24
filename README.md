@@ -30,7 +30,7 @@
 
 ### Wire Frame
 - [Url] : https://thegi01.github.io/components/wireframe.html
-- Ing...
+- To do
 
 
 *** 

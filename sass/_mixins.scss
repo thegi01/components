@@ -13,7 +13,12 @@
     clear: both;
   }
 }
-@mixin ellipsis($line) {
+@mixin ellipsis{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+@mixin ellipsis-m($line) {
     overflow: hidden;
     text-overflow: ellipsis;
     display: -webkit-box;
@@ -21,14 +26,12 @@
     -webkit-box-orient: vertical;
     word-wrap:break-word; 
 }
-
 // box-sizing 
 @mixin box-sizing($box-model) {
     -webkit-box-sizing: $box-model; // Safari <= 5
        -moz-box-sizing: $box-model; // Firefox <= 19
             box-sizing: $box-model;
 }
-
 // border-radius
 @mixin border-radius( $radius ){
 	-webkit-border-radius : $radius;
@@ -44,16 +47,3 @@
 	background-clip: padding-box;  /* stops bg color from leaking outside the border: */
 }
     
-// button
-@mixin btn-hovered {
-    background-color: #f1f1f1;
-}
-@mixin btn-focused {
-    background-color: #f2f2f2;
-    border-color: #bbb;
-    outline : 0;
-}
-@mixin btn-pressed {
-    background-color: yellow;
-    border-color : orange;
-}
