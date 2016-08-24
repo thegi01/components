@@ -25,13 +25,19 @@
 ### Grid
 - [Url] : https://thegi01.github.io/components/grid.html
 - To do 
-	- ie8 media query 적용 여부
 	- aria
 
 ### Wire Frame
 - [Url] : https://thegi01.github.io/components/wireframe.html
 - To do
+	- lnb : Full Menu로 마크업 수정, 기능 구현
+	- tab, tabPanel 기능 구현
+	- Today 기능 구현
+	- 반응형 > font 확인
+	- aria
 
+### 공통
+- reset 확인
 
 *** 
 

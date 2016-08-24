@@ -26,7 +26,7 @@ $wire-space : 10;
     @include wire--margin-top;
 }
 
-/* wrap */
+/* wireFrame : wrap */
 .wrap {
     position: relative;
     min-width: rem(320); max-width: rem(940);
@@ -40,7 +40,7 @@ $wire-space : 10;
 .footer {
     @include clearfix;
 }
-/* header */
+/* wireFrame : header */
 .header {
     height: rem(80);
 }
@@ -51,7 +51,7 @@ $wire-space : 10;
         font-size : rem(25); color: #111;
    }
 }
-/* header > gnb */
+/* wireFrame : header > gnb */
 .gnb{
     position: absolute; right: 0; 
 }
@@ -67,7 +67,7 @@ $wire-space : 10;
     padding:rem(10);
     @include wire__a(14);
 }
-/* header > lnb */
+/* wireFrame : header > lnb */
 .lnb {
     position: absolute; top: rem(50); left:rem($wire-space); right:rem($wire-space);
     // width: 100%;
@@ -129,12 +129,12 @@ $wire-space : 10;
     line-height: 1.5;
 }
 
-/* container */
+/* wireFrame : container */
 .container {
     clear: both;
 }
 
-/* thumb */
+/* wireFrame : thumb */
 .thumb-lst {
 }
 .thumb-item {
@@ -155,7 +155,7 @@ $wire-space : 10;
 }
 
 
-/* main > wire-space */
+/* wireFrame : main > wire-space */
 .page-main {
     @media only screen and (min-width: 601px) {
         .column-1 .wire--block{
@@ -179,7 +179,7 @@ $wire-space : 10;
     }
 }
 
-/* main > contetns */
+/* wireFrame : main > contetns */
 .page-main {
     .contents-1,
     .contents-2,

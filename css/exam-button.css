@@ -1,4 +1,4 @@
-/* reset */
+/* base.style.begin */
 html, body, div, span, applet, object, iframe, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video { margin: 0; padding: 0; border: 0; font-size: 100%; font: inherit; vertical-align: baseline; }
 
 body { line-height: 1; }
@@ -11,10 +11,9 @@ blockquote:before, blockquote:after, q:before, q:after { content: ''; content: n
 
 table { border-collapse: collapse; border-spacing: 0; }
 
-/* base */
 legend, .blind { visibility: hidden; overflow: hidden; position: absolute; top: 0; left: 0; width: 1px; height: 1px; font-size: 0; }
 
-/* blocks/button.style.begin */
+/* button.style.begin */
 button, html input[type=button], input[type=reset], input[type=submit] { -webkit-appearance: button; -moz-appearance: button; cursor: pointer; }
 
 button[disabled], html input[disabled] { cursor: default; }
@@ -77,6 +76,7 @@ input[data-role="button-toggle"]:checked + .btn { background-color: yellow; bord
 .btn-group-radio .btn--theme-default:nth-of-type(1) { -webkit-border-top-right-radius: 0; -moz-border-top-right-radius: 0; border-top-right-radius: 0; background-clip: padding-box; /* stops bg color from leaking outside the border: */ -webkit-border-bottom-right-radius: 0; -moz-border-bottom-right-radius: 0; border-bottom-right-radius: 0; background-clip: padding-box; /* stops bg color from leaking outside the border: */ }
 .btn-group-radio .btn--theme-default:last-child { -webkit-border-top-left-radius: 0; -moz-border-top-left-radius: 0; border-top-left-radius: 0; background-clip: padding-box; /* stops bg color from leaking outside the border: */ -webkit-border-bottom-left-radius: 0; -moz-border-bottom-left-radius: 0; border-bottom-left-radius: 0; background-clip: padding-box; /* stops bg color from leaking outside the border: */ }
 
+/* exam.style.begin */
 .code-exam { padding: 0.625rem 1.25rem; }
 
 .code-exam__h2 { margin-top: 2.5rem; margin-bottom: 1.875rem; }

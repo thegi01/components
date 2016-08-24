@@ -1,6 +1,6 @@
 /* grid.style.begin */
 
-@mixin grid-width($prefix){
+@mixin grid-set($prefix){
     @for $i from 1 through 12 {
         $val : 12/$i;
         #{$prefix}#{$i} {
@@ -16,14 +16,14 @@
     .col {
         float: left;
         box-sizing : border-box;
-        @include grid-width('&.s');
+        @include grid-set('&.s');
 
         @media #{$media-m} {
-            @include grid-width('&.m');
+            @include grid-set('&.m');
         }
 
-         @media #{$media-l} {
-            @include grid-width('&.l');
+        @media #{$media-l} {
+            @include grid-set('&.l');
         }
     }
 }
