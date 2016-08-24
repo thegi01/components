@@ -61,6 +61,8 @@ legend, .blind { visibility: hidden; overflow: hidden; position: absolute; top: 
 /* wrap */
 .wrap { min-width: 20rem; max-width: 58.75rem; margin: 0 auto; padding: 0.625rem; box-sizing: border-box; background-color: #fff; }
 
+.header:after, .container:after, .footer:after { content: ""; display: table; clear: both; }
+
 /* header */
 .header { overflow: hidden; position: relative; height: 5rem; }
 
@@ -92,17 +94,32 @@ legend, .blind { visibility: hidden; overflow: hidden; position: absolute; top: 
 /* container */
 .container { clear: both; }
 
+/* thumb */
+.thumb-item { box-sizing: border-box; padding: 0.625rem; }
+
+.thumb__a { display: block; text-decoration: none; font-size: 0.75rem; color: #666; }
+.thumb__a:hover { text-decoration: underline; }
+
+.thumb__img { margin-bottom: 0.5rem; background-color: #f1f1f1; }
+
+.thumb__txt { line-height: 1.2; overflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp: 2; /* 라인수 */ -webkit-box-orient: vertical; word-wrap: break-word; }
+
 /* main > wire-space */
 @media only screen and (min-width: 601px) { .page-main .column-1 .wire--block { margin-right: 0.625rem; } }
-.page-main .news, .page-main .auth, .page-main .timeSqure, .page-main .ad, .page-main .themeCast, .page-main .shoppingCast, .page-main .columnBa, .page-main .footer { padding: 0.625rem; }
-.page-main .promotion, .page-main .auth { background-color: #f1f1f1; }
+.page-main .newsFlash, .page-main .news, .page-main .auth, .page-main .today, .page-main .themeCast, .page-main .shoppingCast, .page-main .footer { padding: 0.625rem; }
+.page-main .promotion, .page-main .ad, .page-main .auth, .page-main .columnBa { background-color: #f1f1f1; }
 
 /* main > contetns */
-.page-main .promotion { height: 6.25rem; }
-.page-main .promotion p { margin: 0; line-height: 6.25rem; text-align: center; color: #666; }
-.page-main .h3 { margin: 5px; color: #333; }
-.page-main .news-lst { margin: 0; padding: 0; }
-.page-main .news-item { overflow: hidden; position: relative; line-height: 1.25rem; }
+.page-main .contents-1:after, .page-main .contents-2:after, .page-main .contents-3:after { content: ""; display: table; clear: both; }
+.page-main .promotion { height: 9.375rem; }
+.page-main .promotion p { margin: 0; line-height: 9.375rem; text-align: center; color: #666; }
+.page-main .h3 { margin: 0 0 0.3125rem; font-size: 0.875rem; color: #333; }
+.page-main .newsFlash { padding-top: 0.75rem; font-size: 0.75rem; color: #666; }
+.page-main .newsFlash__a-title, .page-main .newsFlash__a { text-decoration: none; font-size: 0.75rem; color: #666; }
+.page-main .newsFlash__a-title:hover, .page-main .newsFlash__a:hover { text-decoration: underline; }
+.page-main .newsFlash__a { margin-left: 0.3125rem; }
+.page-main .news-lst { margin: 0; padding: 0.1875rem 0; }
+.page-main .news-item { overflow: hidden; position: relative; line-height: 1.3125rem; }
 .page-main .news-item:before { content: '∙'; position: absolute; top: -1px; }
 .page-main .news__a { display: block; margin-left: 0.75rem; text-decoration: none; font-size: 0.75rem; color: #666; }
 .page-main .news__a:hover { text-decoration: underline; }
@@ -115,5 +132,40 @@ legend, .blind { visibility: hidden; overflow: hidden; position: absolute; top: 
 .page-main .auth-menu__a { text-decoration: none; font-size: 0.6875rem; color: #666; }
 .page-main .auth-menu__a:hover { text-decoration: underline; }
 .page-main .auth-menu__a.a-join { margin-right: 1rem; }
+.page-main .today { position: relative; }
+.page-main .today-top { position: absolute; right: 0.625rem; top: 0.625rem; }
+.page-main .today-top .today__date { display: inline-block; margin-right: 0.3125rem; font-size: 11px; color: #666; }
+.page-main .today-top .today-next__a { display: inline-block; text-decoration: none; font-size: 0.6875rem; color: #666; }
+.page-main .today-top .today-next__a:hover { text-decoration: underline; }
+.page-main .today-lst { padding-top: 0.3125rem; font-size: 0.75rem; line-height: 1.5; }
+.page-main .today-item { overflow: hidden; width: 100%; white-space: nowrap; text-overflow: ellipsis; }
+.page-main .today__a-title { display: inline-block; margin-right: 0.3125rem; font-weight: bold; text-decoration: none; font-size: 0.75rem; color: #666; }
+.page-main .today__a-title:hover { text-decoration: underline; }
+.page-main .today__a { text-decoration: none; font-size: 0.75rem; color: #666; }
+.page-main .today__a:hover { text-decoration: underline; }
+.page-main .today__a:not(:last-child):after { content: ''; display: inline-block; width: 1px; height: 0.625rem; margin-left: 0.5rem; margin-right: 0.3125rem; background-color: #ccc; }
+.page-main .today-ctrl { margin-top: 0.3125rem; text-align: right; }
+.page-main .today__page { display: inline-block; margin-right: 0.3125rem; font-size: 0.75rem; color: #666; }
+.page-main .today__page-current { display: inline-block; }
+.page-main .today__page-total { display: inline-block; }
+.page-main .today__btn-prev { display: inline-block; }
+.page-main .today__btn-next { display: inline-block; }
+.page-main .ad { display: table; width: 100%; height: 6.25rem; }
+.page-main .ad__img { display: table-cell; text-align: center; vertical-align: middle; color: #666; }
+.page-main .contents-2 .themeCast, .page-main .contents-2 .shoppingCast { min-height: 25.25rem; }
+.page-main .themeCast-tab { overflow: hidden; }
+.page-main .themeCast-item { float: left; width: 16.666666%; border-bottom: solid 1px #ccc; box-sizing: border-box; background-color: #f1f1f1; }
+.page-main .themeCast-item__a { display: block; height: 2.25rem; line-height: 2.25rem; text-align: center; text-decoration: none; font-size: 0.75rem; color: #666; }
+.page-main .themeCast-item__a:hover { text-decoration: underline; }
+.page-main .themeCast[data-current="4"] .themeCast-item[data-idx="4"] { border: solid 1px #ccc; border-bottom: none; background-color: #fff; }
+.page-main .themeCast-panel { margin-top: 0.9375rem; }
+.page-main .themeCast-panel .h3 { margin-left: 0.625rem; }
+.page-main .themeCast-panel .thumb__img { height: 6.25rem; }
+.page-main .shoppingCast .thumb__img { height: 8.125rem; }
+.page-main .columnBa-lst { overflow: hidden; }
+.page-main .columnBa-item { float: left; width: 33.33333333%; box-sizing: border-box; }
+.page-main .columnBa-item:not(:first-child) { border-left: solid 1px #ddd; }
+.page-main .columnBa__a { display: block; height: 6.25rem; line-height: 6.25rem; vertical-align: middle; text-align: center; text-decoration: none; font-size: 0.75rem; color: #666; }
+.page-main .columnBa__a:hover { text-decoration: underline; }
 
 /*# sourceMappingURL=exam-wireFrame.css.map */

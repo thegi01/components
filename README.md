@@ -15,21 +15,21 @@
 
 
 ### Button 
-- [바로가기] : https://thegi01.github.io/components/button.html 
+- [Url] : https://thegi01.github.io/components/button.html 
 - To do 
-	- full button
+	- 요소 추가(full button...bootstrap)
 	- 하위 버전 크로스 브라우징
 	- 버튼 background-gradient
 	- aria
 
 ### Grid
-- [바로가기] : https://thegi01.github.io/components/grid.html
+- [Url] : https://thegi01.github.io/components/grid.html
 - To do 
 	- ie8 media query 적용 여부
 	- aria
 
 ### Wire Frame
-- [바로가기] : https://thegi01.github.io/components/wireframe.html
+- [Url] : https://thegi01.github.io/components/wireframe.html
 - Ing...
 
 
