@@ -32,7 +32,8 @@
 - To do
 	- lnb : Full Menu로 마크업 수정, 기능 구현
 	- tab, tabPanel 기능 구현
-	- Today 기능 구현
+	- Today 기능 구현 (current data 공통화 ?)
+	- id, pass 
 	- 반응형 > font 확인
 	- aria
 
@@ -46,6 +47,11 @@
 - ie 하위버전에서 --로 시작하는 클래스명은 인식하지 못한다.
 - sass 조건문에서 ''를 인식한다. 'true'와 true는 다르다.
 - ie8에서는 반응형 적용할 필요가 없다.
+- 단순하게 구현할 수 있는 js를 공통화하기 위해 복잡하게 구현할 필요가 있을까?
+	- 유지 보수 차원에서 공통화가 많으면 수정한 후 확인하는데 시간이 너무 오래 걸린다.
+	- 코드를 단순하게 작성하면 신규 구현 후 후임자가 코드를 수정하기가 쉽다.
+	- 예 : Wire Frame.html의 lnb, today, themeCast의 경우..조금씩 다 다르다.
+	- 공통화 기준을 3줄 이상이 동일한 코드인 경우로 기준을 잡자.
 
 ### 참조
 - [BEM] : https://en.bem.info/libs/bem-components/v3.0.0/desktop/button/

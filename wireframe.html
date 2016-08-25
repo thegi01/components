@@ -134,40 +134,50 @@
 						/ <a href="#href" class="auth-menu__a">비밀번호 찾기</a>
 					</div>
 				</fieldset>
-				<div class="today wire--block">
+				<div class="today wire--block" id="today" data-current="0">
 					<h3 class="h3">Today</h3>
 					<div class="today-top">
 						<div class="today__date">08.24(수)</div>
 						<a href="#href" class="today-next__a">tv편성 ></a>
 					</div>
-					<ul class="today-lst">
-						<li class="today-item">
-							<a href="#href" class="today__a-title">학습</a>
-							<a href="#href" class="today__a">영어로 듣는 뉴스</a>
-							<a href="#href" class="today__a">영어 톡톡</a>
-						</li>
-						<li class="today-item">
-							<a href="#href" class="today__a-title">행사</a>
-							<a href="#href" class="today__a">현재 상영 영화</a>
-							<a href="#href" class="today__a">스포츠 주요 경기 일정</a>
-						</li>
-						<li class="today-item">
-							<a href="#href" class="today__a-title">스포츠</a>
-							<a href="#href" class="today__a">[TV중계] 워싱턴 vs 볼티모어</a>
-						</li>
-						<li class="today-item">
-							<a href="#href" class="today__a-title">증시</a>
-							<a href="#href" class="today__a">코스피 2044.12</a>
-							<a href="#href" class="today__a">코스닥 6988.11</a>
-						</li>
-					</ul>
+					<div class="today-panel">
+						<div class="today-panel-item" data-idx="0">
+							<ul class="today-lst">
+								<li class="today-item">
+									<a href="#href" class="today__a-title">학습</a>
+									<a href="#href" class="today__a">영어로 듣는 뉴스</a>
+									<a href="#href" class="today__a">영어 톡톡</a>
+								</li>
+								<li class="today-item">
+									<a href="#href" class="today__a-title">행사</a>
+									<a href="#href" class="today__a">현재 상영 영화</a>
+									<a href="#href" class="today__a">스포츠 주요 경기 일정</a>
+								</li>
+								<li class="today-item">
+									<a href="#href" class="today__a-title">스포츠</a>
+									<a href="#href" class="today__a">[TV중계] 워싱턴 vs 볼티모어</a>
+								</li>
+								<li class="today-item">
+									<a href="#href" class="today__a-title">증시</a>
+									<a href="#href" class="today__a">코스피 2044.12</a>
+									<a href="#href" class="today__a">코스닥 6988.11</a>
+								</li>
+							</ul>
+						</div>
+						<div class="today-panel-item" data-idx="1">
+							<div>Today Panel Item 2</div>
+						</div>
+						<div class="today-panel-item" data-idx="2">
+							<div>Today Panel Item 3</div>
+						</div>
+					</div>
 					<div class="today-ctrl">
 						<div class="today__page">
-							<div class="today__page-current">1</div> /
-							<div class="today__page-total">3</div>
+							<div class="today__page-current" id="todayPageCurrent">1</div> /
+							<div class="today__page-total" id="todayPageTotal">3</div>
 						</div>
-						<button type="button" class="today__btn-prev">이전</button>
-						<button type="button" class="today__btn-next">다음</button>
+						<button type="button" class="today__btn-prev" id="todayBtnPrev">이전</button>
+						<button type="button" class="today__btn-next" id="todayBtnNext">다음</button>
 					</div>
 				</div>
 				<div class="ad wire--block">
@@ -178,9 +188,9 @@
 		</div>
 		<div class="contents-2 row">
 			<div class="column-1 col s12 m8">
-				<div class="themeCast wire--block" data-current = "4">
+				<div class="themeCast wire--block" id="themeCast" data-current = "4">
 					<h3 class="blind">Theme cast</h3>
-					<ul class="themeCast-tab">
+					<ul class="themeCast-tab" id="themeCastTab">
 						<li class="themeCast-item" data-idx="0"><a href="#href" class="themeCast-item__a">라이프</a></li>
 						<li class="themeCast-item" data-idx="1"><a href="#href" class="themeCast-item__a">웹툰</a></li>
 						<li class="themeCast-item" data-idx="2"><a href="#href" class="themeCast-item__a">게임</a></li>
@@ -188,58 +198,75 @@
 						<li class="themeCast-item" data-idx="4"><a href="#href" class="themeCast-item__a">영화</a></li>
 						<li class="themeCast-item" data-idx="5"><a href="#href" class="themeCast-item__a">책/문화</a></li>
 					</ul>
-					<div class="themeCast-panel" data-idx="4">
-						 <h4 class="h3">영화</h4>
-						 <ul class="thumb-lst row">
-						 	<li class="thumb-item col s6 m3">
-						 		<a href="#href" class="thumb__a">
-						 			<div class="thumb__img"></div>
-						 			<div class="thumb__txt">공유, 어차피 잘 될 운명이었나보네요.</div>
-						 		</a>
-						 	</li>
-						 	<li class="thumb-item col s6 m3">
-						 		<a href="#href" class="thumb__a">
-						 			<div class="thumb__img"></div>
-						 			<div class="thumb__txt">공유, 어차피 잘 될 운명이었나보네요.</div>
-						 		</a>
-						 	</li>
-						 	<li class="thumb-item col s6 m3">
-						 		<a href="#href" class="thumb__a">
-						 			<div class="thumb__img"></div>
-						 			<div class="thumb__txt">공유, 어차피 잘 될 운명이었나보네요.</div>
-						 		</a>
-						 	</li>
-						 	<li class="thumb-item col s6 m3">
-						 		<a href="#href" class="thumb__a">
-						 			<div class="thumb__img"></div>
-						 			<div class="thumb__txt">공유, 어차피 잘 될 운명이었나보네요.</div>
-						 		</a>
-						 	</li>
-						 	<li class="thumb-item col s6 m3">
-						 		<a href="#href" class="thumb__a">
-						 			<div class="thumb__img"></div>
-						 			<div class="thumb__txt">공유, 어차피 잘 될 운명이었나보네요.</div>
-						 		</a>
-						 	</li>
-						 	<li class="thumb-item col s6 m3">
-						 		<a href="#href" class="thumb__a">
-						 			<div class="thumb__img"></div>
-						 			<div class="thumb__txt">공유, 어차피 잘 될 운명이었나보네요.</div>
-						 		</a>
-						 	</li>
-						 	<li class="thumb-item col s6 m3">
-						 		<a href="#href" class="thumb__a">
-						 			<div class="thumb__img"></div>
-						 			<div class="thumb__txt">공유, 어차피 잘 될 운명이었나보네요.</div>
-						 		</a>
-						 	</li>
-						 	<li class="thumb-item col s6 m3">
-						 		<a href="#href" class="thumb__a">
-						 			<div class="thumb__img"></div>
-						 			<div class="thumb__txt">공유, 어차피 잘 될 운명이었나보네요.</div>
-						 		</a>
-						 	</li>
-						 </ul>
+					<div class="themeCast-panel">
+						<div class="themeCast-panel-item" data-idx="0">
+							<h4 class="h3">라이프</h4>
+						</div>
+						<div class="themeCast-panel-item" data-idx="1">
+							<h4 class="h3">웹툰</h4>
+						</div>
+						<div class="themeCast-panel-item" data-idx="2">
+							<h4 class="h3">게임</h4>
+						</div>
+						<div class="themeCast-panel-item" data-idx="3">
+							<h4 class="h3">뮤직</h4>
+						</div>
+						<div class="themeCast-panel-item" data-idx="4">
+							<h4 class="h3">영화</h4>
+							<ul class="thumb-lst row">
+								<li class="thumb-item col s6 m3">
+									<a href="#href" class="thumb__a">
+										<div class="thumb__img"></div>
+										<div class="thumb__txt">공유, 어차피 잘 될 운명이었나보네요.</div>
+									</a>
+								</li>
+								<li class="thumb-item col s6 m3">
+									<a href="#href" class="thumb__a">
+										<div class="thumb__img"></div>
+										<div class="thumb__txt">공유, 어차피 잘 될 운명이었나보네요.</div>
+									</a>
+								</li>
+								<li class="thumb-item col s6 m3">
+									<a href="#href" class="thumb__a">
+										<div class="thumb__img"></div>
+										<div class="thumb__txt">공유, 어차피 잘 될 운명이었나보네요.</div>
+									</a>
+								</li>
+								<li class="thumb-item col s6 m3">
+									<a href="#href" class="thumb__a">
+										<div class="thumb__img"></div>
+										<div class="thumb__txt">공유, 어차피 잘 될 운명이었나보네요.</div>
+									</a>
+								</li>
+								<li class="thumb-item col s6 m3">
+									<a href="#href" class="thumb__a">
+										<div class="thumb__img"></div>
+										<div class="thumb__txt">공유, 어차피 잘 될 운명이었나보네요.</div>
+									</a>
+								</li>
+								<li class="thumb-item col s6 m3">
+									<a href="#href" class="thumb__a">
+										<div class="thumb__img"></div>
+										<div class="thumb__txt">공유, 어차피 잘 될 운명이었나보네요.</div>
+									</a>
+								</li>
+								<li class="thumb-item col s6 m3">
+									<a href="#href" class="thumb__a">
+										<div class="thumb__img"></div>
+										<div class="thumb__txt">공유, 어차피 잘 될 운명이었나보네요.</div>
+									</a>
+								</li>
+								<li class="thumb-item col s6 m3">
+									<a href="#href" class="thumb__a">
+										<div class="thumb__img"></div>
+										<div class="thumb__txt">공유, 어차피 잘 될 운명이었나보네요.</div>
+									</a>
+								</li>
+							</ul>
+						</div>
+						<div class="themeCast-panel-item" data-idx="5">
+							<h4 class="h3">책/문화</h4>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -307,25 +334,84 @@
 <!-- javacript -->
 <script>
 
-/* lnb */
-var lnb = {
-	cpnt : document.getElementById('lnb'),
-	dataCurrent : 'data-current',
-	linstenr : function(){
-		var current = lnb.cpnt.getAttribute(lnb.dataCurrent),
-			idx = this.parentElement.getAttribute('data-idx');
-		current = (idx == current) ? null : idx;
-		lnb.setCurrent(current);
+/* Global varient -> 파일 분리 ??? */ 
+var dataCurrent = 'data-current',
+	dataIdx = 'data-idx';
+var idxCtrl = {
+	next : function(idx, len){
+		if(idx == len){
+			idx = 0;
+		} else {
+			idx++;
+		}
+		return idx;
 	},
-	setCurrent : function(idx){
-		lnb.cpnt.setAttribute(lnb.dataCurrent, idx);
+	prev : function(idx, len){
+		if(idx == 0){
+			idx = len;
+		} else {
+			idx--;
+		}
+		return idx;
 	}
 };
-for(var i=0 ; i<5 ; i++){
-	document.getElementById('lnbItem-' + i ).children[0].onclick = lnb.linstenr;
+
+/* cpnt > today */
+/* 이전, 다음 버튼 클릭으로 idx control,
+   현재 페이지 표시
+ */
+var cpntToday = document.getElementById('today');
+cpntToday.len = 3; // len은 정해진 값 또는 서버로부터 받는다.
+document.getElementById('todayPageTotal').textContent = cpntToday.len;
+cpntToday.btnListener = function(direction){
+	var current = cpntToday.getAttribute(dataCurrent);
+	current = idxCtrl[direction]( current, cpntToday.len-1 );
+	cpntToday.setAttribute( dataCurrent, current );
+	document.getElementById('todayPageCurrent').textContent = current+1;
+};
+document.getElementById('todayBtnNext').onclick = function(){
+	cpntToday.btnListener('next');
+};
+document.getElementById('todayBtnPrev').onclick = function(){
+	cpntToday.btnListener('prev');
+};
+
+/* cpnt > lnb */
+/* tab click으로 idx control,
+   자기 자신 클릭 시 null setting
+ */
+var cpntLnb = document.getElementById('lnb');
+cpntLnb.len = 5; // len은 정해진 값 또는 서버로부터 받는다.
+cpntLnb.itemListener = function(){
+	var current = cpntLnb.getAttribute(dataCurrent),
+		idx = this.parentElement.getAttribute(dataIdx);
+	current = (idx == current) ? null : idx;
+	cpntLnb.setAttribute( dataCurrent, current );
+};
+for(var i=0 ; i<cpntLnb.len ; i++){
+	document.getElementById('lnbItem-' + i ).children[0].onclick = cpntLnb.itemListener;
 };
 document.getElementById('lnbBtnClse').onclick = function(){
-	lnb.setCurrent(null);
+	cpntLnb.setAttribute(dataCurrent, null);
+};
+
+/* cpnt > themeCast */
+/* tab click으로 idx control,
+   자기 자신 클릭 시 기능 없음(return)
+ */
+var cpntThemeCast = document.getElementById('themeCast');
+cpntThemeCast.len = 6; // len은 정해진 값 또는 서버로부터 받는다.
+cpntThemeCast.tabListener = function(){
+	var current = cpntThemeCast.getAttribute(dataCurrent),
+		idx = this.parentElement.getAttribute(dataIdx);
+	if( idx != current )
+		current = idx;
+	else 
+		return;
+	cpntThemeCast.setAttribute( dataCurrent, current );
+};
+for(var i=0 ; i<cpntThemeCast.len ; i++){
+	document.getElementById('themeCastTab').getElementsByTagName('a')[i].onclick = cpntThemeCast.tabListener;
 };
 
 </script>

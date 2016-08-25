@@ -286,6 +286,17 @@ $lnb--idx-last : 4;
             @include wire__a(11)
         }
     }
+    .today-panel {
+        height : rem(77);
+    }
+    .today-panel-item {
+        display: none;
+    }
+    @for $i from 0 through 2 {
+        .today[data-current='#{$i}'] .today-panel-item[data-idx='#{$i}']{
+            display: block;
+        }
+    }
     .today-lst {
         padding-top: rem(5);
         font-size: rem(12); line-height: 1.5;
@@ -352,6 +363,11 @@ $lnb--idx-last : 4;
             }
         }
     }
+    // themeCast
+    $themeCast--idx-last : 5;
+    .themeCast {
+
+    }
     .themeCast-tab {
         overflow : hidden;
     }
@@ -362,15 +378,17 @@ $lnb--idx-last : 4;
         box-sizing : border-box;
         @include wire--fill;
     }
+    @for $i from 0 through $themeCast--idx-last {
+        .themeCast[data-current="#{$i}"] .themeCast-item[data-idx="#{$i}"]{
+            border : solid 1px #ccc; border-bottom: none;
+            background-color: #fff;
+        }
+    }
     .themeCast-item__a {
         display: block;
         height : rem(36); line-height: rem(36);
         text-align: center;
         @include wire__a;
-    }
-    .themeCast[data-current="4"] .themeCast-item[data-idx="4"] {
-        border : solid 1px #ccc; border-bottom: none;
-        background-color: #fff;
     }
     .themeCast-panel {
         margin-top:rem(15);
@@ -381,12 +399,19 @@ $lnb--idx-last : 4;
             height : rem(100);
         }
     }
+    .themeCast-panel-item {
+        display: none;
+    }
+    @for $i from 0 through $themeCast--idx-last {
+        .themeCast[ data-current = "#{$i}"] .themeCast-panel-item[ data-idx = "#{$i}" ] {
+            display: block;
+        }
+    }
     .shoppingCast {
         .thumb__img {
             height : rem(120);
         }
     }
-
 
     // contents-3
     .columnBa-lst {
