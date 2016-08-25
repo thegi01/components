@@ -1,0 +1,32 @@
+/* grid.style.begin */
+
+@mixin grid-set($prefix){
+    @for $i from 1 through 12 {
+        $val : 12/$i;
+        #{$prefix}#{$i} {
+            width : 100%/$val;
+        }
+    } 
+}
+
+.row {
+    overflow: hidden;
+    clear : both;
+    box-sizing : border-box;
+    .col {
+        float: left;
+        box-sizing : border-box;
+        @include grid-set('&.s');
+
+        @media #{$media-m} {
+            @include grid-set('&.m');
+        }
+
+        @media #{$media-l} {
+            @include grid-set('&.l');
+        }
+    }
+}
+
+
+

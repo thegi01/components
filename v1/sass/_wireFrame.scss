@@ -68,9 +68,9 @@ $wire-space : 10;
     @include wire__a(14);
 }
 /* wireFrame : header > lnb */
-$lnb--idx-last : 4;
 .lnb {
     position: absolute; top: rem(50); left:rem($wire-space); right:rem($wire-space);
+    // width: 100%;
 }
 .lnb-lst {
     overflow: hidden;
@@ -86,46 +86,47 @@ $lnb--idx-last : 4;
     box-sizing : border-box;
     text-align:center;
     color: #666; text-decoration: none;
-    @for $i from 0 through $lnb--idx-last  {
-        .lnb[ data-current = '#{$i}' ] .lnb-item[ data-idx = '#{$i}' ] & {
-            border-left : solid 1px #ddd; border-right : solid 1px #ddd;
-            background-color : yellow;
-        }
+    .lnb[data-current="0"] .lnb-item[data-idx="0"] &,
+    .lnb[data-current="1"] .lnb-item[data-idx="1"] &,
+    .lnb[data-current="2"] .lnb-item[data-idx="2"] &,
+    .lnb[data-current="3"] .lnb-item[data-idx="3"] &,
+    .lnb[data-current="4"] .lnb-item[data-idx="4"] &  {
+        border-left : solid 1px #ddd; border-right : solid 1px #ddd;
+        background-color : yellow;
     }
     .lnb[data-current="0"] .lnb-item[data-idx="0"] & {
         border-left-color : yellow;
     }
-    .lnb[data-current="#{$lnb--idx-last}"] .lnb-item[data-idx="#{$lnb--idx-last}"] & {
+    .lnb[data-current="4"] .lnb-item[data-idx="4"] & {
         border-right-color : yellow;
     }
 }
-.lnb-panel {
+.lnb-item-lst {
     display: none;
-    overflow: hidden;
-    border-top: solid 1px #ddd;
-    background-color: yellow;
-    @for $i from 0 through $lnb--idx-last {
-        .lnb[ data-current = '#{$i}' ] & {
-            display: block;
-        }
-    }
-}
-.lnb-panel-lst {
-    float : left;
-    width: 20%;
+    position: absolute; left:0; z-index: 100; 
+    width: 100%;
     padding: rem($wire-space) 0;
     box-sizing : border-box;
+    border:solid 1px #ddd;
+    background-color: yellow;
+    // @include wire--fill;
+    @media #{$media-m}{
+        left: auto;
+        width: 20%;
+    }
+    .lnb[data-current="0"] .lnb-item[data-idx="0"] &,
+    .lnb[data-current="1"] .lnb-item[data-idx="1"] &,
+    .lnb[data-current="2"] .lnb-item[data-idx="2"] &,
+    .lnb[data-current="3"] .lnb-item[data-idx="3"] &,
+    .lnb[data-current="4"] .lnb-item[data-idx="4"] & {
+        display: block;
+    }
 }
-.lnb-panel__a {
+.lnb-item__a {
     display: block;
     padding-left : rem(20);
     @include wire--a(14);
     line-height: 1.5;
-}
-.lnb__btn-clse {
-    float : right;
-    margin-right : rem(10); margin-bottom : rem(10);
-    cursor : pointer;
 }
 
 /* wireFrame : container */
