@@ -26,7 +26,7 @@
 	<div class="code-exam-row">
 		<div class="code-exam__txt">type modifier with link value</div>
 		<div>
-			<a href="#href" class="btn btn--theme-default btn--size-m btn--type-link">
+			<a href="#href" role="button" class="btn btn--default btn--m">
 				<span class="btn__txt">Button Type Link</span>
 			</a>
 		</div>
@@ -35,21 +35,19 @@
 	<div class="code-exam-row">
 		<div class="code-exam__txt">type modifier with submit value</div>
 		<div>
-			<button type="submit" class="btn btn--theme-default btn--size-m">
+			<button type="submit" class="btn btn--default btn--m">
 				<span class="btn__txt">Send data</span>
 			</button>
 		</div>
 	</div>
-
-
 
 	<h3 class="code-exam__h3">Togglable modifier</h3>
 	<h4 class="code-exam__h4">Toggle button : check</h4>
 	<div class="code-exam-row">
 		<div class="code-exam__txt">togglable modifier width check value</div>
 		<div>
-			<input type="checkbox" name="btnToggle" id="btnToggle" data-role="button-toggle">
-			<label for="btnToggle" class="btn btn--theme-default btn--size-m" >
+			<input type="checkbox" name="btnToggle" id="btnToggle" data-role="button">
+			<label for="btnToggle" class="btn btn--default btn--m" >
 				<span class="btn__txt">Toggle button</span>
 			</label>
 		</div>
@@ -59,12 +57,12 @@
 	<div class="code-exam-row">
 		<div class="code-exam__txt">togglable modifier width radio value</div>
 		<div>
-			<input type="radio" name="radioToggle" id="radioToggle1" data-role="button-toggle">
-			<label for="radioToggle1" class="btn btn--theme-default btn--size-m" >
+			<input type="radio" name="radioToggle" id="radioToggle1" data-role="button">
+			<label for="radioToggle1" class="btn btn--default btn--m" >
 				<span class="btn__txt">Toggle button : radio 1</span>
 			</label>
-			<input type="radio" name="radioToggle" id="radioToggle2" data-role="button-toggle">
-			<label for="radioToggle2" class="btn btn--theme-default btn--size-m" >
+			<input type="radio" name="radioToggle" id="radioToggle2" data-role="button">
+			<label for="radioToggle2" class="btn btn--default btn--m" >
 				<span class="btn__txt">Toggle button : radio 2</span>
 			</label>
 		</div>
@@ -73,10 +71,10 @@
 	<h3 class="code-exam__h3">Disabled modifier</h3>
 	<div class="code-exam-row">
 		<div class="code-exam__txt"></div>
-		<button type="button" disabled="disabled" class="btn btn--theme-default btn--size-m">
+		<button type="button" disabled="disabled" class="btn btn--default btn--m">
 			<span class="btn__txt">Button : Disabled</span>
 		</button>
-		<button type="button" class="btn btn--theme-default btn--size-m btn--disabled" tabIndex = "-1">
+		<button type="button" class="btn btn--default btn--m btn--disabled" tabIndex = "-1">
 			<span class="btn__txt">Button.btn--disabled</span>
 		</button>
 	</div>
@@ -85,7 +83,7 @@
 	<div class="code-exam-row">
 		<div class="code-exam__txt"></div>
 		<div>
-			<button type="button" aria-pressed="false" class="btn btn--theme-default btn--size-m" id="willPress">
+			<button type="button" aria-pressed="false" class="btn btn--default btn--m" id="btnPressd">
 				<span class="btn__txt">Button pressed</span>
 			</button>
 		</div>
@@ -95,7 +93,7 @@
 	<div class="code-exam-row">
 		<div class="code-exam__txt">s</div>
 		<div>
-			<button type="button" class="btn btn--theme-default btn--size-s">
+			<button type="button" class="btn btn--default btn--s">
 				<span class="btn__txt">Size s</span>
 			</button>
 		</div>
@@ -103,7 +101,7 @@
 	<div class="code-exam-row">
 		<div class="code-exam__txt">m</div>
 		<div>
-			<button type="button" class="btn btn--theme-default btn--size-m">
+			<button type="button" class="btn btn--default btn--m">
 				<span class="btn__txt">Size m</span>
 			</button>
 		</div>
@@ -111,7 +109,7 @@
 	<div class="code-exam-row">
 		<div class="code-exam__txt">l</div>
 		<div>
-			<button type="button" class="btn btn--theme-default btn--size-l">
+			<button type="button" class="btn btn--default btn--l">
 				<span class="btn__txt">Size l</span>
 			</button>
 		</div>
@@ -119,7 +117,7 @@
 	<div class="code-exam-row">
 		<div class="code-exam__txt">m</div>
 		<div>
-			<button type="button" class="btn btn--theme-default btn--size-xl">
+			<button type="button" class="btn btn--default btn--xl">
 				<span class="btn__txt">Size xl</span>
 			</button>
 		</div>
@@ -129,7 +127,7 @@
 	<div class="code-exam-row">
 		<div class="code-exam__txt"></div>
 		<div>
-			<button type="button" class="btn btn--view-plain btn--size-m">
+			<button type="button" class="btn btn--plain btn--m">
 				<span class="btn__txt">Borderless Button</span>
 			</button>
 		</div>
@@ -138,105 +136,138 @@
 	<h3 class="code-exam__h3">Icon button</h3>
 	<div class="code-exam-row">
 		<div class="code-exam__txt"></div>
-		<button type="button" class="btn btn--theme-default btn--size-m">
+		<button type="button" class="btn btn--default btn--m">
 			<span class="btn__icon-left ico ico--arr-prev"></span>
 			<span class="btn__txt">Button with icon</span>
 		</button>
-		<button type="button" class="btn btn--theme-default btn--size-m">
+		<button type="button" class="btn btn--default btn--m">
 			<span class="btn__txt">Button with icon</span>
 			<span class="btn__icon-right ico ico--arr-next"></span>
 		</button>
 	</div>
-
-	<h3 class="code-exam__h3">Button groups position</h3>
+	
+	<h3 class="code-exam__h3">Buttons position</h3>
 	<div class="code-exam-row">
-		<div class="code-exam__txt">Button group > position-left</div>
-		<div class="btn-group--pos-left">
-			<button type="button" class="btn btn--theme-default btn--size-m">
+		<div class="code-exam__txt">Buttons > position-left</div>
+		<div class="btns--pos-left">
+			<button type="button" class="btn btn--default btn--m">
 				<span class="btn__txt">First</span>
 			</button>
-			<button type="button" class="btn btn--theme-default btn--size-m">
+			<button type="button" class="btn btn--default btn--m">
 				<span class="btn__txt">Middle</span>
 			</button>
-			<button type="button" class="btn btn--theme-default btn--size-m">
+			<button type="button" class="btn btn--default btn--m">
 				<span class="btn__txt">Last</span>
 			</button>
 		</div>
 	</div>
 	<div class="code-exam-row">
-		<div class="code-exam__txt">Button group > position-right</div>
-		<div class="btn-group--pos-right">
-			<button type="button" class="btn btn--theme-default btn--size-m">
+		<div class="code-exam__txt">Buttons > position-right</div>
+		<div class="btns--pos-right">
+			<button type="button" class="btn btn--default btn--m">
 				<span class="btn__txt">First</span>
 			</button>
-			<button type="button" class="btn btn--theme-default btn--size-m">
+			<button type="button" class="btn btn--default btn--m">
 				<span class="btn__txt">Middle</span>
 			</button>
-			<button type="button" class="btn btn--theme-default btn--size-m">
+			<button type="button" class="btn btn--default btn--m">
 				<span class="btn__txt">Last</span>
 			</button>
 		</div>
 	</div>
 	<div class="code-exam-row">
-		<div class="code-exam__txt">Button group > position-both</div>
-		<div class="btn-group--pos-left">
-			<button type="button" class="btn btn--theme-default btn--size-m">
+		<div class="code-exam__txt">Buttons > position-both</div>
+		<div class="btns--pos-left">
+			<button type="button" class="btn btn--default btn--m">
 				<span class="btn__txt">Left 1</span>
 			</button>
-			<button type="button" class="btn btn--theme-default btn--size-m">
+			<button type="button" class="btn btn--default btn--m">
 				<span class="btn__txt">Left 2</span>
 			</button>
 		</div>
-		<div class="btn-group--pos-right">
-			<button type="button" class="btn btn--theme-default btn--size-m">
+		<div class="btns--pos-right">
+			<button type="button" class="btn btn--default btn--m">
 				<span class="btn__txt">Right 1</span>
 			</button>
-			<button type="button" class="btn btn--theme-default btn--size-m">
+			<button type="button" class="btn btn--default btn--m">
 				<span class="btn__txt">Right 2</span>
 			</button>
-			<button type="button" class="btn btn--theme-default btn--size-m">
+			<button type="button" class="btn btn--default btn--m">
 				<span class="btn__txt">Right 3</span>
 			</button>
 		</div>
 	</div>
 	<div class="code-exam-row">
-		<div class="code-exam__txt">Button group > position-center</div>
-		<div class="btn-group--pos-center">
-			<button type="button" class="btn btn--theme-default btn--size-m">
+		<div class="code-exam__txt">Buttons > position-center</div>
+		<div class="btns--pos-center">
+			<button type="button" class="btn btn--default btn--m">
 				<span class="btn__txt">First</span>
 			</button>
-			<button type="button" class="btn btn--theme-default btn--size-m">
+			<button type="button" class="btn btn--default btn--m">
 				<span class="btn__txt">Middle</span>
 			</button>
-			<button type="button" class="btn btn--theme-default btn--size-m">
+			<button type="button" class="btn btn--default btn--m">
 				<span class="btn__txt">Last</span>
 			</button>
 		</div>
 	</div>
 
-	<h3 class="code-exam__h3">Button radio group</h3>
+
+	<h3 class="code-exam__h3">Button group position</h3>
+
 	<div class="code-exam-row">
-		<div class="code-exam__txt">Radio button group</div>
-		<div class="btn-group-radio">
-			<input type="radio" name="radipGroup" id="radipGrou1" data-role="button-toggle">
-			<label for="radipGrou1" class="btn btn--theme-default btn--size-m" >
+		<div class="code-exam__txt">Button group</div>
+		<div role="group" class="btn-group">
+			<button type="button" class="btn btn--default btn--m">
+				<span class="btn__txt">First</span>
+			</button>
+			<button type="button" class="btn btn--default btn--m">
+				<span class="btn__txt">Middle</span>
+			</button>
+			<button type="button" class="btn btn--default btn--m">
+				<span class="btn__txt">Last</span>
+			</button>
+		</div>
+	</div>
+
+	<div class="code-exam-row">
+		<div class="code-exam__txt">Button group > radio</div>
+		<div role="group" class="btn-group">
+			<input type="radio" name="radipGroup" id="radipGrou1" data-role="button">
+			<label for="radipGrou1" class="btn btn--default btn--m" >
 				<span class="btn__txt">First</span>
 			</label>
-			<input type="radio" name="radipGroup" id="radipGrou2" data-role="button-toggle">
-			<label for="radipGrou2" class="btn btn--theme-default btn--size-m" >
+			<input type="radio" name="radipGroup" id="radipGrou2" data-role="button">
+			<label for="radipGrou2" class="btn btn--default btn--m" >
 				<span class="btn__txt">Middle</span>
 			</label>
-			<input type="radio" name="radipGroup" id="radipGrou3" data-role="button-toggle">
-			<label for="radipGrou3" class="btn btn--theme-default btn--size-m" >
+			<input type="radio" name="radipGroup" id="radipGrou3" data-role="button">
+			<label for="radipGrou3" class="btn btn--default btn--m" >
 				<span class="btn__txt">Last</span>
 			</label>
 		</div>
 	</div>
+
+	<div class="code-exam-row">
+		<div class="code-exam__txt">Button group > justify</div>
+		<div role="group" class="btn-group btn-group--justify">
+			<a href="#href" role="button" class="btn btn--default btn--m">
+				<span class="btn__txt">First</span>
+			</a>
+			<a href="#href" role="button" class="btn btn--default btn--m">
+				<span class="btn__txt">Middle</span>
+			</a>
+			<a href="#href" role="button" class="btn btn--default btn--m">
+				<span class="btn__txt">Last</span>
+			</a>
+		</div>
+	</div>
+
 </div>		
 
 <!-- javacript -->
 <script>
-document.getElementById('willPress').onclick = function(){
+document.getElementById('btnPressd').onclick = function(){
 	var pressed = 'aria-pressed';
 	if( this.getAttribute(pressed) == 'true' ){
 		this.setAttribute(pressed, 'false');

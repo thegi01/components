@@ -38,7 +38,7 @@ button::-moz-focus-inner, input::-moz-focus-inner {
         touch-action : manipulation;
 }
 // button modifier : theme default
-.btn--theme-default {
+.btn--default {
     min-height: 1em;
     padding : 0;
     border-color : #e8e5e5; 
@@ -57,7 +57,7 @@ button::-moz-focus-inner, input::-moz-focus-inner {
     }
 }
 // button modifier : view plain
-.btn-view-plain {
+.btn--plain {
     border:none;
 }
 // button modifier : disabled
@@ -76,50 +76,46 @@ button::-moz-focus-inner, input::-moz-focus-inner {
     vertical-align: top;
 }
 // button modifier : size
-.btn--size-s {
+.btn--s {
     font-size : rem(13);
     line-height: rem(24);
     .btn__txt {
         margin : 0 rem(10);
     }
 }
-.btn--size-m {
+.btn--m {
     font-size : rem(13);
     line-height: 2em;
     .btn__txt {
         margin : 0 rem(13);
     }
 }
-.btn--size-l {
+.btn--l {
     font-size : rem(15);
     line-height: rem(32);
     .btn__txt {
         margin : 0 rem(15);
     }
 }
-.btn--size-xl {
+.btn--xl {
     font-size : rem(18);
     line-height: rem(38);
     .btn__txt {
         margin : 0 rem(18);
     }
 }
-// button modifier : type
-.btn--type-link {
-    text-decoration: none;
-}
 // button modifier : togglable
-input[data-role="button-toggle"] {
+input[data-role="button"] {
     position: absolute; left:-1000em;
     // visibility: hidden;              // tab key doesn't go focus
 }
-input[data-role="button-toggle"]:hover + .btn {
+input[data-role="button"]:hover + .btn {
     @include btn-hovered;
 }
-input[data-role="button-toggle"]:focus + .btn {
+input[data-role="button"]:focus + .btn {
     @include btn-focused;
 }
-input[data-role="button-toggle"]:checked + .btn {
+input[data-role="button"]:checked + .btn {
     @include btn-pressed;
 }
 // button with icon
@@ -129,48 +125,57 @@ input[data-role="button-toggle"]:checked + .btn {
 .btn__icon-right {
     margin-right : rem(13); margin-left: rem(-10);
 }
-// button gorup
-.btn-group--pos-left {
+// buttons position 
+.btns--pos-left {
     float: left;
 }
-.btn-group--pos-right {
+.btns--pos-right {
     float: right;
 }
-.btn-group--pos-center {
+.btns--pos-center {
     text-align: center;
 }
-.btn-group-radio {
+
+// button gorup
+.btn-group {
     overflow: hidden;
-    .btn--theme-default {
+    .btn--default {
         float: left;
         margin-right: -1px;
     }
-    .btn--theme-default:last-child {
-        border-top-left-radius: 0;
-        border-bottom-left-radius: 0;
-    }
-    .btn--theme-default:focus,
-    input[data-role="button-toggle"]:focus + .btn--theme-default {
+    .btn--default:focus,
+    input[data-role="button"]:focus + .btn--default {
         position: relative; z-index: 1;
     }
 }
+.btn-group--justify {
+    display: table;
+    width : 100%;
+    table-layout : fixed; border-collapse : seperate;
+    .btn {
+        display: table-cell;
+        float : none;
+        width : 1%;
+    }
+}
+
 
 @if $is-rem == true {
 
-    .btn--theme-default {
+    .btn--default {
         @include border-radius( $btn-radius );
     }
 
-    // button gorup
-    .btn-group-radio {
-        .btn--theme-default:not(:nth-of-type(1)):not(:last-child) {
+    // button style side ononly radius
+    .btn-group {
+        .btn--default:not(:nth-of-type(1)):not(:last-child) {
             @include border-radius(0);
         }    
-        .btn--theme-default:nth-of-type(1) {
+        .btn--default:nth-of-type(1) {
             @include border-radius-single(top, right, 0);
             @include border-radius-single(bottom, right, 0);
         }
-        .btn--theme-default:last-child {
+        .btn--default:last-child {
             @include border-radius-single(top, left, 0);
             @include border-radius-single(bottom, left, 0);
         }
