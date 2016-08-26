@@ -47,4 +47,17 @@
 			border-#{$pos1}-#{$pos2}-radius : $radius;
 	background-clip: padding-box;  /* stops bg color from leaking outside the border: */
 }
+// transform
+@mixin transitionDuration($time:0.5s){
+    -webkit-transition-duration : $time; 
+    -moz-transition-duration : $time; 
+    -o-transition-duration : $time; 
+    transition-duration : $time;
+}
+@mixin tarnslate3d($x, $y, $z){
+    -webkit-transform : translate3d($x, $y, $z);
+    -moz-transform : translate3d($x, $y, $z);
+    -o-transform : translate3d($x, $y, $z);
+    transform : translate3d($x, $y, $z);
+}
     

@@ -49,18 +49,33 @@ $themeCast--idx-last : 5;
 }
 /* wireFrame : header */
 .header {
-    height: rem(80);
+    height: rem(40);
+    @media #{$media-m}{
+        height: rem(80);
+    }
 }
 .header-logo {
-   float: left;
-   .ico__logo {
+    text-align: center;
+    .ico__logo {
+        display: inline-block;
         margin: 0; padding : rem(10) 0;
         font-size : rem(25); color: #111;
-   }
+    }
+    @media #{$media-m}{
+        float: left;
+        .ico__logo {
+            display: block;
+        }
+    }
 }
+
 /* wireFrame : header > gnb */
 .gnb{
+    display: none;
     position: absolute; right: 0; 
+    @media #{$media-m}{
+        display: block;
+    }
 }
 .gnb-lst {
     overflow: hidden;
@@ -76,7 +91,11 @@ $themeCast--idx-last : 5;
 }
 /* wireFrame : header > lnb */
 .lnb {
+    display: none;
     position: absolute; top: rem(50); left:rem($wire-space); right:rem($wire-space);
+    @media #{$media-m}{
+        display: block;
+    }
 }
 .lnb-lst {
     overflow: hidden;
@@ -95,21 +114,21 @@ $themeCast--idx-last : 5;
     @for $i from 0 through $lnb--idx-last  {
         .lnb[ data-current = '#{$i}' ] .lnb-item[ data-idx = '#{$i}' ] & {
             border-left : solid 1px #ddd; border-right : solid 1px #ddd;
-            background-color : yellow;
+            background-color : #fffadc;
         }
     }
     .lnb[data-current="0"] .lnb-item[data-idx="0"] & {
-        border-left-color : yellow;
+        border-left-color : #fffadc;
     }
     .lnb[data-current="#{$lnb--idx-last}"] .lnb-item[data-idx="#{$lnb--idx-last}"] & {
-        border-right-color : yellow;
+        border-right-color : #fffadc;
     }
 }
 .lnb-panel {
     display: none;
     overflow: hidden;
     border-top: solid 1px #ddd;
-    background-color: yellow;
+    background-color: #fffadc;
     @for $i from 0 through $lnb--idx-last {
         .lnb[ data-current = '#{$i}' ] & {
             display: block;
@@ -133,6 +152,35 @@ $themeCast--idx-last : 5;
     margin-right : rem(10); margin-bottom : rem(10);
     cursor : pointer;
 }
+
+/* wireFrame : side > side */
+.side__btn {
+    position: absolute; top:rem(10); left:rem(10);
+    width : rem(60); height : rem(30);
+    background-color: #fff;
+    text-align: center; font-size: 11px;
+    @media #{$media-m}{
+       display: none;
+    }
+}
+.side {
+    position : absolute; left: 0; right: 0; top: 0; bottom: 0; z-index: 10000;
+    @include transitionDuration();
+    @include tarnslate3d(-100%, 0, 0);
+    &[data-visible='true'] {
+        @include tarnslate3d(0, 0, 0);
+    }
+}
+.side-dimm {
+    position: absolute; left:0; right:0; top:0; bottom:0; z-index :9999;
+    background-color: #000;
+    opacity: 0.7;
+}
+.side-cnts {
+    position: absolute; top:0; left:0; right: 30%; bottom :0; z-index:9999;
+    background-color: #fff;
+}
+
 
 /* wireFrame : container */
 .container {
@@ -236,7 +284,10 @@ $themeCast--idx-last : 5;
     }
     // auth-login
     .auth {
-       
+       display: none;
+       @media #{$media-m} {
+            display: block;
+       }
     }
     .auth-save {
         margin-bottom: rem(5);
@@ -297,6 +348,11 @@ $themeCast--idx-last : 5;
     }
     .today-panel-item {
         display: none;
+        div {
+            text-align: center;
+            font-size: rem(12); color : #666;
+            line-height: rem(77);   
+        }
     }
     @for $i from 0 through $today--idx-last {
         .today[data-current='#{$i}'] .today-panel-item[data-idx='#{$i}']{

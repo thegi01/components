@@ -19,11 +19,11 @@
 <!-- //wrap -->
 <div class="wrap page-main">
 	<!-- header -->
-	<div class="header">
+	<div class="header" id="header">
 		<div class="header-logo">
 			<h1 class="ico__logo">Brand</h1>
 		</div>
-		<div class="gnb">
+		<div class="gnb" id="gnb">
 			<ul class="gnb-lst">
 				<li class="gnb-item"><a href="#href" class="gnb__a">gnb 1</a></li>
 				<li class="gnb-item"><a href="#href" class="gnb__a">gnb 2</a></li>
@@ -89,13 +89,24 @@
 		</div>
 	</div>
 	<!-- //header -->
+	
+	<button class="side__btn wire--block" id="sideBtn">Menu</button>
+
+	<div class="side" id="side" data-visible='false'>
+		<div class="side-dimm">
+		</div>
+		<div class="side-cnts">
+			side contetns
+		</div>
+	</div>
+
 	<!-- container -->
 	<div class="container">
 		<div class="contents-1 row">
 			<div class="column-1 col s12 m8">
 				<div class="promotion wire--block">
-					<h3 class="blind">Visual</h3>
-					<p>Promotion banner</p>
+					<h3 class="blind">Promotion</h3>
+					<p>Promotion</p>
 				</div>
 				<div class="newsFlash wire--block">
 					<h3 class="blind">뉴스 flash</h3>
@@ -331,6 +342,7 @@
 </div>
 <!-- //wrap -->
 
+
 <!-- javacript -->
 <script>
 
@@ -362,12 +374,12 @@ var idxCtrl = {
  */
 var cpntToday = document.getElementById('today');
 cpntToday.len = 3; // len은 정해진 값 또는 서버로부터 받는다.
-document.getElementById('todayPageTotal').textContent = cpntToday.len;
+document.getElementById('todayPageTotal').innerText = cpntToday.len;
 cpntToday.btnListener = function(direction){
 	var current = cpntToday.getAttribute(dataCurrent);
 	current = idxCtrl[direction]( current, cpntToday.len-1 );
 	cpntToday.setAttribute( dataCurrent, current );
-	document.getElementById('todayPageCurrent').textContent = current+1;
+	document.getElementById('todayPageCurrent').innerText = current+1;
 };
 document.getElementById('todayBtnNext').onclick = function(){
 	cpntToday.btnListener('next');
@@ -414,6 +426,25 @@ for(var i=0 ; i<cpntThemeCast.len ; i++){
 	document.getElementById('themeCastTab').getElementsByTagName('a')[i].onclick = cpntThemeCast.tabListener;
 };
 
+/* mobile > menu control */
+var cpntSide = document.getElementById('side');
+document.getElementById('sideBtn').onclick = function(){
+	cpntSide.setAttribute('data-visible', 'true');
+}
+cpntSide.onclick = function(){
+	this.setAttribute('data-visible', 'false');
+}
+/*var cpntGnb = document.getElementById('gnb'),
+	cpntHeader = document.getElementById('header');
+document.getElementById('haderBtnMenu').onclick = function(){
+	var data = 'data-menu-visible';
+	if( cpntHeader.getAttribute(data) == 'true' ){
+		cpntHeader.setAttribute(data, 'false');
+	} else {
+		cpntHeader.setAttribute(data, 'true');
+	};
+};
+*/
 </script>
 
 <!-- //javacript -->
