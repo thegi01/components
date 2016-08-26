@@ -127,25 +127,27 @@
 				</div>
 			</div>
 			<div class="column-2 col s12 m4">
-				<fieldset class="auth wire--block">
-					<legend>로그인</legend>
-					<div class="auth-save">
-						<input type="checkbox" name="save" id="save">
-						<label for="save" class="auth-save__label">로그인 유지</label>
-					</div>
-					<div class="auth-login row">
-						<div class="auth-inputs col s8">
-							<input type="text" name="id" id="id" class="auth__input-id" title="아이디" placeholder="아이디">
-							<input type="password" name="pass" id="pass" class="auth__input-pass" title="비밀번호" placeholder="비밀번호">
+				<form id="formLogin" name="formLogin" action="#href" method="post">
+					<fieldset class="auth wire--block">
+						<legend>로그인</legend>
+						<div class="auth-save">
+							<input type="checkbox" name="save" id="save">
+							<label for="save" class="auth-save__label">로그인 유지</label>
 						</div>
-						<button type="submit" id="loginSubmit" class="auth__btn-login col s4"> 로그인 </button>
-					</div>
-					<div class="auth-menu">
-						<a href="#href" class="auth-menu__a a-join">회원가입</a>
-						<a href="#href" class="auth-menu__a">아이디<span class="blind">찾기</span></a>
-						/ <a href="#href" class="auth-menu__a">비밀번호 찾기</a>
-					</div>
-				</fieldset>
+						<div class="auth-login row">
+							<div class="auth-inputs col s8">
+								<input type="text" name="id" id="id" class="auth__input-id" title="아이디" placeholder="아이디">
+								<input type="password" name="pass" id="pass" class="auth__input-pass" title="비밀번호" placeholder="비밀번호">
+							</div>
+							<button type="submit" id="loginSubmit" class="auth__btn-login col s4"> 로그인 </button>
+						</div>
+						<div class="auth-menu">
+							<a href="#href" class="auth-menu__a a-join">회원가입</a>
+							<a href="#href" class="auth-menu__a">아이디<span class="blind">찾기</span></a>
+							/ <a href="#href" class="auth-menu__a">비밀번호 찾기</a>
+						</div>
+					</fieldset>
+				</form>
 				<div class="today wire--block" id="today" data-current="0">
 					<h3 class="h3">Today</h3>
 					<div class="today-top">
@@ -156,21 +158,21 @@
 						<div class="today-panel-item" data-idx="0">
 							<ul class="today-lst">
 								<li class="today-item">
-									<a href="#href" class="today__a-title">학습</a>
+									<a href="#href" class="today__a-tit">학습</a>
 									<a href="#href" class="today__a">영어로 듣는 뉴스</a>
 									<a href="#href" class="today__a">영어 톡톡</a>
 								</li>
 								<li class="today-item">
-									<a href="#href" class="today__a-title">행사</a>
+									<a href="#href" class="today__a-tit">행사</a>
 									<a href="#href" class="today__a">현재 상영 영화</a>
 									<a href="#href" class="today__a">스포츠 주요 경기 일정</a>
 								</li>
 								<li class="today-item">
-									<a href="#href" class="today__a-title">스포츠</a>
+									<a href="#href" class="today__a-tit">스포츠</a>
 									<a href="#href" class="today__a">[TV중계] 워싱턴 vs 볼티모어</a>
 								</li>
 								<li class="today-item">
-									<a href="#href" class="today__a-title">증시</a>
+									<a href="#href" class="today__a-tit">증시</a>
 									<a href="#href" class="today__a">코스피 2044.12</a>
 									<a href="#href" class="today__a">코스닥 6988.11</a>
 								</li>
@@ -427,7 +429,7 @@ for(var i=0 ; i<cpntThemeCast.len ; i++){
 	document.getElementById('themeCastTab').getElementsByTagName('a')[i].onclick = cpntThemeCast.tabListener;
 };
 
-/* mobile > menu control */
+/* mobile > side control */
 var cpntSide = document.getElementById('side');
 document.getElementById('sideBtn').onclick = function(){
 	cpntSide.setAttribute('data-visible', 'true');

@@ -58,7 +58,10 @@
 	- 예 : Wire Frame.html의 lnb, today, themeCast의 경우..조금씩 다 다르다.
 	- 공통화 기준을 3줄 이상이 동일한 코드인 경우로 기준을 잡자.
 - 네이밍이 너무 길면 안되므로 누구나 인지할 수 있는 정도면 가능한 간소화 한다.
-	- 예) btn--theme-default --> btn--default
+	- 예 : btn--theme-default --> btn--default
+- 네이밍의 간소화. 누구나 인지할 수 있는 3자리~5자리로 사용
+	- 예외 : 레이아웃은 full naming 사용
+	- 예 : title --> tit, components --> cpnt
 
 ### 참조
 - [BEM] : https://en.bem.info/libs/bem-components/v3.0.0/desktop/button/

@@ -180,8 +180,8 @@ legend, .blind { visibility: hidden; overflow: hidden; position: absolute; top: 
 .page-main .today[data-current='2'] .today-panel-item[data-idx='2'] { display: block; }
 .page-main .today-lst { padding-top: 5px; font-size: 12px; line-height: 1.5; }
 .page-main .today-item { width: 100%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
-.page-main .today__a-title { display: inline-block; margin-right: 5px; font-weight: bold; text-decoration: none; font-size: 12px; color: #666; }
-.page-main .today__a-title:hover { text-decoration: underline; }
+.page-main .today__a-tit { display: inline-block; margin-right: 5px; font-weight: bold; text-decoration: none; font-size: 12px; color: #666; }
+.page-main .today__a-tit:hover { text-decoration: underline; }
 .page-main .today__a { text-decoration: none; font-size: 12px; color: #666; }
 .page-main .today__a:hover { text-decoration: underline; }
 .page-main .today__a:not(:last-child):after { content: ''; display: inline-block; width: 1px; height: 10px; margin-left: 8px; margin-right: 5px; background-color: #ccc; }
