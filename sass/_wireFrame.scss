@@ -170,6 +170,11 @@ $themeCast--idx-last : 5;
     &[data-visible='true'] {
         @include tarnslate3d(0, 0, 0);
     }
+    @media #{$media-m}{
+        &{
+            display: none;
+        }
+    }
 }
 .side-dimm {
     position: absolute; left:0; right:0; top:0; bottom:0; z-index :9999;
