@@ -13,7 +13,7 @@ table { border-collapse: collapse; border-spacing: 0; }
 
 legend, .blind { visibility: hidden; overflow: hidden; position: absolute; top: 0; left: 0; width: 1px; height: 1px; font-size: 0; }
 
-/* button.style.begin */
+/* button */
 button, html input[type=button], input[type=reset], input[type=submit] { -webkit-appearance: button; -moz-appearance: button; cursor: pointer; }
 
 button[disabled], html input[disabled] { cursor: default; }
@@ -63,7 +63,6 @@ input[data-role="button"]:checked + .btn { background-color: yellow; border-colo
 
 .btns--pos-center { text-align: center; }
 
-/* button */
 .btn-group { overflow: hidden; }
 .btn-group .btn--default { float: left; margin-right: -1px; }
 .btn-group .btn--default:focus, .btn-group input[data-role="button"]:focus + .btn--default { position: relative; z-index: 1; }
@@ -77,32 +76,33 @@ input[data-role="button"]:checked + .btn { background-color: yellow; border-colo
 .btn-group .btn--default:nth-of-type(1) { -webkit-border-top-right-radius: 0; -moz-border-top-right-radius: 0; border-top-right-radius: 0; background-clip: padding-box; /* stops bg color from leaking outside the border: */ -webkit-border-bottom-right-radius: 0; -moz-border-bottom-right-radius: 0; border-bottom-right-radius: 0; background-clip: padding-box; /* stops bg color from leaking outside the border: */ }
 .btn-group .btn--default:last-child { -webkit-border-top-left-radius: 0; -moz-border-top-left-radius: 0; border-top-left-radius: 0; background-clip: padding-box; /* stops bg color from leaking outside the border: */ -webkit-border-bottom-left-radius: 0; -moz-border-bottom-left-radius: 0; border-bottom-left-radius: 0; background-clip: padding-box; /* stops bg color from leaking outside the border: */ }
 
-/* exam */
-.code-exam { padding: 0.625rem 1.25rem; }
+/* ex */
+.ex { padding: 0.625rem 1.25rem; }
 
-.code-exam__h2 { margin-top: 2.5rem; margin-bottom: 1.875rem; }
+.ex__h2 { margin-top: 2.5rem; margin-bottom: 1.875rem; }
 
-.code-exam__h3 { margin-top: 32px; margin-bottom: 0; padding: 8px; background-color: #f1f1f1; }
+.ex__h3 { margin-top: 32px; margin-bottom: 0; padding: 8px; background-color: #f1f1f1; }
 
-.code-exam__h4 { margin-top: 8px; margin-bottom: 0; padding-top: 16px; border-bottom: solid 1px #ccc; }
+.ex__h4 { margin-top: 8px; margin-bottom: 0; padding-top: 16px; border-bottom: solid 1px #ccc; }
 
-.code-exam-row { overflow: hidden; clear: both; padding: 8px; }
+.ex-row { overflow: hidden; clear: both; padding: 8px; }
 
-.code-exam__txt { font-size: 12px; color: #777; line-height: 32px; }
+.ex__txt { font-size: 12px; color: #777; line-height: 32px; }
 
-.exam-grid .col { height: 50px; border: solid 1px #fff; background-color: #f1f1f1; text-align: center; line-height: 50px; vertical-align: middle; }
+/* ex-gird */
+.ex-grid .col { height: 50px; border: solid 1px #fff; background-color: #f1f1f1; text-align: center; line-height: 50px; vertical-align: middle; }
 
-.exam-grid-prefix { margin: 0; padding: 0; font-size: 14px; }
-.exam-grid-prefix li { border-bottom: solid 1px #f3f3f3; }
-.exam-grid-prefix dt { display: inline-block; width: 40%; }
-.exam-grid-prefix dd { display: inline-block; border-bottom: solid 1px #fefefe; }
+.ex-grid-prefix { margin: 0; padding: 0; font-size: 14px; }
+.ex-grid-prefix li { border-bottom: solid 1px #f3f3f3; }
+.ex-grid-prefix dt { display: inline-block; width: 40%; }
+.ex-grid-prefix dd { display: inline-block; border-bottom: solid 1px #fefefe; }
 
-.col.exam-grid__1 { height: 200px; }
-.col.exam-grid__1 div { margin: 10px; }
-.col.exam-grid__1 p { height: 30px; margin: 10px; font-size: 12px; line-height: 30px; background-color: #cad7de; }
+.col.ex-grid__1 { height: 200px; }
+.col.ex-grid__1 div { margin: 10px; }
+.col.ex-grid__1 p { height: 30px; margin: 10px; font-size: 12px; line-height: 30px; background-color: #cad7de; }
 
-.col.exam-grid__2 { height: 200px; }
-.col.exam-grid__2 div { margin: 10px; }
-.col.exam-grid__2 p { height: 30px; margin: 10px; font-size: 12px; line-height: 30px; background-color: #8cccc6; }
+.col.ex-grid__2 { height: 200px; }
+.col.ex-grid__2 div { margin: 10px; }
+.col.ex-grid__2 p { height: 30px; margin: 10px; font-size: 12px; line-height: 30px; background-color: #8cccc6; }
 
-/*# sourceMappingURL=exam-button.css.map */
+/*# sourceMappingURL=ex-button.css.map */

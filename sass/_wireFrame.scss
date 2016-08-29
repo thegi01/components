@@ -1,5 +1,6 @@
 /* wireFrame */
-// varient 
+
+// variable 
 $wire-space : 10;
 $lnb--idx-last : 4;
 $today--idx-last : 2;
@@ -25,7 +26,7 @@ $themeCast--idx-last : 5;
         text-decoration: underline;
     }
 }
-// wireFrame : wire--block
+/* wireFrame : block */
 .wire--block {
     box-sizing : border-box;
     border : solid 1px #ddd;  

@@ -1,32 +1,33 @@
-/* exam */
+/* ex */
 
-.code-exam {
+.ex {
     padding:rem(10) rem(20);
 }
-.code-exam__h2 {
+.ex__h2 {
     margin-top: rem(40); margin-bottom : rem(30);
 }
-.code-exam__h3 {
+.ex__h3 {
     margin-top:32px; margin-bottom: 0;
     padding :8px;
     background-color: #f1f1f1;
 }
-.code-exam__h4 {
+.ex__h4 {
     margin-top: 8px; margin-bottom: 0;
     padding-top : 16px;
     border-bottom : solid 1px #ccc;
 }
-.code-exam-row {
+.ex-row {
     overflow: hidden;
     clear: both;
     padding : 8px;
 }
-.code-exam__txt {
+.ex__txt {
     font-size: 12px; color:#777;
     line-height: 32px;
 }
 
-.exam-grid {
+/* ex-gird */
+.ex-grid {
     .col {
         height : 50px;
         border: solid 1px #fff;
@@ -36,7 +37,7 @@
         vertical-align: middle;
     }
 }
-.exam-grid-prefix {
+.ex-grid-prefix {
     margin:0; padding :0;
     font-size: 14px;
     li {
@@ -51,7 +52,7 @@
         border-bottom: solid 1px #fefefe;
     }
 }
-.col.exam-grid__1 {
+.col.ex-grid__1 {
     height: 200px;
     div {
         margin : 10px;
@@ -63,7 +64,7 @@
         background-color:  #cad7de;
     }
 } 
-.col.exam-grid__2 {
+.col.ex-grid__2 {
     height: 200px;
     div {
         margin : 10px;

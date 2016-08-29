@@ -58,6 +58,8 @@
 - 네이밍의 간소화. 누구나 인지할 수 있는 3자리~5자리로 사용
 	- 예외 : 레이아웃은 full naming 사용
 	- 예 : title --> tit, components --> cpnt
+- 한 개의 언어로 표기한다. 
+	- 가능한 영어로 이해하기 쉽도록 작성하는 습관을 들인다.
 
 ### 참조
 - [BEM] : https://en.bem.info/libs/bem-components/v3.0.0/desktop/button/
