@@ -1,4 +1,4 @@
-/* base.style.begin */
+/* base */
 html, body, div, span, applet, object, iframe, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video { margin: 0; padding: 0; border: 0; font-size: 100%; font: inherit; vertical-align: baseline; }
 
 body { line-height: 1; }
@@ -63,6 +63,7 @@ input[data-role="button"]:checked + .btn { background-color: yellow; border-colo
 
 .btns--pos-center { text-align: center; }
 
+/* button */
 .btn-group { overflow: hidden; }
 .btn-group .btn--default { float: left; margin-right: -1px; }
 .btn-group .btn--default:focus, .btn-group input[data-role="button"]:focus + .btn--default { position: relative; z-index: 1; }
@@ -70,7 +71,7 @@ input[data-role="button"]:checked + .btn { background-color: yellow; border-colo
 .btn-group--justify { display: table; width: 100%; table-layout: fixed; border-collapse: seperate; }
 .btn-group--justify .btn { display: table-cell; float: none; width: 1%; }
 
-/* exam.style.begin */
+/* exam */
 .code-exam { padding: 10px 20px; }
 
 .code-exam__h2 { margin-top: 40px; margin-bottom: 30px; }

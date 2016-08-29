@@ -1,4 +1,4 @@
-/* base.style.begin */
+/* base */
 html, body, div, span, applet, object, iframe, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video { margin: 0; padding: 0; border: 0; font-size: 100%; font: inherit; vertical-align: baseline; }
 
 body { line-height: 1; }
@@ -63,6 +63,7 @@ input[data-role="button"]:checked + .btn { background-color: yellow; border-colo
 
 .btns--pos-center { text-align: center; }
 
+/* button */
 .btn-group { overflow: hidden; }
 .btn-group .btn--default { float: left; margin-right: -1px; }
 .btn-group .btn--default:focus, .btn-group input[data-role="button"]:focus + .btn--default { position: relative; z-index: 1; }
@@ -76,7 +77,7 @@ input[data-role="button"]:checked + .btn { background-color: yellow; border-colo
 .btn-group .btn--default:nth-of-type(1) { -webkit-border-top-right-radius: 0; -moz-border-top-right-radius: 0; border-top-right-radius: 0; background-clip: padding-box; /* stops bg color from leaking outside the border: */ -webkit-border-bottom-right-radius: 0; -moz-border-bottom-right-radius: 0; border-bottom-right-radius: 0; background-clip: padding-box; /* stops bg color from leaking outside the border: */ }
 .btn-group .btn--default:last-child { -webkit-border-top-left-radius: 0; -moz-border-top-left-radius: 0; border-top-left-radius: 0; background-clip: padding-box; /* stops bg color from leaking outside the border: */ -webkit-border-bottom-left-radius: 0; -moz-border-bottom-left-radius: 0; border-bottom-left-radius: 0; background-clip: padding-box; /* stops bg color from leaking outside the border: */ }
 
-/* exam.style.begin */
+/* exam */
 .code-exam { padding: 0.625rem 1.25rem; }
 
 .code-exam__h2 { margin-top: 2.5rem; margin-bottom: 1.875rem; }

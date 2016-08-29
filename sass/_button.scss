@@ -1,5 +1,7 @@
 /* button.style.begin */
+// variable
 $btn-radius : 0.3em;
+
 // button
 @mixin btn-hovered {
     background-color: #f1f1f1;
@@ -135,7 +137,7 @@ input[data-role="button"]:checked + .btn {
 .btns--pos-center {
     text-align: center;
 }
-
+/* button */
 // button gorup
 .btn-group {
     overflow: hidden;
