@@ -83,20 +83,4 @@ input[data-role="button"]:checked + .btn { background-color: yellow; border-colo
 
 .ex__txt { font-size: 12px; color: #777; line-height: 32px; }
 
-/* ex-gird */
-.ex-grid .col { height: 50px; border: solid 1px #fff; background-color: #f1f1f1; text-align: center; line-height: 50px; vertical-align: middle; }
-
-.ex-grid-prefix { margin: 0; padding: 0; font-size: 14px; }
-.ex-grid-prefix li { border-bottom: solid 1px #f3f3f3; }
-.ex-grid-prefix dt { display: inline-block; width: 40%; }
-.ex-grid-prefix dd { display: inline-block; border-bottom: solid 1px #fefefe; }
-
-.col.ex-grid__1 { height: 200px; }
-.col.ex-grid__1 div { margin: 10px; }
-.col.ex-grid__1 p { height: 30px; margin: 10px; font-size: 12px; line-height: 30px; background-color: #cad7de; }
-
-.col.ex-grid__2 { height: 200px; }
-.col.ex-grid__2 div { margin: 10px; }
-.col.ex-grid__2 p { height: 30px; margin: 10px; font-size: 12px; line-height: 30px; background-color: #8cccc6; }
-
 /*# sourceMappingURL=ex-button-ie.css.map */

@@ -1,32 +1,4 @@
-/* ex */
-
-.ex {
-    padding:rem(10) rem(20);
-}
-.ex__h2 {
-    margin-top: rem(40); margin-bottom : rem(30);
-}
-.ex__h3 {
-    margin-top:32px; margin-bottom: 0;
-    padding :8px;
-    background-color: #f1f1f1;
-}
-.ex__h4 {
-    margin-top: 8px; margin-bottom: 0;
-    padding-top : 16px;
-    border-bottom : solid 1px #ccc;
-}
-.ex-row {
-    overflow: hidden;
-    clear: both;
-    padding : 8px;
-}
-.ex__txt {
-    font-size: 12px; color:#777;
-    line-height: 32px;
-}
-
-/* ex-gird */
+/* ex-grid */
 .ex-grid {
     .col {
         height : 50px;
