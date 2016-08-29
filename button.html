@@ -22,7 +22,7 @@
 
 	<h3 class="code-exam__h3">Type modifier</h3>
 
-	<h4 class="code-exam__h4">Link-button</h4>
+	<h4 class="code-exam__h4">Link button</h4>
 	<div class="code-exam-row">
 		<div class="code-exam__txt">type modifier with link value</div>
 		<div>
@@ -84,7 +84,7 @@
 		<div class="code-exam__txt"></div>
 		<div>
 			<button type="button" aria-pressed="false" class="btn btn--default btn--m" id="btnPressd">
-				<span class="btn__txt">Button pressed</span>
+				<span class="btn__txt">Button</span>
 			</button>
 		</div>
 	</div>
@@ -268,11 +268,14 @@
 <!-- javacript -->
 <script>
 document.getElementById('btnPressd').onclick = function(){
-	var pressed = 'aria-pressed';
+	var pressed = 'aria-pressed',
+		elTxt = this.children[0];
 	if( this.getAttribute(pressed) == 'true' ){
 		this.setAttribute(pressed, 'false');
+		elTxt.innerText = 'Button';
 	} else {
 		this.setAttribute(pressed, 'true');
+		elTxt.innerText = 'Button pressed';
 	}
 };
 </script>
