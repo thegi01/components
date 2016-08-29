@@ -21,7 +21,6 @@
 	- btn--size-m : btn--m, btn--l, btn--s, btn--xl
 	- btn--veiw-plain : btn--plain
 - To do 
-	- 요소 추가(full button...bootstrap)
 	- 하위 버전 크로스 브라우징
 	- 버튼 background-gradient
 	- aria
@@ -34,9 +33,6 @@
 ### Wire Frame
 - [Url] : https://thegi01.github.io/components/wireframe.html
 - To do
-	- lnb : Full Menu로 마크업 수정, 기능 구현
-	- tab, tabPanel 기능 구현
-	- Today 기능 구현 (current data 공통화 ?)
 	- id, pass 
 	- 반응형 > font 확인
 	- aria
