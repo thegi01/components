@@ -129,13 +129,16 @@ input[data-role="button"]:checked + .btn {
     margin-right : rem(13); margin-left: rem(-10);
 }
 // buttons position 
-.btns--pos-left {
+// btns--position-left
+.btns--left {
     float: left;
 }
-.btns--pos-right {
+// btns--position-right
+.btns--right {
     float: right;
 }
-.btns--pos-center {
+// btns--position-center
+.btns--center {
     text-align: center;
 }
 // button gorup

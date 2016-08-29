@@ -20,6 +20,7 @@
 	- btn--theme-default : btn--default
 	- btn--size-m : btn--m, btn--l, btn--s, btn--xl
 	- btn--veiw-plain : btn--plain
+	- btns-position-left : btns--left, btns--right, btns--center
 - To do 
 	- 하위 버전 크로스 브라우징
 	- 버튼 background-gradient

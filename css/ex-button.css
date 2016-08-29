@@ -57,11 +57,11 @@ input[data-role="button"]:checked + .btn { background-color: yellow; border-colo
 
 .btn__icon-right { margin-right: 0.8125rem; margin-left: -0.625rem; }
 
-.btns--pos-left { float: left; }
+.btns--left { float: left; }
 
-.btns--pos-right { float: right; }
+.btns--right { float: right; }
 
-.btns--pos-center { text-align: center; }
+.btns--center { text-align: center; }
 
 .btn-group { overflow: hidden; }
 .btn-group .btn--default { float: left; margin-right: -1px; }
