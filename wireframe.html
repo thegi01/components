@@ -31,20 +31,20 @@
 			</ul>
 		</div>
 		<div class="lnb wire--block" id="lnb" data-current="null">
-			<ul class="lnb-lst">
-				<li class="lnb-item" id="lnbItem-0" data-idx="0">
+			<ul class="lnb-lst" id="lnbLst">
+				<li class="lnb-item" data-idx="0">
 					<a href="#href" class="lnb__a">lnb 1</a>
 				</li>
-				<li class="lnb-item" id="lnbItem-1" data-idx="1">
+				<li class="lnb-item" data-idx="1">
 					<a href="#href" class="lnb__a">lnb 2</a>
 				</li>
-				<li class="lnb-item" id="lnbItem-2" data-idx="2">
+				<li class="lnb-item" data-idx="2">
 					<a href="#href" class="lnb__a">lnb 3</a>
 				</li>
-				<li class="lnb-item" id="lnbItem-3" data-idx="3">
+				<li class="lnb-item" data-idx="3">
 					<a href="#href" class="lnb__a">lnb 4</a>
 				</li>
-				<li class="lnb-item" id="lnbItem-4" data-idx="4">
+				<li class="lnb-item" data-idx="4">
 					<a href="#href" class="lnb__a">lnb 5</a>
 				</li>
 			</ul>
@@ -117,12 +117,12 @@
 				<div class="news wire--block">
 					<h4 class="h3">뉴스 스탠드</h4>
 					<ul class="news-lst">
-						<li class="news-item"><a href="#href" class="news__a">중남미 여행 중 놓치면 후회할 별미</a></li>
+						<li class="news-item"><a href="#href" class="news__a">중남미 여행 중 놓치면 후회할 별미 </a></li>
 						<li class="news-item"><a href="#href" class="news__a">파스텔 빛 항구 도시, 발파라이소</a></li>
 						<li class="news-item"><a href="#href" class="news__a">사과식초·아보카도, 피부에 양보하세요</a></li>
 						<li class="news-item"><a href="#href" class="news__a">밥투정 부리는 아이를 위한 솔루션</a></li>
 						<li class="news-item"><a href="#href" class="news__a">메밀국수 효능, 항산화·항고혈압에 좋아</a></li>
-						<li class="news-item"><a href="#href" class="news__a">캠핑 다녀온 후 생긴 허리·엉덩이 통증엔 찜질</a></li>
+						<li class="news-item"><a href="#href" class="news__a">[CNN] Turning to tradition: Why China's super wealthy don't want western-looking homes anymore</a></li>
 					</ul>
 				</div>
 			</div>
@@ -371,6 +371,25 @@ var idxCtrl = {
 	}
 };
 
+/* cpnt > lnb */
+/* tab click으로 idx control,
+   자기 자신 클릭 시 null setting
+ */
+var cpntLnb = document.getElementById('lnb');
+cpntLnb.len = 5; // len은 정해진 값 또는 서버로부터 받는다.
+cpntLnb.itemListener = function(){
+	var current = cpntLnb.getAttribute(dataCurrent),
+		idx = this.parentElement.getAttribute(dataIdx);
+	current = (idx == current) ? null : idx;
+	cpntLnb.setAttribute( dataCurrent, current );
+};
+for(var i=0 ; i<cpntLnb.len ; i++){
+	document.getElementById('lnbLst').getElementsByTagName('a')[i].onclick = cpntLnb.itemListener;
+};
+document.getElementById('lnbBtnClse').onclick = function(){
+	cpntLnb.setAttribute(dataCurrent, null);
+};
+
 /* cpnt > today */
 /* 이전, 다음 버튼 클릭으로 idx control,
    현재 페이지 표시
@@ -389,25 +408,6 @@ document.getElementById('todayBtnNext').onclick = function(){
 };
 document.getElementById('todayBtnPrev').onclick = function(){
 	cpntToday.btnListener('prev');
-};
-
-/* cpnt > lnb */
-/* tab click으로 idx control,
-   자기 자신 클릭 시 null setting
- */
-var cpntLnb = document.getElementById('lnb');
-cpntLnb.len = 5; // len은 정해진 값 또는 서버로부터 받는다.
-cpntLnb.itemListener = function(){
-	var current = cpntLnb.getAttribute(dataCurrent),
-		idx = this.parentElement.getAttribute(dataIdx);
-	current = (idx == current) ? null : idx;
-	cpntLnb.setAttribute( dataCurrent, current );
-};
-for(var i=0 ; i<cpntLnb.len ; i++){
-	document.getElementById('lnbItem-' + i ).children[0].onclick = cpntLnb.itemListener;
-};
-document.getElementById('lnbBtnClse').onclick = function(){
-	cpntLnb.setAttribute(dataCurrent, null);
 };
 
 /* cpnt > themeCast */
@@ -433,21 +433,11 @@ for(var i=0 ; i<cpntThemeCast.len ; i++){
 var cpntSide = document.getElementById('side');
 document.getElementById('sideBtn').onclick = function(){
 	cpntSide.setAttribute('data-visible', 'true');
-}
+};
 cpntSide.onclick = function(){
 	this.setAttribute('data-visible', 'false');
-}
-/*var cpntGnb = document.getElementById('gnb'),
-	cpntHeader = document.getElementById('header');
-document.getElementById('haderBtnMenu').onclick = function(){
-	var data = 'data-menu-visible';
-	if( cpntHeader.getAttribute(data) == 'true' ){
-		cpntHeader.setAttribute(data, 'false');
-	} else {
-		cpntHeader.setAttribute(data, 'true');
-	};
 };
-*/
+
 </script>
 
 <!-- //javacript -->

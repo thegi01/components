@@ -155,7 +155,7 @@ legend, .blind { visibility: hidden; overflow: hidden; position: absolute; top: 
 .page-main .news-lst { margin: 0; padding: 3px 0; }
 .page-main .news-item { overflow: hidden; position: relative; line-height: 21px; }
 .page-main .news-item:before { content: '∙'; position: absolute; top: -1px; }
-.page-main .news__a { display: block; margin-left: 12px; text-decoration: none; font-size: 12px; color: #666; }
+.page-main .news__a { display: block; margin-left: 12px; text-decoration: none; font-size: 12px; color: #666; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 .page-main .news__a:hover { text-decoration: underline; }
 .page-main .auth { display: none; }
 @media only screen and (min-width: 601px) { .page-main .auth { display: block; } }

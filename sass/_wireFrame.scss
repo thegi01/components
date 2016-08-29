@@ -286,6 +286,7 @@ $themeCast--idx-last : 5;
         display: block;
         margin-left : rem(12);
         @include wire__a;
+        @include ellipsis;
     }
     // auth-login
     .auth {
