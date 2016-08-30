@@ -47,7 +47,7 @@ button::-moz-focus-inner, input::-moz-focus-inner {
     border-color : #e8e5e5; 
     background-color: #fff;
     vertical-align: baseline;
-    font-family: $font-family; font-size: 1rem; color: #000;
+    font-size: 1rem; color: #000;
     -webkit-tab-highlight-color : rgba(0, 0, 0, 0);
     &:hover {
         @include btn-hovered;
@@ -129,15 +129,15 @@ input[data-role="button"]:checked + .btn {
     margin-right : rem(13); margin-left: rem(-10);
 }
 // buttons position 
-// btns--position-left
+// btns--pos-left
 .btns--left {
     float: left;
 }
-// btns--position-right
+// btns--pos-right
 .btns--right {
     float: right;
 }
-// btns--position-center
+// btns--pos-center
 .btns--center {
     text-align: center;
 }
@@ -164,7 +164,6 @@ input[data-role="button"]:checked + .btn {
     }
 }
 
-
 @if $is-rem == true {
 
     .btn--default {
@@ -185,5 +184,4 @@ input[data-role="button"]:checked + .btn {
             @include border-radius-single(bottom, left, 0);
         }
     }
-
 }

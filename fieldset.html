@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>Fieldset</title>
+	<meta name="viewport" content="width=device-width, user-scalable=no">
+	<meta name="robots" content="noindex,nofollow">
+	<meta name="googlebot" content="noindex,nofollow">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="css/ex-fieldset.css">
+</head>
+<body>
+
+<!-- //wrap -->
+
+<div class="wrap ex ex-fieldset">
+	<h1>Fieldset</h1>
+	<h2>Fieldset element</h2>
+	<form action="" class="block--box ex-form-cpnt1">
+		<fieldset>
+			<legend class="blind">Display</legend>
+			<p><label><input type=radio name=c value=0 checked> Black on White</label></p>
+			<p><label><input type=radio name=c value=1> White on Black</label></p>
+			<p><label><input type=checkbox name=g> Use grayscale</label></p>
+			<p><label>Enhance contrast <input type=range name=e list=contrast min=0 max=100 value=0 step=1></label></p>
+			<datalist id='contrast'>
+				<option label=Normal value=0>
+				<option label=Maximum value=100>
+			</datalist>
+		</fieldset>
+	</form>
+
+	<h2 class="h2">Fieldset with a checkbox in the legend.</h2>
+	<div class="ex__txt">The following snippet shows a fieldset with a checkbox in the legend.</div>
+	<form action="" class="block--box ex-form-cpnt2">
+		<fieldset name="clubfields" disabled>
+			<legend> 
+				<label>
+					<input type=checkbox name=club onchange="form.clubfields.disabled = !checked">
+					Use Club Card
+				</label> 
+			</legend>
+			<p><label>Name on card: <input name=clubname required></label></p>
+			<p><label>Card number: <input name=clubnum required pattern="[-0-9]+"></label></p>
+			<p><label>Expiry date: <input name=clubexp type=month></label></p>
+		</fieldset>
+	</form>
+
+	<h2 class="h2">Nest fieldset</h2>
+	<form action="" class="block--box ex-form-cpnt3">
+		<fieldset name="clubfields" disabled>
+			<legend> 
+				<label>
+					<input type=checkbox name=club onchange="form.clubfields.disabled = !checked">
+					Use Club Card
+				</label> 
+			</legend>
+			<p><label>Name on card: <input name=clubname required></label></p>
+			<fieldset name="numfields">
+				<legend> 
+					<label>
+						<input type=radio checked name=clubtype onchange="form.numfields.disabled = !checked">
+						My card has numbers on it
+					</label> 
+				</legend>
+				<p><label>Card number: <input name=clubnum required pattern="[-0-9]+"></label></p>
+			</fieldset>
+			<fieldset name="letfields" disabled>
+				<legend> 
+					<label>
+						<input type=radio name=clubtype onchange="form.letfields.disabled = !checked">
+						My card has letters on it
+					</label> 
+				</legend>
+				<p><label>Card code: <input name=clublet required pattern="[A-Za-z]+"></label></p>
+			</fieldset>
+		</fieldset>
+	</form>
+
+</div>
+<!-- //wrap -->
+
+<!-- javacript -->
+
+<!-- //javacript -->
+
+</body>
+</html>
