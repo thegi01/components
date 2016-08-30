@@ -38,6 +38,11 @@
 	- 반응형 > font 확인
 	- aria
 
+### Fieldset
+	- [Url] : https://thegi01.github.io/components/fieldset.html
+	- Fieldset의 다양한 기능 확인 목적
+	- 스타일은 나중에 따로 
+
 ### 공통
 - reset 확인
 
@@ -61,6 +66,8 @@
 	- 예 : title --> tit, components --> cpnt
 - 한 개의 언어로 표기한다. 
 	- 가능한 영어로 이해하기 쉽도록 작성하는 습관을 들인다.
+- reset 
+	- reset의 중복 적용을 하지 않도록 필요한 코드만 작성한다.
 
 ### 참조
 - [BEM] : https://en.bem.info/libs/bem-components/v3.0.0/desktop/button/
