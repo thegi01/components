@@ -39,9 +39,9 @@
 	- aria
 
 ### Fieldset
-	- [Url] : https://thegi01.github.io/components/fieldset.html
-	- Fieldset의 다양한 기능 확인 목적
-	- 스타일은 나중에 따로 
+- [Url] : https://thegi01.github.io/components/fieldset.html
+- Fieldset의 다양한 기능 확인 목적
+- 스타일은 나중에 따로 
 
 ### 공통
 - reset 확인
