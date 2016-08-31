@@ -1,19 +1,37 @@
 /* base */
-body { margin: 0; }
+body, html { height: 100%; }
+
+body { margin: 0; font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; line-height: 1; }
 
 ol, ul { margin: 0; padding: 0; list-style: none; }
 
 li { margin: 0; padding: 0; }
 
-blockquote, q { quotes: none; }
+img { border: 0; }
 
-blockquote:before, blockquote:after, q:before, q:after { content: ''; content: none; }
+button, input, optgroup, select, textarea { font-family: inherit; }
+
+/* button,html input[type=button],input[type=reset],input[type=submit] { -webkit-appearance: button; cursor: pointer;
+} */
+fieldset { margin: 0; padding: 0; border: none; }
 
 table { border-collapse: collapse; border-spacing: 0; }
 
-fieldset { margin: 0; padding: 0; border: none; }
+/* td,th { padding: 0
+} */
+h1, h2, h3, h4, h5, h6 { margin-top: 0; margin-bottom: 1.125rem; color: #222; font-weight: 500; line-height: 1; }
 
-body { font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; line-height: 1; }
+h1, .h1 { font-size: 3rem; }
+
+h2, .h2 { margin-top: 2.25rem; font-size: 2.25rem; font-weight: 300; }
+
+h3, .h3 { font-size: 1.25rem; }
+
+h4, .h4 { font-size: 1rem; }
+
+h5, .h5 { font-size: 0.85rem; }
+
+h6, .h6 { font-size: 0.75rem; }
 
 .blind { visibility: hidden; overflow: hidden; position: absolute; top: 0; left: 0; width: 1px; height: 1px; font-size: 0; }
 
@@ -57,13 +75,20 @@ body { font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; line-height:
   .row .col.l11 { width: 91.66667%; }
   .row .col.l12 { width: 100%; } }
 
+/* ico */
+.ico { display: inline-block; }
+
+.ico-arr-prev, .ico-arr-next { width: 0.625rem; height: 0.625rem; background-color: green; }
+
+.ico-loading { width: 0.875rem; height: 0.875rem; -webkit-border-radius: 31.25rem; -moz-border-radius: 31.25rem; border-radius: 31.25rem; background-clip: padding-box; /* stops bg color from leaking outside the border: */ border-style: solid; border-width: 2px; border-color: #b1b1b1 #f3f3f3 #f3f3f3; -webkit-animation: button-spin .6s linear; animation: button-spin .6s linear; -webkit-animation-iteration-count: infinite; animation-iteration-count: infinite; }
+
+@-webkit-keyframes button-spin { from { -webkit-transform: rotate(0); transform: rotate(0); }
+  to { -webkit-transform: rotate(360deg); transform: rotate(360deg); } }
+@keyframes button-spin { from { -webkit-transform: rotate(0); transform: rotate(0); }
+  to { -webkit-transform: rotate(360deg); transform: rotate(360deg); } }
+.ico-srch { content: "\f002"; width: 2.3125rem; height: 2.3125rem; }
+
 /* button */
-button, html input[type=button], input[type=reset], input[type=submit] { -webkit-appearance: button; -moz-appearance: button; cursor: pointer; }
-
-button[disabled], html input[disabled] { cursor: default; }
-
-button::-moz-focus-inner, input::-moz-focus-inner { border: 0; padding: 0; }
-
 .btn { display: inline-block; border: 1px solid transparent; background: none; text-align: center; vertical-align: middle; white-space: nowrap; cursor: pointer; -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none; -ms-touch-action: manipulation; touch-action: manipulation; }
 
 .btn--default { min-height: 1em; padding: 0; border-color: #e8e5e5; background-color: #fff; vertical-align: baseline; font-size: 1rem; color: #000; -webkit-tab-highlight-color: transparent; }
@@ -121,26 +146,10 @@ input[data-role="button"]:checked + .btn { background-color: yellow; border-colo
 .btn-group .btn--default:last-child { -webkit-border-top-left-radius: 0; -moz-border-top-left-radius: 0; border-top-left-radius: 0; background-clip: padding-box; /* stops bg color from leaking outside the border: */ -webkit-border-bottom-left-radius: 0; -moz-border-bottom-left-radius: 0; border-bottom-left-radius: 0; background-clip: padding-box; /* stops bg color from leaking outside the border: */ }
 
 /* ex */
-h1, h2, h3, h4, h5, h6 { margin-top: 0; margin-bottom: 1.125rem; color: #222; font-weight: 500; line-height: 1; }
-
-h1, .h1 { font-size: 3rem; }
-
-h2, .h2 { margin-top: 2.25rem; font-size: 2.25rem; font-weight: 300; }
-
-h3, .h3 { font-size: 1.25rem; }
-
-h4, .h4 { font-size: 1rem; }
-
-h5, .h5 { font-size: 0.85rem; }
-
-h6, .h6 { font-size: 0.75rem; }
-
 .wrap.ex { padding: 0.625rem 1.25rem; color: #333; }
 
 .ex__txt { margin-bottom: 1rem; font-size: 0.75rem; }
 
 .block--box { margin-top: 0.625rem; margin-bottom: 0.625rem; margin-right: 0.625rem; padding: 1.25rem; border: solid 1px #ccc; -webkit-border-radius: 4.2px; -moz-border-radius: 4.2px; border-radius: 4.2px; background-clip: padding-box; /* stops bg color from leaking outside the border: */ }
-
-.ico { display: inline-block; width: 0.625rem; height: 0.625rem; background-color: green; }
 
 /*# sourceMappingURL=ex-button.css.map */

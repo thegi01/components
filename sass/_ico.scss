@@ -1,0 +1,47 @@
+/* ico */
+
+.ico {
+    display: inline-block;
+}
+.ico-arr-prev,
+.ico-arr-next {
+    width: rem(10); height: rem(10);
+    background-color: green;
+}
+.ico-loading {
+    width : rem(14); height:rem(14);
+    @include border-radius(rem(500));
+    border-style: solid; border-width: 2px; border-color : #b1b1b1 #f3f3f3 #f3f3f3;
+    -webkit-animation: button-spin .6s linear;
+    animation: button-spin .6s linear;
+    -webkit-animation-iteration-count : infinite;
+    animation-iteration-count : infinite;
+}
+@-webkit-keyframes button-spin {
+    from {
+        -webkit-transform: rotate(0);
+        transform: rotate(0)
+    }
+
+    to {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg)
+    }
+}
+
+@keyframes button-spin {
+    from {
+        -webkit-transform: rotate(0);
+        transform: rotate(0)
+    }
+
+    to {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg)
+    }
+}
+
+.ico-srch {
+    content: "\f002";
+    width:rem(37); height : rem(37);
+}

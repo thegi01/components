@@ -9,31 +9,6 @@
     @include border-radius( 4.2px );
 }
 
-// h
-h1, h2, h3, h4, h5, h6 {
-    margin-top: 0; margin-bottom: rem(18);
-    color:#222; font-weight: 500; 
-    line-height: 1;
-}
-h1, .h1 {
-    font-size: rem(48);
-}
-h2, .h2 {
-    margin-top: rem(36);
-    font-size: rem(36); font-weight: 300;
-}
-h3, .h3 {
-    font-size : rem(20);
-}
-h4, .h4 {
-    font-size: rem(16);
-}
-h5, .h5 {
-    font-size: rem(13.6);
-}
-h6, .h6 {
-    font-size: rem(12);
-}
 
 // contents
 .wrap.ex {
@@ -46,10 +21,5 @@ h6, .h6 {
 }
 .block--box {
     @include block--box;
-}
-.ico {
-    display: inline-block;
-    width: rem(10); height: rem(10);
-    background-color: green;
 }
 

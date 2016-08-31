@@ -1,19 +1,37 @@
 /* base */
-body { margin: 0; }
+body, html { height: 100%; }
+
+body { margin: 0; font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; line-height: 1; }
 
 ol, ul { margin: 0; padding: 0; list-style: none; }
 
 li { margin: 0; padding: 0; }
 
-blockquote, q { quotes: none; }
+img { border: 0; }
 
-blockquote:before, blockquote:after, q:before, q:after { content: ''; content: none; }
+button, input, optgroup, select, textarea { font-family: inherit; }
+
+/* button,html input[type=button],input[type=reset],input[type=submit] { -webkit-appearance: button; cursor: pointer;
+} */
+fieldset { margin: 0; padding: 0; border: none; }
 
 table { border-collapse: collapse; border-spacing: 0; }
 
-fieldset { margin: 0; padding: 0; border: none; }
+/* td,th { padding: 0
+} */
+h1, h2, h3, h4, h5, h6 { margin-top: 0; margin-bottom: 18px; color: #222; font-weight: 500; line-height: 1; }
 
-body { font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; line-height: 1; }
+h1, .h1 { font-size: 48px; }
+
+h2, .h2 { margin-top: 36px; font-size: 36px; font-weight: 300; }
+
+h3, .h3 { font-size: 20px; }
+
+h4, .h4 { font-size: 16px; }
+
+h5, .h5 { font-size: 13.6px; }
+
+h6, .h6 { font-size: 12px; }
 
 .blind { visibility: hidden; overflow: hidden; position: absolute; top: 0; left: 0; width: 1px; height: 1px; font-size: 0; }
 
@@ -58,27 +76,11 @@ body { font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; line-height:
   .row .col.l12 { width: 100%; } }
 
 /* ex */
-h1, h2, h3, h4, h5, h6 { margin-top: 0; margin-bottom: 18px; color: #222; font-weight: 500; line-height: 1; }
-
-h1, .h1 { font-size: 48px; }
-
-h2, .h2 { margin-top: 36px; font-size: 36px; font-weight: 300; }
-
-h3, .h3 { font-size: 20px; }
-
-h4, .h4 { font-size: 16px; }
-
-h5, .h5 { font-size: 13.6px; }
-
-h6, .h6 { font-size: 12px; }
-
 .wrap.ex { padding: 10px 20px; color: #333; }
 
 .ex__txt { margin-bottom: 16px; font-size: 12px; }
 
 .block--box { margin-top: 10px; margin-bottom: 10px; margin-right: 10px; padding: 20px; border: solid 1px #ccc; -webkit-border-radius: 4.2px; -moz-border-radius: 4.2px; border-radius: 4.2px; background-clip: padding-box; /* stops bg color from leaking outside the border: */ }
-
-.ico { display: inline-block; width: 10px; height: 10px; background-color: green; }
 
 /* ex-grid */
 .ex-grid .col { height: 50px; border: solid 1px #fff; background-color: #f1f1f1; text-align: center; line-height: 50px; vertical-align: middle; }

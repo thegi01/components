@@ -43,6 +43,11 @@
 - Fieldset의 다양한 기능 확인 목적
 - 스타일은 나중에 따로 
 
+### Input
+- [Url] : https://thegi01.github.io/components/input.html
+- To do
+	- mixin : input placeholder, animation
+
 ### 공통
 - reset 확인
 

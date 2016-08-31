@@ -1,8 +1,15 @@
 /* base */
 
+// font
+$font-family : "Helvetica Neue", Helvetica, Arial, sans-serif;
+
 // reset
+body, html {
+    height: 100%
+}
 body {
 	margin: 0;
+	font-family: $font-family; line-height: 1;
 }
 ol, ul {
 	margin:0; padding:0;
@@ -11,28 +18,59 @@ ol, ul {
 li {
 	margin:0; padding:0;
 }
-blockquote, q {
-	quotes: none;
-}
-blockquote:before, blockquote:after,
-q:before, q:after {
-	content: '';
-	content: none;
-}
-table {
-	border-collapse: collapse;
-	border-spacing: 0;
-}
-fieldset {
-	margin:0; padding:0;
-	border:none;
+img {
+	border:0;
 }
 
-// font
-$font-family : "Helvetica Neue", Helvetica, Arial, sans-serif;
-body {
-	font-family: $font-family; 
-	line-height: 1;
+button, input, optgroup, select, textarea {
+    // color: inherit;
+    font-family: inherit;
+    // margin: 0;
+}
+/* button,html input[type=button],input[type=reset],input[type=submit] {
+    -webkit-appearance: button;
+    cursor: pointer;
+} */
+
+
+fieldset {
+    margin:0; padding:0;
+    border:none;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0
+}
+
+/* td,th {
+    padding: 0
+} */
+
+// h
+h1, h2, h3, h4, h5, h6 {
+    margin-top: 0; margin-bottom: rem(18);
+    color:#222; font-weight: 500; 
+    line-height: 1;
+}
+h1, .h1 {
+    font-size: rem(48);
+}
+h2, .h2 {
+    margin-top: rem(36);
+    font-size: rem(36); font-weight: 300;
+}
+h3, .h3 {
+    font-size : rem(20);
+}
+h4, .h4 {
+    font-size: rem(16);
+}
+h5, .h5 {
+    font-size: rem(13.6);
+}
+h6, .h6 {
+    font-size: rem(12);
 }
 
 // blind

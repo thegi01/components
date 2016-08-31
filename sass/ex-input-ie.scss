@@ -1,6 +1,6 @@
 @charset "utf-8";
 
-$is-rem : true;
+$is-rem : false;
 
 // import
 @import "_mixins.scss";
@@ -9,6 +9,9 @@ $is-rem : true;
 @import "_base.scss";
 @import "_grid.scss";
 @import "_ico.scss";
-@import "_button.scss";
+@import "_input.scss";
 @import "__ex.scss";
+
+
+
 
