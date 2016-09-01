@@ -1,7 +1,5 @@
 @charset "UTF-8";
 /* base */
-body, html { height: 100%; }
-
 body { margin: 0; font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; line-height: 1; }
 
 ol, ul { margin: 0; padding: 0; list-style: none; }

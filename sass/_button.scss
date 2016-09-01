@@ -26,6 +26,13 @@ $btn-radius : 0.3em;
     -webkit-user-select : none; -moz-user-select : none; -ms-user-select : none; user-select : none;
     -ms-touch-action : manipulation;
         touch-action : manipulation;
+
+    .btn__txt {
+        // pointer-events : none;
+    }
+}
+a.btn {
+    text-decoration: none;
 }
 // button modifier : theme default
 .btn--default {
@@ -69,30 +76,30 @@ $btn-radius : 0.3em;
 .btn--s {
     font-size : rem(13);
     line-height: rem(24);
-    .btn__txt {
-        margin : 0 rem(10);
-    }
+    // .btn__txt {
+        padding : 0 rem(10);
+    // }
 }
 .btn--m {
     font-size : rem(13);
     line-height: 2em;
-    .btn__txt {
-        margin : 0 rem(13);
-    }
+    // .btn__txt {
+        padding : 0 rem(13);
+    // }
 }
 .btn--l {
     font-size : rem(15);
     line-height: rem(32);
-    .btn__txt {
-        margin : 0 rem(15);
-    }
+    // .btn__txt {
+        padding : 0 rem(15);
+    // }
 }
 .btn--xl {
     font-size : rem(18);
     line-height: rem(38);
-    .btn__txt {
-        margin : 0 rem(18);
-    }
+    // .btn__txt {
+        padding : 0 rem(18);
+    // }
 }
 // button modifier : togglable
 input[data-role="button"] {
@@ -110,10 +117,10 @@ input[data-role="button"]:checked + .btn {
 }
 // button with icon
 .btn__icon-left {
-    margin-left : rem(13); margin-right: rem(-10);
+    margin-right : rem(3);
 }
 .btn__icon-right {
-    margin-right : rem(13); margin-left: rem(-10);
+   margin-left : rem(3);
 }
 // buttons position 
 // btns--pos-left
