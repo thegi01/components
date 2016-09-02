@@ -50,8 +50,12 @@
 
 ### 공통
 - reset 확인
+- 접근성 타겟 적용(참조 hmp wireframe)
 
 *** 
+
+### 의문 사항
+- input type button과 button의 차이는?
 
 
 ### 추가 내용 정리
