@@ -155,7 +155,7 @@ input[data-role="button-toggle"]:checked + .btn {
     }
 }
 
-@if $is-rem == true {
+@if $is--rem == true {
 
     .btn--theme-default {
         @include border-radius( $btn-radius );

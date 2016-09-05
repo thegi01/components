@@ -4,43 +4,37 @@
 $btn-radius : 0.3em;
 
 // button
-@mixin btn-hovered {
-    background-image: -webkit-linear-gradient(top, #fff 0%, #eee 100%);
-    background-image: -o-linear-gradient(top, #fff 0%, #eee 100%);
-    background-image: linear-gradient(to bottom, #fff 0%, #eee 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffffff', endColorstr='#ffeeeeee', GradientType=0);
+@mixin btn--default--hovered {
     border-color: #bfbfbf #bfbfbf #b3b3b3;
     box-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    @include background-gradient(#fff, #eee);
 }
-@mixin btn-focused {
+@mixin btn--default--focused {
     position: relative; z-index: 1;
     border-color: #1385e5;
     box-shadow: 0 0 0 3px rgba(19, 133, 229, 0.1);
     outline: none;
 }
-@mixin btn-pressed {
+@mixin btn--default--pressed {
     border-color: green;
     color: green;
 }
+
 .btn {
     display: inline-block;
     border: 1px solid transparent; 
     background: none;
-    text-align : center; vertical-align: middle; white-space: nowrap;
+    text-align: center; vertical-align: middle; white-space: nowrap;
     cursor: pointer;
     -webkit-user-select : none; -moz-user-select : none; -ms-user-select : none; user-select : none;
     -ms-touch-action : manipulation;
         touch-action : manipulation;
-
    
     &[disabled],
     &.btn--disabled {
       opacity: .4;
       pointer-events: none;
-    }
-
-    .btn__txt {
-        // pointer-events : none;
     }
 }
 a.btn {
@@ -49,45 +43,37 @@ a.btn {
 
 // button modifier : theme default
 .btn--default {
-    background-image: -webkit-linear-gradient(top, #fafafa 0%, #eaeaea 100%);
-    background-image: -o-linear-gradient(top, #fafafa 0%, #eaeaea 100%);
-    background-image: linear-gradient(to bottom, #fafafa 0%, #eaeaea 100%);
-    background-repeat: repeat-x;
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fffafafa', endColorstr='#ffeaeaea', GradientType=0);
     border-color: #ccc #bdbdbd #adadad;
-    color: #333;
-    text-shadow: 0 1px 0 white;
+    background-color: #fafafa;
+    @include background-gradient(#fafafa, #eaeaea);
+    color: #333; text-shadow: 0 1px 0 white;
 
     &:hover {
-        @include btn-hovered;
+        @include btn--default--hovered;
     }
     &:focus {
-        @include btn-focused;
+        @include btn--default--focused;
     }
-    &:active,
-    &.is--active { // ???
-        @include btn-focused;
-    }
-    &.is--active:focus:not(:active) { //추가 ???
-      border-color: #1385e5;
-      box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1), 0 0 0 3px rgba(19, 133, 229, 0.1);
+    &:active { // ???
+        @include btn--default--focused;
     }
     &[ aria-pressed="true" ] {
-        @include btn-pressed;
+        @include btn--default--pressed;
     }
 }
+
 // button modifier : view plain
 .btn--plain {
     border:none;
 }
+
 // button modifier : disabled
 .btn[disabled],
 .btn--disabled {
     pointer-events : none;
     background-color: #f3f3f3;
-   /*  background-color: #ebebeb;
-    color : #aaa; */
 }
+
 // custom fields(element) : text
 .btn__txt { 
     overflow: hidden;
@@ -95,69 +81,72 @@ a.btn {
     text-overflow : ellipsis;
     vertical-align: top;
 }
+
 // button modifier : size
-.btn--xs {
-    font-size : rem(11.2);
-    line-height: rem(21.28);
-    // .btn__txt {
+.btn {
+    &--xs {
+        font-size : rem(11.2);
+        line-height: rem(21.28);
         padding : 0 rem(11.2);
-    // }
-}
-.btn--s {
-    font-size : rem(12.6);
-    line-height: rem(28.98);
-    // .btn__txt {
+    }
+    &--s {
+        font-size : rem(12.6);
+        line-height: rem(28.98);
         padding : 0 rem(12.6);
-    // }
-}
-.btn--m {
-    font-size : rem(14);
-    line-height: 2.3em;
-    // .btn__txt {
+    }
+    &--m {
+        font-size : rem(14);
+        line-height: 2.3em;
         padding : 0 rem(14);
-    // }
-}
-.btn--l {
-    font-size : rem(17.5);
-    line-height: rem(40.25);
-    // .btn__txt {
+    }
+    &--l {
+        font-size : rem(17.5);
+        line-height: rem(40.25);
         padding : 0 rem(17.5);
-    // }
+    }
 }
+
 // button modifier : togglable
 input[data-role="button"] {
     position: absolute; left:-1000em;
     // visibility: hidden;              // tab key doesn't go focus
+    &:hover + .btn {
+        @include btn--default--hovered;
+    }
+    &:focus + .btn {
+        @include btn--default--focused;
+    }
+    &:checked + .btn {
+        @include btn--default--pressed;
+    }
 }
-input[data-role="button"]:hover + .btn {
-    @include btn-hovered;
-}
-input[data-role="button"]:focus + .btn {
-    @include btn-focused;
-}
-input[data-role="button"]:checked + .btn {
-    @include btn-pressed;
-}
+
 // button with icon
-.btn__ico-left {
-    margin-right : rem(3);
+.btn__ico {
+    &-left {
+        margin-right : rem(3);
+    }
+    &-right {
+       margin-left : rem(3);
+    }
 }
-.btn__ico-right {
-   margin-left : rem(3);
-}
+
 // buttons position 
-// btns--pos-left
-.btns--left {
-    float: left;
+.btns {
+    // btns--pos-left
+    &--left {
+        float: left;
+    }
+    // btns--pos-right
+    &--right {
+        float: right;
+    }
+    // btns--pos-center
+    &--center {
+        text-align: center;
+    }
 }
-// btns--pos-right
-.btns--right {
-    float: right;
-}
-// btns--pos-center
-.btns--center {
-    text-align: center;
-}
+
 // button gorup
 .btn-group {
     overflow: hidden;
@@ -169,19 +158,22 @@ input[data-role="button"]:checked + .btn {
     input[data-role="button"]:focus + .btn--default {
         // position: relative; z-index: 1;
     }
-}
-.btn-group--justify {
-    display: table;
-    width : 100%;
-    table-layout : fixed; border-collapse : seperate;
-    .btn {
-        display: table-cell;
-        float : none;
-        width : 1%;
+
+    &--justify {
+        display: table;
+        width : 100%;
+        table-layout : fixed; border-collapse : seperate;
+        .btn {
+            display: table-cell;
+            float : none;
+            width : 1%;
+        }
     }
 }
 
-@if $is-rem == true {
+
+// not ie8
+@if $is--rem == true {
 
     .btn--default {
         @include border-radius( $btn-radius );

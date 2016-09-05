@@ -17,6 +17,11 @@
     	.ex-btn-size .col:not(:first-child) {
     		margin-top: 15px;
     	}
+    	.ex-btn-toggle .btn, 
+    	.ex-btn-disabled .btn,
+    	.ex-btn-icon .btn {
+    		margin-bottom: 5px;
+    	}
     </style>
 </head>
 <body>
@@ -47,7 +52,7 @@
 	</div>
 
 	<h2 class="h2">Togglable</h2>
-	<div class="row">
+	<div class="row ex-btn-toggle">
 		<div class="col s12 l6">
 			<div class="block--box">
 				<h3 class="h3">Check</h3>
@@ -73,7 +78,7 @@
 	</div>
 
 	<h2 class="h2">Disabled</h2>
-	<div class="row block--box">
+	<div class="row block--box ex-btn-disabled">
 		<button type="button" disabled="disabled" class="btn btn--default btn--m">Button : Disabled </button>
 		<button type="button" class="btn btn--default btn--m btn--disabled" tabIndex = "-1"> Button.btn--disabled </button>
 	</div>
@@ -109,7 +114,7 @@
 	</div>
 
 	<h2 class="h2">Icon button</h2>
-	<div class="row block--box">
+	<div class="row block--box ex-btn-icon">
 		<button type="button" class="btn btn--default btn--m">
 			<i class="btn__ico-left ico ico-arr-prev"></i>
 			Button with icon
