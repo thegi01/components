@@ -22,30 +22,33 @@ img {
 	border:0;
 }
 
-button, input, optgroup, select, textarea {
+button, input, select, textarea {
     // color: inherit;
     font-family: inherit;
     // margin: 0;
 }
-/* button,html input[type=button],input[type=reset],input[type=submit] {
-    -webkit-appearance: button;
-    cursor: pointer;
-} */
-
+// button, input[type=button], input[type=reset],input[type=submit] {
+//     -webkit-appearance: button;
+//     cursor: pointer;
+// }
+// input[type="checkbox"],
+// input[type="radio"] {
+//   box-sizing: border-box;
+//   padding: 0;
+// }
 
 fieldset {
     margin:0; padding:0;
     border:none;
 }
-
 table {
     border-collapse: collapse;
     border-spacing: 0
 }
 
-/* td,th {
-    padding: 0
-} */
+// td,th {
+//     padding: 0
+// }
 
 // h
 h1, h2, h3, h4, h5, h6 {

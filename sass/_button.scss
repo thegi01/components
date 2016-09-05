@@ -54,9 +54,9 @@ a.btn {
     &:focus {
         @include btn--default--focused;
     }
-    &:active { // ???
-        @include btn--default--focused;
-    }
+    // &:active {
+    //     @include btn--default--pressed;
+    // }
     &[ aria-pressed="true" ] {
         @include btn--default--pressed;
     }
