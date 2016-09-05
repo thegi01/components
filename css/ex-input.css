@@ -173,7 +173,7 @@ input[data-role="button"]:checked + .btn { background-color: yellow; border-colo
 .input-field .ico-loading:after { margin-top: -0.5625rem; margin-left: -0.5625rem; }
 
 .input-group--contiguous { overflow: hidden; }
-.input-group--contiguous input { float: left; }
+.input-group--contiguous input { float: left; position: relative; }
 .input-group--contiguous input:first-child { -webkit-border-top-right-radius: 0; -moz-border-top-right-radius: 0; border-top-right-radius: 0; background-clip: padding-box; /* stops bg color from leaking outside the border: */ -webkit-border-bottom-right-radius: 0; -moz-border-bottom-right-radius: 0; border-bottom-right-radius: 0; background-clip: padding-box; /* stops bg color from leaking outside the border: */ }
 .input-group--contiguous input:last-child { -webkit-border-top-left-radius: 0; -moz-border-top-left-radius: 0; border-top-left-radius: 0; background-clip: padding-box; /* stops bg color from leaking outside the border: */ -webkit-border-bottom-left-radius: 0; -moz-border-bottom-left-radius: 0; border-bottom-left-radius: 0; background-clip: padding-box; /* stops bg color from leaking outside the border: */ }
 .input-group--contiguous input:not(:first-child):not(:last-child) { -webkit-border-radius: 0; -moz-border-radius: 0; border-radius: 0; background-clip: padding-box; /* stops bg color from leaking outside the border: */ }

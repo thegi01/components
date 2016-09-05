@@ -110,6 +110,7 @@
 	overflow: hidden;
 	input {
 		float: left;
+		position: relative;
 		&:first-child {
 			@include border-radius-single(top, right, 0);
 			@include border-radius-single(bottom, right, 0);
