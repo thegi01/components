@@ -73,32 +73,32 @@ a.btn {
     vertical-align: top;
 }
 // button modifier : size
-.btn--s {
-    font-size : rem(13);
-    line-height: rem(24);
+.btn--xs {
+    font-size : rem(11.2);
+    line-height: rem(21.28);
     // .btn__txt {
-        padding : 0 rem(10);
+        padding : 0 rem(11.2);
+    // }
+}
+.btn--s {
+    font-size : rem(12.6);
+    line-height: rem(28.98);
+    // .btn__txt {
+        padding : 0 rem(12.6);
     // }
 }
 .btn--m {
-    font-size : rem(13);
-    line-height: 2em;
+    font-size : rem(14);
+    line-height: 2.3em;
     // .btn__txt {
-        padding : 0 rem(13);
+        padding : 0 rem(14);
     // }
 }
 .btn--l {
-    font-size : rem(15);
-    line-height: rem(32);
+    font-size : rem(17.5);
+    line-height: rem(40.25);
     // .btn__txt {
-        padding : 0 rem(15);
-    // }
-}
-.btn--xl {
-    font-size : rem(18);
-    line-height: rem(38);
-    // .btn__txt {
-        padding : 0 rem(18);
+        padding : 0 rem(17.5);
     // }
 }
 // button modifier : togglable

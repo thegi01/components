@@ -103,13 +103,13 @@ a.btn { text-decoration: none; }
 
 .btn__txt { overflow: hidden; display: inline-block; text-overflow: ellipsis; vertical-align: top; }
 
-.btn--s { font-size: 0.8125rem; line-height: 1.5rem; padding: 0 0.625rem; }
+.btn--xs { font-size: 0.7rem; line-height: 1.33rem; padding: 0 0.7rem; }
 
-.btn--m { font-size: 0.8125rem; line-height: 2em; padding: 0 0.8125rem; }
+.btn--s { font-size: 0.7875rem; line-height: 1.81125rem; padding: 0 0.7875rem; }
 
-.btn--l { font-size: 0.9375rem; line-height: 2rem; padding: 0 0.9375rem; }
+.btn--m { font-size: 0.875rem; line-height: 2.3em; padding: 0 0.875rem; }
 
-.btn--xl { font-size: 1.125rem; line-height: 2.375rem; padding: 0 1.125rem; }
+.btn--l { font-size: 1.09375rem; line-height: 2.51563rem; padding: 0 1.09375rem; }
 
 input[data-role="button"] { position: absolute; left: -1000em; }
 
