@@ -14,20 +14,41 @@
         <link rel="stylesheet" href="css/ex-input-ie.css">
     <![endif]-->
     <style>
+    	body {
+    		padding-bottom : 100px;
+    	}
     	.input {
     		margin-bottom : 5px;
     	}
     	.h3:not(:first-child){
     		margin-top: 17px;
     	}
+    	
+    	.row.ex-input-grid .col:first-child{
+			padding-right: 5px;
+    	}
+
+    	.ex-input-group .input {
+    		margin-bottom: 0;
+    	}
+    	.input-group,
+    	.input-group--contiguous {
+    		margin-bottom: 5px;
+    	}
+    	.ex-input-group-contiguous input{
+			width : 300px;
+    	}
+    	h3 {
+    		margin-top: 10px;
+    	}
     </style>
 </head>
 <body>
 <!-- //wrap -->
-<div class="wrap ex ex-grid">
+<div class="wrap ex">
 	<h1>Input</h1>
 	<h2 class="h2">Default</h2>
-	<input type="text" name="default" id="default" placeholder="default input" class="input">
+	<input type="text" name="default" id="default" placeholder="default" class="input">
 	
 	<h2 class="h2">States</h2>
 	<div class="row">
@@ -40,31 +61,117 @@
 
 		<h3 class="h3">Error</h3>
 		<input type="text" name="error" id="error" placeholder="error" class="input input--error">
+		<input type="text" name="error" id="error" placeholder="error focused" class="input input--error input--focus">
 
 		<h3 class="h3">Loading</h3>
-
-		<label for="loading-left" class="input--loading-l">
-			<input type="text" name="loading-l" id="loading-l" placeholder="loading-l" class="input">
-			<i class="ico ico-loading"></i>
-		</label>
-		<label for="loading-right" class=" input--loading-r">
-			<input type="text" name="loading-r" id="loading-r" placeholder="loading-r" class="input">
-			<i class="ico ico-loading"></i>
-		</label>
+		<div class="ex-loading">
+			<div class="input-field ico--left">
+				<input type="text" name="loading-l" id="loading-l" placeholder="loading-l" class="input">
+				<i class="ico ico-loading"></i>
+			</div>
+			<div class="input-field ico--right">
+				<input type="text" name="loading-r" id="loading-r" placeholder="loading-r" class="input">
+				<i class="ico ico-loading"></i>
+			</div>
+			<div class="input-field ico--left">
+				<input type="text" name="loading-l" id="loading-l" placeholder="loading-l focused" class="input input--focus">
+				<i class="ico ico-loading"></i>
+			</div>
+			<div class="input-field ico--right">
+				<input type="text" name="loading-r" id="loading-r" placeholder="loading-r focused" class="input input--focus">
+				<i class="ico ico-loading"></i>
+			</div>
+		</div>
 	</div>
 
-	<h2 class="h2">Variations</h2>
-	<div class="row">
-		<h3 class="h3">Icon</h3>
-		<label for="icon-1" class="input-outer--icon-l">
-			<input type="text" name="icon-1" id="icon-1" placeholder="Icon-l" class="input">
+	<h2 class="h2">Input field</h2>
+	<div class="ex-ico">
+		<div class="input-field ico--left">
+			<input type="text" name="icon-1" id="icon-1" placeholder="Icon-left" class="input">
 			<i class="ico ico-srch"></i>
-		</label>
-		
+		</div>
+		<div class="input-field ico--right">
+			<input type="text" name="icon-2" id="icon-2" placeholder="Icon-right" class="input">
+			<i class="ico ico-srch"></i>
+		</div>
+		<div class="input-field ico--right">
+			<input type="search" name="seach" id="search" placeholder="search" class="input">
+			<button class="ico ico-srch btn"></button>
+		</div>
+	</div>
+
+	<h2 class="h2">Input group</h2>
+	<div class="row ex-input-group">
+		<h3 class="h3">Seperated</h3>
+		<div class="input-group">
+			<input type="text" name="group-1" id="group-1" placeholder="input group 1" class="input">
+			<button class="btn btn--default btn--m">button</button>
+		</div>
+		<div class="input-group">
+			<button class="btn btn--default btn--m">button</button>
+			<input type="text" name="group-2" id="group-2" placeholder="input group 2" class="input">
+		</div>
+		<div class="input-group">
+			<button class="btn btn--default btn--m">button</button>
+			<input type="text" name="group-3" id="group-3" placeholder="input group 3" class="input">
+			<button class="btn btn--default btn--m">button</button>
+		</div>
+		<h3 class="h3">Contiguous</h3>
+		<div class="ex-input-group-contiguous">
+			<div class="input-group--contiguous">
+				<input type="text" name="group-4" id="group-4" placeholder="input group 4" class="input">
+				<button class="btn btn--default btn--m">button</button>
+			</div>
+			<div class="input-group--contiguous">
+				<button class="btn btn--default btn--m">button</button>
+				<input type="text" name="group-5" id="group-5" placeholder="input group 5" class="input">
+			</div>
+			<div class="input-group--contiguous">
+				<button class="btn btn--default btn--m">button</button>
+				<input type="text" name="group-6" id="group-6" placeholder="input group 6" class="input">
+				<button class="btn btn--default btn--m">button</button>
+			</div>
+		</div>
+	</div>
+
+	<h2 class="h2">Grid</h2>
+	<h3 class="h3">half</h3>
+	<div class="row ex-input-grid">
+		<div class="col s6 input-field ico--left">
+			<input type="text" name="grid-1" id="grid-1" placeholder="Icon-left" class="input">
+			<i class="ico ico-srch"></i>
+		</div>
+		<div class="col s6 input-field ico--right">
+			<input type="text" name="grid-2" id="grid-2" placeholder="Icon-right" class="input">
+			<i class="ico ico-srch"></i>
+		</div>
+	</div>
+	<h3 class="h3">full</h3>
+	<div class="row">
+		<div class="col s12 input-field ico--right">
+			<input type="text" name="full" id="full" placeholder="Full > search" class="input">
+			<button class="ico ico-srch btn"></button>
+		</div>
+	</div>
+
+	<h2 class="h2">Size</h2>
+	<div class="row ex-input-size">
+		<div class="col s12">
+			<h3 class="h3">Default</h3>
+			<input type="text" name="default" id="default" placeholder="default" class="input">
+		</div>
+		<div class="col s12">
+			<h3 class="h3">Large</h3>
+			<input type="text" name="large" id="large" placeholder="large" class="input input--l">
+		</div>
+		<div class="col s12">
+			<h3 class="h3">small</h3>
+			<input type="text" name="small" id="small" placeholder="small" class="input input--s">
+		</div>
 	</div>
 	
-	
-	
+
+
 	
 	<!-- http://semantic-ui.com/elements/input.html -->
 </div>

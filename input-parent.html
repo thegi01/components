@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>Input</title>
+	<meta name="viewport" content="width=device-width, user-scalable=no">
+	<meta name="robots" content="noindex,nofollow">
+	<meta name="googlebot" content="noindex,nofollow">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<!--[if (gt IE 8)|!(IE)]><!-->
+        <link rel="stylesheet" href="css/ex-input.css">
+    <!--<![endif]-->
+    <!--[if lte IE 8]>
+        <link rel="stylesheet" href="css/ex-input-ie.css">
+    <![endif]-->
+    <style>
+    	.input {
+    		margin-bottom : 5px;
+    	}
+    	.h3:not(:first-child){
+    		margin-top: 17px;
+    	}
+    	.ex-loading .col:first-child,
+    	.ex-ico .col:first-child{
+			padding-right: 5px;
+    	}
+    </style>
+</head>
+<body>
+<!-- //wrap -->
+<div class="wrap ex">
+	<h1>Input</h1>
+	<h2 class="h2">Default</h2>
+	<div for="default" class="input">
+		<input type="text" name="default" id="default" placeholder="default input">
+	</div>
+	
+	<h2 class="h2">States</h2>
+	<div class="row">
+		<h3 class="h3">Focus</h3>
+		<div class="input input--focus">
+			<input type="text" name="focus" id="focus" placeholder="focused">
+		</div>
+
+		<h3 class="h3">Disabled</h3>
+		<div class="input">
+			<input type="text" name="disabled" id="disabledTrue" placeholder="disabled true" disabled>
+		</div>
+		<div class="input input--disabled">
+			<input type="text" name="disabled" id="disabledCalsss" placeholder="has class disabled">
+		</div>
+
+		<h3 class="h3">Error</h3>
+		<div class="input input--error">
+			<input type="text" name="error" id="error" placeholder="error">
+		</div>
+
+		<h3 class="h3">Loading</h3>
+		<div class="row ex-loading">
+			<div class="col s6 input input--ico-l">
+				<input type="text" name="loading-l" id="loading-l" placeholder="loading-l">
+				<i class="ico ico-loading"></i>
+			</div>
+			<div class="col s6 input input--ico-r">
+				<input type="text" name="loading-r" id="loading-r" placeholder="loading-r">
+				<i class="ico ico-loading"></i>
+			</div>
+		</div>
+	</div>
+
+	<h2 class="h2">Variations</h2>
+	<h3 class="h3">Icon</h3>
+	<div class="row ex-ico">
+		<div class="col s6 input input--ico-l">
+			<input type="text" name="icon-1" id="icon-1" placeholder="Icon-left">
+			<i class="ico ico-srch"></i>
+		</div>
+		<div class="col s6 input input--ico-r">
+			<input type="text" name="icon-1" id="icon-1" placeholder="Icon-right">
+			<i class="ico ico-srch"></i>
+		</div>
+	</div>
+	
+	<!-- http://semantic-ui.com/elements/input.html -->
+</div>
+<!-- //wrap -->
+
+<!-- javacript -->
+
+<!-- //javacript -->
+
+</body>
+</html>

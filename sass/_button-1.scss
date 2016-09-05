@@ -1,0 +1,215 @@
+/* button */
+
+// variable
+$btn-radius : 0.3em;
+
+// button
+@mixin btn-hovered {
+    background-image: -webkit-linear-gradient(top, #fff 0%, #eee 100%);
+      background-image: -o-linear-gradient(top, #fff 0%, #eee 100%);
+      background-image: linear-gradient(to bottom, #fff 0%, #eee 100%);
+      background-repeat: repeat-x;
+      filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffffff', endColorstr='#ffeeeeee', GradientType=0);
+      border-color: #bfbfbf #bfbfbf #b3b3b3;
+      box-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
+      color: #333;
+}
+@mixin btn-focused {
+    border-color: #1385e5;
+      box-shadow: 0 0 0 3px rgba(19, 133, 229, 0.1);
+      color: #333;
+      outline: none;
+}
+@mixin btn-pressed {
+    background: #e6e6e6;
+      border-color: #b3b3b3;
+      box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+      color: #333;
+      border-color: #1385e5;
+        box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1), 0 0 0 3px rgba(19, 133, 229, 0.1);
+}
+
+.btn {
+    -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+      background: none;
+      border: 1px solid transparent;
+      border-radius: rem(3.8);
+      cursor: pointer;
+      display: inline-block;
+      font-weight: 500;
+      line-height: 2.3em;
+      height: 2.4em;
+      margin-bottom: 0;
+      overflow: hidden;
+      padding: 0 rem(12);
+      text-align: center;
+      touch-action: manipulation;
+      vertical-align: middle;
+      white-space: nowrap;
+      -webkit-appearance: none;
+      /* 
+    display: inline-block;
+    border: 1px solid transparent; 
+    background: none;
+    text-align : center; vertical-align: middle; white-space: nowrap;
+    cursor: pointer;
+    -webkit-user-select : none; -moz-user-select : none; -ms-user-select : none; user-select : none;
+    -ms-touch-action : manipulation;
+        touch-action : manipulation; */
+}
+.btn:hover,
+.btn:focus,
+.btn.focus,
+.btn.is-focus {
+  color: #1385e5;
+  text-decoration: none;
+}
+.btn:active,
+.btn.active,
+.btn.is-active {
+  background-image: none;
+  outline: 0;
+}
+.btn.disabled,
+.btn[disabled] {
+  opacity: .4;
+  pointer-events: none;
+}
+a.btn {
+    text-decoration: none;
+}
+// button modifier : theme default
+.btn--default {
+    background-image: -webkit-linear-gradient(top, #fafafa 0%, #eaeaea 100%);
+      background-image: -o-linear-gradient(top, #fafafa 0%, #eaeaea 100%);
+      background-image: linear-gradient(to bottom, #fafafa 0%, #eaeaea 100%);
+      background-repeat: repeat-x;
+      filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fffafafa', endColorstr='#ffeaeaea', GradientType=0);
+      border: 1px solid #ccc;
+      border-color: #ccc #bdbdbd #adadad;
+      color: #333;
+      text-shadow: 0 1px 0 white;
+    &:hover {
+        @include btn-hovered;
+    }
+    &:focus {
+        @include btn-focused;
+    }
+    &[ aria-pressed="true" ] {
+        @include btn-pressed;
+    }
+}
+// button modifier : view plain
+.btn--plain {
+    border:none;
+}
+// button modifier : disabled
+.btn[disabled],
+.btn--disabled {
+     background-color: #f3f3f3;
+}
+// custom fields(element) : text
+.btn__txt { 
+    overflow: hidden;
+    display: inline-block;
+    text-overflow : ellipsis;
+    vertical-align: top;
+}
+// button modifier : size
+.btn--xs {
+    font-size: rem(11.2);
+      line-height: 1.9;
+      padding-left: rem(7.4);
+      padding-right: rem(7.4);
+}
+.btn--s {
+    font-size: rem(12.6);
+}
+.btn--m {
+    font-size : rem(14);
+}
+.btn--l {
+    font-size: rem(17.5);
+}
+
+// button modifier : togglable
+input[data-role="button"] {
+    position: absolute; left:-1000em;
+    // visibility: hidden;              // tab key doesn't go focus
+}
+input[data-role="button"]:hover + .btn {
+    @include btn-hovered;
+}
+input[data-role="button"]:focus + .btn {
+    @include btn-focused;
+}
+input[data-role="button"]:checked + .btn {
+    @include btn-pressed;
+}
+// button with icon
+.btn__icon-left {
+    margin-right : rem(3);
+}
+.btn__icon-right {
+   margin-left : rem(3);
+}
+// buttons position 
+// btns--pos-left
+.btns--left {
+    float: left;
+}
+// btns--pos-right
+.btns--right {
+    float: right;
+}
+// btns--pos-center
+.btns--center {
+    text-align: center;
+}
+// button gorup
+.btn-group {
+    overflow: hidden;
+    .btn--default {
+        float: left;
+        margin-right: -1px;
+    }
+    .btn--default:focus,
+    input[data-role="button"]:focus + .btn--default {
+        position: relative; z-index: 1;
+    }
+}
+.btn-group--justify {
+    display: table;
+    width : 100%;
+    table-layout : fixed; border-collapse : seperate;
+    .btn {
+        display: table-cell;
+        float : none;
+        width : 1%;
+    }
+}
+
+@if $is-rem == true {
+
+    .btn--default {
+        @include border-radius( $btn-radius );
+    }
+
+    // button style side ononly radius
+    .btn-group {
+        .btn--default:not(:nth-of-type(1)):not(:last-child) {
+            @include border-radius(0);
+        }    
+        .btn--default:nth-of-type(1) {
+            @include border-radius-single(top, right, 0);
+            @include border-radius-single(bottom, right, 0);
+        }
+        .btn--default:last-child {
+            @include border-radius-single(top, left, 0);
+            @include border-radius-single(bottom, left, 0);
+        }
+    }
+}
