@@ -89,17 +89,20 @@ h6, .h6 { font-size: 0.75rem; }
 
 /* button */
 .btn { display: inline-block; border: 1px solid transparent; background: none; text-align: center; vertical-align: middle; white-space: nowrap; cursor: pointer; -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none; -ms-touch-action: manipulation; touch-action: manipulation; }
+.btn[disabled], .btn.btn--disabled { opacity: .4; pointer-events: none; }
 
 a.btn { text-decoration: none; }
 
-.btn--default { min-height: 1em; padding: 0; border-color: #e8e5e5; background-color: #fff; vertical-align: baseline; font-size: 1rem; color: #000; -webkit-tab-highlight-color: transparent; }
-.btn--default:hover { background-color: #f1f1f1; }
-.btn--default:focus { background-color: #f2f2f2; border-color: #bbb; outline: 0; }
-.btn--default[aria-pressed="true"] { background-color: yellow; border-color: orange; }
+.btn--default { background-image: -webkit-linear-gradient(top, #fafafa 0%, #eaeaea 100%); background-image: -o-linear-gradient(top, #fafafa 0%, #eaeaea 100%); background-image: linear-gradient(to bottom, #fafafa 0%, #eaeaea 100%); background-repeat: repeat-x; filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fffafafa', endColorstr='#ffeaeaea', GradientType=0); border-color: #ccc #bdbdbd #adadad; color: #333; text-shadow: 0 1px 0 white; }
+.btn--default:hover { background-image: -webkit-linear-gradient(top, #fff 0%, #eee 100%); background-image: -o-linear-gradient(top, #fff 0%, #eee 100%); background-image: linear-gradient(to bottom, #fff 0%, #eee 100%); filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffffff', endColorstr='#ffeeeeee', GradientType=0); border-color: #bfbfbf #bfbfbf #b3b3b3; box-shadow: 0 1px 0 rgba(0, 0, 0, 0.1); }
+.btn--default:focus { position: relative; z-index: 1; border-color: #1385e5; box-shadow: 0 0 0 3px rgba(19, 133, 229, 0.1); outline: none; }
+.btn--default:active, .btn--default.is--active { position: relative; z-index: 1; border-color: #1385e5; box-shadow: 0 0 0 3px rgba(19, 133, 229, 0.1); outline: none; }
+.btn--default.is--active:focus:not(:active) { border-color: #1385e5; box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1), 0 0 0 3px rgba(19, 133, 229, 0.1); }
+.btn--default[aria-pressed="true"] { border-color: green; color: green; }
 
 .btn--plain { border: none; }
 
-.btn[disabled], .btn--disabled { pointer-events: none; background-color: #ebebeb; color: #aaa; }
+.btn[disabled], .btn--disabled { pointer-events: none; background-color: #f3f3f3; /*  background-color: #ebebeb; color : #aaa; */ }
 
 .btn__txt { overflow: hidden; display: inline-block; text-overflow: ellipsis; vertical-align: top; }
 
@@ -113,15 +116,15 @@ a.btn { text-decoration: none; }
 
 input[data-role="button"] { position: absolute; left: -1000em; }
 
-input[data-role="button"]:hover + .btn { background-color: #f1f1f1; }
+input[data-role="button"]:hover + .btn { background-image: -webkit-linear-gradient(top, #fff 0%, #eee 100%); background-image: -o-linear-gradient(top, #fff 0%, #eee 100%); background-image: linear-gradient(to bottom, #fff 0%, #eee 100%); filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffffff', endColorstr='#ffeeeeee', GradientType=0); border-color: #bfbfbf #bfbfbf #b3b3b3; box-shadow: 0 1px 0 rgba(0, 0, 0, 0.1); }
 
-input[data-role="button"]:focus + .btn { background-color: #f2f2f2; border-color: #bbb; outline: 0; }
+input[data-role="button"]:focus + .btn { position: relative; z-index: 1; border-color: #1385e5; box-shadow: 0 0 0 3px rgba(19, 133, 229, 0.1); outline: none; }
 
-input[data-role="button"]:checked + .btn { background-color: yellow; border-color: orange; }
+input[data-role="button"]:checked + .btn { border-color: green; color: green; }
 
-.btn__icon-left { margin-right: 0.1875rem; }
+.btn__ico-left { margin-right: 0.1875rem; }
 
-.btn__icon-right { margin-left: 0.1875rem; }
+.btn__ico-right { margin-left: 0.1875rem; }
 
 .btns--left { float: left; }
 
@@ -131,7 +134,6 @@ input[data-role="button"]:checked + .btn { background-color: yellow; border-colo
 
 .btn-group { overflow: hidden; }
 .btn-group .btn--default { float: left; margin-right: -1px; }
-.btn-group .btn--default:focus, .btn-group input[data-role="button"]:focus + .btn--default { position: relative; z-index: 1; }
 
 .btn-group--justify { display: table; width: 100%; table-layout: fixed; border-collapse: seperate; }
 .btn-group--justify .btn { display: table-cell; float: none; width: 1%; }

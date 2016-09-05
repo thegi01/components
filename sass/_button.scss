@@ -5,18 +5,23 @@ $btn-radius : 0.3em;
 
 // button
 @mixin btn-hovered {
-    background-color: #f1f1f1;
+    background-image: -webkit-linear-gradient(top, #fff 0%, #eee 100%);
+    background-image: -o-linear-gradient(top, #fff 0%, #eee 100%);
+    background-image: linear-gradient(to bottom, #fff 0%, #eee 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffffff', endColorstr='#ffeeeeee', GradientType=0);
+    border-color: #bfbfbf #bfbfbf #b3b3b3;
+    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
 }
 @mixin btn-focused {
-    background-color: #f2f2f2;
-    border-color: #bbb;
-    outline : 0;
+    position: relative; z-index: 1;
+    border-color: #1385e5;
+    box-shadow: 0 0 0 3px rgba(19, 133, 229, 0.1);
+    outline: none;
 }
 @mixin btn-pressed {
-    background-color: yellow;
-    border-color : orange;
+    border-color: green;
+    color: green;
 }
-
 .btn {
     display: inline-block;
     border: 1px solid transparent; 
@@ -27,6 +32,13 @@ $btn-radius : 0.3em;
     -ms-touch-action : manipulation;
         touch-action : manipulation;
 
+   
+    &[disabled],
+    &.btn--disabled {
+      opacity: .4;
+      pointer-events: none;
+    }
+
     .btn__txt {
         // pointer-events : none;
     }
@@ -34,20 +46,31 @@ $btn-radius : 0.3em;
 a.btn {
     text-decoration: none;
 }
+
 // button modifier : theme default
 .btn--default {
-    min-height: 1em;
-    padding : 0;
-    border-color : #e8e5e5; 
-    background-color: #fff;
-    vertical-align: baseline;
-    font-size: 1rem; color: #000;
-    -webkit-tab-highlight-color : rgba(0, 0, 0, 0);
+    background-image: -webkit-linear-gradient(top, #fafafa 0%, #eaeaea 100%);
+    background-image: -o-linear-gradient(top, #fafafa 0%, #eaeaea 100%);
+    background-image: linear-gradient(to bottom, #fafafa 0%, #eaeaea 100%);
+    background-repeat: repeat-x;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fffafafa', endColorstr='#ffeaeaea', GradientType=0);
+    border-color: #ccc #bdbdbd #adadad;
+    color: #333;
+    text-shadow: 0 1px 0 white;
+
     &:hover {
         @include btn-hovered;
     }
     &:focus {
         @include btn-focused;
+    }
+    &:active,
+    &.is--active { // ???
+        @include btn-focused;
+    }
+    &.is--active:focus:not(:active) { //추가 ???
+      border-color: #1385e5;
+      box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1), 0 0 0 3px rgba(19, 133, 229, 0.1);
     }
     &[ aria-pressed="true" ] {
         @include btn-pressed;
@@ -61,9 +84,9 @@ a.btn {
 .btn[disabled],
 .btn--disabled {
     pointer-events : none;
-    // opacity: 0.4;
-    background-color: #ebebeb;
-    color : #aaa;
+    background-color: #f3f3f3;
+   /*  background-color: #ebebeb;
+    color : #aaa; */
 }
 // custom fields(element) : text
 .btn__txt { 
@@ -116,10 +139,10 @@ input[data-role="button"]:checked + .btn {
     @include btn-pressed;
 }
 // button with icon
-.btn__icon-left {
+.btn__ico-left {
     margin-right : rem(3);
 }
-.btn__icon-right {
+.btn__ico-right {
    margin-left : rem(3);
 }
 // buttons position 
@@ -144,7 +167,7 @@ input[data-role="button"]:checked + .btn {
     }
     .btn--default:focus,
     input[data-role="button"]:focus + .btn--default {
-        position: relative; z-index: 1;
+        // position: relative; z-index: 1;
     }
 }
 .btn-group--justify {
