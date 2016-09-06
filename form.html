@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>Form</title>
+	<meta name="viewport" content="width=device-width, user-scalable=no">
+	<meta name="robots" content="noindex,nofollow">
+	<meta name="googlebot" content="noindex,nofollow">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<!--[if (gt IE 8)|!(IE)]><!-->
+        <link rel="stylesheet" href="css/ex-form.css">
+    <!--<![endif]-->
+    <!--[if lte IE 8]>
+        <link rel="stylesheet" href="css/ex-form-ie.css">
+    <![endif]-->
+    <style>
+    </style>
+</head>
+<body>
+<!-- //wrap -->
+<div class="wrap ex">
+	<h1>Form</h1>
+
+	<h2 class="h2">Default</h2>
+	<form action="#href" name="default" method="post" class="form form--default">
+		<fieldset class="fieldset">
+			<legend class="blind">Default form</legend>
+			<div class="form-field">
+				<label for="email" class="label">Email address</label>
+				<input type="text" name="email" id="email" placeholder="Enter email" class="input">
+			</div>
+			<div class="form-field">
+				<label for="password" class="label">Password</label>
+				<input type="password" name="password" id="password" placeholder="Password" class="input">
+			</div>
+			<div class="form-field">
+				<input type="checkbox" name="check" id="check" class="checkbox">
+				<label for="check" class="label--checkbox">Check it</label>
+			</div>
+			<div class="form-field">
+				<input type="submit" value="Submit" class="btn btn--default btn--m">
+			</div>
+		</fieldset>
+	</form>
+
+	<h2 class="h2">Horizontal Form</h2>
+	<form action="#href" name="horizontal" method="post" class="form form--horizontal">
+		<fieldset class="fieldset">
+			<legend class="blind">Horizontal form</legend>
+			<div class="form-field">
+				<label for="email2" class="label">Email address</label>
+				<input type="text" name="email2" id="email2" placeholder="Enter email" class="input">
+			</div>
+			<div class="form-field">
+				<label for="password2" class="label">Password</label>
+				<input type="password" name="password2" id="password2" placeholder="Password" class="input">
+			</div>
+			<div class="form-field form-field--offset">
+				<input type="checkbox" name="check2" id="check2" class="checkbox">
+				<label for="check2" class="label--checkbox">Check it</label>
+			</div>
+			<div class="form-field form-field--offset">
+				<input type="submit" value="Submit2" class="btn btn--default btn--m">
+			</div>
+		</fieldset>
+	</form>
+
+	<h2 class="h2">Inline Form</h2>
+	<div class="ex__txt">In mobile : default form include</div>
+	<form action="#href" name="inline" method="post" class="form form--inline">
+		<fieldset class="fieldset">
+			<legend class="blind">Inline form</legend>
+			<div class="form-field">
+				<label for="email3" class="label">Email address</label>
+				<input type="text" name="email3" id="email3" placeholder="Enter email" class="input">
+			</div>
+			<div class="form-field">
+				<label for="password3" class="label col">Password</label>
+				<input type="password" name="password3" id="password3" placeholder="Password" class="input">
+			</div>
+			<div class="form-field">
+				<input type="checkbox" name="check3" id="check3" class="checkbox">
+				<label for="check3" class="label--checkbox">Check it</label>
+			</div>
+			<div class="form-field">
+				<input type="submit" value="Submit3" class="btn btn--default btn--m">
+			</div>
+		</fieldset>
+	</form>
+</div>
+<!-- //wrap -->
+
+<!-- javacript -->
+
+<!-- //javacript -->
+
+</body>
+</html>

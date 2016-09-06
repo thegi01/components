@@ -1,0 +1,56 @@
+/* form */
+@mixin form--default {
+	margin-top: rem(-16);
+	.form-field {
+		margin-top: rem(16);
+	}
+	.label {
+		display: block;
+		margin-bottom: rem(5);
+	}
+	.input {
+		width: 100%;
+	}
+}
+.form {
+	.label {
+		font-size: rem(12); font-weight: 500; color:#777;
+		&--checkbox,
+		&--radio {
+			font-size: rem(14); color : #333;
+		}
+	}
+}
+.form--default {
+	@include form--default;
+}
+.form--horizontal {
+	margin-top: rem(-16);
+	.form-field {
+		overflow: hidden;
+		margin-top: rem(16);
+		&--offset {
+			margin-left: 30%;
+		}
+	}
+	.label {
+		float: left;
+		width: 30%;
+		line-height: rem(34);
+	}
+	.input {
+		width: 70%;
+	}
+}
+.form--inline {
+	@include form--default;
+	@media #{$media-m} {
+		.form-field {
+			display: inline-block;
+			margin-right:rem(10); margin-bottom: 0;
+			.label {
+				@include blind;
+			}
+		}
+	}
+}
