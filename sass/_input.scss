@@ -1,7 +1,7 @@
 /* input */
 
 // mixin
-@mixin input {
+@mixin input-style {
 	box-sizing : border-box;
 	padding-left:rem(10); padding-right: rem(10);
 	border: solid 1px #ccc;
@@ -37,7 +37,7 @@
 
 // default
 .input {
-	@include input;
+	@include input-style;
 	display: inline-block;	
 	padding-top: rem(8); padding-bottom: rem(8);
 
@@ -146,4 +146,32 @@
 	}
 }
 
+.textarea {
+	@include input-style;
+	display: block;
+	width: 100%; height: auto;
+	padding-top: rem(7); padding-bottom: rem(7);
+	line-height: 1.4em;
+	resize: vertical;
+}
 
+@mixin select--base {
+	@include input-style;
+	display: inline-block;
+	height: 2.4em;
+	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075);
+	border-top-color: #d6d6d6; border-bottom-color: #c2c2c2;
+}
+.select {
+	@include select--base;
+}
+.select--arr {
+	@include select--base;
+	-webkit-appearance: none; -moz-appearance: none; 
+}
+.select__arr {
+	position: absolute; right: 0; bottom:0;
+	width: 33px; height: 33px; 
+	text-align: center; line-height: 29px;
+	pointer-events:none;
+}

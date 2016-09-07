@@ -1,9 +1,21 @@
 /* form */
-@mixin form--default {
-	margin-top: rem(-16);
+
+// mixin
+@mixin form--base {
 	.form-field {
-		margin-top: rem(16);
+		position: relative;
+		margin-bottom: rem(16);
 	}
+	.label {
+		font-size: rem(12); font-weight: 500; color:#777;
+		&--checkbox,
+		&--radio {
+			font-size: rem(14); color : #333;
+		}
+	}
+}
+@mixin form--default {
+	@include form--base;
 	.label {
 		display: block;
 		margin-bottom: rem(5);
@@ -13,25 +25,15 @@
 	}
 }
 
+// form layout
 .form {
-	.label {
-		font-size: rem(12); font-weight: 500; color:#777;
-		&--checkbox,
-		&--radio {
-			font-size: rem(14); color : #333;
-		}
-	}
-}
-
-.form--default {
 	@include form--default;
 }
-
 .form--horizontal {
-	margin-top: rem(-16);
+	@include form--base;
 	.form-field {
 		overflow: hidden;
-		margin-top: rem(16);
+		// margin-bottom: rem(16);
 		&--offset {
 			margin-left: 30%;
 		}
@@ -45,7 +47,6 @@
 		width: 70%;
 	}
 }
-
 .form--inline {
 	@include form--default;
 	@media #{$media-m} {
@@ -59,11 +60,4 @@
 	}
 }
 
-.textarea {
-	@include input;
-	display: block;
-	width: 100%; height: auto; min-height: rem(95);
-	padding-top: rem(7); padding-bottom: rem(7);
-	line-height: 1.4em;
-	resize: vertical;
-}
+

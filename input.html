@@ -20,8 +20,20 @@
     	.input {
     		margin-bottom : 5px;
     	}
-    	.h3:not(:first-child){
-    		margin-top: 17px;
+    	.h2 {
+    		margin-top: 50px;
+    	}
+    	.h3{
+    		margin-top: 35px;
+    		padding-bottom: 10px;
+    		border-bottom: solid 1px #eee;
+    	}
+    	.h4 {
+    		margin-top: 20px;
+    		color: #333;
+    	}
+    	.h4:first-child {
+    		margin-top: 0;
     	}
     	
     	.row.ex-input-grid .col:first-child{
@@ -38,32 +50,32 @@
     	.ex-input-group-contiguous input{
 			width : 300px;
     	}
-    	h3 {
-    		margin-top: 10px;
-    	}
+    	
     </style>
 </head>
 <body>
 <!-- //wrap -->
 <div class="wrap ex">
-	<h1>Input</h1>
-	<h2 class="h2">Default</h2>
+	<h1>Input UI</h1>
+	
+	<h2>Input</h2>
+	<h3 class="h3">Default</h3>
 	<input type="text" name="default" id="default" placeholder="default" class="input">
 	
-	<h2 class="h2">States</h2>
+	<h3 class="h3">States</h3>
 	<div class="row">
-		<h3 class="h3">Focus</h3>
+		<h4 class="h4">Focus</h4>
 		<input type="text" name="focus" id="focus" placeholder="focused" class="input input--focus">
 
-		<h3 class="h3">Disabled</h3>
+		<h4 class="h4">Disabled</h4>
 		<input type="text" name="disabled" id="disabledTrue" placeholder="disabled true" disabled class="input">
 		<input type="text" name="disabled" id="disabledCalsss" placeholder="has class disabled" class="input input--disabled">
 
-		<h3 class="h3">Error</h3>
+		<h4 class="h4">Error</h4>
 		<input type="text" name="error" id="error" placeholder="error" class="input input--error">
 		<input type="text" name="error" id="error" placeholder="error focused" class="input input--error input--focus">
 
-		<h3 class="h3">Loading</h3>
+		<h4 class="h4">Loading</h4>
 		<div class="ex-loading">
 			<div class="input-field ico--left">
 				<input type="text" name="loading-l" id="loading-l" placeholder="loading-l" class="input">
@@ -84,7 +96,7 @@
 		</div>
 	</div>
 
-	<h2 class="h2">Input field</h2>
+	<h3 class="h3">Input field</h3>
 	<div class="ex-ico">
 		<div class="input-field ico--left">
 			<input type="text" name="icon-1" id="icon-1" placeholder="Icon-left" class="input">
@@ -100,9 +112,9 @@
 		</div>
 	</div>
 
-	<h2 class="h2">Input group</h2>
+	<h3 class="h3">Input group</h3>
 	<div class="row ex-input-group">
-		<h3 class="h3">Seperated</h3>
+		<h4 class="h4">Seperated</h4>
 		<div class="input-group">
 			<input type="text" name="group-1" id="group-1" placeholder="input group 1" class="input">
 			<button class="btn btn--default btn--m">button</button>
@@ -116,7 +128,7 @@
 			<input type="text" name="group-3" id="group-3" placeholder="input group 3" class="input">
 			<button class="btn btn--default btn--m">button</button>
 		</div>
-		<h3 class="h3">Contiguous</h3>
+		<h4 class="h4">Contiguous</h4>
 		<div class="ex-input-group-contiguous">
 			<div class="input-group--contiguous">
 				<input type="text" name="group-4" id="group-4" placeholder="input group 4" class="input">
@@ -134,8 +146,8 @@
 		</div>
 	</div>
 
-	<h2 class="h2">Grid</h2>
-	<h3 class="h3">half</h3>
+	<h3 class="h3">Grid</h3>
+	<h4 class="h4">half</h4>
 	<div class="row ex-input-grid">
 		<div class="col s6 input-field ico--left">
 			<input type="text" name="grid-1" id="grid-1" placeholder="Icon-left" class="input">
@@ -146,7 +158,7 @@
 			<i class="ico ico-srch"></i>
 		</div>
 	</div>
-	<h3 class="h3">full</h3>
+	<h4 class="h4">full</h4>
 	<div class="row">
 		<div class="col s12 input-field ico--right">
 			<input type="text" name="full" id="full" placeholder="Full > search" class="input">
@@ -154,22 +166,49 @@
 		</div>
 	</div>
 
-	<h2 class="h2">Size</h2>
+	<h3 class="h3">Size</h3>
 	<div class="row ex-input-size">
-		<div class="col s12">
-			<h3 class="h3">Default</h3>
-			<input type="text" name="default" id="default" placeholder="default" class="input">
-		</div>
-		<div class="col s12">
-			<h3 class="h3">Large</h3>
-			<input type="text" name="large" id="large" placeholder="large" class="input input--l">
-		</div>
-		<div class="col s12">
-			<h3 class="h3">small</h3>
-			<input type="text" name="small" id="small" placeholder="small" class="input input--s">
-		</div>
+		<h4 class="h4">Default</h4>
+		<input type="text" name="default" id="default" placeholder="default" class="input">
+		<h4 class="h4">Large</h4>
+		<input type="text" name="large" id="large" placeholder="large" class="input input--l">
+		<h4 class="h4">small</h4>
+		<input type="text" name="small" id="small" placeholder="small" class="input input--s">
 	</div>
 	
+
+	<h2 class="h2">Textarea</h2>
+	<textarea name="textarea" placeholder="Textarea" class="textarea"></textarea>
+
+	<h2 class="h2">select</h2>
+	<h3 class="h3">Html select</h3>
+	<div class="form">
+		<div class="form-field">
+			<select name="select" class="select" style="width:100%;">
+				<option value="1">option 1</option>
+				<option value="2">option 2</option>
+				<option value="3">option 3</option>
+				<option value="4">option 4</option>
+				<option value="5">option 5</option>
+			</select>
+		</div>
+	</div>
+	<h3 class="h3">Html select arrow modify : ie not supply</h3>
+	<div class="form">
+		<div class="form-field">
+			<select name="select" class="select--arr" style="width:100%;">
+				<option value="1">option 1</option>
+				<option value="2">option 2</option>
+				<option value="3">option 3</option>
+				<option value="4">option 4</option>
+				<option value="5">option 5</option>
+			</select>
+			<span class="select__arr">
+				<svg width="7px" height="11px" viewBox="0 0 7 11" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M3.5,0 L7,4 L0,4 L3.5,0 Z M3.5,11 L7,7 L0,7 L3.5,11 Z"></path></svg>
+			</span>
+
+		</div>
+	</div>
 
 
 	
