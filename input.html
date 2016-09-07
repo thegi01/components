@@ -214,10 +214,60 @@
 			
 		</div>
 	</div>
+
+ 	<h2 class="h2">Checkbox</h2>
+ 	<div class="form">
+ 		<div class="form-field">
+ 			<div vlass="checkbox">
+ 				<input type="checkbox" name="checkbox" id="checkbox">
+ 				<label for="checkbox">Default</label>
+ 			</div>
+ 		</div>
+ 		<div class="form-field">
+ 			<div class="checkbox--custom">
+ 				<input type="checkbox" name="checkbox" id="checkboxCustom" data-checked="false">
+ 				<label for="checkboxCustom">Custom</label>
+ 			</div>
+ 		</div>
+ 		<div class="form-field">
+ 			<div class="checkbox--slider">
+ 				<input type="checkbox" name="checkbox" id="checkboxSlider">
+ 				<label for="checkboxSlider">Slider</label>
+ 			</div>
+ 		</div>
+ 		<div class="form-field">
+ 			<div class="checkbox--toggle">
+ 				<input type="checkbox" name="checkbox" id="checkboxToggle">
+ 				<label for="checkboxToggle">Toggle</label>
+ 			</div>
+ 		</div>
+ 	</div>
+ 	
 </div>
 <!-- //wrap -->
 
 <!-- javacript -->
+<script>
+var checkboxToggle = function(el){
+	var d = 'data-checked',
+		c = el.getAttribute(d);
+	if( c == 'true' ) {
+		el.setAttribute(d, 'false');
+	} else {
+		el.setAttribute(d, 'true');
+	};
+};
+document.getElementById('checkboxCustom').onclick = function(){
+	checkboxToggle(this);
+};
+/*document.getElementById('checkboxSlider').onclick = function(){
+	checkboxToggle(this);
+};
+document.getElementById('checkboxToggle').onclick = function(){
+	checkboxToggle(this);
+};*/
+</script>
+
 
 <!-- //javacript -->
 

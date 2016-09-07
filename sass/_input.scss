@@ -179,3 +179,45 @@
 	}
 }
 
+// checkbox
+.checkbox {
+
+}
+.checkbox--custom {
+	position: relative;
+	input {
+		z-index: -1;
+		opacity: 0;
+	}
+	label {
+		cursor: pointer;
+		-webkit-user-select: none;
+		-moz-user-select: none;
+		-ms-user-select: none;
+		user-select: none;
+		&:before{
+			content: '';
+			position: absolute; top: 0; left: 0;
+			width: 17px; height: 17px;
+			box-sizing: border-box;
+			border-radius: .21428571rem; border: 1px solid #D4D4D5;
+			background: #fff;
+		}
+	}
+	input[data-checked="true"] + label:after {
+		content: 'v';
+		position: absolute; top: 0; left: 0;
+		width: 17px; height: 17px;
+		text-align: center;
+	}
+	input:focus + label:before {
+		border-color: #85b7d9; border-width: 2px;
+	}
+
+}
+.checkbox--slider {
+
+}
+.checkbox--toggle {
+
+}

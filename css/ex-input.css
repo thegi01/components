@@ -367,6 +367,13 @@ input[data-role="button"]:checked + .btn { border-color: green; color: green; }
 .select--arr:disabled, .select--arr--disabled { pointer-events: none; border-color: #e9e9e9; color: #f3f3f3; background-color: #f9f9f9; }
 .select--arr__arr { position: absolute; right: 0; bottom: 0; width: 33px; height: 33px; text-align: center; line-height: 33px; pointer-events: none; }
 
+.checkbox--custom { position: relative; }
+.checkbox--custom input { z-index: -1; opacity: 0; }
+.checkbox--custom label { cursor: pointer; -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none; }
+.checkbox--custom label:before { content: ''; position: absolute; top: 0; left: 0; width: 17px; height: 17px; box-sizing: border-box; border-radius: .21428571rem; border: 1px solid #D4D4D5; background: #fff; }
+.checkbox--custom input[data-checked="true"] + label:after { content: 'v'; position: absolute; top: 0; left: 0; width: 17px; height: 17px; text-align: center; }
+.checkbox--custom input:focus + label:before { border-color: #85b7d9; border-width: 2px; }
+
 /* form */
 .form .form-field { position: relative; margin-bottom: 1rem; }
 .form .label { font-size: 0.75rem; font-weight: 500; color: #777; }
