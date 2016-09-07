@@ -146,6 +146,7 @@
 	}
 }
 
+// textarea
 .textarea {
 	@include input-style;
 	display: block;
@@ -155,6 +156,7 @@
 	resize: vertical;
 }
 
+// select
 @mixin select--base {
 	@include input-style;
 	display: inline-block;
@@ -167,11 +169,13 @@
 }
 .select--arr {
 	@include select--base;
+	width: 100%;
 	-webkit-appearance: none; -moz-appearance: none; 
+	&__arr {
+		position: absolute; right: 0; bottom:0;
+		width: 33px; height: 33px; 
+		text-align: center; line-height: 33px;
+		pointer-events:none;
+	}
 }
-.select__arr {
-	position: absolute; right: 0; bottom:0;
-	width: 33px; height: 33px; 
-	text-align: center; line-height: 29px;
-	pointer-events:none;
-}
+

@@ -46,7 +46,10 @@
 ### Input
 - [Url] : https://thegi01.github.io/components/input.html
 - To do
-	- mixin : input placeholder, animation
+	- checkbox : default, slider, toggle
+	- radio : vertical, inline
+	- selelct ui custom
+	- dropdown
 
 ### 공통
 - reset 확인

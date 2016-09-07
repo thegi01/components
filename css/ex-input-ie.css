@@ -354,13 +354,12 @@ input[data-role="button"]:checked + .btn { border-color: green; color: green; }
 .select:focus::-webkit-input-placeholder, .select--focus::-webkit-input-placeholder { color: #8e8e8e; }
 .select:disabled, .select--disabled { pointer-events: none; border-color: #e9e9e9; color: #f3f3f3; background-color: #f9f9f9; }
 
-.select--arr { box-sizing: border-box; padding-left: 10px; padding-right: 10px; border: solid 1px #ccc; -webkit-border-radius: 0.3rem; -moz-border-radius: 0.3rem; border-radius: 0.3rem; background-clip: padding-box; /* stops bg color from leaking outside the border: */ background-color: #fff; font-size: 14px; color: #333; vertical-align: middle; display: inline-block; height: 2.4em; box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075); border-top-color: #d6d6d6; border-bottom-color: #c2c2c2; -webkit-appearance: none; -moz-appearance: none; }
+.select--arr { box-sizing: border-box; padding-left: 10px; padding-right: 10px; border: solid 1px #ccc; -webkit-border-radius: 0.3rem; -moz-border-radius: 0.3rem; border-radius: 0.3rem; background-clip: padding-box; /* stops bg color from leaking outside the border: */ background-color: #fff; font-size: 14px; color: #333; vertical-align: middle; display: inline-block; height: 2.4em; box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075); border-top-color: #d6d6d6; border-bottom-color: #c2c2c2; width: 100%; -webkit-appearance: none; -moz-appearance: none; }
 .select--arr::-webkit-input-placeholder { color: #e0e0e0; }
 .select--arr:focus, .select--arr--focus { outline: 0; border-color: #85B7D9; }
 .select--arr:focus::-webkit-input-placeholder, .select--arr--focus::-webkit-input-placeholder { color: #8e8e8e; }
 .select--arr:disabled, .select--arr--disabled { pointer-events: none; border-color: #e9e9e9; color: #f3f3f3; background-color: #f9f9f9; }
-
-.select__arr { position: absolute; right: 0; bottom: 0; width: 33px; height: 33px; text-align: center; line-height: 29px; pointer-events: none; }
+.select--arr__arr { position: absolute; right: 0; bottom: 0; width: 33px; height: 33px; text-align: center; line-height: 33px; pointer-events: none; }
 
 /* form */
 .form .form-field { position: relative; margin-bottom: 16px; }
