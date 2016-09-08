@@ -244,7 +244,7 @@
  	</div>
 
  	<h2 class="h2">Checkbox - 마크업 변경</h2>
- 	<div class="form">
+ 	<form name="checkboxForm" class="form">
  		<div class="form-field">
  			<label class="checkbox">
  				<input type="checkbox" name="checkboxDeafult">
@@ -269,7 +269,7 @@
  				<span class="checkbox__label">Toggle</span>
  			</label>
  		</div>
- 	</div>
+ 	</form>
 
  	<h2 class="h2">Radio</h2>
  	<div class="form">
@@ -293,10 +293,29 @@
  				<label >Custom 3</label>
  			</div>
  		</div>
-		
-	
-
  	</div>
+
+ 	<h2 class="h2">Radio - Re</h2>
+ 	<form name="radioForm" class="form">
+ 		<div class="form-field">
+ 			<label class="radio">
+ 				<input type="radio" name="radio" data-idx="0">
+ 				<span class="radio__label">Default</span>
+ 			</div>
+ 			<label class="radio--custom">
+ 				<input type="radio" name="radio" data-idx="1">
+ 				<span class="radio__label">Custom 1</span>
+ 			</label>
+ 			<label class="radio--custom">
+ 				<input type="radio" name="radio" data-idx="2">
+ 				<span class="radio__label">Custom 2</span>
+ 			</label>
+ 			<label class="radio--custom">
+ 				<input type="radio" name="radio" data-idx="3">
+ 				<span class="radio__label">Custom 3</span>
+ 			</label>
+ 		</div>
+ 	</form>
  	
 </div>
 <!-- //wrap -->
@@ -312,16 +331,30 @@ var checkboxCheck = function(el){
 		el.setAttribute(d, 'true');
 	};
 };
-document.getElementById('checkboxCustom').onclick = function(){
+document.checkboxForm.checkboxCustom.onclick = function(){
 	checkboxCheck(this);
 };
-document.getElementById('checkboxSlider').onclick = function(){
+document.checkboxForm.checkboxSlider.onclick = function(){
 	checkboxCheck(this);
 };
-document.getElementById('checkboxToggle').onclick = function(){
+document.checkboxForm.checkboxToggle.onclick = function(){
 	checkboxCheck(this);
 };
 
+var radioEl = document.radioForm.radio;
+radioEl.current = null;
+for(var i=0 ; i<radioEl.length ; i++){
+	radioEl[i].onclick = function(){
+		var d = 'checked',
+			c = this.getAttribute(d),
+			idx = this.getAttribute('data-idx');
+		if(radioEl.current && radioEl.current != idx ){
+			radioEl[radioEl.current].setAttribute(d, 'false');
+		};
+		this.setAttribute(d, 'true');
+		radioEl.current = this.getAttribute('data-idx');
+	};
+};
 </script>
 
 
