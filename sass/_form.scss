@@ -6,6 +6,9 @@
 		position: relative;
 		margin-bottom: rem(16);
 	}
+	.label {
+		font-size: rem(12); font-weight: 500; color:#777;
+	}
 }
 @mixin form--default {
 	@include form--base;

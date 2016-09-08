@@ -365,7 +365,7 @@ input[data-role="button"]:checked + .btn { border-color: green; color: green; }
 
 /* checkbox */
 .checkbox { display: inline-block; }
-.checkbox .checkbox__label { vertical-align: middle; }
+.checkbox__label { vertical-align: middle; }
 
 .checkbox--custom { display: inline-block; position: relative; }
 .checkbox--custom input { position: absolute; left: 0; /*  z-index: -1; */ opacity: 0; }
@@ -414,16 +414,19 @@ input[data-role="button"]:checked + .btn { border-color: green; color: green; }
 
 /* form */
 .form .form-field { position: relative; margin-bottom: 16px; }
+.form .label { font-size: 12px; font-weight: 500; color: #777; }
 .form .label { display: block; margin-bottom: 5px; }
 .form .input { width: 100%; }
 
 .form--horizontal .form-field { position: relative; margin-bottom: 16px; }
+.form--horizontal .label { font-size: 12px; font-weight: 500; color: #777; }
 .form--horizontal .form-field { overflow: hidden; }
 .form--horizontal .form-field--offset { margin-left: 30%; }
 .form--horizontal .label { float: left; width: 30%; line-height: 34px; }
 .form--horizontal .input { width: 70%; }
 
 .form--inline .form-field { position: relative; margin-bottom: 16px; }
+.form--inline .label { font-size: 12px; font-weight: 500; color: #777; }
 .form--inline .label { display: block; margin-bottom: 5px; }
 .form--inline .input { width: 100%; }
 @media only screen and (min-width: 601px) { .form--inline .form-field { display: inline-block; margin-right: 10px; margin-bottom: 0; }
