@@ -73,7 +73,7 @@
 
 		<h4 class="h4">Error</h4>
 		<input type="text" name="error" id="error" placeholder="error" class="input input--error">
-		<input type="text" name="error" id="error" placeholder="error focused" class="input input--error input--focus">
+		<input type="text" name="error" id="error-focus" placeholder="error focused" class="input input--error input--focus">
 
 		<h4 class="h4">Loading</h4>
 		<div class="ex-loading">
@@ -86,11 +86,11 @@
 				<i class="ico ico-loading"></i>
 			</div>
 			<div class="input-field ico--left">
-				<input type="text" name="loading-l" id="loading-l" placeholder="loading-l focused" class="input input--focus">
+				<input type="text" name="loading-l2" id="loading-l2" placeholder="loading-l focused" class="input input--focus">
 				<i class="ico ico-loading"></i>
 			</div>
 			<div class="input-field ico--right">
-				<input type="text" name="loading-r" id="loading-r" placeholder="loading-r focused" class="input input--focus">
+				<input type="text" name="loading-r2" id="loading-r2" placeholder="loading-r focused" class="input input--focus">
 				<i class="ico ico-loading"></i>
 			</div>
 		</div>
@@ -169,18 +169,18 @@
 	<h3 class="h3">Size</h3>
 	<div class="row ex-input-size">
 		<h4 class="h4">Default</h4>
-		<input type="text" name="default" id="default" placeholder="default" class="input">
+		<input type="text" name="default" id="input-size-default" placeholder="default" class="input">
 		<h4 class="h4">Large</h4>
-		<input type="text" name="large" id="large" placeholder="large" class="input input--l">
+		<input type="text" name="large" id="input-size-large" placeholder="large" class="input input--l">
 		<h4 class="h4">small</h4>
-		<input type="text" name="small" id="small" placeholder="small" class="input input--s">
+		<input type="text" name="small" id="input-size-small" placeholder="small" class="input input--s">
 	</div>
 	
 
 	<h2 class="h2">Textarea</h2>
 	<textarea name="textarea" placeholder="Textarea" class="textarea"></textarea>
 
-	<h2 class="h2">select</h2>
+	<h2 class="h2">Select</h2>
 	<h3 class="h3">Html select</h3>
 	<div class="form">
 		<div class="form-field">
@@ -218,29 +218,61 @@
  	<h2 class="h2">Checkbox</h2>
  	<div class="form">
  		<div class="form-field">
- 			<div vlass="checkbox">
- 				<input type="checkbox" name="checkbox" id="checkbox">
- 				<label for="checkbox">Default</label>
+ 			<div class="checkbox-field">
+ 				<input type="checkbox" name="checkboxDeafult" id="checkboxDeafult" class="checkbox">
+ 				<label for="checkboxDeafult" class="label--checkbox">Default</label>
  			</div>
  		</div>
  		<div class="form-field">
- 			<div class="checkbox--custom">
- 				<input type="checkbox" name="checkbox" id="checkboxCustom" data-checked="false">
+ 			<div class="checkbox-field--custom">
+ 				<input type="checkbox" name="checkboxCustom" id="checkboxCustom">
  				<label for="checkboxCustom">Custom</label>
  			</div>
  		</div>
  		<div class="form-field">
- 			<div class="checkbox--slider">
- 				<input type="checkbox" name="checkbox" id="checkboxSlider">
+ 			<div class="checkbox-field--slider">
+ 				<input type="checkbox" name="checkboxSlider" id="checkboxSlider">
  				<label for="checkboxSlider">Slider</label>
  			</div>
  		</div>
  		<div class="form-field">
- 			<div class="checkbox--toggle">
- 				<input type="checkbox" name="checkbox" id="checkboxToggle">
+ 			<div class="checkbox-field--toggle">
+ 				<input type="checkbox" name="checkboxToggle" id="checkboxToggle">
  				<label for="checkboxToggle">Toggle</label>
  			</div>
  		</div>
+ 	</div>
+
+ 	<h2 class="h2">Radio</h2>
+ 	<div class="form">
+ 		<div class="form-field">
+ 			<div class="radio-field">
+ 				<input type="radio" name="radioDefault" id="radioDefault" class="radio">
+ 				<label for="radioDefault" class="label--radio">Default</label>
+ 			</div>
+ 		</div>
+ 		<div class="form-field">
+ 			<div class="radio-field--custom">
+ 				<input type="radio" name="radioCustom" id="radioCustom1" class="radio">
+ 				<label for="radioCustom1"><span class="label__txt">Custom 1</span></label>
+ 			</div>
+ 			<div class="radio-field--custom">
+ 				<input type="radio" name="radioCustom" id="radioCustom2" class="radio">
+ 				<label for="radioCustom2">Custom 2</label>
+ 			</div>
+ 			<div class="radio-field--custom">
+ 				<input type="radio" name="radioCustom" id="radioCustom3" class="radio">
+ 				<label >Custom 3</label>
+ 			</div>
+ 		</div>
+		
+		<div class="form">
+ 			<label class="Radio">
+ 				<input type="radio" class="Radio__input" name="inline_radios" value="on">
+ 				<span class="Radio__label">Pick me</span>
+ 			</label>
+		</div>
+
  	</div>
  	
 </div>
@@ -248,8 +280,8 @@
 
 <!-- javacript -->
 <script>
-var checkboxToggle = function(el){
-	var d = 'data-checked',
+var checkboxCheck = function(el){
+	var d = 'checked',
 		c = el.getAttribute(d);
 	if( c == 'true' ) {
 		el.setAttribute(d, 'false');
@@ -258,14 +290,15 @@ var checkboxToggle = function(el){
 	};
 };
 document.getElementById('checkboxCustom').onclick = function(){
-	checkboxToggle(this);
+	checkboxCheck(this);
 };
-/*document.getElementById('checkboxSlider').onclick = function(){
-	checkboxToggle(this);
+document.getElementById('checkboxSlider').onclick = function(){
+	checkboxCheck(this);
 };
 document.getElementById('checkboxToggle').onclick = function(){
-	checkboxToggle(this);
-};*/
+	checkboxCheck(this);
+};
+
 </script>
 
 

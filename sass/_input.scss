@@ -146,7 +146,7 @@
 	}
 }
 
-// textarea
+/* textarea */
 .textarea {
 	@include input-style;
 	display: block;
@@ -156,7 +156,7 @@
 	resize: vertical;
 }
 
-// select
+/* select */
 @mixin select--base {
 	@include input-style;
 	display: inline-block;
@@ -179,45 +179,164 @@
 	}
 }
 
-// checkbox
-.checkbox {
-
-}
-.checkbox--custom {
+/* checkbox */
+@mixin checkbox--custom {
 	position: relative;
 	input {
 		z-index: -1;
 		opacity: 0;
 	}
 	label {
-		cursor: pointer;
-		-webkit-user-select: none;
-		-moz-user-select: none;
-		-ms-user-select: none;
-		user-select: none;
+		font-size: rem(14); color: #333;
+		// cursor: pointer;
+		-webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none; 
+	}
+}
+.checkbox-field {
+
+}
+.checkbox-field--custom {
+	@include checkbox--custom;
+	label {
 		&:before{
 			content: '';
 			position: absolute; top: 0; left: 0;
-			width: 17px; height: 17px;
+			width: rem(17); height: rem(17);
 			box-sizing: border-box;
 			border-radius: .21428571rem; border: 1px solid #D4D4D5;
 			background: #fff;
 		}
 	}
-	input[data-checked="true"] + label:after {
+	input[checked="true"] + label:after {
 		content: 'v';
 		position: absolute; top: 0; left: 0;
-		width: 17px; height: 17px;
+		width: rem(17); height: rem(17);
 		text-align: center;
 	}
-	input:focus + label:before {
-		border-color: #85b7d9; border-width: 2px;
+	input[checked="true"]:focus + label:before {
+		border-color: $outline-color; 
 	}
-
 }
-.checkbox--slider {
-
+.checkbox-field--slider {
+	@include checkbox--custom;
+	label {
+		position: absolute; left: 0;
+		&:before{
+			content: '';
+			display: inline-block;
+			width: rem(50); height: 3px;
+			margin-right: rem(10);
+			box-sizing: border-box;
+			background-color: #f3f3f3;
+			vertical-align: middle;
+			@include transition( background, .3s, ease );
+		}
+		&:after{
+			content: '';
+			position: absolute; top: rem(-1); left: 0; z-index: 2;
+			width: rem(20); height: rem(20);
+			box-shadow: 0 1px 2px 0 rgba(34,36,38,.15), 0 0 0 1px rgba(34,36,38,.15) inset;
+			border-radius: 500rem;
+			@include background-gradient(#fff, #f2f2f2);
+			@include transition( left, .3s, ease );
+		}
+	}
+	input[checked="true"] + label:before {
+		background-color: #545454;
+	}
+	input[checked="true"] + label:after {
+		left: 32px;
+	}
+	input:focus + label:before {
+	}
+	input[checked="true"]:focus + label:before {
+	}
 }
-.checkbox--toggle {
+.checkbox-field--toggle {
+	@include checkbox--custom;
+	label {
+		position: absolute; left: 0;
+		&:before{
+			content: '';
+			display: inline-block;
+			width: rem(50); height: rem(20);
+			margin-right: rem(10);
+			box-sizing: border-box;
+			background-color: #f3f3f3;
+			vertical-align: middle;
+			@include border-radius(500rem);
+			@include transition( background, .3s, ease );
 
+		}
+		&:after{
+			content: '';
+			position: absolute; top: rem(-1); left: 0; z-index: 2;
+			width: rem(20); height: rem(20);
+			box-shadow: 0 1px 2px 0 rgba(34,36,38,.15), 0 0 0 1px rgba(34,36,38,.15) inset;
+			border-radius: 500rem;
+			@include background-gradient(#fff, #f2f2f2);
+			@include transition( left, .3s, ease );
+		}
+	}
+	input[checked="true"] + label:before {
+		background-color: #0d71bb;
+	}
+	input[checked="true"] + label:after {
+		left: 32px;
+	}
+	input:focus + label:after {
+		// border:solid 2px $outline-color; 
+	}
 }
+
+/* radio */
+.radio-field--custom {
+	display: inline-block;
+	@include checkbox--custom;
+	input {
+		position: absolute; top: 0; left: 0;
+	}
+	label {
+		display: block;
+		padding-left: rem(26);
+		&:before{
+			content: '';
+			position: absolute; top: 0; left: 0;
+			width: rem(15); height: rem(15);
+			box-sizing: border-box;
+			@include border-radius( 500rem ); 
+			border: 1px solid #D4D4D5;
+			background: #fff;
+		}
+		&:after {
+			content: '';
+			position: absolute; top: 4px; left: 4px;
+			width: rem(7); height: rem(7);
+			@include border-radius( 500rem ); 
+			background-color: #fff;
+		}
+	}
+	input[checked="true"] + label:after {
+		background-color: #000;
+	}
+	input:focus + label:before {
+		border-color: $outline-color; 
+	}
+	input[checked="true"] + label {
+		background-color: red;
+	}
+}
+
+
+/* label */
+.label {
+	font-size: rem(12); font-weight: 500; color:#777;
+}
+.label--checkbox,
+.label--radio{
+	font-size: rem(14); color: #333;
+	vertical-align: middle;
+}
+
+
+

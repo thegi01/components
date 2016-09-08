@@ -6,13 +6,6 @@
 		position: relative;
 		margin-bottom: rem(16);
 	}
-	.label {
-		font-size: rem(12); font-weight: 500; color:#777;
-		&--checkbox,
-		&--radio {
-			font-size: rem(14); color : #333;
-		}
-	}
 }
 @mixin form--default {
 	@include form--base;

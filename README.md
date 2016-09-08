@@ -50,6 +50,7 @@
 	- radio : vertical, inline
 	- selelct ui custom
 	- dropdown
+	- checkbox : tab key의 focus시 스타일
 
 ### 공통
 - reset 확인
@@ -59,6 +60,7 @@
 
 ### 의문 사항
 - input type button과 button의 차이는?
+- tab key의 focus시 스타일
 
 
 ### 추가 내용 정리

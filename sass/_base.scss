@@ -50,6 +50,7 @@ table {
 //     padding: 0
 // }
 
+
 // h
 h1, h2, h3, h4, h5, h6 {
     margin-top: 0; margin-bottom: rem(18);
@@ -80,6 +81,9 @@ h6, .h6 {
 .blind {
 	@include blind;
 }
+
+// Variable
+$outline-color : #85b7d9;
 
 // media query
 $media-m : "only screen and ( min-width : 601px )";
