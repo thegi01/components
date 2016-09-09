@@ -255,6 +255,6 @@ h6, .h6 { font-size: 0.75rem; }
 
 .ex__txt { margin-bottom: 1rem; font-size: 0.75rem; }
 
-.block--box { margin-top: 0.625rem; margin-bottom: 0.625rem; margin-right: 0.625rem; padding: 1.25rem; border: solid 1px #ccc; -webkit-border-radius: 4.2px; -moz-border-radius: 4.2px; border-radius: 4.2px; background-clip: padding-box; /* stops bg color from leaking outside the border: */ }
+.block--box { margin-top: 0.625rem; margin-bottom: 0.625rem; margin-right: 0.625rem; padding: 1.25rem; border: solid 1px #ccc; -webkit-border-radius: 4.2px; -moz-border-radius: 4.2px; border-radius: 4.2px; background-clip: padding-box; }
 
 /*# sourceMappingURL=ex-fieldset.css.map */

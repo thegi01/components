@@ -260,7 +260,7 @@ h6, .h6 { font-size: 0.75rem; }
 
 .ico-arr-prev, .ico-arr-next { width: 0.625rem; height: 0.625rem; background-color: green; }
 
-.ico-loading:after { width: 0.875rem; height: 0.875rem; -webkit-border-radius: 31.25rem; -moz-border-radius: 31.25rem; border-radius: 31.25rem; background-clip: padding-box; /* stops bg color from leaking outside the border: */ border-style: solid; border-width: 2px; border-color: #b1b1b1 #f3f3f3 #f3f3f3; -webkit-animation: button-spin .6s linear; animation: button-spin .6s linear; -webkit-animation-iteration-count: infinite; animation-iteration-count: infinite; }
+.ico-loading:after { width: 0.875rem; height: 0.875rem; -webkit-border-radius: 31.25rem; -moz-border-radius: 31.25rem; border-radius: 31.25rem; background-clip: padding-box; border-style: solid; border-width: 2px; border-color: #b1b1b1 #f3f3f3 #f3f3f3; -webkit-animation: button-spin .6s linear; animation: button-spin .6s linear; -webkit-animation-iteration-count: infinite; animation-iteration-count: infinite; }
 
 .ico-srch:after { width: 0.625rem; height: 0.625rem; background-color: gray; }
 
@@ -300,20 +300,20 @@ input[data-role="button"]:checked + .btn { border-color: green; color: green; }
 
 .btn-group { overflow: hidden; }
 .btn-group .btn--default { float: left; margin-right: -1px; }
-.btn-group--justify { display: table; width: 100%; table-layout: fixed; border-collapse: seperate; }
+.btn-group--justify { display: table; width: 100%; table-layout: fixed; border-collapse: separate; }
 .btn-group--justify .btn { display: table-cell; float: none; width: 1%; }
 
-.btn--default { -webkit-border-radius: 0.3em; -moz-border-radius: 0.3em; border-radius: 0.3em; background-clip: padding-box; /* stops bg color from leaking outside the border: */ }
+.btn--default { -webkit-border-radius: 0.3em; -moz-border-radius: 0.3em; border-radius: 0.3em; background-clip: padding-box; }
 
-.btn-group .btn--default:not(:nth-of-type(1)):not(:last-child) { -webkit-border-radius: 0; -moz-border-radius: 0; border-radius: 0; background-clip: padding-box; /* stops bg color from leaking outside the border: */ }
-.btn-group .btn--default:nth-of-type(1) { -webkit-border-top-right-radius: 0; -moz-border-top-right-radius: 0; border-top-right-radius: 0; background-clip: padding-box; /* stops bg color from leaking outside the border: */ -webkit-border-bottom-right-radius: 0; -moz-border-bottom-right-radius: 0; border-bottom-right-radius: 0; background-clip: padding-box; /* stops bg color from leaking outside the border: */ }
-.btn-group .btn--default:last-child { -webkit-border-top-left-radius: 0; -moz-border-top-left-radius: 0; border-top-left-radius: 0; background-clip: padding-box; /* stops bg color from leaking outside the border: */ -webkit-border-bottom-left-radius: 0; -moz-border-bottom-left-radius: 0; border-bottom-left-radius: 0; background-clip: padding-box; /* stops bg color from leaking outside the border: */ }
+.btn-group .btn--default:not(:nth-of-type(1)):not(:last-child) { -webkit-border-radius: 0; -moz-border-radius: 0; border-radius: 0; background-clip: padding-box; }
+.btn-group .btn--default:nth-of-type(1) { -webkit-border-top-right-radius: 0; -moz-border-top-right-radius: 0; border-top-right-radius: 0; background-clip: padding-box; -webkit-border-bottom-right-radius: 0; -moz-border-bottom-right-radius: 0; border-bottom-right-radius: 0; background-clip: padding-box; }
+.btn-group .btn--default:last-child { -webkit-border-top-left-radius: 0; -moz-border-top-left-radius: 0; border-top-left-radius: 0; background-clip: padding-box; -webkit-border-bottom-left-radius: 0; -moz-border-bottom-left-radius: 0; border-bottom-left-radius: 0; background-clip: padding-box; }
 
 /* ex */
 .wrap.ex { padding: 0.625rem 1.25rem; color: #333; }
 
 .ex__txt { margin-bottom: 1rem; font-size: 0.75rem; }
 
-.block--box { margin-top: 0.625rem; margin-bottom: 0.625rem; margin-right: 0.625rem; padding: 1.25rem; border: solid 1px #ccc; -webkit-border-radius: 4.2px; -moz-border-radius: 4.2px; border-radius: 4.2px; background-clip: padding-box; /* stops bg color from leaking outside the border: */ }
+.block--box { margin-top: 0.625rem; margin-bottom: 0.625rem; margin-right: 0.625rem; padding: 1.25rem; border: solid 1px #ccc; -webkit-border-radius: 4.2px; -moz-border-radius: 4.2px; border-radius: 4.2px; background-clip: padding-box; }
 
 /*# sourceMappingURL=ex-button.css.map */

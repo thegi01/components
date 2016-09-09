@@ -43,14 +43,17 @@
     	.ex-input-group .input {
     		margin-bottom: 0;
     	}
-    	.input-group,
-    	.input-group--contiguous {
+    	.input-group--fixed,
+    	.input-group--fixed--contiguous {
     		margin-bottom: 5px;
     	}
     	.ex-input-group-contiguous input{
 			width : 300px;
     	}
-    	
+    	.input-group--fluid,
+    	.input-group--mobile{
+    		margin-bottom: 10px;
+    	}
     </style>
 </head>
 <body>
@@ -77,7 +80,7 @@
 
 		<h4 class="h4">Loading</h4>
 		<div class="ex-loading">
-			<div class="input-field ico--left">
+			<div class="input-field ico--right">
 				<input type="text" name="loading-l" id="loading-l" placeholder="loading-l" class="input">
 				<i class="ico ico-loading"></i>
 			</div>
@@ -108,41 +111,107 @@
 		</div>
 		<div class="input-field ico--right">
 			<input type="search" name="seach" id="search" placeholder="search" class="input">
-			<button class="ico ico-srch btn"></button>
+			<button class="btn btn--plain btn---m ico ico-srch"></button>
 		</div>
 	</div>
 
-	<h3 class="h3">Input group</h3>
+	<h3 class="h3">Input group : fixed</h3>
 	<div class="row ex-input-group">
 		<h4 class="h4">Seperated</h4>
-		<div class="input-group">
+		<div class="input-group--fixed">
 			<input type="text" name="group-1" id="group-1" placeholder="input group 1" class="input">
 			<button class="btn btn--default btn--m">button</button>
 		</div>
-		<div class="input-group">
+		<div class="input-group--fixed">
 			<button class="btn btn--default btn--m">button</button>
 			<input type="text" name="group-2" id="group-2" placeholder="input group 2" class="input">
 		</div>
-		<div class="input-group">
+		<div class="input-group--fixed">
 			<button class="btn btn--default btn--m">button</button>
 			<input type="text" name="group-3" id="group-3" placeholder="input group 3" class="input">
 			<button class="btn btn--default btn--m">button</button>
 		</div>
 		<h4 class="h4">Contiguous</h4>
-		<div class="ex-input-group-contiguous">
-			<div class="input-group--contiguous">
+		<div class="ex-input-group--fixed-contiguous">
+			<div class="input-group--fixed--contiguous">
 				<input type="text" name="group-4" id="group-4" placeholder="input group 4" class="input">
 				<button class="btn btn--default btn--m">button</button>
 			</div>
-			<div class="input-group--contiguous">
+			<div class="input-group--fixed--contiguous">
 				<button class="btn btn--default btn--m">button</button>
 				<input type="text" name="group-5" id="group-5" placeholder="input group 5" class="input">
 			</div>
-			<div class="input-group--contiguous">
+			<div class="input-group--fixed--contiguous">
 				<button class="btn btn--default btn--m">button</button>
 				<input type="text" name="group-6" id="group-6" placeholder="input group 6" class="input">
 				<button class="btn btn--default btn--m">button</button>
 			</div>
+		</div>
+	</div>
+
+	<h3 class="h3">Input group (IE8 : add js) : fluid  </h3>
+	<div class="row ex-input-group">
+		<div class="input-group--fluid">
+			<input type="text" name="group-1" id="group-1" placeholder="input group 1" class="input">
+			<div class="input-group-btn">
+				<button class="btn btn--default btn--m">button</button>
+			</div>
+		</div>
+		<div class="input-group--fluid">
+			<input type="text" name="group-1" id="group-1" placeholder="input group 1" class="input">
+			<div class="input-group-btn">
+				<button class="btn btn--default btn--m">button</button>
+				<button class="btn btn--default btn--m">button</button>
+			</div>
+		</div>
+		<div class="input-group--fluid">
+			<div class="input-group-btn">
+				<button class="btn btn--default btn--m">button</button>
+			</div>
+			<input type="text" name="group-2" id="group-2" placeholder="input group 2" class="input">
+		</div>
+		<div class="input-group--fluid">
+			<div class="input-group-btn">
+				<button class="btn btn--default btn--m">button</button>
+				<button class="btn btn--default btn--m">button</button>
+			</div>
+			<input type="text" name="group-2" id="group-2" placeholder="input group 2" class="input">
+		</div>
+		<div class="input-group--fluid">
+			<div class="input-group-btn">
+				<button class="btn btn--default btn--m">button</button>
+			</div>
+			<input type="text" name="group-3" id="group-3" placeholder="input group 3" class="input">
+			<div class="input-group-btn">
+				<button class="btn btn--default btn--m">button</button>
+			</div>
+		</div>
+	</div>
+
+	<h3 class="h3">Input group : mobile</h3>
+	<div class="row ex-input-group">
+		<div class="input-group--mobile">
+			<input type="text" name="group-1" id="group-1" placeholder="input group 1" class="input">
+			<button class="btn btn--default btn--m">button</button>
+		</div>
+		<div class="input-group--mobile">
+			<input type="text" name="group-1" id="group-1" placeholder="input group 1" class="input">
+			<button class="btn btn--default btn--m">button</button>
+			<button class="btn btn--default btn--m">button</button>
+		</div>
+		<div class="input-group--mobile">
+			<button class="btn btn--default btn--m">button</button>
+			<input type="text" name="group-2" id="group-2" placeholder="input group 2" class="input">
+		</div>
+		<div class="input-group--mobile">
+			<button class="btn btn--default btn--m">button</button>
+			<button class="btn btn--default btn--m">button</button>
+			<input type="text" name="group-2" id="group-2" placeholder="input group 2" class="input">
+		</div>
+		<div class="input-group--mobile">
+			<button class="btn btn--default btn--m">button</button>
+			<input type="text" name="group-3" id="group-3" placeholder="input group 3" class="input">
+			<button class="btn btn--default btn--m">button</button>
 		</div>
 	</div>
 
@@ -181,7 +250,7 @@
 	<textarea name="textarea" placeholder="Textarea" class="textarea"></textarea>
 
 	<h2 class="h2">Select</h2>
-	<h3 class="h3">Html select</h3>
+	<h3 class="h3">Select Default</h3>
 	<div class="form">
 		<div class="form-field">
 			<select name="select" class="select" style="width:100%;">
@@ -193,7 +262,7 @@
 			</select>
 		</div>
 	</div>
-	<h3 class="h3">Html select modify : ie not supply</h3>
+	<h3 class="h3">Select coustom : ie not supply</h3>
 	<div class="form">
 		<div class="form-field">
 			<select name="select" class="select--arr">
@@ -220,25 +289,25 @@
  		<div class="form-field">
  			<label class="checkbox">
  				<input type="checkbox" name="checkboxDeafult">
- 				<span class="checkbox__label">Default</span>
+ 				<span class="checkbox__label">Checkbox Default</span>
  			</label>
  		</div>
  		<div class="form-field">
  			<label class="checkbox--custom">
  				<input type="checkbox" name="checkboxCustom">
- 				<span class="checkbox__label">Custom</span>
+ 				<span class="checkbox__label">Checkbox Custom</span>
  			</label>
  		</div>
  		<div class="form-field">
  			<label class="checkbox--slider">
  				<input type="checkbox" name="checkboxSlider">
- 				<span class="checkbox__label">Slider</span>
+ 				<span class="checkbox__label">Checkbox Slider</span>
  			</label>
  		</div>
  		<div class="form-field">
  			<label class="checkbox--toggle">
  				<input type="checkbox" name="checkboxToggle">
- 				<span class="checkbox__label">Toggle</span>
+ 				<span class="checkbox__label">Checkbox Toggle</span>
  			</label>
  		</div>
  	</form>
@@ -249,18 +318,18 @@
  			<label class="radio">
  				<input type="radio" name="radio" data-idx="0">
  				<span class="radio__label">Default</span>
- 			</div>
+ 			</label>
  			<label class="radio--custom">
  				<input type="radio" name="radio" data-idx="1">
- 				<span class="radio__label">Custom 1</span>
+ 				<span class="radio__label">Custom</span>
  			</label>
  			<label class="radio--custom">
  				<input type="radio" name="radio" data-idx="2">
- 				<span class="radio__label">Custom 2</span>
+ 				<span class="radio__label">Custom</span>
  			</label>
  			<label class="radio--custom">
  				<input type="radio" name="radio" data-idx="3">
- 				<span class="radio__label">Custom 3</span>
+ 				<span class="radio__label">Custom</span>
  			</label>
  		</div>
  	</form>
@@ -296,16 +365,16 @@ for(var i=0 ; i<radioEl.length ; i++){
 		var d = 'checked',
 			c = this.getAttribute(d),
 			idx = this.getAttribute('data-idx');
-		if(radioEl.current && radioEl.current != idx ){
+		if(radioEl.current == idx )return;
+		if(radioEl.current){
 			radioEl[radioEl.current].setAttribute(d, 'false');
 		};
 		this.setAttribute(d, 'true');
 		radioEl.current = this.getAttribute('data-idx');
 	};
 };
+
 </script>
-
-
 <!-- //javacript -->
 
 </body>

@@ -260,7 +260,7 @@ h6, .h6 { font-size: 12px; }
 
 .ico-arr-prev, .ico-arr-next { width: 10px; height: 10px; background-color: green; }
 
-.ico-loading:after { width: 14px; height: 14px; -webkit-border-radius: 500px; -moz-border-radius: 500px; border-radius: 500px; background-clip: padding-box; /* stops bg color from leaking outside the border: */ border-style: solid; border-width: 2px; border-color: #b1b1b1 #f3f3f3 #f3f3f3; -webkit-animation: button-spin .6s linear; animation: button-spin .6s linear; -webkit-animation-iteration-count: infinite; animation-iteration-count: infinite; }
+.ico-loading:after { width: 14px; height: 14px; -webkit-border-radius: 500px; -moz-border-radius: 500px; border-radius: 500px; background-clip: padding-box; border-style: solid; border-width: 2px; border-color: #b1b1b1 #f3f3f3 #f3f3f3; -webkit-animation: button-spin .6s linear; animation: button-spin .6s linear; -webkit-animation-iteration-count: infinite; animation-iteration-count: infinite; }
 
 .ico-srch:after { width: 10px; height: 10px; background-color: gray; }
 
@@ -300,7 +300,7 @@ input[data-role="button"]:checked + .btn { border-color: green; color: green; }
 
 .btn-group { overflow: hidden; }
 .btn-group .btn--default { float: left; margin-right: -1px; }
-.btn-group--justify { display: table; width: 100%; table-layout: fixed; border-collapse: seperate; }
+.btn-group--justify { display: table; width: 100%; table-layout: fixed; border-collapse: separate; }
 .btn-group--justify .btn { display: table-cell; float: none; width: 1%; }
 
 /* ex */
@@ -308,6 +308,6 @@ input[data-role="button"]:checked + .btn { border-color: green; color: green; }
 
 .ex__txt { margin-bottom: 16px; font-size: 12px; }
 
-.block--box { margin-top: 10px; margin-bottom: 10px; margin-right: 10px; padding: 20px; border: solid 1px #ccc; -webkit-border-radius: 4.2px; -moz-border-radius: 4.2px; border-radius: 4.2px; background-clip: padding-box; /* stops bg color from leaking outside the border: */ }
+.block--box { margin-top: 10px; margin-bottom: 10px; margin-right: 10px; padding: 20px; border: solid 1px #ccc; -webkit-border-radius: 4.2px; -moz-border-radius: 4.2px; border-radius: 4.2px; background-clip: padding-box; }
 
 /*# sourceMappingURL=ex-button-ie.css.map */

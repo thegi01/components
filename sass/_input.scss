@@ -18,6 +18,7 @@
 	// focus
 	&:focus, 
 	&--focus {
+		position: relative;
 		outline: 0;
 		border-color : #85B7D9;
 		&::-webkit-input-placeholder{
@@ -70,6 +71,30 @@
 	}
 }
 
+
+// input-field2 : gte ie8
+.input-field2 {
+    display: table;
+    position: relative;
+    border-collapse: separate;;
+    box-sizing : border-box;
+	.input {
+		display: table-cell;
+		width:100%;
+		// float: left;
+	}
+	.ico {
+		display: table-cell;
+		width : 1%;
+		&:after {
+		    content: '';
+		    display: inline-block;
+		    width : rem(40); height:rem(36);
+		    background-color: gray;
+		}
+	}
+}
+
 // input-field
 .input-field {
     display: inline-block;
@@ -110,9 +135,11 @@
         margin-top: rem(-9); margin-left: rem(-9);
     }
 }
-.input-group--contiguous {
+
+// input group : fixed
+.input-group--fixed--contiguous {
 	overflow: hidden;
-	input {
+	.input {
 		float: left;
 		position: relative;
 		&:first-child {
@@ -130,7 +157,7 @@
 			margin-left: -1px;
 		}
 	}
-	button {
+	.btn {
 		float: left;
 		&:first-child {
 			@include border-radius-single(top, right, 0);
@@ -145,6 +172,79 @@
 		}
 	}
 }
+
+// Input group : fluid
+// ie8 not supply
+// not selector, last-child is ie8 npt supply ---> js??
+.input-group--fluid {
+	display: table;
+	border-collapse: separate;
+	.input {
+		display: table-cell;
+		width: 100%;
+	}	
+	.input-group-btn {
+		display: table-cell;
+		width: 1%;
+		padding-right : 6px;
+		white-space: nowrap;
+		.btn {
+			display: inline-block;
+			margin-right: -6px;
+		}
+	}
+	.input + .input-group-btn > .btn:first-child {
+		margin-left: -1px;
+	}
+	.input-group-btn:first-child > .btn:last-child { 
+		margin-right: -7px;
+	}
+	.input:first-child,
+	.input + .input-group-btn > .btn:not(:last-child),
+	.input-group-btn:first-child > .btn {
+		@include border-radius-single(top, right, 0);
+		@include border-radius-single(bottom, right, 0);
+	}
+	.input + .input-group-btn > .btn,
+	.input-group-btn:first-child > .btn:not(:first-child),
+	.input-group-btn:first-child + .input {
+		@include border-radius-single(top, left, 0);
+		@include border-radius-single(bottom, left, 0);
+	}
+	.input:not(:first-child):not(:last-child){
+		@include border-radius(0);
+	}
+}
+
+// input-group--mobile
+.input-group--mobile {
+	display: flex;
+	.input {
+		-webkit-box-flex: 1; -webkit-flex: 1 0 auto; -ms-flex: 1 0 auto; flex: 1 0 auto;
+	}
+	.btn {
+		-webkit-box-flex: 0; -webkit-flex: 0 0 auto; -ms-flex: 0 0 auto; flex: 0 0 auto;
+	}
+	.input:not(:first-child),
+	.btn:not(:first-child) {
+		margin-left: -1px;
+	}
+	.input:not(:first-child):not(:last-child),
+	.btn:not(:first-child):not(:last-child){
+		@include border-radius(0);
+	}
+	.input:first-child,
+	.btn:first-child {
+		@include border-radius-single(top, right , 0);
+		@include border-radius-single(bottom, right , 0);
+	}
+	.input:last-child,
+	.btn:last-child {
+		@include border-radius-single(top, left , 0);
+		@include border-radius-single(bottom, left, 0);
+	}
+}
+
 
 /* textarea */
 .textarea {
@@ -180,8 +280,12 @@
 }
 
 /* checkbox */
-@mixin checkbox--custom-common {
+@mixin checkbox-common {
 	display: inline-block;
+	margin-right: rem(10);
+}
+@mixin checkbox--custom-common {
+	@include checkbox-common;
 	position: relative;
 	input {
 		position: absolute; left: 0;/*  z-index: -1; */
@@ -194,12 +298,13 @@
 	}
 }
 .checkbox {
-	display: inline-block;
+	@include checkbox-common;
 	input {
 
 	}
 	&__label {
 		vertical-align: middle;
+		white-space: nowrap;
 	}
 }
 .checkbox--custom {
@@ -304,17 +409,17 @@
 
 /* radio */
 .radio {
-	display: inline-block;
+	@include checkbox-common;
 	input {
 
 	}
 	&__label {
 		vertical-align: middle;
+		white-space: nowrap;
 	}
 }
 .radio--custom {
 	@include checkbox--custom-common;
-	margin-right: rem(10);
 	input {
 		position: absolute; top: 0; left: 0;
 	}
