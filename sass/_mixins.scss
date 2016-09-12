@@ -31,24 +31,42 @@
     -webkit-box-orient: vertical;
     word-wrap:break-word; 
 }
+@mixin prefix($property, $value, $prefixes: ()) {
+  @each $prefix in $prefixes {
+    #{'-' + $prefix + '-' + $property}: $value;
+  }
+  // Output standard non-prefixed declaration
+  #{$property}: $value;
+}
+@mixin user-select( $value ){
+    @include prefix(user-select, $value, webkit moz ms);
+    // -webkit-user-select: $property; 
+    // -moz-user-select: $property; 
+    // -ms-user-select: $property; 
+    // user-select: $property; 
+}
+
 // box-sizing 
-@mixin box-sizing($box-model) {
-    -webkit-box-sizing: $box-model; // Safari <= 5
-       -moz-box-sizing: $box-model; // Firefox <= 19
-            box-sizing: $box-model;
+@mixin box-sizing( $box-model ) {
+    @include prefix(box-sizing, $box-model, webkit moz);
+    // -webkit-box-sizing: $box-model; // Safari <= 5
+    //    -moz-box-sizing: $box-model; // Firefox <= 19
+    //         box-sizing: $box-model;
 }
 // border-radius
 @mixin border-radius( $radius ){
-	-webkit-border-radius : $radius;
-	   -moz-border-radius : $radius;
-			border-radius : $radius;
+    @include prefix(border-radius, $radius, webkit moz);
+	// -webkit-border-radius : $radius;
+	//    -moz-border-radius : $radius;
+	// 		border-radius : $radius;
 	background-clip: padding-box;  // stops bg color from leaking outside the border
 }
 // border-radius-single
 @mixin border-radius-single( $pos1, $pos2, $radius ){
-	-webkit-border-#{$pos1}-#{$pos2}-radius : $radius;
-	   -moz-border-#{$pos1}-#{$pos2}-radius : $radius;
-			border-#{$pos1}-#{$pos2}-radius : $radius;
+    @include prefix(border-#{$pos1}-#{$pos2}-radius, $radius, webkit moz);
+	// -webkit-border-#{$pos1}-#{$pos2}-radius : $radius;
+	//    -moz-border-#{$pos1}-#{$pos2}-radius : $radius;
+	// 		border-#{$pos1}-#{$pos2}-radius : $radius;
 	background-clip: padding-box;  // stops bg color from leaking outside the border
 }
 // gradient
@@ -61,21 +79,30 @@
 }
 // transform
 @mixin transition( $property, $duration, $ani ){
-    -webkit-transition: $property $duration $ani; 
-    -moz-transition: $property $duration $ani; 
-    -o-transition: $property $duration $ani; 
-    transition: $property $duration $ani;
+    @include prefix(transition, $property $duration $ani, webkit moz o);
+    // -webkit-transition: $property $duration $ani; 
+    // -moz-transition: $property $duration $ani; 
+    // -o-transition: $property $duration $ani; 
+    // transition: $property $duration $ani;
 }
 @mixin transitionDuration($time:0.5s){
-    -webkit-transition-duration : $time; 
-    -moz-transition-duration : $time; 
-    -o-transition-duration : $time; 
-    transition-duration : $time;
+    @include prefix(transition-duration, $time, webkit moz o);
+    // -webkit-transition-duration : $time; 
+    // -moz-transition-duration : $time; 
+    // -o-transition-duration : $time; 
+    // transition-duration : $time;
 }
 @mixin tarnslate3d($x, $y, $z){
-    -webkit-transform : translate3d($x, $y, $z);
-    -moz-transform : translate3d($x, $y, $z);
-    -o-transform : translate3d($x, $y, $z);
-    transform : translate3d($x, $y, $z);
+    @include prefix(transform, translate3d($x, $y, $z), webkit moz o);
+    // -webkit-transform : translate3d($x, $y, $z);
+    // -moz-transform : translate3d($x, $y, $z);
+    // -o-transform : translate3d($x, $y, $z);
+    // transform : translate3d($x, $y, $z);
 }
-    
+// flex
+@mixin flex( $val ){
+    @include prefix(flex, $val, webkit ms);
+    // -webkit-flex: $val; 
+    // -ms-flex: $val; 
+    // flex: $val;
+}

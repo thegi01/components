@@ -27,9 +27,8 @@ $btn-radius : 0.3em;
     background: none;
     text-align: center; vertical-align: middle; white-space: nowrap;
     cursor: pointer;
-    -webkit-user-select : none; -moz-user-select : none; -ms-user-select : none; user-select : none;
-    -ms-touch-action : manipulation;
-        touch-action : manipulation;
+    @include user-select(none);
+    -ms-touch-action : manipulation; touch-action : manipulation;
    
     &[disabled],
     &.btn--disabled {

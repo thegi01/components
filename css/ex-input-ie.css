@@ -347,7 +347,7 @@ input[data-role="button"]:checked + .btn { border-color: green; color: green; }
 .input-group--table .input-group-btn { display: table-cell; width: 1%; padding-right: 6px; white-space: nowrap; }
 .input-group--table .input-group-btn .btn { display: inline-block; margin-right: -6px; }
 .input-group--table .input + .input-group-btn > .btn:first-child { margin-left: -1px; }
-.input-group--table .input-group-btn:first-child > .btn:last-child { margin-right: -7px; }
+.input-group--table .input-group-btn:first-child > .btn:last-child, .input-group--table .input-group-btn:first-child > .btn.last-child { margin-right: -7px; }
 .input-group--table .input:first-child, .input-group--table .input + .input-group-btn > .btn:not(:last-child), .input-group--table .input-group-btn:first-child > .btn { -webkit-border-top-right-radius: 0; -moz-border-top-right-radius: 0; border-top-right-radius: 0; background-clip: padding-box; -webkit-border-bottom-right-radius: 0; -moz-border-bottom-right-radius: 0; border-bottom-right-radius: 0; background-clip: padding-box; }
 .input-group--table .input + .input-group-btn > .btn, .input-group--table .input-group-btn:first-child > .btn:not(:first-child), .input-group--table .input-group-btn:first-child + .input { -webkit-border-top-left-radius: 0; -moz-border-top-left-radius: 0; border-top-left-radius: 0; background-clip: padding-box; -webkit-border-bottom-left-radius: 0; -moz-border-bottom-left-radius: 0; border-bottom-left-radius: 0; background-clip: padding-box; }
 .input-group--table .input:not(:first-child):not(:last-child) { -webkit-border-radius: 0; -moz-border-radius: 0; border-radius: 0; background-clip: padding-box; }

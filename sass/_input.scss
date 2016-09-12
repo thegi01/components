@@ -144,9 +144,9 @@
 	}
 }
 
-// Input group : fluid
+// Input group : table
 // ie8 not supply
-// not selector, last-child is ie8 npt supply ---> js??
+// not selector, :last-child is ie8 not supply ---> js??
 .input-group--table {
 	display: table;
 	border-collapse: separate;
@@ -167,7 +167,8 @@
 	.input + .input-group-btn > .btn:first-child {
 		margin-left: -1px;
 	}
-	.input-group-btn:first-child > .btn:last-child { 
+	.input-group-btn:first-child > .btn:last-child,
+	.input-group-btn:first-child > .btn.last-child { 
 		margin-right: -7px;
 	}
 	.input:first-child,
@@ -191,11 +192,13 @@
 .input-group--flex {
 	display: flex;
 	.input {
-		-webkit-box-flex: 1; -webkit-flex: 1 0 auto; -ms-flex: 1 0 auto; flex: 1 0 auto;
+		-webkit-box-flex: 1; 
+		@include flex(1 0 auto);
 		width:0; // small screen 
 	}
 	.btn {
-		-webkit-box-flex: 0; -webkit-flex: 0 0 auto; -ms-flex: 0 0 auto; flex: 0 0 auto;
+		-webkit-box-flex: 0; 
+		@include flex(0 0 auto);
 	}
 	.input:not(:first-child),
 	.btn:not(:first-child) {
@@ -270,7 +273,7 @@
 	.checkbox__label {
 		font-size: rem(14); color: #333;
 		cursor: pointer;
-		-webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none; 
+		@include user-select(none);
 	}
 }
 .checkbox {
