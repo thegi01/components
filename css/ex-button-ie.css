@@ -261,8 +261,13 @@ h6, .h6 { font-size: 12px; }
 .ico-arr-prev, .ico-arr-next { width: 10px; height: 10px; background-color: green; }
 
 .ico-loading:after { width: 14px; height: 14px; -webkit-border-radius: 500px; -moz-border-radius: 500px; border-radius: 500px; background-clip: padding-box; border-style: solid; border-width: 2px; border-color: #b1b1b1 #f3f3f3 #f3f3f3; -webkit-animation: button-spin .6s linear; animation: button-spin .6s linear; -webkit-animation-iteration-count: infinite; animation-iteration-count: infinite; }
+.input-field .ico-loading:after { margin-top: -9px; margin-left: -9px; }
 
 .ico-srch:after { width: 10px; height: 10px; background-color: gray; }
+.input-field .ico-srch:after { margin-top: -5px; margin-left: -5px; }
+
+.ico-rect:after { width: 10px; height: 10px; background-color: gray; }
+.input-field .ico-rect:after { margin-top: -5px; margin-left: -5px; }
 
 /* button */
 .btn { display: inline-block; border: 1px solid transparent; background: none; text-align: center; vertical-align: middle; white-space: nowrap; cursor: pointer; -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none; -ms-touch-action: manipulation; touch-action: manipulation; }

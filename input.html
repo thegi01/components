@@ -51,7 +51,7 @@
 			width : 300px;
     	}
     	.input-group--fluid,
-    	.input-group--mobile{
+    	.input-group--flex{
     		margin-bottom: 10px;
     	}
     </style>
@@ -77,41 +77,34 @@
 		<h4 class="h4">Error</h4>
 		<input type="text" name="error" id="error" placeholder="error" class="input input--error">
 		<input type="text" name="error" id="error-focus" placeholder="error focused" class="input input--error input--focus">
-
-		<h4 class="h4">Loading</h4>
-		<div class="ex-loading">
-			<div class="input-field ico--right">
-				<input type="text" name="loading-l" id="loading-l" placeholder="loading-l" class="input">
-				<i class="ico ico-loading"></i>
-			</div>
-			<div class="input-field ico--right">
-				<input type="text" name="loading-r" id="loading-r" placeholder="loading-r" class="input">
-				<i class="ico ico-loading"></i>
-			</div>
-			<div class="input-field ico--left">
-				<input type="text" name="loading-l2" id="loading-l2" placeholder="loading-l focused" class="input input--focus">
-				<i class="ico ico-loading"></i>
-			</div>
-			<div class="input-field ico--right">
-				<input type="text" name="loading-r2" id="loading-r2" placeholder="loading-r focused" class="input input--focus">
-				<i class="ico ico-loading"></i>
-			</div>
-		</div>
 	</div>
 
 	<h3 class="h3">Input field</h3>
+	<div class="ex__txt">기능이 없는 단순 아이콘을 넣는 ui, 굳이 쓰지 않으면 한다.</div>
 	<div class="ex-ico">
-		<div class="input-field ico--left">
+		<h4 class="h4">Default</h4>
+		<div class="input-field">
+			<i class="ico ico-rect"></i>
 			<input type="text" name="icon-1" id="icon-1" placeholder="Icon-left" class="input">
-			<i class="ico ico-srch"></i>
 		</div>
-		<div class="input-field ico--right">
+		<div class="input-field">
 			<input type="text" name="icon-2" id="icon-2" placeholder="Icon-right" class="input">
-			<i class="ico ico-srch"></i>
+			<i class="ico ico-rect"></i>
 		</div>
-		<div class="input-field ico--right">
-			<input type="search" name="seach" id="search" placeholder="search" class="input">
-			<button class="btn btn--plain btn---m ico ico-srch"></button>
+		<div class="input-field">
+			<input type="text" name="icon-3" id="icon-3" placeholder="Icon-right" class="input">
+			<button class="btn btn---m">
+				<i class="ico ico-rect"></i>
+			</button>
+		</div>
+		<h4 class="h4">Loading</h4>
+		<div class="input-field">
+			<i class="ico ico-loading"></i>
+			<input type="text" name="loading-l" id="loading-l" placeholder="loading-l" class="input">
+		</div>
+		<div class="input-field">
+			<input type="text" name="loading-r" id="loading-r" placeholder="loading-r" class="input">
+			<i class="ico ico-loading"></i>
 		</div>
 	</div>
 
@@ -119,46 +112,51 @@
 	<div class="row ex-input-group">
 		<h4 class="h4">Seperated</h4>
 		<div class="input-group--fixed">
-			<input type="text" name="group-1" id="group-1" placeholder="input group 1" class="input">
+			<input type="text" name="group-fixed-1" id="group-fixed-1" placeholder="input group 1" class="input">
 			<button class="btn btn--default btn--m">button</button>
 		</div>
 		<div class="input-group--fixed">
 			<button class="btn btn--default btn--m">button</button>
-			<input type="text" name="group-2" id="group-2" placeholder="input group 2" class="input">
+			<input type="text" name="group-fixed-2" id="group-fixed-2" placeholder="input group 2" class="input">
 		</div>
 		<div class="input-group--fixed">
 			<button class="btn btn--default btn--m">button</button>
-			<input type="text" name="group-3" id="group-3" placeholder="input group 3" class="input">
+			<input type="text" name="group-fixed-3" id="group-fixed-3" placeholder="input group 3" class="input">
 			<button class="btn btn--default btn--m">button</button>
 		</div>
 		<h4 class="h4">Contiguous</h4>
 		<div class="ex-input-group--fixed-contiguous">
 			<div class="input-group--fixed--contiguous">
-				<input type="text" name="group-4" id="group-4" placeholder="input group 4" class="input">
+				<input type="text" name="group-fixed-4" id="group-fixed-4" placeholder="input group 4" class="input">
 				<button class="btn btn--default btn--m">button</button>
 			</div>
 			<div class="input-group--fixed--contiguous">
 				<button class="btn btn--default btn--m">button</button>
-				<input type="text" name="group-5" id="group-5" placeholder="input group 5" class="input">
+				<input type="text" name="group-fixed-5" id="group-fixed-5" placeholder="input group 5" class="input">
 			</div>
 			<div class="input-group--fixed--contiguous">
 				<button class="btn btn--default btn--m">button</button>
-				<input type="text" name="group-6" id="group-6" placeholder="input group 6" class="input">
+				<input type="text" name="group-fixed-6" id="group-fixed-6" placeholder="input group 6" class="input">
 				<button class="btn btn--default btn--m">button</button>
 			</div>
 		</div>
 	</div>
 
-	<h3 class="h3">Input group (IE8 : add js) : fluid  </h3>
+	<h3 class="h3">Input group : display:table</h3>
+	<div class="ex__txt">
+		 <p>ie8 이상 지원</p>
+		 <p>ie8에서는 :last-child, :not 을 지원하지 않으므로 관련 js 추가해야함.</p>
+		 <p>Mibole에서 flex 보다 추천</p>
+	</div>
 	<div class="row ex-input-group">
 		<div class="input-group--fluid">
-			<input type="text" name="group-1" id="group-1" placeholder="input group 1" class="input">
+			<input type="text" name="group-fluid-1" id="group-fluid-1" placeholder="input group 1" class="input">
 			<div class="input-group-btn">
 				<button class="btn btn--default btn--m">button</button>
 			</div>
 		</div>
 		<div class="input-group--fluid">
-			<input type="text" name="group-1" id="group-1" placeholder="input group 1" class="input">
+			<input type="text" name="group-fluid-2" id="group-fluid-2" placeholder="input group 2" class="input">
 			<div class="input-group-btn">
 				<button class="btn btn--default btn--m">button</button>
 				<button class="btn btn--default btn--m">button</button>
@@ -168,49 +166,50 @@
 			<div class="input-group-btn">
 				<button class="btn btn--default btn--m">button</button>
 			</div>
-			<input type="text" name="group-2" id="group-2" placeholder="input group 2" class="input">
+			<input type="text" name="group-fluid-3" id="group-3" placeholder="input group 3" class="input">
 		</div>
 		<div class="input-group--fluid">
 			<div class="input-group-btn">
 				<button class="btn btn--default btn--m">button</button>
 				<button class="btn btn--default btn--m">button</button>
 			</div>
-			<input type="text" name="group-2" id="group-2" placeholder="input group 2" class="input">
+			<input type="text" name="group-fluid-4" id="group--fluid-4" placeholder="input group 4" class="input">
 		</div>
 		<div class="input-group--fluid">
 			<div class="input-group-btn">
 				<button class="btn btn--default btn--m">button</button>
 			</div>
-			<input type="text" name="group-3" id="group-3" placeholder="input group 3" class="input">
+			<input type="text" name="group--fluid-5" id="group--fluid-5" placeholder="input group 5" class="input">
 			<div class="input-group-btn">
 				<button class="btn btn--default btn--m">button</button>
 			</div>
 		</div>
 	</div>
 
-	<h3 class="h3">Input group : mobile</h3>
+	<h3 class="h3">Input group : css flex </h3>
+	<div class="ex__txt">320 size 잘림, input박스가 줄어들지 않음</div>
 	<div class="row ex-input-group">
-		<div class="input-group--mobile">
-			<input type="text" name="group-1" id="group-1" placeholder="input group 1" class="input">
+		<div class="input-group--flex">
+			<input type="text" name="group-flex-1" id="group-flex-1" placeholder="input group 1" class="input">
 			<button class="btn btn--default btn--m">button</button>
 		</div>
-		<div class="input-group--mobile">
-			<input type="text" name="group-1" id="group-1" placeholder="input group 1" class="input">
+		<div class="input-group--flex">
+			<input type="text" name="group-flex-2" id="group-flex-2" placeholder="input group 2" class="input">
 			<button class="btn btn--default btn--m">button</button>
 			<button class="btn btn--default btn--m">button</button>
 		</div>
-		<div class="input-group--mobile">
+		<div class="input-group--flex">
 			<button class="btn btn--default btn--m">button</button>
-			<input type="text" name="group-2" id="group-2" placeholder="input group 2" class="input">
+			<input type="text" name="group-flex-3" id="group-flex-3" placeholder="input group 3" class="input">
 		</div>
-		<div class="input-group--mobile">
+		<div class="input-group--flex">
 			<button class="btn btn--default btn--m">button</button>
 			<button class="btn btn--default btn--m">button</button>
-			<input type="text" name="group-2" id="group-2" placeholder="input group 2" class="input">
+			<input type="text" name="group-flex-4" id="group-flex-4" placeholder="input group 4" class="input">
 		</div>
-		<div class="input-group--mobile">
+		<div class="input-group--flex">
 			<button class="btn btn--default btn--m">button</button>
-			<input type="text" name="group-3" id="group-3" placeholder="input group 3" class="input">
+			<input type="text" name="group-flex-5" id="group-flex-5" placeholder="input group 5" class="input">
 			<button class="btn btn--default btn--m">button</button>
 		</div>
 	</div>
@@ -218,11 +217,11 @@
 	<h3 class="h3">Grid</h3>
 	<h4 class="h4">half</h4>
 	<div class="row ex-input-grid">
-		<div class="col s6 input-field ico--left">
-			<input type="text" name="grid-1" id="grid-1" placeholder="Icon-left" class="input">
+		<div class="col s6 input-field">
 			<i class="ico ico-srch"></i>
+			<input type="text" name="grid-1" id="grid-1" placeholder="Icon-left" class="input">
 		</div>
-		<div class="col s6 input-field ico--right">
+		<div class="col s6 input-field">
 			<input type="text" name="grid-2" id="grid-2" placeholder="Icon-right" class="input">
 			<i class="ico ico-srch"></i>
 		</div>
@@ -231,7 +230,7 @@
 	<div class="row">
 		<div class="col s12 input-field ico--right">
 			<input type="text" name="full" id="full" placeholder="Full > search" class="input">
-			<button class="ico ico-srch btn"></button>
+			<i class="ico ico-srch"></i>
 		</div>
 	</div>
 
@@ -285,13 +284,57 @@
 	</div>
 
  	<h2 class="h2">Checkbox</h2>
- 	<form name="checkboxForm" class="form">
+ 	<h3 class="h3">Align</h3>
+ 	<form name="checkboxForm1" class="form">
+ 		<h4 class="h4">Inline</h4>
  		<div class="form-field">
  			<label class="checkbox">
- 				<input type="checkbox" name="checkboxDeafult">
- 				<span class="checkbox__label">Checkbox Default</span>
+ 				<input type="checkbox" name="checkboxAlign1">
+ 				<span class="checkbox__label">Checkbox Inline</span>
+ 			</label>
+ 			<label class="checkbox">
+ 				<input type="checkbox" name="checkboxAlign1">
+ 				<span class="checkbox__label">Checkbox Inline</span>
+ 			</label>
+ 			<label class="checkbox">
+ 				<input type="checkbox" name="checkboxAlign1">
+ 				<span class="checkbox__label">Checkbox Inline</span>
  			</label>
  		</div>
+ 		<h4 class="h4">block</h4>
+ 		<h5 class="h5">grid 이용</h5>
+ 		<div class="form-field row">
+ 			<label class="checkbox col s12">
+ 				<input type="checkbox" name="checkboxAlign2">
+ 				<span class="checkbox__label">Checkbox block</span>
+ 			</label>
+ 			<label class="checkbox col s12">
+ 				<input type="checkbox" name="checkboxAlign2">
+ 				<span class="checkbox__label">Checkbox block</span>
+ 			</label>
+ 			<label class="checkbox col s12">
+ 				<input type="checkbox" name="checkboxAlign2">
+ 				<span class="checkbox__label">Checkbox block</span>
+ 			</label>
+ 		</div>
+ 		<h5 class="h5">클래스 추가</h5>
+ 		<div class="form-field form-field--block">
+ 			<label class="checkbox">
+ 				<input type="checkbox" name="checkboxAlign3">
+ 				<span class="checkbox__label">Checkbox block</span>
+ 			</label>
+ 			<label class="checkbox">
+ 				<input type="checkbox" name="checkboxAlign3">
+ 				<span class="checkbox__label">Checkbox block</span>
+ 			</label>
+ 			<label class="checkbox">
+ 				<input type="checkbox" name="checkboxAlign3">
+ 				<span class="checkbox__label">Checkbox block</span>
+ 			</label>
+ 		</div>
+ 	</form>
+ 	<h3 class="h3">Custom</h3>
+ 	<form name="checkboxForm2" class="form">
  		<div class="form-field">
  			<label class="checkbox--custom">
  				<input type="checkbox" name="checkboxCustom">
@@ -313,22 +356,68 @@
  	</form>
 
  	<h2 class="h2">Radio</h2>
- 	<form name="radioForm" class="form">
+ 	<h3 class="h3">Align</h3>
+ 	<form name="radioForm1" class="form">
+ 		<h4 class="h4">Inline</h4>
  		<div class="form-field">
  			<label class="radio">
- 				<input type="radio" name="radio" data-idx="0">
- 				<span class="radio__label">Default</span>
+ 				<input type="radio" name="radio">
+ 				<span class="radio__label">inline</span>
  			</label>
+ 			<label class="radio">
+ 				<input type="radio" name="radio">
+ 				<span class="radio__label">inline</span>
+ 			</label>
+ 			<label class="radio">
+ 				<input type="radio" name="radio">
+ 				<span class="radio__label">inline</span>
+ 			</label>
+ 		</div>
+ 		<h4 class="h4">block</h4>
+ 		<h5 class="h5">Grid</h5>
+ 		<div class="form-field row">
+ 			<label class="radio col s12">
+ 				<input type="radio" name="radio">
+ 				<span class="radio__label">Radio block</span>
+ 			</label>
+ 			<label class="radio col s12">
+ 				<input type="radio" name="radio">
+ 				<span class="radio__label">Radio block</span>
+ 			</label>
+ 			<label class="radio col s12">
+ 				<input type="radio" name="radio">
+ 				<span class="radio__label">Radio block</span>
+ 			</label>
+ 		</div>
+ 		<h5 class="h5">클래스 추가</h5>
+ 		<div class="form-field form-field--block">
+ 			<label class="radio">
+ 				<input type="radio" name="radio">
+ 				<span class="radio__label">Radio block</span>
+ 			</label>
+ 			<label class="radio">
+ 				<input type="radio" name="radio">
+ 				<span class="radio__label">Radio block</span>
+ 			</label>
+ 			<label class="radio">
+ 				<input type="radio" name="radio">
+ 				<span class="radio__label">Radio block</span>
+ 			</label>
+ 		</div>
+ 	</form>
+ 	<h3 class="h3">Custom</h3>
+ 	<form name="radioForm2" class="form">
+ 		<div class="form-field">
  			<label class="radio--custom">
- 				<input type="radio" name="radio" data-idx="1">
+ 				<input type="radio" name="radioCustom" data-idx="0">
  				<span class="radio__label">Custom</span>
  			</label>
  			<label class="radio--custom">
- 				<input type="radio" name="radio" data-idx="2">
+ 				<input type="radio" name="radioCustom" data-idx="1">
  				<span class="radio__label">Custom</span>
  			</label>
  			<label class="radio--custom">
- 				<input type="radio" name="radio" data-idx="3">
+ 				<input type="radio" name="radioCustom" data-idx="2">
  				<span class="radio__label">Custom</span>
  			</label>
  		</div>
@@ -348,17 +437,17 @@ var checkboxCheck = function(el){
 		el.setAttribute(d, 'true');
 	};
 };
-document.checkboxForm.checkboxCustom.onclick = function(){
+document.checkboxForm2.checkboxCustom.onclick = function(){
 	checkboxCheck(this);
 };
-document.checkboxForm.checkboxSlider.onclick = function(){
+document.checkboxForm2.checkboxSlider.onclick = function(){
 	checkboxCheck(this);
 };
-document.checkboxForm.checkboxToggle.onclick = function(){
+document.checkboxForm2.checkboxToggle.onclick = function(){
 	checkboxCheck(this);
 };
 
-var radioEl = document.radioForm.radio;
+var radioEl = document.radioForm2.radioCustom;
 radioEl.current = null;
 for(var i=0 ; i<radioEl.length ; i++){
 	radioEl[i].onclick = function(){

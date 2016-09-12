@@ -261,8 +261,13 @@ h6, .h6 { font-size: 0.75rem; }
 .ico-arr-prev, .ico-arr-next { width: 0.625rem; height: 0.625rem; background-color: green; }
 
 .ico-loading:after { width: 0.875rem; height: 0.875rem; -webkit-border-radius: 31.25rem; -moz-border-radius: 31.25rem; border-radius: 31.25rem; background-clip: padding-box; border-style: solid; border-width: 2px; border-color: #b1b1b1 #f3f3f3 #f3f3f3; -webkit-animation: button-spin .6s linear; animation: button-spin .6s linear; -webkit-animation-iteration-count: infinite; animation-iteration-count: infinite; }
+.input-field .ico-loading:after { margin-top: -0.5625rem; margin-left: -0.5625rem; }
 
 .ico-srch:after { width: 0.625rem; height: 0.625rem; background-color: gray; }
+.input-field .ico-srch:after { margin-top: -0.3125rem; margin-left: -0.3125rem; }
+
+.ico-rect:after { width: 0.625rem; height: 0.625rem; background-color: gray; }
+.input-field .ico-rect:after { margin-top: -0.3125rem; margin-left: -0.3125rem; }
 
 /* button */
 .btn { display: inline-block; border: 1px solid transparent; background: none; text-align: center; vertical-align: middle; white-space: nowrap; cursor: pointer; -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none; -ms-touch-action: manipulation; touch-action: manipulation; }

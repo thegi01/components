@@ -72,69 +72,40 @@
 }
 
 
-// input-field2 : gte ie8
-.input-field2 {
-    display: table;
-    position: relative;
-    border-collapse: separate;;
-    box-sizing : border-box;
-	.input {
-		display: table-cell;
-		width:100%;
-		// float: left;
-	}
-	.ico {
-		display: table-cell;
-		width : 1%;
-		&:after {
-		    content: '';
-		    display: inline-block;
-		    width : rem(40); height:rem(36);
-		    background-color: gray;
-		}
-	}
-}
-
-// input-field
+// input-field : gte ie8
 .input-field {
     display: inline-block;
-    position: relative;
-    box-sizing: border-box;
-    .ico {
-        position: absolute; top:0; 
-        width : rem(40); height:rem(36);
-        &:after {
-            content: '';
-            display: inline-block;
-            position: absolute; top:50%; left: 50%;
-            vertical-align: middle; 
-        }
-    }
+	position: relative;
+	box-sizing: border-box;
+
+	.input {
+	     padding-right: rem(40);
+ 	}
+ 	.ico:after {
+ 		content: '';
+ 		display: inline-block;
+ 	    vertical-align: middle; 
+ 	}
+ 	> .ico,
+ 	> .btn {
+ 	    position: absolute; top:0; z-index:1;
+ 	    width : rem(40); height:rem(36);
+ 	    &:after {
+ 	        position: absolute; top:50%; left: 50%;
+ 	    }
+ 	}
+
+	.ico + .input,
+	.btn + .input {
+			padding-right: rem(10); padding-left: rem(40);
+	}
+	.input + .ico,
+	.input + .btn {
+	    right: 0;
+	}
+	
 }
-.ico--left {
-    .input {
-        padding-left: rem(40);
-    }
-    .ico {
-        left: 0;
-    }
-}
-.ico--right {
-    .input {
-        padding-right: rem(40);
-    }
-    .ico {
-        right: 0;
-    }
-}
-.input-field {
-    .ico-srch:after {
-        margin-top:rem(-5); margin-left: rem(-5);
-    }
-    .ico-loading:after {
-        margin-top: rem(-9); margin-left: rem(-9);
-    }
-}
+
 
 // input group : fixed
 .input-group--fixed--contiguous {
@@ -216,8 +187,8 @@
 	}
 }
 
-// input-group--mobile
-.input-group--mobile {
+// input-group--flex
+.input-group--flex {
 	display: flex;
 	.input {
 		-webkit-box-flex: 1; -webkit-flex: 1 0 auto; -ms-flex: 1 0 auto; flex: 1 0 auto;
@@ -283,6 +254,9 @@
 @mixin checkbox-common {
 	display: inline-block;
 	margin-right: rem(10);
+	.form-field--block & {
+		display: block;
+	}
 }
 @mixin checkbox--custom-common {
 	@include checkbox-common;

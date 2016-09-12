@@ -1,18 +1,8 @@
 /* form */
 
 // mixin
-@mixin form--base {
-	.form-field {
-		position: relative;
-		margin-bottom: rem(16);
-	}
-	.label {
-		font-size: rem(12); font-weight: 500; color:#777;
-	}
-}
 @mixin form--default {
-	@include form--base;
-	.label {
+	.form-field__label {
 		display: block;
 		margin-bottom: rem(5);
 	}
@@ -23,10 +13,18 @@
 
 // form layout
 .form {
+	.form-field {
+		position: relative;
+		margin-bottom: rem(16);
+	}
+	.form-field__label {
+		font-size: rem(12); font-weight: 500; color:#777;
+	}
+}
+.form--default {
 	@include form--default;
 }
 .form--horizontal {
-	@include form--base;
 	.form-field {
 		overflow: hidden;
 		// margin-bottom: rem(16);
@@ -34,7 +32,7 @@
 			margin-left: 30%;
 		}
 	}
-	.label {
+	.form-field__label {
 		float: left;
 		width: 30%;
 		line-height: rem(34);
@@ -49,7 +47,7 @@
 		.form-field {
 			display: inline-block;
 			margin-right:rem(10); margin-bottom: 0;
-			.label {
+			.form-field__label {
 				@include blind;
 			}
 		}

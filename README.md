@@ -23,7 +23,6 @@
 	- btns-position-left : btns--left, btns--right, btns--center
 - To do 
 	- 하위 버전 크로스 브라우징
-	- 버튼 background-gradient
 	- aria
 	- btn--deafutl, btn--m을 btn 기본으로 사용?
 
@@ -52,6 +51,12 @@
 	- checkbox : tab key의 focusd와 click의 focus 문제(checkbox-field--toggle, checkbox-field--slider)
 	- checkbox, radio custom 시 js를 사용하지 않고 기본 기능으로 구현할 수 없나.
 	- not selector, last-child ie8 not supply --> js??
+	- 하위 버전 확인
+
+### Form
+	- [Url] : https://thegi01.github.io/components/form.html
+	- To do
+		- 하위 버전 확인
 
 ### 공통
 - reset 확인
