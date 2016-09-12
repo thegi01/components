@@ -50,7 +50,7 @@
     	.ex-input-group-contiguous input{
 			width : 300px;
     	}
-    	.input-group--fluid,
+    	.input-group--table,
     	.input-group--flex{
     		margin-bottom: 10px;
     	}
@@ -146,36 +146,35 @@
 	<div class="ex__txt">
 		 <p>ie8 이상 지원</p>
 		 <p>ie8에서는 :last-child, :not 을 지원하지 않으므로 관련 js 추가해야함.</p>
-		 <p>Mibole에서 flex 보다 추천</p>
 	</div>
 	<div class="row ex-input-group">
-		<div class="input-group--fluid">
+		<div class="input-group--table">
 			<input type="text" name="group-fluid-1" id="group-fluid-1" placeholder="input group 1" class="input">
 			<div class="input-group-btn">
 				<button class="btn btn--default btn--m">button</button>
 			</div>
 		</div>
-		<div class="input-group--fluid">
+		<div class="input-group--table">
 			<input type="text" name="group-fluid-2" id="group-fluid-2" placeholder="input group 2" class="input">
 			<div class="input-group-btn">
 				<button class="btn btn--default btn--m">button</button>
 				<button class="btn btn--default btn--m">button</button>
 			</div>
 		</div>
-		<div class="input-group--fluid">
+		<div class="input-group--table">
 			<div class="input-group-btn">
 				<button class="btn btn--default btn--m">button</button>
 			</div>
 			<input type="text" name="group-fluid-3" id="group-3" placeholder="input group 3" class="input">
 		</div>
-		<div class="input-group--fluid">
+		<div class="input-group--table">
 			<div class="input-group-btn">
 				<button class="btn btn--default btn--m">button</button>
 				<button class="btn btn--default btn--m">button</button>
 			</div>
 			<input type="text" name="group-fluid-4" id="group--fluid-4" placeholder="input group 4" class="input">
 		</div>
-		<div class="input-group--fluid">
+		<div class="input-group--table">
 			<div class="input-group-btn">
 				<button class="btn btn--default btn--m">button</button>
 			</div>
@@ -187,7 +186,6 @@
 	</div>
 
 	<h3 class="h3">Input group : css flex </h3>
-	<div class="ex__txt">320 size 잘림, input박스가 줄어들지 않음</div>
 	<div class="row ex-input-group">
 		<div class="input-group--flex">
 			<input type="text" name="group-flex-1" id="group-flex-1" placeholder="input group 1" class="input">

@@ -147,7 +147,7 @@
 // Input group : fluid
 // ie8 not supply
 // not selector, last-child is ie8 npt supply ---> js??
-.input-group--fluid {
+.input-group--table {
 	display: table;
 	border-collapse: separate;
 	.input {
@@ -192,6 +192,7 @@
 	display: flex;
 	.input {
 		-webkit-box-flex: 1; -webkit-flex: 1 0 auto; -ms-flex: 1 0 auto; flex: 1 0 auto;
+		width:0; // small screen 
 	}
 	.btn {
 		-webkit-box-flex: 0; -webkit-flex: 0 0 auto; -ms-flex: 0 0 auto; flex: 0 0 auto;
@@ -256,6 +257,7 @@
 	margin-right: rem(10);
 	.form-field--block & {
 		display: block;
+		margin-bottom: rem(5);
 	}
 }
 @mixin checkbox--custom-common {
