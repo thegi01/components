@@ -54,9 +54,9 @@
 	- 하위 버전 확인
 
 ### Form
-	- [Url] : https://thegi01.github.io/components/form.html
-	- To do
-		- 하위 버전 확인
+- [Url] : https://thegi01.github.io/components/form.html
+- To do
+	- 하위 버전 확인
 
 ### 공통
 - reset 확인
