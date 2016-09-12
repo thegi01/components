@@ -15,7 +15,9 @@
 .form {
 	.form-field {
 		position: relative;
-		margin-bottom: rem(16);
+		&:not(:first-child) {
+			margin-top: rem(16);
+		}
 	}
 	.form-field__label {
 		font-size: rem(12); font-weight: 500; color:#777;

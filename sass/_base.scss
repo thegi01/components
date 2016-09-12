@@ -53,7 +53,7 @@ table {
 
 // h
 h1, h2, h3, h4, h5, h6 {
-    margin-top: 0; margin-bottom: rem(18);
+    // margin-top: 0; margin-bottom: rem(18);
     color:#222; font-weight: 500; 
     line-height: 1;
 }
@@ -72,6 +72,9 @@ h4, .h4 {
 }
 h5, .h5 {
     font-size: rem(13.6);
+    &:first-child {
+        margin-top: 0;
+    }
 }
 h6, .h6 {
     font-size: rem(12);

@@ -313,7 +313,6 @@
 	@include checkbox--custom-common;
 	.checkbox__label {
 		display: block;
-		position: relative; left: 0;
 		padding-left: rem(57);
 		&:before{
 			content: '';
@@ -351,7 +350,6 @@
 	@include checkbox--custom-common;
 	.checkbox__label {
 		display: block;
-		position: absolute; left: 0;
 		padding-left: rem(60); padding-top: 1px;
 		&:before{
 			content: '';

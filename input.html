@@ -285,71 +285,81 @@
  	<h3 class="h3">Align</h3>
  	<form name="checkboxForm1" class="form">
  		<h4 class="h4">Inline</h4>
- 		<div class="form-field">
- 			<label class="checkbox">
- 				<input type="checkbox" name="checkboxAlign1">
- 				<span class="checkbox__label">Checkbox Inline</span>
- 			</label>
- 			<label class="checkbox">
- 				<input type="checkbox" name="checkboxAlign1">
- 				<span class="checkbox__label">Checkbox Inline</span>
- 			</label>
- 			<label class="checkbox">
- 				<input type="checkbox" name="checkboxAlign1">
- 				<span class="checkbox__label">Checkbox Inline</span>
- 			</label>
+ 		<div class="block--box">
+ 			<div class="form-field">
+ 				<label class="checkbox">
+ 					<input type="checkbox" name="checkboxAlign1">
+ 					<span class="checkbox__label">Checkbox Inline</span>
+ 				</label>
+ 				<label class="checkbox">
+ 					<input type="checkbox" name="checkboxAlign1">
+ 					<span class="checkbox__label">Checkbox Inline</span>
+ 				</label>
+ 				<label class="checkbox">
+ 					<input type="checkbox" name="checkboxAlign1">
+ 					<span class="checkbox__label">Checkbox Inline</span>
+ 				</label>
+ 			</div>
  		</div>
+ 		
  		<h4 class="h4">block</h4>
- 		<h5 class="h5">grid 이용</h5>
- 		<div class="form-field row">
- 			<label class="checkbox col s12">
- 				<input type="checkbox" name="checkboxAlign2">
- 				<span class="checkbox__label">Checkbox block</span>
- 			</label>
- 			<label class="checkbox col s12">
- 				<input type="checkbox" name="checkboxAlign2">
- 				<span class="checkbox__label">Checkbox block</span>
- 			</label>
- 			<label class="checkbox col s12">
- 				<input type="checkbox" name="checkboxAlign2">
- 				<span class="checkbox__label">Checkbox block</span>
- 			</label>
+ 		<div class="block--box">
+ 			<h5 class="h5">grid 이용</h5>
+ 			<div class="form-field row">
+ 				<label class="checkbox col s12">
+ 					<input type="checkbox" name="checkboxAlign2">
+ 					<span class="checkbox__label">Checkbox block</span>
+ 				</label>
+ 				<label class="checkbox col s12">
+ 					<input type="checkbox" name="checkboxAlign2">
+ 					<span class="checkbox__label">Checkbox block</span>
+ 				</label>
+ 				<label class="checkbox col s12">
+ 					<input type="checkbox" name="checkboxAlign2">
+ 					<span class="checkbox__label">Checkbox block</span>
+ 				</label>
+ 			</div>
  		</div>
- 		<h5 class="h5">클래스 추가</h5>
- 		<div class="form-field form-field--block">
- 			<label class="checkbox">
- 				<input type="checkbox" name="checkboxAlign3">
- 				<span class="checkbox__label">Checkbox block</span>
- 			</label>
- 			<label class="checkbox">
- 				<input type="checkbox" name="checkboxAlign3">
- 				<span class="checkbox__label">Checkbox block</span>
- 			</label>
- 			<label class="checkbox">
- 				<input type="checkbox" name="checkboxAlign3">
- 				<span class="checkbox__label">Checkbox block</span>
- 			</label>
+ 		
+ 		<div class="block--box">
+ 			<h5 class="h5">클래스 추가</h5>
+ 			<div class="form-field form-field--block">
+ 				<label class="checkbox">
+ 					<input type="checkbox" name="checkboxAlign3">
+ 					<span class="checkbox__label">Checkbox block</span>
+ 				</label>
+ 				<label class="checkbox">
+ 					<input type="checkbox" name="checkboxAlign3">
+ 					<span class="checkbox__label">Checkbox block</span>
+ 				</label>
+ 				<label class="checkbox">
+ 					<input type="checkbox" name="checkboxAlign3">
+ 					<span class="checkbox__label">Checkbox block</span>
+ 				</label>
+ 			</div>
  		</div>
  	</form>
  	<h3 class="h3">Custom</h3>
  	<form name="checkboxForm2" class="form">
- 		<div class="form-field">
- 			<label class="checkbox--custom">
- 				<input type="checkbox" name="checkboxCustom">
- 				<span class="checkbox__label">Checkbox Custom</span>
- 			</label>
- 		</div>
- 		<div class="form-field">
- 			<label class="checkbox--slider">
- 				<input type="checkbox" name="checkboxSlider">
- 				<span class="checkbox__label">Checkbox Slider</span>
- 			</label>
- 		</div>
- 		<div class="form-field">
- 			<label class="checkbox--toggle">
- 				<input type="checkbox" name="checkboxToggle">
- 				<span class="checkbox__label">Checkbox Toggle</span>
- 			</label>
+ 		<div class="block--box">
+ 			<div class="form-field">
+ 				<label class="checkbox--custom">
+ 					<input type="checkbox" name="checkboxCustom" onchange="checkboxCheck(this);">
+ 					<span class="checkbox__label">Checkbox Custom</span>
+ 				</label>
+ 			</div>
+ 			<div class="form-field">
+ 				<label class="checkbox--slider">
+ 					<input type="checkbox" name="checkboxSlider" onchange="checkboxCheck(this);">
+ 					<span class="checkbox__label">Checkbox Slider</span>
+ 				</label>
+ 			</div>
+ 			<div class="form-field">
+ 				<label class="checkbox--toggle">
+ 					<input type="checkbox" name="checkboxToggle" onchange="checkboxCheck(this);">
+ 					<span class="checkbox__label">Checkbox Toggle</span>
+ 				</label>
+ 			</div>
  		</div>
  	</form>
 
@@ -357,67 +367,77 @@
  	<h3 class="h3">Align</h3>
  	<form name="radioForm1" class="form">
  		<h4 class="h4">Inline</h4>
- 		<div class="form-field">
- 			<label class="radio">
- 				<input type="radio" name="radio">
- 				<span class="radio__label">inline</span>
- 			</label>
- 			<label class="radio">
- 				<input type="radio" name="radio">
- 				<span class="radio__label">inline</span>
- 			</label>
- 			<label class="radio">
- 				<input type="radio" name="radio">
- 				<span class="radio__label">inline</span>
- 			</label>
+ 		<div class="block--box">
+ 			<div class="form-field">
+ 				<label class="radio">
+ 					<input type="radio" name="radio">
+ 					<span class="radio__label">inline</span>
+ 				</label>
+ 				<label class="radio">
+ 					<input type="radio" name="radio">
+ 					<span class="radio__label">inline</span>
+ 				</label>
+ 				<label class="radio">
+ 					<input type="radio" name="radio">
+ 					<span class="radio__label">inline</span>
+ 				</label>
+ 			</div>
  		</div>
  		<h4 class="h4">block</h4>
- 		<h5 class="h5">Grid</h5>
- 		<div class="form-field row">
- 			<label class="radio col s12">
- 				<input type="radio" name="radio">
- 				<span class="radio__label">Radio block</span>
- 			</label>
- 			<label class="radio col s12">
- 				<input type="radio" name="radio">
- 				<span class="radio__label">Radio block</span>
- 			</label>
- 			<label class="radio col s12">
- 				<input type="radio" name="radio">
- 				<span class="radio__label">Radio block</span>
- 			</label>
+ 		<div class="block--box">
+ 			<h5 class="h5">Grid</h5>
+ 			<div class="form-field row">
+ 				<label class="radio col s12">
+ 					<input type="radio" name="radio">
+ 					<span class="radio__label">Radio block</span>
+ 				</label>
+ 				<label class="radio col s12">
+ 					<input type="radio" name="radio">
+ 					<span class="radio__label">Radio block</span>
+ 				</label>
+ 				<label class="radio col s12">
+ 					<input type="radio" name="radio">
+ 					<span class="radio__label">Radio block</span>
+ 				</label>
+ 			</div>
  		</div>
- 		<h5 class="h5">클래스 추가</h5>
- 		<div class="form-field form-field--block">
- 			<label class="radio">
- 				<input type="radio" name="radio">
- 				<span class="radio__label">Radio block</span>
- 			</label>
- 			<label class="radio">
- 				<input type="radio" name="radio">
- 				<span class="radio__label">Radio block</span>
- 			</label>
- 			<label class="radio">
- 				<input type="radio" name="radio">
- 				<span class="radio__label">Radio block</span>
- 			</label>
+ 		
+ 		<div class="block--box">
+ 			<h5 class="h5">클래스 추가</h5>
+ 			<div class="form-field form-field--block">
+ 				<label class="radio">
+ 					<input type="radio" name="radio">
+ 					<span class="radio__label">Radio block</span>
+ 				</label>
+ 				<label class="radio">
+ 					<input type="radio" name="radio">
+ 					<span class="radio__label">Radio block</span>
+ 				</label>
+ 				<label class="radio">
+ 					<input type="radio" name="radio">
+ 					<span class="radio__label">Radio block</span>
+ 				</label>
+ 			</div>
  		</div>
+ 		
  	</form>
  	<h3 class="h3">Custom</h3>
  	<form name="radioForm2" class="form">
- 		<div class="form-field">
- 			<label class="radio--custom">
- 				<input type="radio" name="radioCustom" data-idx="0">
- 				<span class="radio__label">Custom</span>
- 			</label>
- 			<label class="radio--custom">
- 				<input type="radio" name="radioCustom" data-idx="1">
- 				<span class="radio__label">Custom</span>
- 			</label>
- 			<label class="radio--custom">
- 				<input type="radio" name="radioCustom" data-idx="2">
- 				<span class="radio__label">Custom</span>
- 			</label>
+ 		<div class="block--box">
+ 			<div class="form-field">
+ 				<label class="radio--custom">
+ 					<input type="radio" name="radioCustom" data-idx="0" onchange="radioCheck(this)">
+ 					<span class="radio__label">Custom</span>
+ 				</label>
+ 				<label class="radio--custom">
+ 					<input type="radio" name="radioCustom" data-idx="1" onchange="radioCheck(this)">
+ 					<span class="radio__label">Custom</span>
+ 				</label>
+ 				<label class="radio--custom">
+ 					<input type="radio" name="radioCustom" data-idx="2" onchange="radioCheck(this)">
+ 					<span class="radio__label">Custom</span>
+ 				</label>
+ 			</div>
  		</div>
  	</form>
  	
@@ -435,7 +455,7 @@ var checkboxCheck = function(el){
 		el.setAttribute(d, 'true');
 	};
 };
-document.checkboxForm2.checkboxCustom.onclick = function(){
+/*document.checkboxForm2.checkboxCustom.onclick = function(){
 	checkboxCheck(this);
 };
 document.checkboxForm2.checkboxSlider.onclick = function(){
@@ -443,23 +463,26 @@ document.checkboxForm2.checkboxSlider.onclick = function(){
 };
 document.checkboxForm2.checkboxToggle.onclick = function(){
 	checkboxCheck(this);
-};
+};*/
 
 var radioEl = document.radioForm2.radioCustom;
 radioEl.current = null;
-for(var i=0 ; i<radioEl.length ; i++){
-	radioEl[i].onclick = function(){
-		var d = 'checked',
-			c = this.getAttribute(d),
-			idx = this.getAttribute('data-idx');
-		if(radioEl.current == idx )return;
-		if(radioEl.current){
-			radioEl[radioEl.current].setAttribute(d, 'false');
-		};
-		this.setAttribute(d, 'true');
-		radioEl.current = this.getAttribute('data-idx');
+var radioCheck = function(el){
+	var d = 'checked',
+		c = el.getAttribute(d),
+		idx = el.getAttribute('data-idx');
+	if(radioEl.current == idx )return;
+	if(radioEl.current){
+		radioEl[radioEl.current].setAttribute(d, 'false');
 	};
+	el.setAttribute(d, 'true');
+	radioEl.current = el.getAttribute('data-idx');
 };
+/*for(var i=0 ; i<radioEl.length ; i++){
+	radioEl[i].onchange = function(){
+		radioCheck(this);
+	};
+};*/
 
 // ie8 .input-group--table ui
 // var inputGroupTable = document.querySelector('.input-group--table');
