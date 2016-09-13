@@ -52,32 +52,31 @@ table {
 
 
 // h
-h1, h2, h3, h4, h5, h6 {
-    // margin-top: 0; margin-bottom: rem(18);
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6 {
+    margin-top: 2em; margin-bottom: 1em;
     color:#222; font-weight: 500; 
     line-height: 1;
 }
 h1, .h1 {
-    font-size: rem(48);
+    margin-top: 0;
+    font-size: rem(42);
 }
 h2, .h2 {
-    margin-top: rem(36);
-    font-size: rem(36); font-weight: 300;
+    // margin-top: rem(84); margin-bottom: rem(18);
+    font-size: rem(24); 
 }
 h3, .h3 {
-    font-size : rem(20);
+    font-size : rem(17.5);
 }
 h4, .h4 {
-    font-size: rem(16);
+    font-size: rem(14);
 }
 h5, .h5 {
-    font-size: rem(13.6);
-    &:first-child {
-        margin-top: 0;
-    }
+    font-size: rem(12);
 }
 h6, .h6 {
-    font-size: rem(12);
+    font-size: rem(11);
 }
 
 // blind

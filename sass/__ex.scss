@@ -12,12 +12,12 @@
 
 // contents
 .wrap.ex {
-    padding:rem(10) rem(20);
+    padding:rem(20);
     color: #333;
 }
 .ex__txt {
-    margin-bottom: rem(16);
-    font-size: rem(12);
+    margin-top: 0; margin-bottom: rem(14);
+    font-size: rem(14); color: #333;
 }
 .block--box {
     @include block--box;
