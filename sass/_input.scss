@@ -241,6 +241,9 @@
 }
 .select {
 	@include select--base;
+	.form-field & {
+		width: 100%;
+	}
 }
 .select--arr {
 	@include select--base;

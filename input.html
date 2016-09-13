@@ -250,7 +250,7 @@
 	<h3 class="h3">Select Default</h3>
 	<div class="form">
 		<div class="form-field">
-			<select name="select" class="select" style="width:100%;">
+			<select name="select" class="select">
 				<option value="1">option 1</option>
 				<option value="2">option 2</option>
 				<option value="3">option 3</option>
@@ -440,7 +440,8 @@
  			</div>
  		</div>
  	</form>
- 	
+
+
 </div>
 <!-- //wrap -->
 
@@ -479,9 +480,7 @@ var radioCheck = function(el){
 	radioEl.current = el.getAttribute('data-idx');
 };
 /*for(var i=0 ; i<radioEl.length ; i++){
-	radioEl[i].onchange = function(){
-		radioCheck(this);
-	};
+	radioEl[i].onchange = radioCheck;
 };*/
 
 // ie8 .input-group--table ui
