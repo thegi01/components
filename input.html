@@ -274,6 +274,24 @@
 			</span>
 		</div>
 	</div>
+	<h3 class="h3">Select dropdown</h3>
+	<div class="dropdown select-dropdown">
+		<div class="dropdown__btn" id="dropdownMenu1" data-toggle="dropdown" aria-expanded=false>
+			Dropdown <span class="ico"></span>
+		</div>
+		<ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+			<li class="dropdown-item"><a href="#href" class="dropdown__a" onclick="dropdown.getItem(this)">None</a></li>
+			<li class="dropdown-header">Dropdown header 1</li>
+			<li class="dropdown-item"><a href="#href" class="dropdown__a" onclick="dropdown.getItem(this)">Dropdown 1</a></li>
+			<li class="dropdown-item"><a href="#href" class="dropdown__a" onclick="dropdown.getItem(this)">Dropdown 2</a></li>
+			<li class="dropdown-item"><a href="#href" class="dropdown__a" onclick="dropdown.getItem(this)">Dropdown 3</a></li>
+			<li class="dropdown-header">Dropdown header 2</li>
+			<li class="dropdown-item"><a href="#href" class="dropdown__a" onclick="dropdown.getItem(this)">Dropdown 4</a></li>
+			<li class="dropdown--disabled"><a href="#href" class="dropdown__a" onclick="dropdown.getItem(this)">Dropdown 5 Disabled</a></li>
+			<li role="separator" class="dropdown__divider"></li>
+			<li class="dropdown-item"><a href="#href" class="dropdown__a" onclick="dropdown.getItem(this)">Separated link</a></li>
+		</ul>
+	</div>
 
  	<h2 class="h2">Checkbox</h2>
  	<h3 class="h3">Align</h3>
@@ -439,6 +457,7 @@
 <!-- //wrap -->
 
 <!-- javacript -->
+<script type="text/javascript" src="ui-base.js"></script>
 <script>
 var checkboxCheck = function(el){
 	var d = 'checked',
@@ -480,6 +499,10 @@ var radioCheck = function(el){
 // var inputGroupTable = document.querySelector('.input-group--table');
 
 
+/* Dropdown click */
+document.getElementById('dropdownMenu1').onclick = function(){
+	dropdown.toggle(this);
+};
 </script>
 <!-- //javacript -->
 

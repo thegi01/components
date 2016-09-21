@@ -185,7 +185,7 @@
 				<li class="dropdown-item"><a href="#href" class="dropdown__a">Dropdown 4</a></li>
 				<li class="dropdown--disabled"><a href="#href" class="dropdown__a">Dropdown 5 Disabled</a></li>
 				<li role="separator" class="dropdown-divider"></li>
-				<li class="dropdown-item"><a href="#href" class="dropdown__a">Seperated link</a></li>
+				<li class="dropdown-item"><a href="#href" class="dropdown__a">Separated link</a></li>
 			</ul>
 		</div>
 	</div>
@@ -202,7 +202,7 @@
 				<li class="dropdown-header">Dropdown header 2</li>
 				<li class="dropdown-item"><a href="#href" class="dropdown__a" onclick="dropdown.getItem(this)">Dropdown 4</a></li>
 				<li class="dropdown--disabled"><a href="#href" class="dropdown__a" onclick="dropdown.getItem(this)">Dropdown 5 Disabled</a></li>
-				<li role="separator" class="dropdown-divider"></li>
+				<li role="separator" class="dropdown__divider"></li>
 				<li class="dropdown-item"><a href="#href" class="dropdown__a" onclick="dropdown.getItem(this)">Seperated link</a></li>
 			</ul>
 		</div>
@@ -278,39 +278,8 @@
 </div>		
 
 <!-- javacript -->
+<script type="text/javascript" src="ui-base.js"></script>
 <script>
-
-/* toggleAttirbute */
-var toggleAttirbute = function(attribute, el){
-	if( el.getAttribute(attribute) == 'true' ){
-		el.setAttribute(attribute, 'false');
-	} else {
-		el.setAttribute(attribute, 'true');
-	};
-};
-
-/* dropdown */
-var dropdown = {
-	expanedEl : undefined,
-	attribute : 'aria-expanded',
-	toggle : function(el){
-		if( this.expanedEl && this.expanedEl != el ) {
-			this.expanedEl.setAttribute(this.attribute, 'false');
-		};
-		toggleAttirbute(this.attribute, el);
-		this.expanedEl = el;
-	},
-	outFocus : function(event){
-		var target = event.target || event.srcElement; // Support IE6-8
-		if( target.getAttribute('data-toggle') != 'dropdown' && this.expanedEl) {
-			dropdown.expanedEl.setAttribute(this.attribute, 'false');
-			dropdown.expanedEl = undefined;
-		};
-	},
-	getItem : function(a){
-		a.parentElement.parentElement.previousElementSibling.firstChild.textContent = a.innerText; // gte IE9
-	}
-};
 
 /* btnPressd */
 document.getElementById('btnPressd').onclick = function(){
@@ -339,9 +308,6 @@ document.getElementById('dropdownMenu4').onclick = function(){
 };
 document.getElementById('dropdownMenu5').onclick = function(){
 	dropdown.toggle(this);
-};
-window.onclick = function(event) {
-	dropdown.outFocus(event);
 };
 
 </script>

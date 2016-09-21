@@ -161,6 +161,10 @@ input[data-role="button"] {
             left: inherit; right: 0;
         }
     }
+    &-header {
+        @include dropdown-item;
+        font-size: rem(12); color: #777;
+    }
     &__a {
         @include dropdown-item;
         font-size: rem(14); color: #333; text-decoration: none;
@@ -169,11 +173,7 @@ input[data-role="button"] {
             color: #262626;
         }
     }
-    &-header {
-        @include dropdown-item;
-        font-size: rem(12); color: #777;
-    }
-    &-divider {
+    &__divider {
         overflow: hidden;
         height: 1px;
         margin: rem(9) 0;
@@ -186,10 +186,10 @@ input[data-role="button"] {
             cursor : not-allowed;
         }
     }
-    .btn[aria-expanded="true"] + .dropdown-menu {
+    .dropdown__btn[aria-expanded="true"] + .dropdown-menu {
         display: block;
     }
-    .btn[aria-expanded="false"] + .dropdown-menu {
+    .dropdown__btn[aria-expanded="false"] + .dropdown-menu {
         display: none;
     }
     &--up {

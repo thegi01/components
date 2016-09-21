@@ -250,10 +250,31 @@
 	width: 100%;
 	-webkit-appearance: none; -moz-appearance: none; 
 	&__arr {
+		overflow: hidden;
 		position: absolute; right: 0; bottom:0;
 		width: 33px; height: 33px; 
 		text-align: center; line-height: 33px;
 		pointer-events:none;
+	}
+}
+.select-dropdown {
+	display: block;
+	position: relative;
+	.dropdown__btn {
+		@include select--base;
+		display: block;
+		position: relative;
+		line-height: rem(30);
+		cursor: default;
+		.ico {
+			float: right;
+			position: absolute; top:50%; right: rem(10);
+			margin-top: -2px;
+		}
+	}
+	.dropdown-menu {
+		width: 100%;
+		box-sizing : border-box;
 	}
 }
 
