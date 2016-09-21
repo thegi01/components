@@ -262,9 +262,9 @@
 	position: relative;
 	.dropdown__btn {
 		@include select--base;
-		display: block;
 		position: relative;
-		line-height: rem(30);
+		width: 100%;
+		text-align: left;
 		cursor: default;
 		.ico {
 			float: right;
