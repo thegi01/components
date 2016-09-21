@@ -274,12 +274,6 @@
 			</span>
 		</div>
 	</div>
-	<h3 class="h3">Multiple select</h3>
-	<div class="form">
-		<div class="form-field">
-			
-		</div>
-	</div>
 
  	<h2 class="h2">Checkbox</h2>
  	<h3 class="h3">Align</h3>
@@ -471,7 +465,7 @@ var radioCheck = function(el){
 	var d = 'checked',
 		c = el.getAttribute(d),
 		idx = el.getAttribute('data-idx');
-	if(radioEl.current == idx )return;
+	if(radioEl.current == idx ) return;
 	if(radioEl.current){
 		radioEl[radioEl.current].setAttribute(d, 'false');
 	};

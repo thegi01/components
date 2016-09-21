@@ -5,6 +5,7 @@
 	.form-field__label {
 		display: block;
 		margin-bottom: rem(5);
+		line-height: 1.4;
 	}
 	.input {
 		width: 100%;
@@ -58,6 +59,7 @@
 .form-note {
 	margin-top: rem(6); margin-bottom: rem(6);
 	font-size: rem(12); color:#777;
+	line-height: 1.4;
 }
 
 

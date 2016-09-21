@@ -25,6 +25,7 @@
 	- 하위 버전 크로스 브라우징
 	- aria
 	- btn--deafutl, btn--m을 btn 기본으로 사용?
+	- dropdown : js ie8이하 pollyfill
 
 ### Grid
 - [Url] : https://thegi01.github.io/components/grid.html

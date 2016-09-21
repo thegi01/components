@@ -17,7 +17,7 @@
 }
 .ex__txt {
     margin-top: 0; margin-bottom: rem(14);
-    font-size: rem(14); color: #333;
+    font-size: rem(14); color: #333; line-height: 1.4;
 }
 .block--box {
     @include block--box;

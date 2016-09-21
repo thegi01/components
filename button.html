@@ -109,12 +109,12 @@
 	</div>
 
 	<h2 class="h2">Borderless</h2>
-	<div class="row block--box">
+	<div class="block--box">
 		<button type="button" class="btn btn--plain btn--m">Borderless Button</button>
 	</div>
 
 	<h2 class="h2">Icon button</h2>
-	<div class="row block--box ex-btn-icon">
+	<div class="block--box ex-btn-icon">
 		<button type="button" class="btn btn--default btn--m">
 			<i class="btn__ico-left ico ico-arr-prev"></i>
 			Button with icon
@@ -123,6 +123,89 @@
 			Button with icon
 			<i class="btn__ico-right ico ico-arr-next"></i>
 		</button>
+	</div>
+
+	<h2 class="h2">Dropdown, Dropup</h2>
+	<h3 class="h3">Dropdown</h3>
+	<div class="block--box">
+		<div class="dropdown">
+			<!-- <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Dropdown <span class="caret"></span> </button> -->
+			<button type="button" class="btn btn--default btn--m dropdown__btn" id="dropdownMenu1" data-toggle="dropdown" aria-expanded=false>Dropdown<span class="ico"></span></button>
+			<ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+				<li class="dropdown-header">Dropdown header 1</li>
+				<li class="dropdown-item"><a href="#href" class="dropdown__a">Dropdown 1</a></li>
+				<li class="dropdown-item"><a href="#href" class="dropdown__a">Dropdown 2</a></li>
+				<li class="dropdown-item"><a href="#href" class="dropdown__a">Dropdown 3</a></li>
+				<li class="dropdown-header">Dropdown header 2</li>
+				<li class="dropdown-item"><a href="#href" class="dropdown__a">Dropdown 4</a></li>
+				<li class="dropdown--disabled"><a href="#href" class="dropdown__a">Dropdown 5 Disabled</a></li>
+				<li role="separator" class="dropdown-divider"></li>
+				<li class="dropdown-item"><a href="#href" class="dropdown__a">Seperated link</a></li>
+			</ul>
+		</div>
+		<div class="dropdown">
+			<button type="button" class="btn btn--default btn--m dropdown__btn" id="dropdownMenu2" data-toggle="dropdown" aria-expanded="false">Dropdown right<span class="ico"></span></button>
+			<ul class="dropdown-menu dropdown-menu--right" aria-labelledby="dropdownMenu2">
+				<li class="dropdown-header">Dropdown header 1</li>
+				<li class="dropdown-item"><a href="#href" class="dropdown__a">Dropdown 1</a></li>
+				<li class="dropdown-item"><a href="#href" class="dropdown__a">Dropdown 2</a></li>
+				<li class="dropdown-item"><a href="#href" class="dropdown__a">Dropdown 3</a></li>
+				<li class="dropdown-header">Dropdown header 2</li>
+				<li class="dropdown-item"><a href="#href" class="dropdown__a">Dropdown 4</a></li>
+				<li class="dropdown--disabled"><a href="#href" class="dropdown__a">Dropdown 5 Disabled</a></li>
+				<li role="separator" class="dropdown-divider"></li>
+				<li class="dropdown-item"><a href="#href" class="dropdown__a">Seperated link</a></li>
+			</ul>
+		</div>
+	</div>
+	<h3 class="h3">Dropup</h3>
+	<div class="block--box">
+		<div class="dropdown dropdown--up">
+			<button type="button" class="btn btn--default btn--m dropdown__btn" id="dropdownMenu3" data-toggle="dropdown" aria-expanded="false">Dropup<span class="ico"></span></button>
+			<ul class="dropdown-menu" aria-labelledby="dropdownMenu3">
+				<li class="dropdown-header">Dropdown header 1</li>
+				<li class="dropdown-item"><a href="#href" class="dropdown__a">Dropdown 1</a></li>
+				<li class="dropdown-item"><a href="#href" class="dropdown__a">Dropdown 2</a></li>
+				<li class="dropdown-item"><a href="#href" class="dropdown__a">Dropdown 3</a></li>
+				<li class="dropdown-header">Dropdown header 2</li>
+				<li class="dropdown-item"><a href="#href" class="dropdown__a">Dropdown 4</a></li>
+				<li class="dropdown--disabled"><a href="#href" class="dropdown__a">Dropdown 5 Disabled</a></li>
+				<li role="separator" class="dropdown-divider"></li>
+				<li class="dropdown-item"><a href="#href" class="dropdown__a">Seperated link</a></li>
+			</ul>
+		</div>
+		<div class="dropdown dropdown--up">
+			<button type="button" class="btn btn--default btn--m dropdown__btn" id="dropdownMenu4" data-toggle="dropdown" aria-expanded="false">Dropup right<span class="ico"></span></button>
+			<ul class="dropdown-menu dropdown-menu--right" aria-labelledby="dropdownMenu4">
+				<li class="dropdown-header">Dropdown header 1</li>
+				<li class="dropdown-item"><a href="#href" class="dropdown__a">Dropdown 1</a></li>
+				<li class="dropdown-item"><a href="#href" class="dropdown__a">Dropdown 2</a></li>
+				<li class="dropdown-item"><a href="#href" class="dropdown__a">Dropdown 3</a></li>
+				<li class="dropdown-header">Dropdown header 2</li>
+				<li class="dropdown-item"><a href="#href" class="dropdown__a">Dropdown 4</a></li>
+				<li class="dropdown--disabled"><a href="#href" class="dropdown__a">Dropdown 5 Disabled</a></li>
+				<li role="separator" class="dropdown-divider"></li>
+				<li class="dropdown-item"><a href="#href" class="dropdown__a">Seperated link</a></li>
+			</ul>
+		</div>
+	</div>
+	<h3 class="h3">Get Item</h3>
+	<div class="block--box">
+		<div class="dropdown">
+			<button type="button" class="btn btn--default btn--m dropdown__btn" id="dropdownMenu5" data-toggle="dropdown" aria-expanded=false>Dropdown<span class="ico"></span></button>
+			<ul class="dropdown-menu" aria-labelledby="dropdownMenu5">
+				<li class="dropdown-item"><a href="#href" class="dropdown__a" onclick="dropdown.getItem(this)">None</a></li>
+				<li class="dropdown-header">Dropdown header 1</li>
+				<li class="dropdown-item"><a href="#href" class="dropdown__a" onclick="dropdown.getItem(this)">Dropdown 1</a></li>
+				<li class="dropdown-item"><a href="#href" class="dropdown__a" onclick="dropdown.getItem(this)">Dropdown 2</a></li>
+				<li class="dropdown-item"><a href="#href" class="dropdown__a" onclick="dropdown.getItem(this)">Dropdown 3</a></li>
+				<li class="dropdown-header">Dropdown header 2</li>
+				<li class="dropdown-item"><a href="#href" class="dropdown__a" onclick="dropdown.getItem(this)">Dropdown 4</a></li>
+				<li class="dropdown--disabled"><a href="#href" class="dropdown__a" onclick="dropdown.getItem(this)">Dropdown 5 Disabled</a></li>
+				<li role="separator" class="dropdown-divider"></li>
+				<li class="dropdown-item"><a href="#href" class="dropdown__a" onclick="dropdown.getItem(this)">Seperated link</a></li>
+			</ul>
+		</div>
 	</div>
 	
 	<h2 class="h2">Buttons position</h2>
@@ -196,6 +279,40 @@
 
 <!-- javacript -->
 <script>
+
+/* toggleAttirbute */
+var toggleAttirbute = function(attribute, el){
+	if( el.getAttribute(attribute) == 'true' ){
+		el.setAttribute(attribute, 'false');
+	} else {
+		el.setAttribute(attribute, 'true');
+	};
+};
+
+/* dropdown */
+var dropdown = {
+	expanedEl : undefined,
+	attribute : 'aria-expanded',
+	toggle : function(el){
+		if( this.expanedEl && this.expanedEl != el ) {
+			this.expanedEl.setAttribute(this.attribute, 'false');
+		};
+		toggleAttirbute(this.attribute, el);
+		this.expanedEl = el;
+	},
+	outFocus : function(event){
+		var target = event.target || event.srcElement; // Support IE6-8
+		if( target.getAttribute('data-toggle') != 'dropdown' && this.expanedEl) {
+			dropdown.expanedEl.setAttribute(this.attribute, 'false');
+			dropdown.expanedEl = undefined;
+		};
+	},
+	getItem : function(a){
+		a.parentElement.parentElement.previousElementSibling.firstChild.textContent = a.innerText; // gte IE9
+	}
+};
+
+/* btnPressd */
 document.getElementById('btnPressd').onclick = function(){
 	var pressed = 'aria-pressed';
 	if( this.getAttribute(pressed) == 'true' ){
@@ -206,6 +323,27 @@ document.getElementById('btnPressd').onclick = function(){
 		this.innerText = 'Button pressed';
 	}
 };
+
+/* Dropdown click */
+document.getElementById('dropdownMenu1').onclick = function(){
+	dropdown.toggle(this);
+};
+document.getElementById('dropdownMenu2').onclick = function(){
+	dropdown.toggle(this);
+};
+document.getElementById('dropdownMenu3').onclick = function(){
+	dropdown.toggle(this);
+};
+document.getElementById('dropdownMenu4').onclick = function(){
+	dropdown.toggle(this);
+};
+document.getElementById('dropdownMenu5').onclick = function(){
+	dropdown.toggle(this);
+};
+window.onclick = function(event) {
+	dropdown.outFocus(event);
+};
+
 </script>
 <!-- //javacript -->
 

@@ -261,6 +261,10 @@
 @mixin checkbox-common {
 	display: inline-block;
 	margin-right: rem(10);
+	line-height: 1.4;
+	input {
+		vertical-align: middle;
+	}
 	.form-field--block & {
 		display: block;
 		margin-bottom: rem(5);

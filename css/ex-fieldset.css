@@ -247,7 +247,7 @@ table { border-collapse: collapse; border-spacing: 0; }
 /* ex */
 .wrap.ex { padding: 1.25rem; color: #333; }
 
-.ex__txt { margin-top: 0; margin-bottom: 0.875rem; font-size: 0.875rem; color: #333; }
+.ex__txt { margin-top: 0; margin-bottom: 0.875rem; font-size: 0.875rem; color: #333; line-height: 1.4; }
 
 .block--box { margin-top: 0.625rem; margin-bottom: 0.625rem; margin-right: 0.625rem; padding: 1.25rem; border: solid 1px #ccc; -webkit-border-radius: 4.2px; -moz-border-radius: 4.2px; border-radius: 4.2px; background-clip: padding-box; }
 
