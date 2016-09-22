@@ -71,6 +71,16 @@
 	}
 }
 
+//input-group-addon
+.input-group-addon {
+	padding: rem(6) rem(12);
+	border:1px solid #ccc;
+	@include border-radius(rem(4));
+	background-color: #eee;
+	font-size: rerm(14); font-weight: 400; color: #555;
+	line-height: 1;
+	text-align: center;
+}
 
 // input-field : gte ie8
 .input-field {
@@ -196,25 +206,30 @@
 		@include flex(1 0 auto);
 		width:0; // small screen 
 	}
-	.btn {
+	.btn,
+	.input-group-addon {
 		-webkit-box-flex: 0; 
 		@include flex(0 0 auto);
 	}
 	.input:not(:first-child),
-	.btn:not(:first-child) {
+	.btn:not(:first-child),
+	.input-group-addon:not(:first-child) {
 		margin-left: -1px;
 	}
 	.input:not(:first-child):not(:last-child),
-	.btn:not(:first-child):not(:last-child){
+	.btn:not(:first-child):not(:last-child),
+	.input-group-addon:not(:first-child):not(:last-child){
 		@include border-radius(0);
 	}
 	.input:first-child,
-	.btn:first-child {
+	.btn:first-child,
+	.input-group-addon:first-child {
 		@include border-radius-single(top, right , 0);
 		@include border-radius-single(bottom, right , 0);
 	}
 	.input:last-child,
-	.btn:last-child {
+	.btn:last-child,
+	.input-group-addon:last-child {
 		@include border-radius-single(top, left , 0);
 		@include border-radius-single(bottom, left, 0);
 	}

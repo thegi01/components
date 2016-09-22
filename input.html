@@ -18,7 +18,6 @@
     		padding-bottom : 100px;
     	}
     	.input {
-    		margin-bottom : 5px;
     	}
     	.h2 {
     		margin-top: 50px;
@@ -36,12 +35,14 @@
     		margin-top: 0;
     	}
     	
+    	.ex-ico .input-field {
+    		margin-bottom: 5px; 
+    	}
     	.row.ex-input-grid .col:first-child{
 			padding-right: 5px;
     	}
 
     	.ex-input-group .input {
-    		margin-bottom: 0;
     	}
     	.input-group--fixed,
     	.input-group--fixed--contiguous {
@@ -209,6 +210,26 @@
 			<button class="btn btn--default btn--m">button</button>
 			<input type="text" name="group-flex-5" id="group-flex-5" placeholder="input group 5" class="input">
 			<button class="btn btn--default btn--m">button</button>
+		</div>
+	</div>
+	<h3 class="h3">Input group : Addon</h4>
+	<div class="ex-input-group">
+		<div class="input-group--flex">
+			<span class="input-group-addon" id="basic-addon1">@</span>
+			<input type="text" class="input" placeholder="Username" aria-describedby="basic-addon1">
+		</div>
+		<div class="input-group--flex">
+			<input type="text" class="input" placeholder="Recipient's username" aria-describedby="basic-addon2">
+			<span class="input-group-addon" id="basic-addon2">@example.com</span>
+		</div>
+		<div class="input-group--flex">
+			<span class="input-group-addon">$</span>
+			<input type="text" class="input" aria-label="Amount (to the nearest dollar)">
+			<span class="input-group-addon">.00</span>
+		</div>
+		<div class="input-group--flex">
+			<span class="input-group-addon" id="basic-addon3">https://example.com/users/</span>
+			<input type="text" class="input" id="basic-url" aria-describedby="basic-addon3">
 		</div>
 	</div>
 

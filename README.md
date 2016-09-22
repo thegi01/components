@@ -47,8 +47,6 @@
 ### Input
 - [Url] : https://thegi01.github.io/components/input.html
 - To do
-	- selelct ui custom
-	- dropdown
 	- checkbox : tab key의 focusd와 click의 focus 문제(checkbox-field--toggle, checkbox-field--slider)
 	- checkbox, radio custom 시 js를 사용하지 않고 기본 기능으로 구현할 수 없나.
 	- not selector, last-child ie8 not supply --> js??
@@ -69,6 +67,7 @@
 ### 의문 사항
 - input type button과 button의 차이는?
 - tab key의 focus시 스타일
+- 마크업내의 onclick과 script 내의 onclick의 차이
 
 
 ### 추가 내용 정리
