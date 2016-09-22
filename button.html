@@ -59,7 +59,7 @@
 				<div class="ex__txt">togglable modifier width check value</div>
 				<div>
 					<input type="checkbox" name="btnToggle" id="btnToggle" data-role="button">
-					<label for="btnToggle" class="btn btn--default btn--m" > Toggle button </label>
+					<label class="btn btn--default btn--m" for="btnToggle"> Toggle button </label>
 				</div>
 			</div>
 		</div>
@@ -69,9 +69,9 @@
 				<div class="ex__txt">togglable modifier width radio value</div>
 				<div>
 					<input type="radio" name="radioToggle" id="radioToggle1" data-role="button">
-					<label for="radioToggle1" class="btn btn--default btn--m" > Toggle button : radio 1 </label>
+					<label class="btn btn--default btn--m" for="radioToggle1"> Toggle button : radio 1 </label>
 					<input type="radio" name="radioToggle" id="radioToggle2" data-role="button">
-					<label for="radioToggle2" class="btn btn--default btn--m" > Toggle button : radio 2 </label>
+					<label class="btn btn--default btn--m" for="radioToggle2"> Toggle button : radio 2 </label>
 				</div>
 			</div>
 		</div>
@@ -79,13 +79,13 @@
 
 	<h2 class="h2">Disabled</h2>
 	<div class="row block--box ex-btn-disabled">
-		<button type="button" disabled="disabled" class="btn btn--default btn--m">Button : Disabled </button>
+		<button type="button" class="btn btn--default btn--m" disabled="disabled">Button : Disabled </button>
 		<button type="button" class="btn btn--default btn--m btn--disabled" tabIndex = "-1"> Button.btn--disabled </button>
 	</div>
 
 	<h2 class="h2">Pressed</h2>
 	<div class="row block--box">
-		<button type="button" aria-pressed="false" class="btn btn--default btn--m" id="btnPressd"> Button </button>
+		<button type="button" class="btn btn--default btn--m" id="btnPressd" aria-pressed="false"> Button </button>
 	</div>
 
 	<h2 class="h2">Size</h2>
@@ -270,19 +270,19 @@
 		<div class="ex__txt">Button group > radio</div>
 		<div role="group" class="btn-group">
 			<input type="radio" name="radipGroup" id="radipGrou1" data-role="button">
-			<label for="radipGrou1" class="btn btn--default btn--m">First</label>
+			<label class="btn btn--default btn--m" for="radipGrou1">First</label>
 			<input type="radio" name="radipGroup" id="radipGrou2" data-role="button">
-			<label for="radipGrou2" class="btn btn--default btn--m">Middle</label>
+			<label class="btn btn--default btn--m" for="radipGrou2">Middle</label>
 			<input type="radio" name="radipGroup" id="radipGrou3" data-role="button">
-			<label for="radipGrou3" class="btn btn--default btn--m">Last</label>
+			<label class="btn btn--default btn--m" for="radipGrou3">Last</label>
 		</div>
 	</div>
 	<div class="row block--box">
 		<div class="ex__txt">Button group > justify</div>
-		<div role="group" class="btn-group btn-group--justify">
-			<a href="#href" role="button" class="btn btn--default btn--m">First</a>
-			<a href="#href" role="button" class="btn btn--default btn--m">Middle</a>
-			<a href="#href" role="button" class="btn btn--default btn--m">Last</a>
+		<div class="btn-group btn-group--justify" role="group">
+			<a href="#href" class="btn btn--default btn--m" role="button">First</a>
+			<a href="#href" class="btn btn--default btn--m" role="button">Middle</a>
+			<a href="#href" class="btn btn--default btn--m" role="button">Last</a>
 		</div>
 	</div>
 

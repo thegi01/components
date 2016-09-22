@@ -474,12 +474,13 @@ input[data-role="button"]:checked + .btn { border-color: green; color: green; }
 .label--checkbox, .label--radio { font-size: 0.875rem; color: #333; vertical-align: middle; }
 
 /* form */
-.form .form-field { position: relative; }
-.form .form-field:not(:first-child) { margin-top: 1rem; }
+.form .form-field { position: relative; margin-bottom: 0.625rem; }
 .form .form-field__label { font-size: 0.75rem; font-weight: 500; color: #777; }
 
 .form--default .form-field__label { display: block; margin-bottom: 0.3125rem; line-height: 1.4; }
 .form--default .input { width: 100%; }
+@media only screen and (min-width: 601px) { .form--default .row { margin-left: -0.3125rem; margin-right: -0.3125rem; }
+  .form--default .row .col.form-field { margin-top: inherit; padding-left: 0.3125rem; padding-right: 0.3125rem; } }
 
 .form--horizontal .form-field { overflow: hidden; }
 .form--horizontal .form-field--offset { margin-left: 30%; }
@@ -492,6 +493,8 @@ input[data-role="button"]:checked + .btn { border-color: green; color: green; }
   .form--inline .form-field .form-field__label { visibility: hidden; overflow: hidden; position: absolute; top: 0; left: 0; width: 1px; height: 1px; font-size: 0; } }
 
 .form-note { margin-top: 0.375rem; margin-bottom: 0.375rem; font-size: 0.75rem; color: #777; line-height: 1.4; }
+
+.legend { margin-bottom: 0.625rem; }
 
 /* ex */
 .wrap.ex { padding: 1.25rem; color: #333; }

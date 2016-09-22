@@ -20,7 +20,7 @@ var radio = {
 			idx = el.getAttribute('data-idx');
 		if(this.current == idx ) return;
 		if(this.current){
-			this[this.current].setAttribute(attribute, 'false');
+			el.form[el.name][this.current].setAttribute(attribute, 'false');
 		};
 		el.setAttribute(attribute, 'true');
 		this.current = idx;

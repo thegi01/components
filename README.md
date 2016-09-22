@@ -57,6 +57,9 @@
 - [Url] : https://thegi01.github.io/components/form.html
 - To do
 	- 하위 버전 확인
+	- complex forms
+	- validation
+	- file upload
 
 ### 공통
 - reset 확인
@@ -90,6 +93,9 @@
 	- 가능한 영어로 이해하기 쉽도록 작성하는 습관을 들인다.
 - reset 
 	- reset의 중복 적용을 하지 않도록 필요한 코드만 작성한다.
+- form 속성 순서 : type, class, name, id, pattern, placeholder, disabled?, data, aria
+
+
 
 ### 참조
 - [BEM] : https://en.bem.info/libs/bem-components/v3.0.0/desktop/button/

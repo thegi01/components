@@ -16,21 +16,29 @@
 .form {
 	.form-field {
 		position: relative;
-		&:not(:first-child) {
-			margin-top: rem(16);
-		}
+		margin-bottom: rem(10);
 	}
 	.form-field__label {
 		font-size: rem(12); font-weight: 500; color:#777;
 	}
+
 }
 .form--default {
 	@include form--default;
+	.row {
+		@media #{$media-m}{
+			margin-left: rem(-5); margin-right: rem(-5);
+			.col.form-field {
+				margin-top: inherit;
+				padding-left: rem(5); padding-right: rem(5);
+			}
+		}
+	}
+	
 }
 .form--horizontal {
 	.form-field {
 		overflow: hidden;
-		// margin-bottom: rem(16);
 		&--offset {
 			margin-left: 30%;
 		}
@@ -62,4 +70,6 @@
 	line-height: 1.4;
 }
 
-
+.legend {
+	margin-bottom: rem(10);
+}
