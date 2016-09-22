@@ -46,7 +46,7 @@ var dropdown = {
 		};
 	},
 	getItem : function(a){
-		a.parentElement.parentElement.previousElementSibling.firstChild.textContent = a.innerText; // gte IE9
+		a.parentElement.parentElement.previousElementSibling.firstChild.textContent = a.innerText + ' '; // gte IE9
 	}
 };
 window.onclick = function(event) {

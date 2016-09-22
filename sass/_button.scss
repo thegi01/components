@@ -143,7 +143,6 @@ input[data-role="button"] {
     &__btn {
        .ico {
             width: 0; height: 0;
-            margin-left: 7px;
             border-top: 4px solid;
             border-right: 4px solid transparent; border-left: 4px solid transparent;
             vertical-align: middle;
@@ -186,10 +185,10 @@ input[data-role="button"] {
             cursor : not-allowed;
         }
     }
-    .dropdown__btn[aria-expanded="true"] + .dropdown-menu {
+    &__btn[aria-expanded="true"] + &-menu {
         display: block;
     }
-    .dropdown__btn[aria-expanded="false"] + .dropdown-menu {
+    &__btn[aria-expanded="false"] + &-menu {
         display: none;
     }
     &--up {

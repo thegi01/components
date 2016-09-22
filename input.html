@@ -108,7 +108,7 @@
 			<i class="ico ico-loading"></i>
 		</div>
 	</div>
-
+	
 	<h3 class="h3">Input group : fixed</h3>
 	<div class="row ex-input-group">
 		<h4 class="h4">Seperated</h4>
@@ -143,12 +143,12 @@
 		</div>
 	</div>
 
-	<h3 class="h3">Input group : display:table</h3>
+	<h3 class="h3">Input group : display-table</h3>
 	<div class="ex__txt">
 		 <p>ie8 이상 지원</p>
 		 <p>ie8에서는 :last-child, :not 을 지원하지 않으므로 관련 ui js 추가해야함.</p>
 	</div>
-	<div class="row ex-input-group">
+	<div class="ex-input-group">
 		<div class="input-group--table">
 			<input type="text" name="group-table-1" id="group-table-1" placeholder="input group 1" class="input">
 			<div class="input-group-btn">
@@ -184,10 +184,132 @@
 				<button class="btn btn--default btn--m">button</button>
 			</div>
 		</div>
+
+		<h4 class="h4">Addon</h4>
+		<div class="ex-input-group">
+			<div class="input-group--table">
+				<span class="input-group-addon" id="basic-addon1">@</span>
+				<input type="text" class="input" placeholder="Username" aria-describedby="basic-addon1">
+			</div>
+			<div class="input-group--table">
+				<input type="text" class="input" placeholder="Recipient's username" aria-describedby="basic-addon2">
+				<span class="input-group-addon" id="basic-addon2">@example.com</span>
+			</div>
+			<div class="input-group--table">
+				<span class="input-group-addon">$</span>
+				<input type="text" class="input" aria-label="Amount (to the nearest dollar)">
+				<span class="input-group-addon">.00</span>
+			</div>
+			<div class="input-group--table">
+				<span class="input-group-addon" id="basic-addon3">https://example.com/users/</span>
+				<input type="text" class="input" id="basic-url" aria-describedby="basic-addon3">
+			</div>
+		</div>
+		<h4 class="h4">Addon : checkbox, radio</h4>
+		<div class="input-group--table">
+			<span class="input-group-addon">
+				<input type="checkbox" aria-label="Checkbox for following text input">
+			</span>
+			<input type="text" class="input" aria-label="Text input with checkbox">
+		</div>
+		<div class="input-group--table">
+			<span class="input-group-addon">
+				<input type="radio" aria-label="Radio button for following text input">
+			</span>
+			<input type="text" class="input" aria-label="Text input with radio button">
+		</div>
+		<h4 class="h4">Addon : dropdown</h4>
+		<div class="input-group--table">
+			<span class="input-group-btn">
+				<!-- <div class="dropdown"> -->
+				<button type="button" class="btn btn--default btn--m dropdown__btn" id="dropdownMenu2" data-toggle="dropdown" aria-expanded="false" onclick="dropdown.toggle(this)">
+					Dropdown <span class="ico"></span>
+				</button>
+				<ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
+					<li class="dropdown-item"><a href="#href" class="dropdown__a" onclick="dropdown.getItem(this)">None</a></li>
+					<li class="dropdown-header">Dropdown header 1</li>
+					<li class="dropdown-item"><a href="#href" class="dropdown__a" onclick="dropdown.getItem(this)">Dropdown 1</a></li>
+					<li class="dropdown-item"><a href="#href" class="dropdown__a" onclick="dropdown.getItem(this)">Dropdown 2</a></li>
+					<li class="dropdown-item"><a href="#href" class="dropdown__a" onclick="dropdown.getItem(this)">Dropdown 3</a></li>
+					<li class="dropdown-header">Dropdown header 2</li>
+					<li class="dropdown-item"><a href="#href" class="dropdown__a" onclick="dropdown.getItem(this)">Dropdown 4</a></li>
+					<li class="dropdown--disabled"><a href="#href" class="dropdown__a" onclick="dropdown.getItem(this)">Dropdown 5 Disabled</a></li>
+					<li role="separator" class="dropdown__divider"></li>
+					<li class="dropdown-item"><a href="#href" class="dropdown__a" onclick="dropdown.getItem(this)">Seperated link</a></li>
+				</ul>
+				<!-- </div> -->
+			</span>
+			<input type="text" class="input" aria-label="Text input with radio button">
+		</div>
+		<div class="input-group--table">
+			<input type="text" class="input" aria-label="Text input with radio button">
+			<span class="input-group-btn">
+				<!-- <div class="dropdown"> -->
+				<button type="button" class="btn btn--default btn--m dropdown__btn" id="dropdownMenu3" data-toggle="dropdown" aria-expanded="false" onclick="dropdown.toggle(this)">
+					Dropdown <span class="ico"></span>
+				</button>
+				<ul class="dropdown-menu dropdown-menu--right" aria-labelledby="dropdownMenu3">
+					<li class="dropdown-item"><a href="#href" class="dropdown__a" onclick="dropdown.getItem(this)">None</a></li>
+					<li class="dropdown-header">Dropdown header 1</li>
+					<li class="dropdown-item"><a href="#href" class="dropdown__a" onclick="dropdown.getItem(this)">Dropdown 1</a></li>
+					<li class="dropdown-item"><a href="#href" class="dropdown__a" onclick="dropdown.getItem(this)">Dropdown 2</a></li>
+					<li class="dropdown-item"><a href="#href" class="dropdown__a" onclick="dropdown.getItem(this)">Dropdown 3</a></li>
+					<li class="dropdown-header">Dropdown header 2</li>
+					<li class="dropdown-item"><a href="#href" class="dropdown__a" onclick="dropdown.getItem(this)">Dropdown 4</a></li>
+					<li class="dropdown--disabled"><a href="#href" class="dropdown__a" onclick="dropdown.getItem(this)">Dropdown 5 Disabled</a></li>
+					<li role="separator" class="dropdown__divider"></li>
+					<li class="dropdown-item"><a href="#href" class="dropdown__a" onclick="dropdown.getItem(this)">Seperated link</a></li>
+				</ul>
+				<!-- </div> -->
+			</span>
+		</div>
+		<h4 class="h4">Segmented buttons</h4>
+		<div class="input-group--table">
+			<span class="input-group-btn">
+				<button type="button" class="btn btn--default btn--m">Action</button>
+				<button type="button" class="btn btn--default btn--m dropdown__btn" id="dropdownMenu6" data-toggle="dropdown" aria-expanded="false" onclick="dropdown.toggle(this)">
+					<span class="ico"></span>
+				</button>
+				<ul class="dropdown-menu" aria-labelledby="dropdownMenu6">
+					<li class="dropdown-item"><a href="#href" class="dropdown__a" onclick="dropdown.getItem(this)">None</a></li>
+					<li class="dropdown-header">Dropdown header 1</li>
+					<li class="dropdown-item"><a href="#href" class="dropdown__a" onclick="dropdown.getItem(this)">Dropdown 1</a></li>
+					<li class="dropdown-item"><a href="#href" class="dropdown__a" onclick="dropdown.getItem(this)">Dropdown 2</a></li>
+					<li class="dropdown-item"><a href="#href" class="dropdown__a" onclick="dropdown.getItem(this)">Dropdown 3</a></li>
+					<li class="dropdown-header">Dropdown header 2</li>
+					<li class="dropdown-item"><a href="#href" class="dropdown__a" onclick="dropdown.getItem(this)">Dropdown 4</a></li>
+					<li class="dropdown--disabled"><a href="#href" class="dropdown__a" onclick="dropdown.getItem(this)">Dropdown 5 Disabled</a></li>
+					<li role="separator" class="dropdown__divider"></li>
+					<li class="dropdown-item"><a href="#href" class="dropdown__a" onclick="dropdown.getItem(this)">Seperated link</a></li>
+				</ul>
+			</span>
+			<input type="text" class="input" aria-label="Text input with segmented button dropdown">
+		</div>
+		<div class="input-group--table">
+			<input type="text" class="input" aria-label="Text input with segmented button dropdown">
+			<span class="input-group-btn">
+				<button type="button" class="btn btn--default btn--m">Action</button>
+				<button type="button" class="btn btn--default btn--m dropdown__btn" id="dropdownMenu6" data-toggle="dropdown" aria-expanded="false" onclick="dropdown.toggle(this)">
+					<span class="ico"></span>
+				</button>
+				<ul class="dropdown-menu dropdown-menu--right" aria-labelledby="dropdownMenu6">
+					<li class="dropdown-item"><a href="#href" class="dropdown__a" onclick="dropdown.getItem(this)">None</a></li>
+					<li class="dropdown-header">Dropdown header 1</li>
+					<li class="dropdown-item"><a href="#href" class="dropdown__a" onclick="dropdown.getItem(this)">Dropdown 1</a></li>
+					<li class="dropdown-item"><a href="#href" class="dropdown__a" onclick="dropdown.getItem(this)">Dropdown 2</a></li>
+					<li class="dropdown-item"><a href="#href" class="dropdown__a" onclick="dropdown.getItem(this)">Dropdown 3</a></li>
+					<li class="dropdown-header">Dropdown header 2</li>
+					<li class="dropdown-item"><a href="#href" class="dropdown__a" onclick="dropdown.getItem(this)">Dropdown 4</a></li>
+					<li class="dropdown--disabled"><a href="#href" class="dropdown__a" onclick="dropdown.getItem(this)">Dropdown 5 Disabled</a></li>
+					<li role="separator" class="dropdown__divider"></li>
+					<li class="dropdown-item"><a href="#href" class="dropdown__a" onclick="dropdown.getItem(this)">Seperated link</a></li>
+				</ul>
+			</span>
+		</div>
 	</div>
 
-	<h3 class="h3">Input group : css flex </h3>
-	<div class="row ex-input-group">
+	<h3 class="h3">Input group : flex </h3>
+	<div class="ex-input-group">
 		<div class="input-group--flex">
 			<input type="text" name="group-flex-1" id="group-flex-1" placeholder="input group 1" class="input">
 			<button class="btn btn--default btn--m">button</button>
@@ -211,27 +333,126 @@
 			<input type="text" name="group-flex-5" id="group-flex-5" placeholder="input group 5" class="input">
 			<button class="btn btn--default btn--m">button</button>
 		</div>
+
+		<h4 class="h4">Addon</h4>
+		<div class="ex-input-group">
+			<div class="input-group--flex">
+				<span class="input-group-addon" id="basic-addon1">@</span>
+				<input type="text" class="input" placeholder="Username" aria-describedby="basic-addon1">
+			</div>
+			<div class="input-group--flex">
+				<input type="text" class="input" placeholder="Recipient's username" aria-describedby="basic-addon2">
+				<span class="input-group-addon" id="basic-addon2">@example.com</span>
+			</div>
+			<div class="input-group--flex">
+				<span class="input-group-addon">$</span>
+				<input type="text" class="input" aria-label="Amount (to the nearest dollar)">
+				<span class="input-group-addon">.00</span>
+			</div>
+			<div class="input-group--flex">
+				<span class="input-group-addon" id="basic-addon3">https://example.com/users/</span>
+				<input type="text" class="input" id="basic-url" aria-describedby="basic-addon3">
+			</div>
+		</div>
+		<h4 class="h4">Addon : checkbox, radio</h4>
+		<div class="input-group--flex">
+			<span class="input-group-addon">
+				<input type="checkbox" aria-label="Checkbox for following text input">
+			</span>
+			<input type="text" class="input" aria-label="Text input with checkbox">
+		</div>
+		<div class="input-group--flex">
+			<span class="input-group-addon">
+				<input type="radio" aria-label="Radio button for following text input">
+			</span>
+			<input type="text" class="input" aria-label="Text input with radio button">
+		</div>
+		<h4 class="h4">Addon : dropdown</h4>
+		<div class="input-group--flex">
+			<div class="dropdown">
+				<button type="button" class="btn btn--default btn--m dropdown__btn" id="dropdownMenu4" data-toggle="dropdown" aria-expanded="false" onclick="dropdown.toggle(this)">
+					Dropdown <span class="ico"></span>
+				</button>
+				<ul class="dropdown-menu" aria-labelledby="dropdownMenu4">
+					<li class="dropdown-item"><a href="#href" class="dropdown__a" onclick="dropdown.getItem(this)">None</a></li>
+					<li class="dropdown-header">Dropdown header 1</li>
+					<li class="dropdown-item"><a href="#href" class="dropdown__a" onclick="dropdown.getItem(this)">Dropdown 1</a></li>
+					<li class="dropdown-item"><a href="#href" class="dropdown__a" onclick="dropdown.getItem(this)">Dropdown 2</a></li>
+					<li class="dropdown-item"><a href="#href" class="dropdown__a" onclick="dropdown.getItem(this)">Dropdown 3</a></li>
+					<li class="dropdown-header">Dropdown header 2</li>
+					<li class="dropdown-item"><a href="#href" class="dropdown__a" onclick="dropdown.getItem(this)">Dropdown 4</a></li>
+					<li class="dropdown--disabled"><a href="#href" class="dropdown__a" onclick="dropdown.getItem(this)">Dropdown 5 Disabled</a></li>
+					<li role="separator" class="dropdown__divider"></li>
+					<li class="dropdown-item"><a href="#href" class="dropdown__a" onclick="dropdown.getItem(this)">Seperated link</a></li>
+				</ul>
+			</div>
+			<input type="text" class="input" aria-label="Text input with radio button">
+		</div>
+		<div class="input-group--flex">
+			<input type="text" class="input" aria-label="Text input with radio button">
+			<div class="dropdown">
+				<button type="button" class="btn btn--default btn--m dropdown__btn" id="dropdownMenu5" data-toggle="dropdown" aria-expanded="false" onclick="dropdown.toggle(this)">
+					Dropdown <span class="ico"></span>
+				</button>
+				<ul class="dropdown-menu dropdown-menu--right" aria-labelledby="dropdownMenu5">
+					<li class="dropdown-item"><a href="#href" class="dropdown__a" onclick="dropdown.getItem(this)">None</a></li>
+					<li class="dropdown-header">Dropdown header 1</li>
+					<li class="dropdown-item"><a href="#href" class="dropdown__a" onclick="dropdown.getItem(this)">Dropdown 1</a></li>
+					<li class="dropdown-item"><a href="#href" class="dropdown__a" onclick="dropdown.getItem(this)">Dropdown 2</a></li>
+					<li class="dropdown-item"><a href="#href" class="dropdown__a" onclick="dropdown.getItem(this)">Dropdown 3</a></li>
+					<li class="dropdown-header">Dropdown header 2</li>
+					<li class="dropdown-item"><a href="#href" class="dropdown__a" onclick="dropdown.getItem(this)">Dropdown 4</a></li>
+					<li class="dropdown--disabled"><a href="#href" class="dropdown__a" onclick="dropdown.getItem(this)">Dropdown 5 Disabled</a></li>
+					<li role="separator" class="dropdown__divider"></li>
+					<li class="dropdown-item"><a href="#href" class="dropdown__a" onclick="dropdown.getItem(this)">Seperated link</a></li>
+				</ul>
+			</div>
+		</div>
+		<h4 class="h4">Segmented buttons</h4>
+		<div class="input-group--flex">
+			<button type="button" class="btn btn--default btn--m">Action</button>
+			<div class="dropdown">
+				<button type="button" class="btn btn--default btn--m dropdown__btn" id="dropdownMenu6" data-toggle="dropdown" aria-expanded="false" onclick="dropdown.toggle(this)">
+					<span class="ico"></span>
+				</button>
+				<ul class="dropdown-menu" aria-labelledby="dropdownMenu6">
+					<li class="dropdown-item"><a href="#href" class="dropdown__a" onclick="dropdown.getItem(this)">None</a></li>
+					<li class="dropdown-header">Dropdown header 1</li>
+					<li class="dropdown-item"><a href="#href" class="dropdown__a" onclick="dropdown.getItem(this)">Dropdown 1</a></li>
+					<li class="dropdown-item"><a href="#href" class="dropdown__a" onclick="dropdown.getItem(this)">Dropdown 2</a></li>
+					<li class="dropdown-item"><a href="#href" class="dropdown__a" onclick="dropdown.getItem(this)">Dropdown 3</a></li>
+					<li class="dropdown-header">Dropdown header 2</li>
+					<li class="dropdown-item"><a href="#href" class="dropdown__a" onclick="dropdown.getItem(this)">Dropdown 4</a></li>
+					<li class="dropdown--disabled"><a href="#href" class="dropdown__a" onclick="dropdown.getItem(this)">Dropdown 5 Disabled</a></li>
+					<li role="separator" class="dropdown__divider"></li>
+					<li class="dropdown-item"><a href="#href" class="dropdown__a" onclick="dropdown.getItem(this)">Seperated link</a></li>
+				</ul>
+			</div>
+			<input type="text" class="input" aria-label="Text input with segmented button dropdown">
+		</div>
+		<div class="input-group--flex">
+			<input type="text" class="input" aria-label="Text input with segmented button dropdown">
+			<button type="button" class="btn btn--default btn--m">Action</button>
+			<div class="dropdown">
+				<button type="button" class="btn btn--default btn--m dropdown__btn" id="dropdownMenu6" data-toggle="dropdown" aria-expanded="false" onclick="dropdown.toggle(this)">
+					<span class="ico"></span>
+				</button>
+				<ul class="dropdown-menu dropdown-menu--right" aria-labelledby="dropdownMenu6">
+					<li class="dropdown-item"><a href="#href" class="dropdown__a" onclick="dropdown.getItem(this)">None</a></li>
+					<li class="dropdown-header">Dropdown header 1</li>
+					<li class="dropdown-item"><a href="#href" class="dropdown__a" onclick="dropdown.getItem(this)">Dropdown 1</a></li>
+					<li class="dropdown-item"><a href="#href" class="dropdown__a" onclick="dropdown.getItem(this)">Dropdown 2</a></li>
+					<li class="dropdown-item"><a href="#href" class="dropdown__a" onclick="dropdown.getItem(this)">Dropdown 3</a></li>
+					<li class="dropdown-header">Dropdown header 2</li>
+					<li class="dropdown-item"><a href="#href" class="dropdown__a" onclick="dropdown.getItem(this)">Dropdown 4</a></li>
+					<li class="dropdown--disabled"><a href="#href" class="dropdown__a" onclick="dropdown.getItem(this)">Dropdown 5 Disabled</a></li>
+					<li role="separator" class="dropdown__divider"></li>
+					<li class="dropdown-item"><a href="#href" class="dropdown__a" onclick="dropdown.getItem(this)">Seperated link</a></li>
+				</ul>
+			</div>
+		</div>
 	</div>
-	<h3 class="h3">Input group : Addon</h4>
-	<div class="ex-input-group">
-		<div class="input-group--flex">
-			<span class="input-group-addon" id="basic-addon1">@</span>
-			<input type="text" class="input" placeholder="Username" aria-describedby="basic-addon1">
-		</div>
-		<div class="input-group--flex">
-			<input type="text" class="input" placeholder="Recipient's username" aria-describedby="basic-addon2">
-			<span class="input-group-addon" id="basic-addon2">@example.com</span>
-		</div>
-		<div class="input-group--flex">
-			<span class="input-group-addon">$</span>
-			<input type="text" class="input" aria-label="Amount (to the nearest dollar)">
-			<span class="input-group-addon">.00</span>
-		</div>
-		<div class="input-group--flex">
-			<span class="input-group-addon" id="basic-addon3">https://example.com/users/</span>
-			<input type="text" class="input" id="basic-url" aria-describedby="basic-addon3">
-		</div>
-	</div>
+	
 
 	<h3 class="h3">Grid</h3>
 	<h4 class="h4">half</h4>

@@ -51,6 +51,7 @@
 	- checkbox, radio custom 시 js를 사용하지 않고 기본 기능으로 구현할 수 없나.
 	- not selector, last-child ie8 not supply --> js??
 	- 하위 버전 확인
+	- input group : margin 간격 정리
 
 ### Form
 - [Url] : https://thegi01.github.io/components/form.html
