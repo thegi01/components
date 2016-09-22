@@ -9,7 +9,23 @@ var toggleAttirbute = function(attribute, el){
 	};
 };
 
-
+/* checkbox, radio */
+var checkboxCheck = function(el){
+	toggleAttirbute('checked', el);
+};
+var radio = {
+	current : undefined,
+	check : function(el){
+		var attribute = 'checked',
+			idx = el.getAttribute('data-idx');
+		if(this.current == idx ) return;
+		if(this.current){
+			this[this.current].setAttribute(attribute, 'false');
+		};
+		el.setAttribute(attribute, 'true');
+		this.current = idx;
+	}
+};
 
 /* Dropdown */
 var dropdown = {

@@ -276,7 +276,7 @@
 	</div>
 	<h3 class="h3">Select dropdown</h3>
 	<div class="dropdown select-dropdown">
-		<button class="dropdown__btn" id="dropdownMenu1" data-toggle="dropdown" aria-expanded=false>
+		<button class="dropdown__btn" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="false" onclick="dropdown.toggle(this)">
 			Dropdown <span class="ico"></span>
 		</button>
 		<ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
@@ -437,15 +437,15 @@
  		<div class="block--box">
  			<div class="form-field">
  				<label class="radio--custom">
- 					<input type="radio" name="radioCustom" data-idx="0" onchange="radioCheck(this)">
+ 					<input type="radio" name="radioCustom" data-idx="0" onchange="radio.check(this)">
  					<span class="radio__label">Custom</span>
  				</label>
  				<label class="radio--custom">
- 					<input type="radio" name="radioCustom" data-idx="1" onchange="radioCheck(this)">
+ 					<input type="radio" name="radioCustom" data-idx="1" onchange="radio.check(this)">
  					<span class="radio__label">Custom</span>
  				</label>
  				<label class="radio--custom">
- 					<input type="radio" name="radioCustom" data-idx="2" onchange="radioCheck(this)">
+ 					<input type="radio" name="radioCustom" data-idx="2" onchange="radio.check(this)">
  					<span class="radio__label">Custom</span>
  				</label>
  			</div>
@@ -459,15 +459,7 @@
 <!-- javacript -->
 <script type="text/javascript" src="ui-base.js"></script>
 <script>
-var checkboxCheck = function(el){
-	var d = 'checked',
-		c = el.getAttribute(d);
-	if( c == 'true' ) {
-		el.setAttribute(d, 'false');
-	} else {
-		el.setAttribute(d, 'true');
-	};
-};
+
 /*document.checkboxForm2.checkboxCustom.onclick = function(){
 	checkboxCheck(this);
 };
@@ -478,21 +470,10 @@ document.checkboxForm2.checkboxToggle.onclick = function(){
 	checkboxCheck(this);
 };*/
 
-var radioEl = document.radioForm2.radioCustom;
-radioEl.current = null;
-var radioCheck = function(el){
-	var d = 'checked',
-		c = el.getAttribute(d),
-		idx = el.getAttribute('data-idx');
-	if(radioEl.current == idx ) return;
-	if(radioEl.current){
-		radioEl[radioEl.current].setAttribute(d, 'false');
-	};
-	el.setAttribute(d, 'true');
-	radioEl.current = el.getAttribute('data-idx');
-};
+
+/*var radioEl = document.radioForm2.radioCustom; */
 /*for(var i=0 ; i<radioEl.length ; i++){
-	radioEl[i].onchange = radioCheck;
+	radioEl[i].onchange = radio.check;
 };*/
 
 // ie8 .input-group--table ui
@@ -500,9 +481,9 @@ var radioCheck = function(el){
 
 
 /* Dropdown click */
-document.getElementById('dropdownMenu1').onclick = function(){
+/*document.getElementById('dropdownMenu1').onclick = function(){
 	dropdown.toggle(this);
-};
+};*/
 </script>
 <!-- //javacript -->
 
