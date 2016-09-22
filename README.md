@@ -57,7 +57,6 @@
 - [Url] : https://thegi01.github.io/components/form.html
 - To do
 	- 하위 버전 확인
-	- complex forms
 	- validation
 	- file upload
 
