@@ -31,7 +31,7 @@
     -webkit-box-orient: vertical;
     word-wrap:break-word; 
 }
-@mixin prefix($property, $value, $prefixes: ()) {
+@mixin prefix( $property, $value, $prefixes:() ) {
   @each $prefix in $prefixes {
     #{'-' + $prefix + '-' + $property}: $value;
   }

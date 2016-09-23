@@ -2,7 +2,7 @@
 
 // mixin
 @mixin form--default {
-	.form-field__label {
+	.form__label {
 		display: block;
 		margin-bottom: rem(5);
 		line-height: 1.4;
@@ -12,13 +12,13 @@
 	}
 }
 
-// form layout
+// Layout
 .form {
 	.form-field {
 		position: relative;
 		margin-bottom: rem(10);
 	}
-	.form-field__label {
+	.form__label {
 		font-size: rem(12); font-weight: 500; color:#777;
 	}
 
@@ -43,7 +43,7 @@
 			margin-left: 30%;
 		}
 	}
-	.form-field__label {
+	.form__label {
 		float: left;
 		width: 30%;
 		line-height: rem(34);
@@ -58,18 +58,30 @@
 		.form-field {
 			display: inline-block;
 			margin-right:rem(10); margin-bottom: 0;
-			.form-field__label {
+			.form__label {
 				@include blind;
 			}
 		}
 	}
 }
+
+// Note
 .form-note {
 	margin-top: rem(6); margin-bottom: rem(6);
-	font-size: rem(12); color:#777;
-	line-height: 1.4;
+	font-size: rem(12); color:#777; line-height: 1.4;
 }
 
+// Legend
 .legend {
 	margin-bottom: rem(10);
 }
+
+// Validation
+.form--invalid {
+	display: none;
+	margin-top: rem(3);
+	font-size:rem(11); color: #d64242; line-height: 1.4;
+}
+
+
+

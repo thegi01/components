@@ -24,7 +24,7 @@
 - To do 
 	- 하위 버전 크로스 브라우징
 	- aria
-	- btn--deafutl, btn--m을 btn 기본으로 사용?
+	- btn--deafult, btn--m을 btn 기본으로 사용?
 	- dropdown : js ie8이하 pollyfill
 
 ### Grid
@@ -64,6 +64,7 @@
 - reset 확인
 - 접근성 타겟 적용(참조 hmp wireframe)
 - ico 정리
+- id 등 속성 값 문자 규칙(camel case, -)
 
 *** 
 
@@ -92,7 +93,11 @@
 	- 가능한 영어로 이해하기 쉽도록 작성하는 습관을 들인다.
 - reset 
 	- reset의 중복 적용을 하지 않도록 필요한 코드만 작성한다.
-- form 속성 순서 : type, class, name, id, pattern, placeholder, disabled?, data, aria
+- form 속성 순서 
+	- input :  type, class, name, id, pattern, placeholder, disabled, data, aria
+	- selelct : class, name, id
+	- label : class, for
+	
 
 
 

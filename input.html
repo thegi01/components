@@ -214,7 +214,7 @@
 		</div>
 		<div class="input-group--table">
 			<span class="input-group-addon">
-				<input type="radio" aria-label="Radio button for following text input">
+				<input type="radio" class="radio" aria-label="Radio button for following text input">
 			</span>
 			<input type="text" class="input" aria-label="Text input with radio button">
 		</div>
@@ -363,7 +363,7 @@
 		</div>
 		<div class="input-group--flex">
 			<span class="input-group-addon">
-				<input type="radio" aria-label="Radio button for following text input">
+				<input type="radio" class="radio" aria-label="Radio button for following text input">
 			</span>
 			<input type="text" class="input" aria-label="Text input with radio button">
 		</div>
@@ -492,7 +492,7 @@
 	<h3 class="h3">Select Default</h3>
 	<div class="form">
 		<div class="form-field">
-			<select name="select" class="select">
+			<select class="select" name="select">
 				<option value="1">option 1</option>
 				<option value="2">option 2</option>
 				<option value="3">option 3</option>
@@ -504,7 +504,7 @@
 	<h3 class="h3">Select coustom : ie not supply</h3>
 	<div class="form">
 		<div class="form-field">
-			<select name="select" class="select--arr">
+			<select class="select--arr" name="select">
 				<option value="1">option 1</option>
 				<option value="2">option 2</option>
 				<option value="3">option 3</option>
@@ -517,7 +517,7 @@
 		</div>
 	</div>
 	<h3 class="h3">Select dropdown</h3>
-	<div class="dropdown select-dropdown">
+	<div class="dropdown dropdown--select">
 		<button class="dropdown__btn" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="false" onclick="dropdown.toggle(this)">
 			Dropdown <span class="ico"></span>
 		</button>
@@ -541,16 +541,16 @@
  		<h4 class="h4">Inline</h4>
  		<div class="block--box">
  			<div class="form-field">
- 				<label class="checkbox">
- 					<input type="checkbox" name="checkboxAlign1">
+ 				<label class="checkbox-field">
+ 					<input type="checkbox" class="checkbox" name="checkboxAlign1">
  					<span class="checkbox__label">Checkbox Inline</span>
  				</label>
- 				<label class="checkbox">
- 					<input type="checkbox" name="checkboxAlign1">
+ 				<label class="checkbox-field">
+ 					<input type="checkbox" class="checkbox" name="checkboxAlign1">
  					<span class="checkbox__label">Checkbox Inline</span>
  				</label>
- 				<label class="checkbox">
- 					<input type="checkbox" name="checkboxAlign1">
+ 				<label class="checkbox-field">
+ 					<input type="checkbox" class="checkbox" name="checkboxAlign1">
  					<span class="checkbox__label">Checkbox Inline</span>
  				</label>
  			</div>
@@ -560,16 +560,16 @@
  		<h5 class="h5">grid 이용</h5>
  		<div class="block--box">
  			<div class="form-field row">
- 				<label class="checkbox col s12">
- 					<input type="checkbox" name="checkboxAlign2">
+ 				<label class="checkbox-field col s12">
+ 					<input type="checkbox" class="checkbox" name="checkboxAlign2">
  					<span class="checkbox__label">Checkbox block</span>
  				</label>
- 				<label class="checkbox col s12">
- 					<input type="checkbox" name="checkboxAlign2">
+ 				<label class="checkbox-field col s12">
+ 					<input type="checkbox" class="checkbox" name="checkboxAlign2">
  					<span class="checkbox__label">Checkbox block</span>
  				</label>
- 				<label class="checkbox col s12">
- 					<input type="checkbox" name="checkboxAlign2">
+ 				<label class="checkbox-field col s12">
+ 					<input type="checkbox" class="checkbox" name="checkboxAlign2">
  					<span class="checkbox__label">Checkbox block</span>
  				</label>
  			</div>
@@ -577,17 +577,17 @@
 
  		<h5 class="h5">클래스 추가</h5>
  		<div class="block--box">
- 			<div class="form-field form-field--block">
- 				<label class="checkbox">
- 					<input type="checkbox" name="checkboxAlign3">
+ 			<div class="form-field">
+ 				<label class="checkbox-field checkbox-field--block">
+ 					<input type="checkbox" class="checkbox" name="checkboxAlign3">
  					<span class="checkbox__label">Checkbox block</span>
  				</label>
- 				<label class="checkbox">
- 					<input type="checkbox" name="checkboxAlign3">
+ 				<label class="checkbox-field checkbox-field--block">
+ 					<input type="checkbox" class="checkbox" name="checkboxAlign3">
  					<span class="checkbox__label">Checkbox block</span>
  				</label>
- 				<label class="checkbox">
- 					<input type="checkbox" name="checkboxAlign3">
+ 				<label class="checkbox-field checkbox-field--block">
+ 					<input type="checkbox" class="checkbox" name="checkboxAlign3">
  					<span class="checkbox__label">Checkbox block</span>
  				</label>
  			</div>
@@ -597,20 +597,20 @@
  	<form name="checkboxForm2" class="form">
  		<div class="block--box">
  			<div class="form-field">
- 				<label class="checkbox--custom">
- 					<input type="checkbox" name="checkboxCustom" onchange="checkboxCheck(this);">
+ 				<label class="checkbox-field checkbox-field--custom">
+ 					<input type="checkbox" class="checkbox" name="checkboxCustom" onchange="checkboxCheck(this);">
  					<span class="checkbox__label">Checkbox Custom</span>
  				</label>
  			</div>
  			<div class="form-field">
- 				<label class="checkbox--slider">
- 					<input type="checkbox" name="checkboxSlider" onchange="checkboxCheck(this);">
+ 				<label class="checkbox-field checkbox-field--slider">
+ 					<input type="checkbox" class="checkbox" name="checkboxSlider" onchange="checkboxCheck(this);">
  					<span class="checkbox__label">Checkbox Slider</span>
  				</label>
  			</div>
  			<div class="form-field">
- 				<label class="checkbox--toggle">
- 					<input type="checkbox" name="checkboxToggle" onchange="checkboxCheck(this);">
+ 				<label class="checkbox-field checkbox-field--toggle">
+ 					<input type="checkbox" class="checkbox" name="checkboxToggle" onchange="checkboxCheck(this);">
  					<span class="checkbox__label">Checkbox Toggle</span>
  				</label>
  			</div>
@@ -623,16 +623,16 @@
  		<h4 class="h4">Inline</h4>
  		<div class="block--box">
  			<div class="form-field">
- 				<label class="radio">
- 					<input type="radio" name="radio">
+ 				<label class="radio-field">
+ 					<input type="radio" class="radio" name="radio">
  					<span class="radio__label">inline</span>
  				</label>
- 				<label class="radio">
- 					<input type="radio" name="radio">
+ 				<label class="radio-field">
+ 					<input type="radio" class="radio" name="radio">
  					<span class="radio__label">inline</span>
  				</label>
- 				<label class="radio">
- 					<input type="radio" name="radio">
+ 				<label class="radio-field">
+ 					<input type="radio" class="radio" name="radio">
  					<span class="radio__label">inline</span>
  				</label>
  			</div>
@@ -641,33 +641,33 @@
  		<h5 class="h5">Grid</h5>
  		<div class="block--box">
  			<div class="form-field row">
- 				<label class="radio col s12">
- 					<input type="radio" name="radio">
+ 				<label class="radio-field col s12">
+ 					<input type="radio" class="radio" name="radio">
  					<span class="radio__label">Radio block</span>
  				</label>
- 				<label class="radio col s12">
- 					<input type="radio" name="radio">
+ 				<label class="radio-field col s12">
+ 					<input type="radio" class="radio" name="radio">
  					<span class="radio__label">Radio block</span>
  				</label>
- 				<label class="radio col s12">
- 					<input type="radio" name="radio">
+ 				<label class="radio-field col s12">
+ 					<input type="radio" class="radio" name="radio">
  					<span class="radio__label">Radio block</span>
  				</label>
  			</div>
  		</div>
  		<h5 class="h5">클래스 추가</h5>
  		<div class="block--box">
- 			<div class="form-field form-field--block">
- 				<label class="radio">
- 					<input type="radio" name="radio">
+ 			<div class="form-field">
+ 				<label class="radio-field radio-field--block">
+ 					<input type="radio" class="radio" name="radio">
  					<span class="radio__label">Radio block</span>
  				</label>
- 				<label class="radio">
- 					<input type="radio" name="radio">
+ 				<label class="radio-field radio-field--block">
+ 					<input type="radio" class="radio" name="radio">
  					<span class="radio__label">Radio block</span>
  				</label>
- 				<label class="radio">
- 					<input type="radio" name="radio">
+ 				<label class="radio-field radio-field--block">
+ 					<input type="radio" class="radio" name="radio">
  					<span class="radio__label">Radio block</span>
  				</label>
  			</div>
@@ -678,16 +678,16 @@
  	<form name="radioForm2" class="form">
  		<div class="block--box">
  			<div class="form-field">
- 				<label class="radio--custom">
- 					<input type="radio" name="radioCustom" data-idx="0" onchange="radio.check(this)">
+ 				<label class="radio-field radio-field--custom">
+ 					<input type="radio" class="radio" name="radioCustom" data-idx="0" onchange="radio.check(this)">
  					<span class="radio__label">Custom</span>
  				</label>
- 				<label class="radio--custom">
- 					<input type="radio" name="radioCustom" data-idx="1" onchange="radio.check(this)">
+ 				<label class="radio-field radio-field--custom">
+ 					<input type="radio" class="radio" name="radioCustom" data-idx="1" onchange="radio.check(this)">
  					<span class="radio__label">Custom</span>
  				</label>
- 				<label class="radio--custom">
- 					<input type="radio" name="radioCustom" data-idx="2" onchange="radio.check(this)">
+ 				<label class="radio-field radio-field--custom">
+ 					<input type="radio" class="radio" name="radioCustom" data-idx="2" onchange="radio.check(this)">
  					<span class="radio__label">Custom</span>
  				</label>
  			</div>
