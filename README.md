@@ -52,6 +52,7 @@
 - To do
 	- 하위 버전 확인
 	- validation : auto complete event ? (ie8)
+		- input event not support IE8
 	- validation : 상황별로 좀 더 개선할 것
 	- file upload
 	- aria
