@@ -315,23 +315,23 @@
 			</div>
 			<div class="form-field">
 				<label class="form__label" for="textValidation2">Name</label>
-				<input type="text" class="input" name="textValidation2" id="textValidation2" placeholder="Enter name">
-				<div class="form--invalid" data-visible="false">Name is required</div>
+				<input type="text" class="input" name="textValidation2" id="textValidation2" placeholder="Enter name" onkeyup="validation.view( this, 'isString' );">
+				<div class="form--invalid" data-visible="true">Name is required</div>
 			</div>
 			<div class="form-field">
 				<label class="form__label" for="emailValidation2">Email</label>
-				<input type="email" class="input" name="emailValidation2" id="emailValidation2" placeholder="Enter email">
-				<div class="form--invalid" data-visible="false">Email address is required</div>
+				<input type="email" class="input" name="emailValidation2" id="emailValidation2" placeholder="Enter email" onkyeup="validation.view( this, 'isEmail' );"  oninput="validation.view( this, 'isEmail' );"> <!-- oninput : Gte IE9 -->
+				<div class="form--invalid" data-visible="true">Email address is required</div>
 			</div>
 			<div class="form-field">
 				<label class="form__label" for="passwordValidation21">Password</label>
-				<input type="password" class="input" name="passwordValidation21" id="passwordValidation21" placeholder="Enter password">
-				<div class="form--invalid" data-visible="false">Password is required</div>
+				<input type="password" class="input" name="passwordValidation21" id="passwordValidation21" placeholder="Enter password" onkeyup="validation.view( this, 'isNumber' );">
+				<div class="form--invalid" data-visible="true">Password is required</div>
 			</div>
 			<div class="form-field">
 				<label class="form__label" for="passwordValidation22">Confirm</label>
-				<input type="password" class="input" name="passwordValidation22" id="passwordValidation22" placeholder="Enter password">
-				<div class="form--invalid" data-visible="false">Password is required</div>
+				<input type="password" class="input" name="passwordValidation22" id="passwordValidation22" placeholder="Enter password" onkeyup="validation.view( this, 'isNumber' ); validation.passConfirm( document.formValidation2.passwordValidation21, this);">
+				<div class="form--invalid" data-visible="true">Password is required</div>
 			</div>
 			<button type="submit" class="btn btn--default btn--m">Submit</button>
 		</fieldset>
@@ -344,49 +344,7 @@
     <script type="text/javascript" src="js/pollyfills/IE8-child-elements.js"></script>
 <![endif]-->
 <script type="text/javascript" src="ui-base.js"></script>
-<script>
-var validation = {
-	dataVisible : 'data-visible',
-	isString : function( str ){
-		return (typeof str == 'string' && str.replace(/^\s*|\s*$/g, '') !== '' && isNaN(str));
-	},
-	isEmail : function( str ){
-		var pattern = /^[\w-\.\']{1,}\@([\da-zA-Z\-]{1,}\.){1,}[\da-zA-Z\-]{2,}$/;
-		return pattern.test( str );
-	},
-	isNumber : function( str ){
-		 return (!isNaN( str) &&  str.replace(/^\s*|\s*$/g, '') !== '');
-	},
-	passConfirm : function( pass1, pass2, viewEl ) {
-		viewEl = viewEl ? viewEl : pass2.nextElementSibling;
-		if( pass2.value && pass1.value != pass2.value){
-			viewEl.setAttribute(this.dataVisible, 'true'); 
-			viewEl.textContent = 'Password and confirm password must be equal.'
-		};
-	},
-	view : function( el, type, viewEl ){
-		viewEl = viewEl ? viewEl : el.nextElementSibling;
-		if( this[type]( el.value ) ){
-			viewEl.setAttribute(this.dataVisible, 'false'); 
-		} else {
-			viewEl.setAttribute(this.dataVisible, 'true'); 
-		};
-	}
-};
-document.formValidation2.onsubmit = function(e){
-	e.preventDefault();
-	var pass1 = this.passwordValidation21,
-		pass2 = this.passwordValidation22;
-	validation.view( this.textValidation2, 'isString' );
-	validation.view( this.emailValidation2, 'isEmail' );
-	validation.view( pass1, 'isNumber' );
-	validation.view( pass2, 'isNumber' );
-	validation.passConfirm( pass1, pass2 );
-
-	// return false;
-};
-</script>
-<!-- //javacript -->
+<!-- // javacript -->
 
 </body>
 </html>

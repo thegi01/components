@@ -54,8 +54,33 @@ window.onclick = function(event) {
 };
 
 /* Validation */
-// Validation routines - add as required
-// https://www.w3.org/WAI/WCAG20/Techniques/working-examples/SCR32/index.php
-
+var validation = {
+	dataVisible : 'data-visible',
+	isString : function( str ){
+		return (typeof str == 'string' && str.replace(/^\s*|\s*$/g, '') !== '' && isNaN(str));
+	},
+	isEmail : function( str ){
+		var pattern = /^[\w-\.\']{1,}\@([\da-zA-Z\-]{1,}\.){1,}[\da-zA-Z\-]{2,}$/;
+		return pattern.test( str );
+	},
+	isNumber : function( str ){
+		 return (!isNaN( str) &&  str.replace(/^\s*|\s*$/g, '') !== '');
+	},
+	passConfirm : function( pass1, pass2, viewEl ) {
+		viewEl = viewEl ? viewEl : pass2.nextElementSibling;
+		if( pass2.value && pass1.value != pass2.value){
+			viewEl.setAttribute(this.dataVisible, 'true'); 
+			viewEl.textContent = 'Password and confirm password must be equal.'
+		};
+	},
+	view : function( el, type, viewEl ){
+		viewEl = viewEl ? viewEl : el.nextElementSibling;
+		if( this[type]( el.value ) ){
+			viewEl.setAttribute(this.dataVisible, 'false'); 
+		} else {
+			viewEl.setAttribute(this.dataVisible, 'true'); 
+		};
+	}
+};
 
 
