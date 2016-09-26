@@ -14,6 +14,11 @@
 <!-- ### Blocks -->
 
 
+### Grid
+- [Url] : https://thegi01.github.io/components/grid.html
+- To do 
+	- aria	
+
 ### Button 
 - [Url] : https://thegi01.github.io/components/button.html 
 - 네이밍 간소화 : modifier 빼고 속성 바로 적용
@@ -27,23 +32,6 @@
 	- btn--deafult, btn--m을 btn 기본으로 사용?
 	- dropdown : js ie8이하 pollyfill
 
-### Grid
-- [Url] : https://thegi01.github.io/components/grid.html
-- To do 
-	- aria
-
-### Wire Frame
-- [Url] : https://thegi01.github.io/components/wireframe.html
-- To do
-	- id, pass 
-	- 반응형 > font 확인
-	- aria
-
-### Fieldset
-- [Url] : https://thegi01.github.io/components/fieldset.html
-- Fieldset의 다양한 기능 확인 목적
-- 스타일은 나중에 따로 
-
 ### Input
 - [Url] : https://thegi01.github.io/components/input.html
 - To do
@@ -53,6 +41,12 @@
 	- 하위 버전 확인
 	- input group : margin 간격 정리
 
+### Fieldset
+- [Url] : https://thegi01.github.io/components/fieldset.html
+- Fieldset의 다양한 기능 확인 목적
+- 스타일은 나중에 따로 
+
+
 ### Form
 - [Url] : https://thegi01.github.io/components/form.html
 - To do
@@ -60,13 +54,23 @@
 	- validation
 	- file upload
 
+### Wire Frame
+- [Url] : https://thegi01.github.io/components/wireframe.html
+- To do
+	- id, pass 
+	- 반응형 > font 확인
+	- aria
+
+
 ### 공통
 - reset 확인
 - 접근성 타겟 적용(참조 hmp wireframe)
 - ico 정리
-- id 등 속성 값 문자 규칙(camel case, -)
+- id 등 속성 값 문자 규칙(camel case, -) --> camel case
+
 
 *** 
+
 
 ### 의문 사항
 - input type button과 button의 차이는?
@@ -77,6 +81,7 @@
 ### 추가 내용 정리
 - ie 하위버전에서 --로 시작하는 클래스명은 인식하지 못한다.
 - sass 조건문에서 ''를 인식한다. 'true'와 true는 다르다.
+- 하위 버전(ie8)에서 data 속성 변경시 css가 적용되지 않을 경우 클래스명을 다시 지정하면 된다.
 - 반응형은 최신 브라우져에서만 적용(모바일, 테블릿은 최신 브라우저만 사용)
 	- ie8에서는 반응형을 적용할 필요가 없다. pc만 구현.
 - 단순하게 구현할 수 있는 js를 공통화하기 위해 복잡하게 구현할 필요가 있을까?
@@ -97,8 +102,9 @@
 	- input :  type, class, name, id, pattern, placeholder, disabled, data, aria
 	- selelct : class, name, id
 	- label : class, for
+- label, input 동시 사용 시 
+	- label의 for와 input의 id의 스펠링이 틀릴 경우 name 셀렉트가 되지 않는다.
 	
-
 
 
 ### 참조
@@ -112,6 +118,9 @@
 - http://pflannery.github.io/oocss-skeleton.docpad/oocss/help/components.html
 - [wire frame] : https://dribbble.com/search?q=wireframe
 - fieldset : https://dev.w3.org/html5/spec-preview/the-fieldset-element.html
+- Form validation :
+	- https://www.w3.org/WAI/WCAG20/Techniques/working-examples/SCR32/index.php
+	- http://html5pattern.com/Emails
 
 ### Sass 함수 참조
 - https://web-design-weekly.com/2013/05/12/handy-sass-mixins/
