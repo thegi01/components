@@ -22,7 +22,7 @@
 	<h1 class="h1">Form</h1>
 
 	<h2 class="h2">Default</h2>
-	<form action="#href" name="default" method="post" class="form form--default">
+	<form action="#href" class="form form--default" name="default" method="post">
 		<fieldset class="fieldset">
 			<legend class="blind">Default form</legend>
 			<div class="form-field">
@@ -71,7 +71,7 @@
 
 	<h2 class="h2">Inline Form</h2>
 	<div class="ex__txt">In mobile : Include default form</div>
-	<form action="#href" name="inline" method="post" class="form form--inline">
+	<form action="#href" class="form form--inline" name="inline" method="post">
 		<fieldset class="fieldset">
 			<legend class="blind">Inline form</legend>
 			<div class="form-field">
@@ -96,7 +96,7 @@
 
 	<h2 class="h2">Disabled</h2>
 	<form action="#href" class="form form--default" name="formDisable">
-		<fieldset name="fieldset" class="fieldset" disabled>
+		<fieldset class="fieldset" name="fieldset" disabled>
 			<legend class="legend"> 
 				<label>
 					<input type=checkbox name=club onchange="form.fieldset.disabled = !checked">
@@ -104,16 +104,16 @@
 				</label> 
 			</legend>
 			<div class="form-field">
-				<label class="form__label" for="disable-input">Input</label>
-				<input type="text" class="input" name="disable-input" id="disable-input" placeholder="Disable Input">
+				<label class="form__label" for="disableInput">Input</label>
+				<input type="text" class="input" name="disableInput" id="disableInput" placeholder="Disable Input">
 			</div>
 			<div class="form-field">
-				<label class="form__label" for="disable-textarea">Textarea</label>
-				<textarea class="textarea" name="disable-textarea" id="disable-textarea" placeholder="disable-textarea"></textarea>
+				<label class="form__label" for="disableTextarea">Textarea</label>
+				<textarea class="textarea" name="disableTextarea" id="disableTextarea" placeholder="disable textarea"></textarea>
 			</div>
 			<div class="form-field">
-				<label class="form__label" for="disble-select">Select</label>
-				<select class="select" name="select" id="disble-select">
+				<label class="form__label" for="disbleSelect">Select</label>
+				<select class="select" name="disbleSelect" id="disbleSelect">
 					<option value="1">option 1</option>
 					<option value="2">option 2</option>
 					<option value="3">option 3</option>
@@ -124,30 +124,30 @@
 			<div class="form-field">
 				<div class="form__label">Checkboxes</div>
 				<label class="checkbox-field">
-					<input type="checkbox" class="checkbox" name="disble-checkbox">
+					<input type="checkbox" class="checkbox" name="disbleCheckbox">
 					<span class="checkbox__label">Checkbox me out</span>
 				</label>
 				<label class="checkbox-field">
-					<input type="checkbox" class="checkbox" name="disble-checkbox">
+					<input type="checkbox" class="checkbox" name="disbleCheckbox">
 					<span class="checkbox__label">Checkbox me out</span>
 				</label>
 				<label class="checkbox-field">
-					<input type="checkbox" class="checkbox" name="disble-checkbox">
+					<input type="checkbox" class="checkbox" name="disbleCheckbox">
 					<span class="checkbox__label">Checkbox me out</span>
 				</label>
 			</div>
 			<div class="form-field">
 				<div class="form__label">Radios</div>
 				<label class="radio-field">
-					<input type="radio" class="radio" name="diable-radio">
+					<input type="radio" class="radio" name="diableRadio">
 					<span class="radio__label">Pick me</span>
 				</label>
 				<label class="radio-field">
-					<input type="radio" class="radio" name="diable-radio">
+					<input type="radio" class="radio" name="diableRadio">
 					<span class="radio__label">Pick me</span>
 				</label>
 				<label class="radio-field">
-					<input type="radio" class="radio" name="diable-radio">
+					<input type="radio" class="radio" name="diableRadio">
 					<span class="radio__label">Pick me</span>
 				</label>
 			</div>
@@ -160,7 +160,7 @@
 			<legend class="blind">Form Note</legend>
 			<div class="form-field">
 				<label class="form__label" for="form-note">Input with note</label>
-				<input type="text" class="input" name="form-note" id="form-note">
+				<input type="text" class="input" name="formNote" id="formNote">
 				<div class="form-note"> A note to help the user understand its associated field; may extend beyond one line. </div> </div>
 		</fieldset>
 	</form>
@@ -171,32 +171,32 @@
 			<legend class="blind">Complex Forms</legend>
 			<div class="row">
 				<div class="form-field col s12 m6">
-					<label class="form__label" for="credit-card-number">Credit Card Number</label>
-					<input type="text" class="input" name="credit-card-number" id="credit-card-number" pattern="[0-9]*" placeholder="Card Number">
+					<label class="form__label" for="creditCardNumber">Credit Card Number</label>
+					<input type="text" class="input" name="creditCardNumber" id="creditCardNumber" pattern="[0-9]*" placeholder="Card Number">
 				</div>
 				<div class="form-field col s12 m3">
-					<label class="form__label" for="credit-card-expiration">Expiration</label>
-					<input type="text" class="input" name="credit-card-expiration" id="credit-card-expiration" placeholder="MM/YYYY">
+					<label class="form__label" for="creditCardExpiration">Expiration</label>
+					<input type="text" class="input" name="creditCardExpiration" id="creditCardExpiration" placeholder="MM/YYYY">
 				</div>
 				<div class="form-field col s12 m3">
-					<label class="form__label" for="credit-card-security">Security Code (CCV)</label>
-					<input type="text" class="input" name="credit-card-security" id="credit-card-security" pattern="[0-9]*" placeholder="123">
+					<label class="form__label" for="creditCardSecurity">Security Code (CCV)</label>
+					<input type="text" class="input" name="creditCardSecurity" id="creditCardSecurity" pattern="[0-9]*" placeholder="123">
 				</div>
 				<div class="form-field col s12 m6">
-					<label class="form__label" for="first-name">First Name</label>
-					<input type="text" class="input" name="first-name" id="first-name" placeholder="first-name">
+					<label class="form__label" for="firstName">First Name</label>
+					<input type="text" class="input" name="firstName" id="firstName" placeholder="firstName">
 				</div>
 				<div class="form-field col s12 m6">
-					<label class="form__label" for="last-name">Last Name</label>
-					<input type="text" class="input" name="last-name" id="last-name" placeholder="Last Name">
+					<label class="form__label" for="lastName">Last Name</label>
+					<input type="text" class="input" name="lastName" id="lastName" placeholder="Last Name">
 				</div>
 				<div class="form-field col s12">
-					<label class="form__label" for="address-street1">Billing Address</label>
-					<input type="text" class="input" name="address-street1" id="address-street1" placeholder="Address Line 1">
+					<label class="form__label" for="addresStreet-1">Billing Address</label>
+					<input type="text" class="input" name="addresStreet-1" id="addresStreet-1" placeholder="Address Line 1">
 				</div>
 				<div class="form-field col s12">
-					<label class="form__label" for="address-street2">Billing Address</label>
-					<input type="text" class="input" name="address-street2" id="address-street2" placeholder="Address Line 1">
+					<label class="form__label" for="addresStreet-2">Billing Address</label>
+					<input type="text" class="input" name="addresStreet-2" id="addresStreet-2" placeholder="Address Line 1">
 				</div>
 				<div class="form-field col s12 m8">
 					<label class="form__label" for="city">City</label>
@@ -207,8 +207,8 @@
 					<input type="text" class="input" name="state" id="state" placeholder="State">
 				</div>
 				<div class="form-field col s12 m4">
-					<label class="form__label" for="post-code">Post code</label>
-					<input type="text" class="input" name="post-code" id="post-code" placeholder="Post code">
+					<label class="form__label" for="postCode">Post code</label>
+					<input type="text" class="input" name="postCode" id="postCode" placeholder="Post code">
 				</div>
 				<div class="form-field col s12 m8">
 					<label class="form__label" for="country">Country</label>
