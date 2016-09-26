@@ -52,3 +52,10 @@ var dropdown = {
 window.onclick = function(event) {
 	dropdown.outFocus(event);
 };
+
+/* Validation */
+// Validation routines - add as required
+// https://www.w3.org/WAI/WCAG20/Techniques/working-examples/SCR32/index.php
+
+
+

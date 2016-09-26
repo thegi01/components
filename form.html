@@ -34,8 +34,8 @@
 				<input type="password" class="input" name="password" id="password" placeholder="Password">
 			</div>
 			<div class="form-field">
-				<label class="checkbox">
-					<input type="checkbox" name="check">
+				<label class="checkbox-field">
+					<input type="checkbox" class="checkbox" name="check">
 					<span class="checkbox__label">Check it</span>
 				</label>
 			</div>
@@ -58,8 +58,8 @@
 				<input type="password" class="input" name="password2" id="password2" placeholder="Password">
 			</div>
 			<div class="form-field form-field--offset">
-				<label class="checkbox">
-					<input type="checkbox" name="check">
+				<label class="checkbox-field">
+					<input type="checkbox" class="checkbox" name="check">
 					<span class="checkbox__label">Check it</span>
 				</label>
 			</div>
@@ -83,8 +83,8 @@
 				<input type="password" class="input" name="password3" id="password3" placeholder="Password">
 			</div>
 			<div class="form-field">
-				<label class="checkbox">
-					<input type="checkbox" name="check">
+				<label class="checkbox-field">
+					<input type="checkbox" class="checkbox" name="check">
 					<span class="checkbox__label">Check it</span>
 				</label>
 			</div>
@@ -123,31 +123,31 @@
 			</div>
 			<div class="form-field">
 				<div class="form__label">Checkboxes</div>
-				<label class="checkbox">
-					<input type="checkbox" name="disble-checkbox">
+				<label class="checkbox-field">
+					<input type="checkbox" class="checkbox" name="disble-checkbox">
 					<span class="checkbox__label">Checkbox me out</span>
 				</label>
-				<label class="checkbox">
-					<input type="checkbox" name="disble-checkbox">
+				<label class="checkbox-field">
+					<input type="checkbox" class="checkbox" name="disble-checkbox">
 					<span class="checkbox__label">Checkbox me out</span>
 				</label>
-				<label class="checkbox">
-					<input type="checkbox" name="disble-checkbox">
+				<label class="checkbox-field">
+					<input type="checkbox" class="checkbox" name="disble-checkbox">
 					<span class="checkbox__label">Checkbox me out</span>
 				</label>
 			</div>
 			<div class="form-field">
 				<div class="form__label">Radios</div>
-				<label class="radio">
-					<input type="radio" name="diable-radio">
+				<label class="radio-field">
+					<input type="radio" class="radio" name="diable-radio">
 					<span class="radio__label">Pick me</span>
 				</label>
-				<label class="radio">
-					<input type="radio" name="diable-radio">
+				<label class="radio-field">
+					<input type="radio" class="radio" name="diable-radio">
 					<span class="radio__label">Pick me</span>
 				</label>
-				<label class="radio">
-					<input type="radio" name="diable-radio">
+				<label class="radio-field">
+					<input type="radio" class="radio" name="diable-radio">
 					<span class="radio__label">Pick me</span>
 				</label>
 			</div>
@@ -223,64 +223,169 @@
 		</fieldset>
 	</form>
 
-	<h2 class="h2">Validation</h2>
-	<form action="http://elemental-ui.com/forms" class="form form--default" name="formValidation">
+	<h2 class="h2">Validation - Gte IE10</h2>
+	<!-- http://html5pattern.com/ -->
+	<form action="#href" class="form form--default" method="post" name="formValidation">
 		<fieldset class="fieldset">
 			<legend class="blind">Validation</legend>
 			<div class="ex__txt">Validation is a work in progress, please use caution</div>
 			<div class="form-field">
 				<div class="form__label">Radios</div>
-				<label class="radio">
-					<input type="radio" name="radios">
+				<label class="radio-field">
+					<input type="radio" class="radio" name="radios">
 					<span class="radio__label">Caramel</span>
 				</label>
-				<label class="radio">
-					<input type="radio" name="radios">
+				<label class="radio-field">
+					<input type="radio" class="radio" name="radios">
 					<span class="radio__label">Chocolate</span>
 				</label>
-				<label class="radio">
-					<input type="radio" name="radios">
+				<label class="radio-field">
+					<input type="radio" class="radio" name="radios">
 					<span class="radio__label">Strawberry</span>
 				</label>
-				<label class="radio">
-					<input type="radio" name="radios">
+				<label class="radio-field">
+					<input type="radio" class="radio" name="radios">
 					<span class="radio__label">Vanila</span>
 				</label>
 			</div>
 			<div class="form-field">
-				<label for="select-validaton" class="form__label">Select</label>
-				<select class="select" name="" id="">
+				<label for="selectValidaton" class="form__label">Select</label>
+				<select class="select" name="selectValidaton" id="selectValidaton">
 					<option value="1">Caramel</option>
 					<option value="2">Chocolate</option>
 					<option value="3">Strawberry</option>
 					<option value="4">Vanila</option>
 					<option value="5">Others</option>
 				</select>
-				<div class="form--invalid">This field is required</div>
 			</div>
 			<div class="form-field">
-				<label class="form__label" for="email-validation">Email</label>
-				<input type="text" class="input" name="email-vaidation" id="email-validation" placeholder="Enter email">
-				<div class="form--invalid">Email address is required</div>
+				<label class="form__label" for="textValidation">Name</label>
+				<input type="text" class="input" name="textValidation" id="textValidation" placeholder="Enter name" pattern="" required>
 			</div>
 			<div class="form-field">
-				<label class="form__label" for="password-validation">Password</label>
-				<input type="password" class="input" name="password-validation" id="password-validation" placeholder="Enter password">
-				<div class="form--invalid">Password is required</div>
+				<label class="form__label" for="emailValidation">Email</label>
+				<input type="email" class="input" name="emailValidation" id="emailValidation" placeholder="Enter email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required>
 			</div>
 			<div class="form-field">
-				<label class="form__label" for="password-validation-confirm">Confirm</label>
-				<input type="password" class="input" name="password-validation-confirm" id="password-validation-confirm" placeholder="Enter password">
-				<div class="form--invalid">Password is required</div>
+				<label class="form__label" for="passwordValidation">Password</label>
+				<input type="password" class="input" name="passwordValidation" id="passwordValidation" placeholder="Enter password" pattern="" required>
 			</div>
+			<div class="form-field">
+				<label class="form__label" for="passwordValidation2">Confirm</label>
+				<input type="password" class="input" name="passwordValidation2" id="passwordValidation2" placeholder="Enter password" pattern="" required>
+			</div>
+			<button type="submit" class="btn btn--default btn--m">Submit</button>
 		</fieldset>
-	
+	</form>
+
+	<h2 class="h2">Validation - lower</h2>
+	<form action="#href" class="form form--default" method="post" name="formValidation2">
+		<fieldset class="fieldset">
+			<legend class="blind">Validation</legend>
+			<div class="ex__txt">Validation is a work in progress, please use caution</div>
+			<div class="form-field">
+				<div class="form__label">Radios</div>
+				<label class="radio-field">
+					<input type="radio" class="radio" name="radios">
+					<span class="radio__label">Caramel</span>
+				</label>
+				<label class="radio-field">
+					<input type="radio" class="radio" name="radios">
+					<span class="radio__label">Chocolate</span>
+				</label>
+				<label class="radio-field">
+					<input type="radio" class="radio" name="radios">
+					<span class="radio__label">Strawberry</span>
+				</label>
+				<label class="radio-field">
+					<input type="radio" class="radio" name="radios">
+					<span class="radio__label">Vanila</span>
+				</label>
+			</div>
+			<div class="form-field">
+				<label for="selectValidaton2" class="form__label">Select</label>
+				<select class="select" name="selectValidaton2" id="selectValidaton2">
+					<option value="1">Caramel</option>
+					<option value="2">Chocolate</option>
+					<option value="3">Strawberry</option>
+					<option value="4">Vanila</option>
+					<option value="5">Others</option>
+				</select>
+				<div class="form--invalid" data-visible="false">This field is required</div>
+			</div>
+			<div class="form-field">
+				<label class="form__label" for="textValidation2">Name</label>
+				<input type="text" class="input" name="textValidation2" id="textValidation2" placeholder="Enter name">
+				<div class="form--invalid" data-visible="false">Name is required</div>
+			</div>
+			<div class="form-field">
+				<label class="form__label" for="emailValidation2">Email</label>
+				<input type="email" class="input" name="emailValidation2" id="emailValidation2" placeholder="Enter email">
+				<div class="form--invalid" data-visible="false">Email address is required</div>
+			</div>
+			<div class="form-field">
+				<label class="form__label" for="passwordValidation21">Password</label>
+				<input type="password" class="input" name="passwordValidation21" id="passwordValidation21" placeholder="Enter password">
+				<div class="form--invalid" data-visible="false">Password is required</div>
+			</div>
+			<div class="form-field">
+				<label class="form__label" for="passwordValidation22">Confirm</label>
+				<input type="password" class="input" name="passwordValidation22" id="passwordValidation22" placeholder="Enter password">
+				<div class="form--invalid" data-visible="false">Password is required</div>
+			</div>
+			<button type="submit" class="btn btn--default btn--m">Submit</button>
+		</fieldset>
 	</form>
 </div>
 <!-- //wrap -->
 
 <!-- javacript -->
+<!--[if lte IE 8]>
+    <script type="text/javascript" src="js/pollyfills/IE8-child-elements.js"></script>
+<![endif]-->
+<script type="text/javascript" src="ui-base.js"></script>
+<script>
+var validation = {
+	dataVisible : 'data-visible',
+	isString : function( str ){
+		return (typeof str == 'string' && str.replace(/^\s*|\s*$/g, '') !== '' && isNaN(str));
+	},
+	isEmail : function( str ){
+		var pattern = /^[\w-\.\']{1,}\@([\da-zA-Z\-]{1,}\.){1,}[\da-zA-Z\-]{2,}$/;
+		return pattern.test( str );
+	},
+	isNumber : function( str ){
+		 return (!isNaN( str) &&  str.replace(/^\s*|\s*$/g, '') !== '');
+	},
+	passConfirm : function( pass1, pass2, viewEl ) {
+		viewEl = viewEl ? viewEl : pass2.nextElementSibling;
+		if( pass2.value && pass1.value != pass2.value){
+			viewEl.setAttribute(this.dataVisible, 'true'); 
+			viewEl.textContent = 'Password and confirm password must be equal.'
+		};
+	},
+	view : function( el, type, viewEl ){
+		viewEl = viewEl ? viewEl : el.nextElementSibling;
+		if( this[type]( el.value ) ){
+			viewEl.setAttribute(this.dataVisible, 'false'); 
+		} else {
+			viewEl.setAttribute(this.dataVisible, 'true'); 
+		};
+	}
+};
+document.formValidation2.onsubmit = function(e){
+	e.preventDefault();
+	var pass1 = this.passwordValidation21,
+		pass2 = this.passwordValidation22;
+	validation.view( this.textValidation2, 'isString' );
+	validation.view( this.emailValidation2, 'isEmail' );
+	validation.view( pass1, 'isNumber' );
+	validation.view( pass2, 'isNumber' );
+	validation.passConfirm( pass1, pass2 );
 
+	// return false;
+};
+</script>
 <!-- //javacript -->
 
 </body>

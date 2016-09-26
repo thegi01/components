@@ -121,6 +121,7 @@
 - Form validation :
 	- https://www.w3.org/WAI/WCAG20/Techniques/working-examples/SCR32/index.php
 	- http://html5pattern.com/Emails
+- polyfills : https://github.com/Alhadis/Snippets/tree/master/js/polyfills
 
 ### Sass 함수 참조
 - https://web-design-weekly.com/2013/05/12/handy-sass-mixins/

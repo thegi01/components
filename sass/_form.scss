@@ -17,6 +17,9 @@
 	.form-field {
 		position: relative;
 		margin-bottom: rem(10);
+		&:last-child {
+			margin-bottom: 0;
+		}
 	}
 	.form__label {
 		font-size: rem(12); font-weight: 500; color:#777;
@@ -78,9 +81,14 @@
 
 // Validation
 .form--invalid {
-	display: none;
 	margin-top: rem(3);
 	font-size:rem(11); color: #d64242; line-height: 1.4;
+	&[data-visible="true"]{
+		display: block;
+	}
+	&[data-visible="false"]{
+		display: none;
+	}
 }
 
 
