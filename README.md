@@ -51,9 +51,9 @@
 - [Url] : https://thegi01.github.io/components/form.html
 - To do
 	- 하위 버전 확인
-	- validation, 키 입력시 실시간으로 검사 추가
-	- file upload
 	- validation : auto complete event ? (ie8)
+	- file upload
+	- aria
 
 
 ### Wire Frame
