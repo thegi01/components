@@ -223,6 +223,34 @@
 		</fieldset>
 	</form>
 
+	<h2 class="h2">File upload</h2>
+	<form action="#href" class="form form--default" method="post" name="formFile">
+		<div class="form-field">
+			<label class="form__label" for="fileUpload">Image</label>
+			<ul class="uploadFile-lst" id="uploadFileLst">
+				<li class="uploadFile-item">
+					<span class="uploadFile-txt">bg_greet.jpg</span>
+					<button type="button" class="btn btn--default btn--xs" onclick="fileUploadItemRemove(this)">Cancel</button>
+				</li>
+				<li class="uploadFile-item">
+					<span class="uploadFile-txt">bg_greet-2.jpg</span>
+					<button type="button" class="btn btn--default btn--xs" onclick="fileUploadItemRemove(this)">Cancel</button>
+				</li>
+			</ul>
+			<div class="fileUpload">
+				<button type="button" class="btn btn--default btn--m" onclick="fileUploadTrigger(this)">Upload images</button>
+				<input type="file" name="fileUpload" id="fileUpload" multiple onchange="fileUploadItemCreate(this.files)">
+			</div>
+		</div>
+		<div class="form-field" style="margin-top:20px;">
+			<label class="form__label" for="fileDragAndDrop">Image Drag And Drop</label>
+			<div class="fileDragAndDrop">
+				<button type="button" class="btn fileDragAndDrop__btn" onclick="fileUploadTrigger(this)">Drag Files Here</button>
+				<input type="file" name="fileDragAndDrop" id="fileDragAndDrop" multiple>
+			</div>
+		</div>
+	</form>
+
 	<h2 class="h2">Validation - Gte IE10</h2>
 	<!-- http://html5pattern.com/ -->
 	<form action="#href" class="form form--default" method="post" name="formValidation">
@@ -335,35 +363,6 @@
 			</div>
 			<button type="submit" class="btn btn--default btn--m">Submit</button>
 		</fieldset>
-	</form>
-
-	<h2 class="h2">File upload</h2>
-	<form action="#href" class="form form--default" method="post" name="formFile">
-		<div class="form-field">
-			<label class="form__label" for="fileUpload">Image</label>
-			<ul class="uploadFile-lst" id="uploadFileLst">
-				<li class="uploadFile-item">
-					<span class="uploadFile-txt">bg_greet.jpg</span>
-					<button type="button" class="btn btn--default btn--xs" onclick="fileUploadItemRemove(this)">Cancel</button>
-				</li>
-				<li class="uploadFile-item">
-					<span class="uploadFile-txt">bg_greet-2.jpg</span>
-					<button type="button" class="btn btn--default btn--xs" onclick="fileUploadItemRemove(this)">Cancel</button>
-				</li>
-			</ul>
-			<div class="form-file">
-				<button type="button" class="btn btn--default btn--m" onclick="fileUploadTrigger(this)">Upload images</button>
-				<input type="file" name="fileUpload" id="fileUpload" multiple onchange="fileUploadItemCreate(this.files)">
-			</div>
-			<!-- <div class="btn btn--default btn--m btn--file">
-				<span class="btn__txt">Upload images</span>
-				<input type="file" name="fileUpload" id="fileUpload" multiple onchange="hadleFiles( this.files )">
-			</div> -->
-		</div>
-		<div class="form-field">
-			<label class="form__label" for="fileDrag">Image Drag</label>
-			<button type="button" class="btn btn-dragDrop" id="fileDrag"></button>
-		</div>
 	</form>
 </div>
 <!-- //wrap -->

@@ -99,31 +99,33 @@
 		float: left;
 	}
 }
-.form-file {
+.fileUpload {
 	position: relative;
 	.btn {
-		// position: relative; z-index: 1;
 	}
 	input[type="file"] {
 		display: inline-block; 
 		visibility: hidden;
 		position: absolute; top:0; left: 0; z-index: -1;
 		height: 100%;
-		// opacity: 0; filter: alpha(opacity=0);
 	}
 }
-// .btn--file {
-// 	position: relative;
-// 	input[type="file"] {
-// 		display: inline-block; 
-// 		position: absolute; top:0; left: 0;
-// 		width:100%; height: 100%;
-// 		opacity: 0; filter: alpha(opacity=0);
-// 		cursor: pointer; 
-// 	}
-// }
-
-
+.fileDragAndDrop {
+	position: relative;
+	&__btn {
+		display: block;
+		width:100%; height: rem(120);
+		border:dashed 2px #ccc;
+		@border-radius(rem(7));
+		line-height: rem(120);
+	}	
+	input[type="file"] {
+		display: inline-block; 
+		visibility: hidden;
+		position: absolute; top:0; left: 0; z-index: -1;
+		height: 100%;
+	}
+}
 
 // Validation
 .form--invalid {
