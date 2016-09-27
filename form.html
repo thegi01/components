@@ -344,16 +344,16 @@
 			<ul class="uploadFile-lst" id="uploadFileLst">
 				<li class="uploadFile-item">
 					<span class="uploadFile-txt">bg_greet.jpg</span>
-					<button type="button" class="btn btn--default btn--xs" onclick="handleFilesCancel(this)">Cancel</button>
+					<button type="button" class="btn btn--default btn--xs" onclick="fileUploadItemRemove(this)">Cancel</button>
 				</li>
 				<li class="uploadFile-item">
 					<span class="uploadFile-txt">bg_greet-2.jpg</span>
-					<button type="button" class="btn btn--default btn--xs" onclick="handleFilesCancel(this)">Cancel</button>
+					<button type="button" class="btn btn--default btn--xs" onclick="fileUploadItemRemove(this)">Cancel</button>
 				</li>
 			</ul>
 			<div class="form-file">
-				<button type="button" class="btn btn--default btn--m" onclick="hadleFilesTrigger(this)">Upload images</button>
-				<input type="file" name="fileUpload" id="fileUpload" multiple onchange="hadleFiles(this.files)">
+				<button type="button" class="btn btn--default btn--m" onclick="fileUploadTrigger(this)">Upload images</button>
+				<input type="file" name="fileUpload" id="fileUpload" multiple onchange="fileUploadItemCreate(this.files)">
 			</div>
 			<!-- <div class="btn btn--default btn--m btn--file">
 				<span class="btn__txt">Upload images</span>

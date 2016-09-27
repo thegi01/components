@@ -54,15 +54,15 @@ window.onclick = function(event) {
 };
 
 /* File upload */
-var hadleFilesTrigger = function( btn ){
+var fileUploadTrigger = function( btn ){
 	btn.nextElementSibling.click(); // input:file click()
 };
-var hadleFiles = function( files ){
+var fileUploadItemCreate = function( files ){
 	var i, 
 		filesLen = files.length,
 		tp;
 	tp = '<span class="uploadFile-txt">{name}</span>';
-	tp += '<button type="button" class="btn btn--default btn--xs" onclick="handleFilesCancel(this)">Cancel</button>';
+	tp += '<button type="button" class="btn btn--default btn--xs" onclick="fileUploadItemRemove(this)">Cancel</button>';
 	for(i=0; i<filesLen ; i++){
 		var item = document.createElement('li');
 		item.className = 'uploadFile-item';
@@ -70,7 +70,7 @@ var hadleFiles = function( files ){
 		document.getElementById('uploadFileLst').appendChild(item);
 	};
 };
-var handleFilesCancel = function( cancelBtn ){
+var fileUploadItemRemove = function( cancelBtn ){
 	cancelBtn.parentElement.remove();
 };
 /*var fileUpload = {
