@@ -53,6 +53,49 @@ window.onclick = function(event) {
 	dropdown.outFocus(event);
 };
 
+/* File upload */
+var hadleFilesTrigger = function( btn ){
+	btn.nextElementSibling.click(); // input:file click()
+};
+var hadleFiles = function( files ){
+	var i, 
+		filesLen = files.length,
+		tp;
+	tp = '<span class="uploadFile-txt">{name}</span>';
+	tp += '<button type="button" class="btn btn--default btn--xs" onclick="handleFilesCancel(this)">Cancel</button>';
+	for(i=0; i<filesLen ; i++){
+		var item = document.createElement('li');
+		item.className = 'uploadFile-item';
+		item.innerHTML = tp.replace( '{name}', files[i].name );
+		document.getElementById('uploadFileLst').appendChild(item);
+	};
+};
+var handleFilesCancel = function( cancelBtn ){
+	cancelBtn.parentElement.remove();
+};
+/*var fileUpload = {
+	exec : function( btn ){
+		btn.nextElementSibling.click(); // input:file click()
+	},
+	itemCreate : function( files ){
+		var i, 
+			filesLen = files.length,
+			tp;
+		tp = '<span class="uploadFile-txt">{name}</span>';
+		tp += '<button type="button" class="btn btn--default btn--xs" onclick="fileUpload.remove(this)">Cancel</button>';
+		for(i=0; i<filesLen ; i++){
+			var item = document.createElement('li');
+			item.className = 'uploadFile-item';
+			item.innerHTML = tp.replace( '{name}', files[i].name );
+			document.getElementById('uploadFileLst').appendChild(item);
+		};
+	},
+	remove : function( cancelBtn ){
+		cancelBtn.parentElement.remove();
+	}
+};*/
+
+
 /* Validation */
 var validation = {
 	dataVisible : 'data-visible',

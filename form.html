@@ -341,11 +341,24 @@
 	<form action="#href" class="form form--default" method="post" name="formFile">
 		<div class="form-field">
 			<label class="form__label" for="fileUpload">Image</label>
-			<div class="btn btn--default btn--m btn-file">
+			<ul class="uploadFile-lst" id="uploadFileLst">
+				<li class="uploadFile-item">
+					<span class="uploadFile-txt">bg_greet.jpg</span>
+					<button type="button" class="btn btn--default btn--xs" onclick="handleFilesCancel(this)">Cancel</button>
+				</li>
+				<li class="uploadFile-item">
+					<span class="uploadFile-txt">bg_greet-2.jpg</span>
+					<button type="button" class="btn btn--default btn--xs" onclick="handleFilesCancel(this)">Cancel</button>
+				</li>
+			</ul>
+			<div class="form-file">
+				<button type="button" class="btn btn--default btn--m" onclick="hadleFilesTrigger(this)">Upload images</button>
+				<input type="file" name="fileUpload" id="fileUpload" multiple onchange="hadleFiles(this.files)">
+			</div>
+			<!-- <div class="btn btn--default btn--m btn--file">
 				<span class="btn__txt">Upload images</span>
 				<input type="file" name="fileUpload" id="fileUpload" multiple onchange="hadleFiles( this.files )">
-			</div>
-				
+			</div> -->
 		</div>
 		<div class="form-field">
 			<label class="form__label" for="fileDrag">Image Drag</label>
@@ -361,12 +374,14 @@
 <![endif]-->
 <script type="text/javascript" src="ui-base.js"></script>
 <script>
-	var hadleFiles = function( files ){
-		var i, filesLen = files.length;
-		for(i=0; i<filesLen ; i++){
-			console.log(files[i].name);
-		};
-	};
+var hadleFilesTrigger = function( btn ){
+	btn.nextElementSibling.click();
+	return false;
+};
+/*document.getElementById('formFileBtn').onclick = function(e){
+	e.preventDefault();
+	this.nextElementSibling.click();
+};*/
 </script>
 <!-- // javacript -->
 
