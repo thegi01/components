@@ -3,16 +3,6 @@
 ## 코딩 기준 : BEM 
 	block-name__elem-name--mod-name
 
-<!-- ## Semantic UI 분류 
-1. Elements 
-2. Collections
-3. Views
-4. Modules -->
-
-<!-- ## Elements -->
-
-<!-- ### Blocks -->
-
 
 ### Grid
 - [Url] : https://thegi01.github.io/components/grid.html
@@ -23,13 +13,12 @@
 - [Url] : https://thegi01.github.io/components/button.html 
 - 네이밍 간소화 : modifier 빼고 속성 바로 적용
 	- btn--theme-default : btn--default
-	- btn--size-m : btn--m, btn--l, btn--s, btn--xl
+	- btn--size-m : btn--l, btn--m, btn--s, btn--xl
 	- btn--veiw-plain : btn--plain
 	- btns-position-left : btns--left, btns--right, btns--center
 - To do 
 	- 하위 버전 크로스 브라우징
 	- aria
-	- btn--deafult, btn--m을 btn 기본으로 사용?
 	- dropdown : js ie8이하 pollyfill
 
 ### Input
@@ -54,7 +43,6 @@
 	- validation : auto complete event ? (ie8)
 		- input event not support IE8
 	- validation : 상황별로 좀 더 개선할 것
-	- file upload
 	- aria
 
 
@@ -70,7 +58,7 @@
 - reset 확인
 - 접근성 타겟 적용(참조 hmp wireframe)
 - ico 정리
-- id 등 속성 값 문자 규칙(camel case, -) --> camel case
+- id 등 속성 값 문자 규칙(camel case, -) ? --> camel case로 결정
 
 
 *** 
@@ -103,7 +91,7 @@
 - reset 
 	- reset의 중복 적용을 하지 않도록 필요한 코드만 작성한다.
 - form 속성 순서 
-	- input :  type, class, name, id, pattern, placeholder, disabled, data, aria
+	- input : type, class, name, id, pattern, placeholder, disabled, data, aria
 	- selelct : class, name, id
 	- label : class, for
 - label, input 동시 사용 시 
