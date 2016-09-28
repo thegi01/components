@@ -355,12 +355,11 @@
 					</li>
 				</ul>
 			</div>
-			
 		</div>
 		<div class="form-field" style="margin-top:20px;">
 			<label class="form__label" for="fileDragAndDrop">File Drag And Drop</label>
 			<div class="fileUpload fileUpload-dragAndDrop">
-				<button type="button" class="btn fileUpload__btn" onclick="handleFileTrigger(this)" ondrop="handleFileSelect(event);" ondragover="handleDragOver(event)">Drag Files Here</button>
+				<button type="button" class="btn fileUpload__btn" onclick="handleFileTrigger(this)" ondrop="handleFileSelect(event);" ondragover="handleFileDragOver(event)">Drag Files Here</button>
 				<input type="file" name="fileDragAndDrop" id="fileDragAndDrop" multiple onchange="handleFileSelect(event)">
 				<ul class="fileUpload-lst">
 					<li class="fileUpload-item">

@@ -55,6 +55,7 @@ window.onclick = function( evt ) {
 
 /* File upload : handelFile */
 var handleFileSelect = function( evt ){
+	evt.stopPropagation();
 	evt.preventDefault();
 	var tp, i,
 		target = evt.target,
@@ -78,7 +79,7 @@ var handleFileTrigger = function( btn ){
 var handleFileRemove = function( cancelBtn ){
 	cancelBtn.parentElement.remove();
 };
-var handleDragOver = function( evt ){
+var handleFileDragOver = function( evt ){
 	evt.stopPropagation();
 	evt.preventDefault();
 	evt.dataTransfer.dropEffect = 'copy';
