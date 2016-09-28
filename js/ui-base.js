@@ -35,7 +35,15 @@ var dropdown = {
 		if( this.expanedEl && this.expanedEl != el ) {
 			this.expanedEl.setAttribute(this.attribute, 'false');
 		};
-		toggleAttirbute(this.attribute, el);
+		if( el.getAttribute(this.attribute) == 'true' ){
+			el.setAttribute(this.attribute, 'false');
+		} else {
+			el.setAttribute(this.attribute, 'true');
+			window.onclick = function( evt ) {
+				dropdown.outFocus(evt);
+			};
+		};
+		// toggleAttirbute(this.attribute, el);
 		this.expanedEl = el;
 	},
 	outFocus : function( evt ){
@@ -49,9 +57,9 @@ var dropdown = {
 		a.parentElement.parentElement.previousElementSibling.firstChild.textContent = a.innerText + ' '; // gte IE9
 	}
 };
-window.onclick = function( evt ) {
+/*window.onclick = function( evt ) {
 	dropdown.outFocus(evt);
-};
+};*/
 
 /* File upload : handelFile */
 var handleFileSelect = function( evt ){

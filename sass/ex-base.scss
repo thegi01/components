@@ -2,7 +2,7 @@
 
 $is--rem : true;
 
-// import
+// Import common scss
 @import "_mixins.scss";
 @import "_calculators.scss";
 
@@ -10,5 +10,7 @@ $is--rem : true;
 @import "_grid.scss";
 @import "_ico.scss";
 @import "_button.scss";
+@import "_input.scss";
+@import "_form.scss";
 @import "__ex.scss";
 

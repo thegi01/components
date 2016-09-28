@@ -458,7 +458,7 @@ input[data-role="button"]:checked + .btn { border-color: green; color: green; }
 /* form */
 .form .form-field { position: relative; margin-bottom: 0.625rem; }
 .form .form-field:last-child { margin-bottom: 0; }
-.form .form__label { font-size: 0.75rem; font-weight: 500; color: #777; }
+.form .form__label { font-size: 0.875rem; font-weight: 500; color: #777; }
 
 .form--default .form__label { display: block; margin-bottom: 0.3125rem; line-height: 1.4; }
 .form--default .input { width: 100%; }
@@ -498,4 +498,4 @@ input[data-role="button"]:checked + .btn { border-color: green; color: green; }
 
 .block--box { margin-top: 0.625rem; margin-bottom: 0.625rem; margin-right: 0.625rem; padding: 1.25rem; border: solid 1px #ccc; -webkit-border-radius: 4.2px; -moz-border-radius: 4.2px; border-radius: 4.2px; background-clip: padding-box; }
 
-/*# sourceMappingURL=ex-form.css.map */
+/*# sourceMappingURL=ex-base.css.map */

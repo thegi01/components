@@ -54,11 +54,12 @@
 	- aria
 
 
-### 공통
+### To do
 - reset 확인
 - 접근성 타겟 적용(참조 hmp wireframe)
 - ico 정리
 - id 등 속성 값 문자 규칙(camel case, -) ? --> camel case로 결정
+- Navs, Breadcrumbs, Pagination, Pager, Labels, Bades, Thumbnails, Alerts, List, 말풍선
 
 
 *** 
