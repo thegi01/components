@@ -79,8 +79,45 @@
 	margin-bottom: rem(10);
 }
 
+// Validation
+.form--invalid {
+	margin-top: rem(3);
+	font-size:rem(11); color: #d64242; line-height: 1.4;
+	&[data-visible="true"]{
+		display: block;
+	}
+	&[data-visible="false"]{
+		display: none;
+	}
+}
+
 // File
-.uploadFile {
+.fileUpload {
+	// position: relative;
+	padding: rem(10) rem(10) 0;
+	border: solid 1px #ccc;
+	@include border-radius(rem(7));
+
+	&__btn {
+	}
+	input[type="file"] {
+		display: none; 
+		// visibility: hidden;
+		// position: absolute; top:0; left: 0; z-index: -1;
+	}
+	
+	&-dragAndDrop {
+		
+		.fileUpload__btn {
+			display: block;
+			padding: rem(25);
+			width:100%; height:rem(10);
+			border:dashed 2px #ccc;
+			@include border-radius(rem(7));
+			color: #666; line-height:0;
+		}
+	}
+
 	&-lst{
 		clear: both;
 		margin-bottom: rem(10);
@@ -97,45 +134,6 @@
 	}
 	&-txt {
 		float: left;
-	}
-}
-.fileUpload {
-	position: relative;
-	.btn {
-	}
-	input[type="file"] {
-		display: inline-block; 
-		visibility: hidden;
-		position: absolute; top:0; left: 0; z-index: -1;
-		height: 100%;
-	}
-}
-.fileDragAndDrop {
-	position: relative;
-	&__btn {
-		display: block;
-		width:100%; height: rem(120);
-		border:dashed 2px #ccc;
-		@border-radius(rem(7));
-		line-height: rem(120);
-	}	
-	input[type="file"] {
-		display: inline-block; 
-		visibility: hidden;
-		position: absolute; top:0; left: 0; z-index: -1;
-		height: 100%;
-	}
-}
-
-// Validation
-.form--invalid {
-	margin-top: rem(3);
-	font-size:rem(11); color: #d64242; line-height: 1.4;
-	&[data-visible="true"]{
-		display: block;
-	}
-	&[data-visible="false"]{
-		display: none;
 	}
 }
 

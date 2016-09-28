@@ -125,6 +125,8 @@
 - Form validation :
 	- https://www.w3.org/WAI/WCAG20/Techniques/working-examples/SCR32/index.php
 	- http://html5pattern.com/Emails
+- file 
+	- html5 : http://www.html5rocks.com/en/tutorials/file/dndfiles/
 - polyfills : https://github.com/Alhadis/Snippets/tree/master/js/polyfills
 
 ### Sass 함수 참조

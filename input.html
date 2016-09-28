@@ -699,34 +699,10 @@
 <!-- //wrap -->
 
 <!-- javacript -->
-<script type="text/javascript" src="ui-base.js"></script>
-<script>
-
-/*document.checkboxForm2.checkboxCustom.onclick = function(){
-	checkboxCheck(this);
-};
-document.checkboxForm2.checkboxSlider.onclick = function(){
-	checkboxCheck(this);
-};
-document.checkboxForm2.checkboxToggle.onclick = function(){
-	checkboxCheck(this);
-};*/
-
-
-/*var radioEl = document.radioForm2.radioCustom; */
-/*for(var i=0 ; i<radioEl.length ; i++){
-	radioEl[i].onchange = radio.check;
-};*/
-
-// ie8 .input-group--table ui
-// var inputGroupTable = document.querySelector('.input-group--table');
-
-
-/* Dropdown click */
-/*document.getElementById('dropdownMenu1').onclick = function(){
-	dropdown.toggle(this);
-};*/
-</script>
+<!--[if lte IE 8]>
+    <script type="text/javascript" src="js/pollyfills/IE8-child-elements.js"></script>
+<![endif]-->
+<script type="text/javascript" src="js/ui-base.js"></script>
 <!-- //javacript -->
 
 </body>
