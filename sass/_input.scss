@@ -41,8 +41,10 @@
 .input {
 	@include input-style;
 	display: inline-block;	
+	height: 34px;
 	padding-top: rem(8); padding-bottom: rem(8);
-
+	line-height: 1;
+	
 	.col & {
 		width: 100%;
 	}
