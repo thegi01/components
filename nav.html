@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>Nav</title>
+	<meta name="viewport" content="width=device-width, user-scalable=no">
+	<meta name="robots" content="noindex,nofollow">
+	<meta name="googlebot" content="noindex,nofollow">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<!--[if (gt IE 8)|!(IE)]><!-->
+        <link rel="stylesheet" href="css/ex-base.css">
+    <!--<![endif]-->
+    <!--[if lte IE 8]>
+        <link rel="stylesheet" href="css/ex-base-ie.css">
+    <![endif]-->
+</head>
+<body>
+
+<div class="wrap ex">
+	<h1 class="h1">Navs</h1>
+	<h2 class="h2">Tabs</h2>
+	<h3 class="h3">Tabs Default</h3>
+	<div class="tabs tabs--default" data-current="0">
+		<ul class="tabs-lst">
+			<li class="tabs-item" data-idx="0"><a href="#href" class="tabs__a">tabs-1</a></li>
+			<li class="tabs-item" data-idx="1"><a href="#href" class="tabs__a">tabs-2</a></li>
+			<li class="tabs-item" data-idx="2"><a href="#href" class="tabs__a">tabs-3</a></li>
+		</ul>
+	</div>
+
+	<h2 class="h2">Tabs contents control</h2>
+	<div class="tabs tabs--default" id="tabs" data-current="0">
+		<ul class="tabs-lst">
+			<li class="tabs-item" data-idx="0"><a href="#href" class="tabs__a" onclick="tabs(this, 'tabs');">tabs-1</a></li>
+			<li class="tabs-item" data-idx="1"><a href="#href" class="tabs__a" onclick="tabs(this, 'tabs');">tabs-2</a></li>
+			<li class="tabs-item" data-idx="2"><a href="#href" class="tabs__a" onclick="tabs(this, 'tabs');">tabs-3</a></li>
+		</ul>
+		<div class="tabs-cnts">
+			<div class="tabs-cnts-item" data-idx="0">
+				<h3 class="blind">tabs1 contents</h3>
+				<span>tabs-1 contents</span>
+			</div>
+			<div class="tabs-cnts-item" data-idx="1">
+				<h3 class="blind">tabs2 contents</h3>
+				<span>tabs-2 contents</span>
+			</div>
+			<div class="tabs-cnts-item" data-idx="2">
+				<h3 class="blind">tabs3 contents</h3>
+				<span>tabs-3 contents</span>
+			</div>
+		</div>
+	</div>
+</div>		
+
+<!-- javacript -->
+<!--[if lte IE 8]>
+    <script type="text/javascript" src="js/pollyfills/IE8-child-elements.js"></script>
+<![endif]-->
+<script type="text/javascript" src="js/ui-base.js"></script>
+<script>
+</script>
+<!-- //javacript -->
+
+</body>
+</html>

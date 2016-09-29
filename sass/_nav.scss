@@ -1,0 +1,72 @@
+/* nav */
+
+.tabs {
+    &-lst {
+        @include clearfix;
+    }
+    &-item{
+        float: left;
+    }
+    &__a {
+        display: block;
+        text-decoration: none;
+    }
+    &[data-current="0"] &-item[data-idx="0"] &__a,
+    &[data-current="1"] &-item[data-idx="1"] &__a,
+    &[data-current="2"] &-item[data-idx="2"] &__a {
+        cursor:default;
+    }
+
+    &-cnts {
+        position: relative;
+        &-item {
+            display: none;
+            position: absolute; top: 0; right: 0; bottom: 0; left: 0;
+        }
+    }
+    
+    &[data-current="0"] &-cnts-item[data-idx="0"],
+    &[data-current="1"] &-cnts-item[data-idx="1"],
+    &[data-current="2"] &-cnts-item[data-idx="2"] {
+        display: block;
+    }
+}
+.tabs--default {
+    .tabs-lst {
+        border-bottom: solid 1px #ddd;
+    }
+    .tabs-item{
+        margin-bottom: -1px;
+    }
+    .tabs__a {
+        margin-right: rem(2);
+        padding : rem(10) rem(15);
+        border: solid 1px transparent; 
+        @include border-radius-single('top', 'left', rem(4));
+        @include border-radius-single('top', 'right', rem(4));
+        font-size: rem(14); color:#555;
+        &:hover {
+            background-color: #eee;
+        }
+    }
+    &[data-current="0"] .tabs-item[data-idx="0"] .tabs__a,
+    &[data-current="1"] .tabs-item[data-idx="1"] .tabs__a,
+    &[data-current="2"] .tabs-item[data-idx="2"] .tabs__a {
+        border-color: #ddd #ddd #fff;
+        background-color: #fff;
+        color:#337ab7;
+    }
+
+    .tabs-cnts {
+        margin-top: rem(10);
+        height: rem(100);
+        border : solid 1px #ccc;
+        @include border-radius(rem(4));
+        &-item {
+            margin: rem(10);
+            font-size: rem(14); color: #666;
+            line-height: 100%;
+            vertical-align: middle;
+        }
+    }
+}

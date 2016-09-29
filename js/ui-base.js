@@ -7,6 +7,7 @@ var toggleAttirbute = function(attribute, el){
 	} else {
 		el.setAttribute(attribute, 'true');
 	};
+	el.className = el.className; // ie8
 };
 
 /* checkbox, radio */
@@ -23,10 +24,10 @@ var radio = {
 			el.form[el.name][this.current].setAttribute(attribute, 'false');
 		};
 		el.setAttribute(attribute, 'true');
+		el.className = el.className; // ie8
 		this.current = idx;
 	}
 };
-
 /* Dropdown */
 var dropdown = {
 	expanedEl : undefined,
@@ -44,12 +45,14 @@ var dropdown = {
 			};
 		};
 		// toggleAttirbute(this.attribute, el);
+		el.className = el.className; // ie8
 		this.expanedEl = el;
 	},
 	outFocus : function( evt ){
 		var target = evt.target || evt.srcElement; // Support IE6-8
 		if( target.getAttribute('data-toggle') != 'dropdown' && this.expanedEl) {
 			dropdown.expanedEl.setAttribute(this.attribute, 'false');
+			dropdown.expanedEl.className = dropdown.expanedEl.className; // ie8
 			dropdown.expanedEl = undefined;
 		};
 	},
@@ -111,6 +114,7 @@ var validation = {
 		viewEl = viewEl ? viewEl : pass2.nextElementSibling;
 		if( pass2.value && pass1.value != pass2.value){
 			viewEl.setAttribute(this.dataVisible, 'true'); 
+			viewEl.className = viewEl.className; // ie8
 			viewEl.textContent = 'Password and confirm password must be equal.'
 		};
 	},
@@ -121,7 +125,14 @@ var validation = {
 		} else {
 			viewEl.setAttribute(this.dataVisible, 'true'); 
 		};
+		viewEl.className = viewEl.className; // ie8
 	}
 };
 
+/* tabs */
+var tabs = function( el, id ){
+	var idx = el.parentElement.getAttribute('data-idx');
+	document.getElementById(id).setAttribute('data-current', idx);
+	document.getElementById(id).className = document.getElementById(id).className; // ie8
+};
 

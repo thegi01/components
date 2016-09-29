@@ -59,7 +59,8 @@
 - 접근성 타겟 적용(참조 hmp wireframe)
 - ico 정리
 - id 등 속성 값 문자 규칙(camel case, -) ? --> camel case로 결정
-- Navs, Breadcrumbs, Pagination, Pager, Labels, Bades, Thumbnails, Alerts, List, 말풍선
+- Navs, Moadl, Breadcrumbs, Pagination, Pager, Labels, Bades, Thumbnails, Alerts, List, 말풍선
+- 기능 관련 클래스 네이밍 ---> is로 변경
 
 
 *** 
@@ -69,6 +70,7 @@
 - input type button과 button의 차이는?
 - tab key의 focus시 스타일
 - 마크업내의 onclick과 script 내의 onclick의 차이
+- github으로 확인시 scss 코드가 보이지 않는다.`
 
 
 ### 추가 내용 정리
@@ -97,6 +99,10 @@
 	- label : class, for
 - label, input 동시 사용 시 
 	- label의 for와 input의 id의 스펠링이 틀릴 경우 name 셀렉트가 되지 않는다.
+- 기능 관련 class 네이밍 규칙 : bem과 is중 어느 것이 효율적인가?
+	- bem으로 하면 네이밍이 길어진다.
+	- 기능 관련 클래스 네이밍이 통일 되면 관리가 편하다.
+	- 따라서 is가 더 효율적이란 생
 	
 
 

@@ -9,9 +9,9 @@
     font-size : 0;
 }
 @mixin clearfix {
-    & {
-        zoom:1;
-    }
+    // & {
+    //     zoom:1;
+    // }
     &:after {
         content:'';
         display:block; 
