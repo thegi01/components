@@ -289,7 +289,7 @@ input[data-role="button"]:checked + .btn { border-color: green; color: green; }
 .btn-group .btn--default:last-child { -webkit-border-top-left-radius: 0; -moz-border-top-left-radius: 0; border-top-left-radius: 0; background-clip: padding-box; -webkit-border-bottom-left-radius: 0; -moz-border-bottom-left-radius: 0; border-bottom-left-radius: 0; background-clip: padding-box; }
 
 /* input */
-.input { box-sizing: border-box; padding-left: 0.625rem; padding-right: 0.625rem; border: solid 1px #ccc; -webkit-border-radius: 0.3rem; -moz-border-radius: 0.3rem; border-radius: 0.3rem; background-clip: padding-box; background-color: #fff; font-size: 0.875rem; color: #333; vertical-align: middle; display: inline-block; height: 2.125rem; padding-top: 0.5rem; padding-bottom: 0.5rem; line-height: 2.125rem; }
+.input { box-sizing: border-box; padding-left: 0.625rem; padding-right: 0.625rem; border: solid 1px #ccc; -webkit-border-radius: 0.3rem; -moz-border-radius: 0.3rem; border-radius: 0.3rem; background-clip: padding-box; background-color: #fff; font-size: 0.875rem; color: #333; vertical-align: middle; display: inline-block; height: 2.125rem; line-height: 2.125rem; }
 .input::-webkit-input-placeholder { color: #e0e0e0; }
 .input:focus, .input--focus { position: relative; z-index: 1; outline: 0; border-color: #85B7D9; }
 .input:focus::-webkit-input-placeholder, .input--focus::-webkit-input-placeholder { color: #8e8e8e; }
