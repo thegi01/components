@@ -49,7 +49,7 @@
 - [Url] : https://thegi01.github.io/components/nav.html
 - To do
 	- 하위 버전 확인
-	- 접근성
+	- 접근성 개선
 	- aria
 
 
@@ -77,7 +77,7 @@
 - input type button과 button의 차이는?
 - tab key의 focus시 스타일
 - 마크업내의 onclick과 script 내의 onclick의 차이
-- github으로 확인시 scss 코드가 보이지 않는다.`
+- github으로 확인시 scss 코드가 보이지 않는다.
 
 
 ### 추가 내용 정리
@@ -109,7 +109,7 @@
 - 기능 관련 class 네이밍 규칙 : bem과 is중 어느 것이 효율적인가?
 	- bem으로 하면 네이밍이 길어진다.
 	- 기능 관련 클래스 네이밍이 통일 되면 관리가 편하다.
-	- 따라서 is가 더 효율적이란 생
+	- 따라서 is가 더 효율적이란 생각
 	
 
 
@@ -129,6 +129,8 @@
 	- http://html5pattern.com/Emails
 - file 
 	- html5 : http://www.html5rocks.com/en/tutorials/file/dndfiles/
+- Nav
+	- tabs aria : http://accessibility.athena-ict.com/aria/examples/tabpanel2.shtml
 - polyfills : https://github.com/Alhadis/Snippets/tree/master/js/polyfills
 
 ### Sass 함수 참조

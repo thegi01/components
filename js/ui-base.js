@@ -130,9 +130,11 @@ var validation = {
 };
 
 /* tabs */
-var tabs = function( el, id ){
-	var idx = el.parentElement.getAttribute('data-idx');
-	document.getElementById(id).setAttribute('data-current', idx);
-	document.getElementById(id).className = document.getElementById(id).className; // ie8
+var tabs = function( el ){
+	var item = el.parentElement,
+		cpnt = item.parentElement.parentElement,
+		idx = item.getAttribute('data-idx');
+	cpnt.setAttribute('data-current', idx);
+	cpnt.className = cpnt.className; // ie8
 };
 

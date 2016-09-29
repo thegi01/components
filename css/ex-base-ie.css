@@ -450,21 +450,23 @@ input[data-role="button"]:checked + .btn { border-color: green; color: green; }
 .fileUpload-txt { float: left; }
 
 /* nav */
-.tabs-lst:after { content: ''; display: block; clear: both; }
-.tabs-item { float: left; }
-.tabs__a { display: block; text-decoration: none; }
-.tabs[data-current="0"] .tabs-item[data-idx="0"] .tabs__a, .tabs[data-current="1"] .tabs-item[data-idx="1"] .tabs__a, .tabs[data-current="2"] .tabs-item[data-idx="2"] .tabs__a { cursor: default; }
-.tabs-cnts { position: relative; }
-.tabs-cnts-item { display: none; position: absolute; top: 0; right: 0; bottom: 0; left: 0; }
-.tabs[data-current="0"] .tabs-cnts-item[data-idx="0"], .tabs[data-current="1"] .tabs-cnts-item[data-idx="1"], .tabs[data-current="2"] .tabs-cnts-item[data-idx="2"] { display: block; }
-
 .tabs--default .tabs-lst { border-bottom: solid 1px #ddd; }
-.tabs--default .tabs-item { margin-bottom: -1px; }
-.tabs--default .tabs__a { margin-right: 2px; padding: 10px 15px; border: solid 1px transparent; -webkit-border-top-left-radius: 4px; -moz-border-top-left-radius: 4px; border-top-left-radius: 4px; background-clip: padding-box; -webkit-border-top-right-radius: 4px; -moz-border-top-right-radius: 4px; border-top-right-radius: 4px; background-clip: padding-box; font-size: 14px; color: #555; }
-.tabs--default .tabs__a:hover { background-color: #eee; }
-.tabs--default[data-current="0"] .tabs-item[data-idx="0"] .tabs__a, .tabs--default[data-current="1"] .tabs-item[data-idx="1"] .tabs__a, .tabs--default[data-current="2"] .tabs-item[data-idx="2"] .tabs__a { border-color: #ddd #ddd #fff; background-color: #fff; color: #337ab7; }
-.tabs--default .tabs-cnts { margin-top: 10px; height: 100px; border: solid 1px #ccc; -webkit-border-radius: 4px; -moz-border-radius: 4px; border-radius: 4px; background-clip: padding-box; }
-.tabs--default .tabs-cnts-item { margin: 10px; font-size: 14px; color: #666; line-height: 100%; vertical-align: middle; }
+.tabs--default .tabs-lst:after { content: ''; display: block; clear: both; }
+.tabs--default .tabs-item { float: left; margin-bottom: -1px; }
+.tabs--default .tabs-item__a { display: block; margin-right: 2px; padding: 10px 15px; border: solid 1px transparent; -webkit-border-top-left-radius: 4px; -moz-border-top-left-radius: 4px; border-top-left-radius: 4px; background-clip: padding-box; -webkit-border-top-right-radius: 4px; -moz-border-top-right-radius: 4px; border-top-right-radius: 4px; background-clip: padding-box; font-size: 14px; color: #555; text-decoration: none; }
+.tabs--default .tabs-item__a:focus { outline: none; }
+.tabs--default .tabs-item__a:hover, .tabs--default .tabs-item__a:focus { background-color: #eee; }
+.tabs--default[data-current="0"] .tabs-item[data-idx="0"] .tabs-item__a, .tabs--default[data-current="1"] .tabs-item[data-idx="1"] .tabs-item__a, .tabs--default[data-current="2"] .tabs-item[data-idx="2"] .tabs-item__a { border-color: #ddd #ddd #fff; background-color: #fff; color: #337ab7; cursor: default; }
+.tabs--default .tabs-cnts { display: none; margin-top: 10px; padding: 10px; border: solid 1px #ccc; -webkit-border-radius: 4px; -moz-border-radius: 4px; border-radius: 4px; background-clip: padding-box; font-size: 14px; color: #666; line-height: 100%; vertical-align: middle; }
+.tabs--default .tabs-cnts a { display: inline-block; margin-right: 10px; font-size: 12px; color: #666; text-decoration: none; }
+.tabs--default .tabs-cnts a:focus { outline: none; }
+.tabs--default .tabs-cnts a:hover, .tabs--default .tabs-cnts a:focus { text-decoration: underline; }
+
+.tabs--nonlogical[data-current="0"] .tabs-cnts[data-idx="0"], .tabs--nonlogical[data-current="1"] .tabs-cnts[data-idx="1"], .tabs--nonlogical[data-current="2"] .tabs-cnts[data-idx="2"] { display: block; }
+
+.tabs--logical .tabs-lst { position: relative; }
+.tabs--logical .tabs-cnts { position: absolute; left: 0; right: 0; }
+.tabs--logical[data-current="0"] .tabs-item[data-idx="0"] .tabs-cnts, .tabs--logical[data-current="1"] .tabs-item[data-idx="1"] .tabs-cnts, .tabs--logical[data-current="2"] .tabs-item[data-idx="2"] .tabs-cnts { display: block; }
 
 /* ex */
 .wrap.ex { padding: 20px; color: #333; }

@@ -1,72 +1,86 @@
 /* nav */
 
-.tabs {
-    &-lst {
-        @include clearfix;
-    }
-    &-item{
-        float: left;
-    }
-    &__a {
-        display: block;
-        text-decoration: none;
-    }
-    &[data-current="0"] &-item[data-idx="0"] &__a,
-    &[data-current="1"] &-item[data-idx="1"] &__a,
-    &[data-current="2"] &-item[data-idx="2"] &__a {
-        cursor:default;
-    }
-
-    &-cnts {
-        position: relative;
-        &-item {
-            display: none;
-            position: absolute; top: 0; right: 0; bottom: 0; left: 0;
-        }
-    }
-    
-    &[data-current="0"] &-cnts-item[data-idx="0"],
-    &[data-current="1"] &-cnts-item[data-idx="1"],
-    &[data-current="2"] &-cnts-item[data-idx="2"] {
-        display: block;
-    }
-}
 .tabs--default {
     .tabs-lst {
+        @include clearfix;
         border-bottom: solid 1px #ddd;
     }
     .tabs-item{
+        float: left;
         margin-bottom: -1px;
-    }
-    .tabs__a {
-        margin-right: rem(2);
-        padding : rem(10) rem(15);
-        border: solid 1px transparent; 
-        @include border-radius-single('top', 'left', rem(4));
-        @include border-radius-single('top', 'right', rem(4));
-        font-size: rem(14); color:#555;
-        &:hover {
-            background-color: #eee;
+        &__a {
+            display: block;
+            margin-right: rem(2);
+            padding : rem(10) rem(15);
+            border: solid 1px transparent; 
+            @include border-radius-single('top', 'left', rem(4));
+            @include border-radius-single('top', 'right', rem(4));
+            font-size: rem(14); color:#555;
+            text-decoration: none;
+            &:focus {
+                outline:none;
+            }
+            &:hover,
+            &:focus {
+                background-color: #eee;
+            }
+
         }
     }
-    &[data-current="0"] .tabs-item[data-idx="0"] .tabs__a,
-    &[data-current="1"] .tabs-item[data-idx="1"] .tabs__a,
-    &[data-current="2"] .tabs-item[data-idx="2"] .tabs__a {
+    &[data-current="0"] .tabs-item[data-idx="0"] .tabs-item__a,
+    &[data-current="1"] .tabs-item[data-idx="1"] .tabs-item__a,
+    &[data-current="2"] .tabs-item[data-idx="2"] .tabs-item__a {
         border-color: #ddd #ddd #fff;
         background-color: #fff;
         color:#337ab7;
+        cursor:default;
     }
-
-    .tabs-cnts {
+    .tabs-cnts{
+        display: none;
         margin-top: rem(10);
-        height: rem(100);
+        padding: rem(10);
         border : solid 1px #ccc;
         @include border-radius(rem(4));
-        &-item {
-            margin: rem(10);
-            font-size: rem(14); color: #666;
-            line-height: 100%;
-            vertical-align: middle;
+        font-size: rem(14); color: #666;
+        line-height: 100%; vertical-align: middle;
+        a {
+            display: inline-block;
+            margin-right: 10px;
+            font-size:12px; color: #666;
+            text-decoration: none;
+            &:focus {
+                outline: none;
+            }
+            &:hover,
+            &:focus {
+                text-decoration: underline;
+            }
         }
+    }
+}
+
+.tabs--nonlogical {
+    .tabs-panel {
+    }
+    .tabs-cnts {
+    }
+    &[data-current="0"] .tabs-cnts[data-idx="0"],
+    &[data-current="1"] .tabs-cnts[data-idx="1"],
+    &[data-current="2"] .tabs-cnts[data-idx="2"] {
+        display: block;
+    }
+}
+
+.tabs--logical {
+    .tabs-lst {
+        position: relative;
+    }
+    .tabs-cnts{
+        position: absolute; left: 0; right: 0;
+    }
+    &[data-current="0"] .tabs-item[data-idx="0"] .tabs-cnts,
+    &[data-current="1"] .tabs-item[data-idx="1"] .tabs-cnts,
+    &[data-current="2"] .tabs-item[data-idx="2"] .tabs-cnts {
+        display: block;
     }
 }
