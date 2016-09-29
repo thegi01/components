@@ -45,6 +45,13 @@
 	- validation : 상황별로 좀 더 개선할 것
 	- aria
 
+### Nav
+- [Url] : https://thegi01.github.io/components/nav.html
+- To do
+	- 하위 버전 확인
+	- 접근성
+	- aria
+
 
 ### Wire Frame
 - [Url] : https://thegi01.github.io/components/wireframe.html
