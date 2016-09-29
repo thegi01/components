@@ -228,7 +228,7 @@ table { border-collapse: collapse; border-spacing: 0; }
 .input-field .ico-rect:after { margin-top: -5px; margin-left: -5px; }
 
 /* button */
-.btn { display: inline-block; border: 1px solid transparent; background: none; text-align: center; vertical-align: middle; white-space: nowrap; cursor: pointer; -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none; -ms-touch-action: manipulation; touch-action: manipulation; }
+.btn { display: inline-block; margin: 0; border: 1px solid transparent; background: none; text-align: center; vertical-align: middle; white-space: nowrap; cursor: pointer; -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none; -ms-touch-action: manipulation; touch-action: manipulation; }
 .btn[disabled], .btn.btn--disabled { opacity: .4; pointer-events: none; }
 
 a.btn { text-decoration: none; }
