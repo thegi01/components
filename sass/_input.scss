@@ -41,8 +41,8 @@
 	@include input-style;
 	display: inline-block;	
 	height: rem(34);
-	padding: rem(6) rem(12) ;
-	// padding-top: rem(6); padding-bottom: rem(6);
+	// padding: rem(6) rem(12) ;
+	padding-top: rem(6); padding-bottom: rem(6);
 	line-height: 1.42;	
 	.col & {
 		width: 100%;

@@ -283,7 +283,7 @@ input[data-role="button"]:checked + .btn { border-color: green; color: green; }
 .btn-group--justify .btn { display: table-cell; float: none; width: 1%; }
 
 /* input */
-.input { box-sizing: border-box; padding-left: 10px; padding-right: 10px; border: solid 1px #ccc; -webkit-border-radius: 0.3rem; -moz-border-radius: 0.3rem; border-radius: 0.3rem; background-clip: padding-box; background-color: #fff; font-size: 14px; color: #333; vertical-align: middle; display: inline-block; height: 34px; padding: 6px 12px; line-height: 1.42; }
+.input { box-sizing: border-box; padding-left: 10px; padding-right: 10px; border: solid 1px #ccc; -webkit-border-radius: 0.3rem; -moz-border-radius: 0.3rem; border-radius: 0.3rem; background-clip: padding-box; background-color: #fff; font-size: 14px; color: #333; vertical-align: middle; display: inline-block; height: 34px; padding-top: 6px; padding-bottom: 6px; line-height: 1.42; }
 .input::-webkit-input-placeholder { color: #e0e0e0; }
 .input:focus, .input--focus { position: relative; z-index: 1; outline: 0; border-color: #85B7D9; }
 .input:focus::-webkit-input-placeholder, .input--focus::-webkit-input-placeholder { color: #8e8e8e; }
