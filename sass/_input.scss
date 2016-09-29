@@ -3,7 +3,7 @@
 // mixin
 @mixin input-style {
 	box-sizing : border-box;
-	// padding-left:rem(10); padding-right: rem(10);
+	padding-left:rem(10); padding-right: rem(10);
 	border: solid 1px #ccc;
 	@include border-radius(0.3rem);
 	background-color: #fff;
@@ -41,7 +41,7 @@
 	@include input-style;
 	display: inline-block;	
 	height: rem(34);
-	padding: rem(6) rem(12);
+	padding: rem(6) rem(12) ;
 	// padding-top: rem(6); padding-bottom: rem(6);
 	line-height: 1.42;	
 	.col & {
