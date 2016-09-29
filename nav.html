@@ -30,9 +30,9 @@
 	<h3 class="h3">Tabs Default</h3>
 	<div class="tabs tabs--default" data-current="0">
 		<ul class="tabs-lst">
-			<li class="tabs-item" data-idx="0"><a href="#href" class="tabs-item__a">tabs-1</a></li>
-			<li class="tabs-item" data-idx="1"><a href="#href" class="tabs-item__a">tabs-2</a></li>
-			<li class="tabs-item" data-idx="2"><a href="#href" class="tabs-item__a">tabs-3</a></li>
+			<li class="tabs-item" data-idx="0"><a href="#href" class="tabs-item__a">tab-1</a></li>
+			<li class="tabs-item" data-idx="1"><a href="#href" class="tabs-item__a">tab-2</a></li>
+			<li class="tabs-item" data-idx="2"><a href="#href" class="tabs-item__a">tab-3</a></li>
 		</ul>
 	</div>
 
@@ -40,30 +40,30 @@
 	<div class="tabs tabs--default tabs--logical" id="tabsLogical" data-current="0">
 		<div class="tabs-lst">
 			<div class="tabs-item" data-idx="0">
-				<a href="#href" class="tabs-item__a" onfocus="tabs(this);">tabs-1</a>
+				<a href="#href" class="tabs-item__a" onfocus="tabs(this);">tab-1</a>
 				<div class="tabs-cnts">
-					<h3 class="blind">tabs1 contents</h3>
-					<a href="#href">tabs1-1</a>
-					<a href="#href">tabs1-2</a>
-					<a href="#href">tabs1-3</a>
+					<h3 class="blind">tabs-1 contents</h3>
+					<a href="#href">tabs-cnts-lnk</a>
+					<a href="#href">tabs-cnts-lnk</a>
+					<a href="#href">tabs-cnts-lnk</a>
 				</div>
 			</div>
 			<div class="tabs-item" data-idx="1">
-				<a href="#href" class="tabs-item__a" onfocus="tabs(this);">tabs-2</a>
+				<a href="#href" class="tabs-item__a" onfocus="tabs(this);">tab-2</a>
 				<div class="tabs-cnts">
-					<h3 class="blind">tabs2 contents</h3>
-					<a href="#href">tabs1-1</a>
-					<a href="#href">tabs2-2</a>
-					<a href="#href">tabs3-3</a>
+					<h3 class="blind">tabs-2 contents</h3>
+					<a href="#href">tabs-cnts-lnk</a>
+					<a href="#href">tabs-cnts-lnk</a>
+					<a href="#href">tabs-cnts-lnk</a>
 				</div>
 			</div>
 			<div class="tabs-item" data-idx="2">
 				<a href="#href" class="tabs-item__a" onfocus="tabs(this);">tabs-3</a>
 				<div class="tabs-cnts">
-					<h3 class="blind">tabs3 contents</h3>
-					<a href="#href">tabs3-1</a>
-					<a href="#href">tabs3-2</a>
-					<a href="#href">tabs3-3</a>
+					<h3 class="blind">tabs-3 contents</h3>
+					<a href="#href">tabs-cnts-lnk</a>
+					<a href="#href">tabs-cnts-lnk</a>
+					<a href="#href">tabs-cnts-lnk</a>
 				</div>
 			</div>
 		</div>
@@ -78,35 +78,35 @@
 	<h2 class="h2">Tabs control - nonLogical</h2>
 	<div class="tabs tabs--default tabs--nonlogical" id="tabs" data-current="0">
 		<ul class="tabs-lst">
-			<li class="tabs-item" data-idx="0"><a href="#href" class="tabs-item__a" onclick="tabs(this);">tabs-1</a></li>
-			<li class="tabs-item" data-idx="1"><a href="#href" class="tabs-item__a" onclick="tabs(this);">tabs-2</a></li>
-			<li class="tabs-item" data-idx="2"><a href="#href" class="tabs-item__a" onclick="tabs(this);">tabs-3</a></li>
+			<li class="tabs-item" data-idx="0"><a href="#href" class="tabs-item__a" onclick="tabs(this);">tab-1</a></li>
+			<li class="tabs-item" data-idx="1"><a href="#href" class="tabs-item__a" onclick="tabs(this);">tab-2</a></li>
+			<li class="tabs-item" data-idx="2"><a href="#href" class="tabs-item__a" onclick="tabs(this);">tab-3</a></li>
 		</ul>
 		<div class="tabs-panel">
 			<div class="tabs-cnts" data-idx="0">
-				<h3 class="blind">tabs1 contents</h3>
-				<a href="#href">tabs1-1</a>
-				<a href="#href">tabs1-2</a>
-				<a href="#href">tabs1-3</a>
+				<h3 class="blind">tabs-1 contents</h3>
+				<a href="#href">tabs-cnts-lnk</a>
+				<a href="#href">tabs-cnts-lnk</a>
+				<a href="#href">tabs-cnts-lnk</a>
 			</div>
 			<div class="tabs-cnts" data-idx="1">
-				<h3 class="blind">tabs2 contents</h3>
-				<a href="#href">tabs1-1</a>
-				<a href="#href">tabs2-2</a>
-				<a href="#href">tabs3-3</a>
+				<h3 class="blind">tabs-2 contents</h3>
+				<a href="#href">tabs-cnts-lnk</a>
+				<a href="#href">tabs-cnts-lnk</a>
+				<a href="#href">tabs-cnts-lnk</a>
 			</div>
 			<div class="tabs-cnts" data-idx="2">
-				<h3 class="blind">tabs3 contents</h3>
-				<a href="#href">tabs3-1</a>
-				<a href="#href">tabs3-2</a>
-				<a href="#href">tabs3-3</a>
+				<h3 class="blind">tabs-3 contents</h3>
+				<a href="#href">tabs-cnts-lnk</a>
+				<a href="#href">tabs-cnts-lnk</a>
+				<a href="#href">tabs-cnts-lnk</a>
 			</div>
 		</div>
 	</div>
 	<div class="ex__txt">
 		모바일에 적합. <br>
 		Tab key 순서가 맞지 않다. <br>
-		접근성 : wai-aria 적용 
+		접근성 : wai-aria 적용해야 함.
 	</div>
 
 	
