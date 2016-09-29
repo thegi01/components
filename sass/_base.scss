@@ -31,12 +31,10 @@ button, input, select, textarea {
 //     -webkit-appearance: button;
 //     cursor: pointer;
 // }
-// input[type="checkbox"],
-// input[type="radio"] {
-//   box-sizing: border-box;
-//   padding: 0;
-// }
-
+input[type="checkbox"],
+input[type="radio"] {
+  vertical-align: middle;
+}
 fieldset {
     margin:0; padding:0;
     border:none;
