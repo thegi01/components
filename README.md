@@ -68,6 +68,7 @@
 - id 등 속성 값 문자 규칙(camel case, -) ? --> camel case로 결정
 - Navs, Moadl, Breadcrumbs, Pagination, Pager, Labels, Bades, Thumbnails, Alerts, List, 말풍선
 - 기능 관련 클래스 네이밍 ---> is로 변경
+- css 검사 후 오류 수정
 
 
 *** 
