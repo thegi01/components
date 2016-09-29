@@ -3,6 +3,7 @@
 // mixin
 @mixin input-style {
 	box-sizing : border-box;
+	margin:0; // safari
 	padding-left:rem(10); padding-right: rem(10);
 	border: solid 1px #ccc;
 	@include border-radius(0.3rem);
