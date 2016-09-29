@@ -295,8 +295,8 @@ input[data-role="button"]:checked + .btn { border-color: green; color: green; }
 .input:focus::-webkit-input-placeholder, .input--focus::-webkit-input-placeholder { color: #8e8e8e; }
 .input:disabled, .input--disabled { pointer-events: none; border-color: #e9e9e9; color: #f3f3f3; background-color: #f9f9f9; }
 .col .input { width: 100%; }
-.input--l { font-size: 1.0625rem; }
-.input--s { font-size: 0.75rem; }
+.input--l { height: 2.875rem; font-size: 1.125rem; line-height: 2.875rem; }
+.input--s { height: 1.875rem; font-size: 0.75rem; line-height: 1.875rem; }
 
 .input--error { background-color: #FFF6F6; border-color: #E0B4B4; color: #9F3A38; }
 .input--error::-webkit-input-placeholder { color: #e7bdbc; }

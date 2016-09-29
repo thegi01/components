@@ -48,10 +48,14 @@
 	}
 
 	&--l {
-		font-size: rem(17);
+		height: rem(46);
+		font-size: rem(18);
+		line-height: rem(46);
 	}
 	&--s {
+		height: rem(30);
 		font-size: rem(12);
+		line-height: rem(30);
 	}
 }
 
