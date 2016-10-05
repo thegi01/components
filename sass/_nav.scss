@@ -1,11 +1,11 @@
 /* nav */
 
-.tabs--default {
-    .tabs-lst {
+.tabs {
+    &-lst {
         @include clearfix;
         border-bottom: solid 1px #ddd;
     }
-    .tabs-item{
+    &-item{
         float: left;
         margin-bottom: -1px;
         &__a {
@@ -35,7 +35,7 @@
         color:#337ab7;
         cursor:default;
     }
-    .tabs-cnts{
+    &-cnts{
         display: none;
         margin-top: rem(10);
         padding: rem(10);
@@ -58,7 +58,37 @@
         }
     }
 }
-
+.tabs-fill {
+    .tabs-lst {
+        border-bottom: none;
+    }
+    .tabs-item{
+        margin-bottom: 0;
+        &__a {
+            @include border-radius(rem(4));
+        }
+    }
+    &[data-current="0"] .tabs-item[data-idx="0"] .tabs-item__a,
+    &[data-current="1"] .tabs-item[data-idx="1"] .tabs-item__a,
+    &[data-current="2"] .tabs-item[data-idx="2"] .tabs-item__a {
+        border-color: transparent;
+        background-color: #337ab7;
+        color:#fff;
+    }
+}
+.tabs-horizon {
+    .tabs-lst {
+        border-bottom: none;
+    }
+    .tabs-item {
+        float: none;
+    }
+    &[data-current="0"] .tabs-item[data-idx="0"] .tabs-item__a,
+    &[data-current="1"] .tabs-item[data-idx="1"] .tabs-item__a,
+    &[data-current="2"] .tabs-item[data-idx="2"] .tabs-item__a {
+        border-color: transparent;
+    }
+}
 .tabs--nonlogical {
     .tabs-panel {
     }

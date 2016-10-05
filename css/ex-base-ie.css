@@ -452,17 +452,26 @@ input[data-role="button"]:checked + .btn { border-color: green; color: green; }
 .fileUpload-txt { float: left; }
 
 /* nav */
-.tabs--default .tabs-lst { border-bottom: solid 1px #ddd; }
-.tabs--default .tabs-lst:after { content: ''; display: block; clear: both; }
-.tabs--default .tabs-item { float: left; margin-bottom: -1px; }
-.tabs--default .tabs-item__a { display: block; margin-right: 2px; padding: 10px 15px; border: solid 1px transparent; -webkit-border-top-left-radius: 4px; -moz-border-top-left-radius: 4px; border-top-left-radius: 4px; background-clip: padding-box; -webkit-border-top-right-radius: 4px; -moz-border-top-right-radius: 4px; border-top-right-radius: 4px; background-clip: padding-box; font-size: 14px; color: #555; text-decoration: none; }
-.tabs--default .tabs-item__a:focus { outline: none; }
-.tabs--default .tabs-item__a:hover, .tabs--default .tabs-item__a:focus { background-color: #eee; }
-.tabs--default[data-current="0"] .tabs-item[data-idx="0"] .tabs-item__a, .tabs--default[data-current="1"] .tabs-item[data-idx="1"] .tabs-item__a, .tabs--default[data-current="2"] .tabs-item[data-idx="2"] .tabs-item__a { border-color: #ddd #ddd #fff; background-color: #fff; color: #337ab7; cursor: default; }
-.tabs--default .tabs-cnts { display: none; margin-top: 10px; padding: 10px; border: solid 1px #ccc; -webkit-border-radius: 4px; -moz-border-radius: 4px; border-radius: 4px; background-clip: padding-box; font-size: 14px; color: #666; line-height: 100%; vertical-align: middle; }
-.tabs--default .tabs-cnts a { display: inline-block; margin-right: 10px; font-size: 12px; color: #666; text-decoration: none; }
-.tabs--default .tabs-cnts a:focus { outline: none; }
-.tabs--default .tabs-cnts a:hover, .tabs--default .tabs-cnts a:focus { text-decoration: underline; }
+.tabs-lst { border-bottom: solid 1px #ddd; }
+.tabs-lst:after { content: ''; display: block; clear: both; }
+.tabs-item { float: left; margin-bottom: -1px; }
+.tabs-item__a { display: block; margin-right: 2px; padding: 10px 15px; border: solid 1px transparent; -webkit-border-top-left-radius: 4px; -moz-border-top-left-radius: 4px; border-top-left-radius: 4px; background-clip: padding-box; -webkit-border-top-right-radius: 4px; -moz-border-top-right-radius: 4px; border-top-right-radius: 4px; background-clip: padding-box; font-size: 14px; color: #555; text-decoration: none; }
+.tabs-item__a:focus { outline: none; }
+.tabs-item__a:hover, .tabs-item__a:focus { background-color: #eee; }
+.tabs[data-current="0"] .tabs-item[data-idx="0"] .tabs-item__a, .tabs[data-current="1"] .tabs-item[data-idx="1"] .tabs-item__a, .tabs[data-current="2"] .tabs-item[data-idx="2"] .tabs-item__a { border-color: #ddd #ddd #fff; background-color: #fff; color: #337ab7; cursor: default; }
+.tabs-cnts { display: none; margin-top: 10px; padding: 10px; border: solid 1px #ccc; -webkit-border-radius: 4px; -moz-border-radius: 4px; border-radius: 4px; background-clip: padding-box; font-size: 14px; color: #666; line-height: 100%; vertical-align: middle; }
+.tabs-cnts a { display: inline-block; margin-right: 10px; font-size: 12px; color: #666; text-decoration: none; }
+.tabs-cnts a:focus { outline: none; }
+.tabs-cnts a:hover, .tabs-cnts a:focus { text-decoration: underline; }
+
+.tabs-fill .tabs-lst { border-bottom: none; }
+.tabs-fill .tabs-item { margin-bottom: 0; }
+.tabs-fill .tabs-item__a { -webkit-border-radius: 4px; -moz-border-radius: 4px; border-radius: 4px; background-clip: padding-box; }
+.tabs-fill[data-current="0"] .tabs-item[data-idx="0"] .tabs-item__a, .tabs-fill[data-current="1"] .tabs-item[data-idx="1"] .tabs-item__a, .tabs-fill[data-current="2"] .tabs-item[data-idx="2"] .tabs-item__a { border-color: transparent; background-color: #337ab7; color: #fff; }
+
+.tabs-horizon .tabs-lst { border-bottom: none; }
+.tabs-horizon .tabs-item { float: none; }
+.tabs-horizon[data-current="0"] .tabs-item[data-idx="0"] .tabs-item__a, .tabs-horizon[data-current="1"] .tabs-item[data-idx="1"] .tabs-item__a, .tabs-horizon[data-current="2"] .tabs-item[data-idx="2"] .tabs-item__a { border-color: transparent; }
 
 .tabs--nonlogical[data-current="0"] .tabs-cnts[data-idx="0"], .tabs--nonlogical[data-current="1"] .tabs-cnts[data-idx="1"], .tabs--nonlogical[data-current="2"] .tabs-cnts[data-idx="2"] { display: block; }
 
