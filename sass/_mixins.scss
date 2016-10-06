@@ -53,6 +53,13 @@
     //    -moz-box-sizing: $box-model; // Firefox <= 19
     //         box-sizing: $box-model;
 }
+// box-shadow
+@mixin box-shadow( $prop ){
+    @include prefix(box-shadow, $prop, webkit moz);
+    // -webkit-box-shadow: $prop;
+    // -moz-box-shadow: $prop;
+    // box-shadow: $prop;
+}
 // border-radius
 @mixin border-radius( $radius ){
     @include prefix(border-radius, $radius, webkit moz);
@@ -85,8 +92,15 @@
     // -o-transition: $property $duration $ani; 
     // transition: $property $duration $ani;
 }
-@mixin transitionDuration($time:0.5s){
+@mixin transition-duration($time:0.5s){
     @include prefix(transition-duration, $time, webkit moz o);
+    // -webkit-transition-duration : $time; 
+    // -moz-transition-duration : $time; 
+    // -o-transition-duration : $time; 
+    // transition-duration : $time;
+}
+@mixin transition-delay($time){
+    @include prefix(transition-delay, $time, webkit moz o);
     // -webkit-transition-duration : $time; 
     // -moz-transition-duration : $time; 
     // -o-transition-duration : $time; 

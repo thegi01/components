@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>Modal</title>
+	<meta name="viewport" content="width=device-width, user-scalable=no">
+	<meta name="robots" content="noindex,nofollow">
+	<meta name="googlebot" content="noindex,nofollow">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<!--[if (gt IE 8)|!(IE)]><!-->
+        <link rel="stylesheet" href="css/ex-base.css">
+    <!--<![endif]-->
+    <!--[if lte IE 8]>
+        <link rel="stylesheet" href="css/ex-base-ie.css">
+    <![endif]-->
+</head>
+<body>
+
+<div class="wrap ex">
+	<h1 class="h1">Modal</h1>
+
+	<button type="button" class="btn btn--default btn--m" onclick="modal.show()">Launch Modal</button>
+
+	<button type="button" class="btn btn--default btn--m" onclick="modalAni.show()">Launch Modal with Animation</button>
+
+	<div class="modal" id="modal" tabindex="-1" data-visible="false"> 
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="btn btn-clse" onclick="modal.hide()"> <span class="blind">Close</span> x </button>
+					<h3 class="modal-title">Modal Title</h3>
+				</div>
+				<div class="modal-body">
+					<h4>Title in a modal</h4>
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+						Ut commodo at felis vitae facilisis. 
+						Cras volutpat fringilla nunc vitae hendrerit. 
+						Donec porta id augue quis sodales. 
+						<a href="#href" class="btn btn--default btn--xs">button</a>
+						Sed sit amet metus ornare, mattis sem at, dignissim arcu. Cras rhoncus ornare mollis. 
+						Ut tempor augue mi, sed luctus neque luctus non. 
+						Vestibulum mollis tristique blandit.</p>
+					<hr>
+					<h4>Title in a modal another</h4>
+					<p>
+						Sed posuere, est at eleifend suscipit, erat ante pretium turpis, eget semper ex risus nec dolor. 
+						Etiam pellentesque nulla neque, ut ullamcorper purus facilisis at. 
+						Nam imperdiet arcu felis, eu placerat risus dapibus sit amet. 
+						Praesent at justo at lectus scelerisque mollis. 
+						Mauris molestie mattis tellus ut facilisis. 
+						Sed vel ligula ornare, posuere velit ornare, consectetur erat.</p>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn--default btn--m" onclick="modal.hide()">Close</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="modal modal--ani" id="modalAni" tabindex="-1" data-visible="false"> 
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="btn btn-clse" onclick="modalAni.hide()"> <span class="blind">Close</span> x </button>
+					<h3 class="modal-title">Modal Title</h3>
+				</div>
+				<div class="modal-body">
+					<h4>Title in a modal</h4>
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+						Ut commodo at felis vitae facilisis. 
+						Cras volutpat fringilla nunc vitae hendrerit. 
+						Donec porta id augue quis sodales. 
+						<a href="#href" class="btn btn--default btn--xs">button</a>
+						Sed sit amet metus ornare, mattis sem at, dignissim arcu. Cras rhoncus ornare mollis. 
+						Ut tempor augue mi, sed luctus neque luctus non. 
+						Vestibulum mollis tristique blandit.</p>
+					<hr>
+					<h4>Title in a modal another</h4>
+					<p>
+						Sed posuere, est at eleifend suscipit, erat ante pretium turpis, eget semper ex risus nec dolor. 
+						Etiam pellentesque nulla neque, ut ullamcorper purus facilisis at. 
+						Nam imperdiet arcu felis, eu placerat risus dapibus sit amet. 
+						Praesent at justo at lectus scelerisque mollis. 
+						Mauris molestie mattis tellus ut facilisis. 
+						Sed vel ligula ornare, posuere velit ornare, consectetur erat.</p>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn--default btn--m" onclick="modalAni.hide()">Close</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+</div>	
+<!-- // wrap -->
+<div class="dimmed" id="dimmed" data-visible="false"></div>
+<div class="dimmed dimmed--ani" id="dimmedAni" data-visible="false"></div>
+
+
+<!-- javacript -->
+<!--[if lte IE 8]>
+    <script type="text/javascript" src="js/pollyfills/IE8-child-elements.js"></script>
+<![endif]-->
+<script type="text/javascript" src="js/ui-base.js"></script>
+<script>
+var modal = {
+	dimmed : document.getElementById('dimmed'),
+	cpnt : document.getElementById('modal'),
+	dataVisibile : 'data-visible',
+	dataFade : 'data-fade',
+	show : function(){
+		this.dimmed.setAttribute(this.dataVisibile, 'true');
+		this.cpnt.setAttribute(this.dataVisibile, 'true');
+		this.dimmed.className = this.dimmed.className;
+		this.cpnt.className = this.cpnt.className;
+		
+	},
+	hide : function(){
+		this.dimmed.setAttribute(this.dataVisibile, 'false');
+		this.cpnt.setAttribute(this.dataVisibile, 'false');
+		this.dimmed.className = this.dimmed.className;
+		this.cpnt.className = this.cpnt.className;
+	}
+}
+var modalAni = {
+	dimmed : document.getElementById('dimmedAni'),
+	cpnt : document.getElementById('modalAni'),
+	dataVisibile : 'data-visible',
+	show : function(  ){
+		this.dimmed.setAttribute(this.dataVisibile, 'true');
+		this.cpnt.setAttribute(this.dataVisibile, 'true');
+		this.dimmed.className = this.dimmed.className;
+		this.cpnt.className = this.cpnt.className;
+		
+	},
+	hide : function(){
+		this.dimmed.setAttribute(this.dataVisibile, 'false');
+		this.cpnt.setAttribute(this.dataVisibile, 'false');
+		this.dimmed.className = this.dimmed.className;
+		this.cpnt.className = this.cpnt.className;
+	}
+}
+	
+</script>
+<!-- //javacript -->
+
+</body>
+</html>
