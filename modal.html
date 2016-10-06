@@ -13,14 +13,22 @@
     <!--[if lte IE 8]>
         <link rel="stylesheet" href="css/ex-base-ie.css">
     <![endif]-->
+    <style>
+    	.btn {
+    		display: block;
+    		margin-top: 10px;
+    	}
+    </style>
 </head>
 <body>
 
 <div class="wrap ex">
 	<h1 class="h1">Modal</h1>
-
+	
+	
 	<button type="button" class="btn btn--default btn--m" onclick="modal.show(this, 'modal')">Launch Modal</button>
-
+	
+	
 	<button type="button" class="btn btn--default btn--m" onclick="modal.show(this, 'modalAni')">Launch Modal with Animation</button>
 	
 	<button type="button" class="btn btn--default btn--m" onclick="modal.show(this, 'modalMiddle')">Launch Modal Vertical Middle</button>
