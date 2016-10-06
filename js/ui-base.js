@@ -31,27 +31,27 @@ var radio = {
 /* Dropdown */
 var dropdown = {
 	expanedEl : undefined,
-	attribute : 'aria-expanded',
 	toggle : function( el ){
+		var attribute = 'aria-expanded';
 		if( this.expanedEl && this.expanedEl != el ) {
-			this.expanedEl.setAttribute(this.attribute, 'false');
+			this.expanedEl.setAttribute(attribute, 'false');
 		};
-		if( el.getAttribute(this.attribute) == 'true' ){
-			el.setAttribute(this.attribute, 'false');
+		if( el.getAttribute(attribute) == 'true' ){
+			el.setAttribute(attribute, 'false');
 		} else {
-			el.setAttribute(this.attribute, 'true');
+			el.setAttribute(attribute, 'true');
 			window.onclick = function( evt ) {
 				dropdown.outFocus(evt);
 			};
 		};
-		// toggleAttirbute(this.attribute, el);
+		// toggleAttirbute(attribute, el);
 		el.className = el.className; // ie8
 		this.expanedEl = el;
 	},
 	outFocus : function( evt ){
 		var target = evt.target || evt.srcElement; // Support IE6-8
 		if( target.getAttribute('data-toggle') != 'dropdown' && this.expanedEl) {
-			dropdown.expanedEl.setAttribute(this.attribute, 'false');
+			dropdown.expanedEl.setAttribute('aria-expanded', 'false');
 			dropdown.expanedEl.className = dropdown.expanedEl.className; // ie8
 			dropdown.expanedEl = undefined;
 		};
@@ -99,7 +99,6 @@ var handleFileDragOver = function( evt ){
 
 /* Validation */
 var validation = {
-	dataVisible : 'data-visible',
 	isString : function( str ){
 		return (typeof str == 'string' && str.replace(/^\s*|\s*$/g, '') !== '' && isNaN(str));
 	},
@@ -113,23 +112,24 @@ var validation = {
 	passConfirm : function( pass1, pass2, viewEl ) {
 		viewEl = viewEl ? viewEl : pass2.nextElementSibling;
 		if( pass2.value && pass1.value != pass2.value){
-			viewEl.setAttribute(this.dataVisible, 'true'); 
+			viewEl.setAttribute('data-visible', 'true'); 
 			viewEl.className = viewEl.className; // ie8
 			viewEl.textContent = 'Password and confirm password must be equal.'
 		};
 	},
 	view : function( el, type, viewEl ){
+		var dataVisible = 'data-visible';
 		viewEl = viewEl ? viewEl : el.nextElementSibling;
 		if( this[type]( el.value ) ){
-			viewEl.setAttribute(this.dataVisible, 'false'); 
+			viewEl.setAttribute(dataVisible, 'false'); 
 		} else {
-			viewEl.setAttribute(this.dataVisible, 'true'); 
+			viewEl.setAttribute(dataVisible, 'true'); 
 		};
 		viewEl.className = viewEl.className; // ie8
 	}
 };
 
-/* tabs */
+/* Tabs */
 var tabs = function( el ){
 	var item = el.parentElement,
 		cpnt = item.parentElement.parentElement,
@@ -138,3 +138,32 @@ var tabs = function( el ){
 	cpnt.className = cpnt.className; // ie8
 };
 
+/* Modal */
+var modal = {
+	show : function( btn, id ){
+		var dataVisibile = 'data-visible';
+		this.cpnt = document.getElementById(id);
+		if(id=='modalAni'){
+			this.dimmed = document.getElementById('dimmedAni');
+		} else {
+			this.dimmed = document.getElementById('dimmed');
+		};
+		this.dimmed.setAttribute(dataVisibile, 'true');
+		this.cpnt.setAttribute(dataVisibile, 'true');
+		this.dimmed.className = this.dimmed.className;
+		this.cpnt.className = this.cpnt.className;
+		this.cpnt.focus();
+		this.target = btn;
+	},
+	hide : function(){
+		var dataVisibile = 'data-visible';
+		this.dimmed.setAttribute(dataVisibile, 'false');
+		this.cpnt.setAttribute(dataVisibile, 'false');
+		this.dimmed.className = this.dimmed.className;
+		this.cpnt.className = this.cpnt.className;
+		this.target.focus();
+		this.cpnt = undefined;
+		this.dimmed = undefined;
+		this.target = undefined;
+	}
+};

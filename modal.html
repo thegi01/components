@@ -19,9 +19,11 @@
 <div class="wrap ex">
 	<h1 class="h1">Modal</h1>
 
-	<button type="button" class="btn btn--default btn--m" onclick="modal.show(this)">Launch Modal</button>
+	<button type="button" class="btn btn--default btn--m" onclick="modal.show(this, 'modal')">Launch Modal</button>
 
-	<button type="button" class="btn btn--default btn--m" onclick="modalAni.show(this)">Launch Modal with Animation</button>
+	<button type="button" class="btn btn--default btn--m" onclick="modal.show(this, 'modalAni')">Launch Modal with Animation</button>
+	
+	<button type="button" class="btn btn--default btn--m" onclick="modal.show(this, 'modalMiddle')">Launch Modal Vertical Middle</button>
 
 	<div class="modal" id="modal" tabindex="-1" data-visible="false"> 
 		<div class="modal-dialog">
@@ -61,7 +63,7 @@
 		<div class="modal-dialog">
 			<div class="modal-content">
 				<div class="modal-header">
-					<button type="button" class="btn btn-clse" onclick="modalAni.hide()"> <span class="blind">Close</span> x </button>
+					<button type="button" class="btn btn-clse" onclick="modal.hide()"> <span class="blind">Close</span> x </button>
 					<h3 class="modal-title">Modal Title</h3>
 				</div>
 				<div class="modal-body">
@@ -85,10 +87,47 @@
 						Sed vel ligula ornare, posuere velit ornare, consectetur erat.</p>
 				</div>
 				<div class="modal-footer">
-					<button type="button" class="btn btn--default btn--m" onclick="modalAni.hide()">Close</button>
+					<button type="button" class="btn btn--default btn--m" onclick="modal.hide()">Close</button>
 				</div>
 			</div>
 		</div>
+	</div>
+
+	<div class="modal modal--middle" id="modalMiddle" tabindex="-1" data-visible="false"> 
+		<div class="modal--middle-block">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="btn btn-clse" onclick="modal.hide()"> <span class="blind">Close</span> x </button>
+						<h3 class="modal-title">Modal Title</h3>
+					</div>
+					<div class="modal-body">
+						<h4>Title in a modal</h4>
+						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+							Ut commodo at felis vitae facilisis. 
+							Cras volutpat fringilla nunc vitae hendrerit. 
+							Donec porta id augue quis sodales. 
+							<a href="#href" class="btn btn--default btn--xs">button</a>
+							Sed sit amet metus ornare, mattis sem at, dignissim arcu. Cras rhoncus ornare mollis. 
+							Ut tempor augue mi, sed luctus neque luctus non. 
+							Vestibulum mollis tristique blandit.</p>
+						<hr>
+						<h4>Title in a modal another</h4>
+						<p>
+							Sed posuere, est at eleifend suscipit, erat ante pretium turpis, eget semper ex risus nec dolor. 
+							Etiam pellentesque nulla neque, ut ullamcorper purus facilisis at. 
+							Nam imperdiet arcu felis, eu placerat risus dapibus sit amet. 
+							Praesent at justo at lectus scelerisque mollis. 
+							Mauris molestie mattis tellus ut facilisis. 
+							Sed vel ligula ornare, posuere velit ornare, consectetur erat.</p>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn--default btn--m" onclick="modal.hide()">Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		
 	</div>
 
 
@@ -104,49 +143,6 @@
 <![endif]-->
 <script type="text/javascript" src="js/ui-base.js"></script>
 <script>
-var modal = {
-	dimmed : document.getElementById('dimmed'),
-	cpnt : document.getElementById('modal'),
-	dataVisibile : 'data-visible',
-	target : undefined,
-	show : function( btn ){
-		this.dimmed.setAttribute(this.dataVisibile, 'true');
-		this.cpnt.setAttribute(this.dataVisibile, 'true');
-		this.dimmed.className = this.dimmed.className;
-		this.cpnt.className = this.cpnt.className;
-		this.cpnt.focus();
-		this.target = btn;
-	},
-	hide : function(){
-		this.dimmed.setAttribute(this.dataVisibile, 'false');
-		this.cpnt.setAttribute(this.dataVisibile, 'false');
-		this.dimmed.className = this.dimmed.className;
-		this.cpnt.className = this.cpnt.className;
-		this.target.focus();
-	}
-};
-var modalAni = {
-	dimmed : document.getElementById('dimmedAni'),
-	cpnt : document.getElementById('modalAni'),
-	dataVisibile : 'data-visible',
-	target : undefined,
-	show : function( btn ){
-		this.dimmed.setAttribute(this.dataVisibile, 'true');
-		this.cpnt.setAttribute(this.dataVisibile, 'true');
-		this.dimmed.className = this.dimmed.className;
-		this.cpnt.className = this.cpnt.className;
-		this.cpnt.focus();
-		this.target = btn;
-	},
-	hide : function(){
-		this.dimmed.setAttribute(this.dataVisibile, 'false');
-		this.cpnt.setAttribute(this.dataVisibile, 'false');
-		this.dimmed.className = this.dimmed.className;
-		this.cpnt.className = this.cpnt.className;
-		this.target.focus();
-	}
-};
-	
 </script>
 <!-- //javacript -->
 
