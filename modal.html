@@ -19,9 +19,9 @@
 <div class="wrap ex">
 	<h1 class="h1">Modal</h1>
 
-	<button type="button" class="btn btn--default btn--m" onclick="modal.show()">Launch Modal</button>
+	<button type="button" class="btn btn--default btn--m" onclick="modal.show(this)">Launch Modal</button>
 
-	<button type="button" class="btn btn--default btn--m" onclick="modalAni.show()">Launch Modal with Animation</button>
+	<button type="button" class="btn btn--default btn--m" onclick="modalAni.show(this)">Launch Modal with Animation</button>
 
 	<div class="modal" id="modal" tabindex="-1" data-visible="false"> 
 		<div class="modal-dialog">
@@ -108,39 +108,44 @@ var modal = {
 	dimmed : document.getElementById('dimmed'),
 	cpnt : document.getElementById('modal'),
 	dataVisibile : 'data-visible',
-	dataFade : 'data-fade',
-	show : function(){
+	target : undefined,
+	show : function( btn ){
 		this.dimmed.setAttribute(this.dataVisibile, 'true');
 		this.cpnt.setAttribute(this.dataVisibile, 'true');
 		this.dimmed.className = this.dimmed.className;
 		this.cpnt.className = this.cpnt.className;
-		
+		this.cpnt.focus();
+		this.target = btn;
 	},
 	hide : function(){
 		this.dimmed.setAttribute(this.dataVisibile, 'false');
 		this.cpnt.setAttribute(this.dataVisibile, 'false');
 		this.dimmed.className = this.dimmed.className;
 		this.cpnt.className = this.cpnt.className;
+		this.target.focus();
 	}
-}
+};
 var modalAni = {
 	dimmed : document.getElementById('dimmedAni'),
 	cpnt : document.getElementById('modalAni'),
 	dataVisibile : 'data-visible',
-	show : function(  ){
+	target : undefined,
+	show : function( btn ){
 		this.dimmed.setAttribute(this.dataVisibile, 'true');
 		this.cpnt.setAttribute(this.dataVisibile, 'true');
 		this.dimmed.className = this.dimmed.className;
 		this.cpnt.className = this.cpnt.className;
-		
+		this.cpnt.focus();
+		this.target = btn;
 	},
 	hide : function(){
 		this.dimmed.setAttribute(this.dataVisibile, 'false');
 		this.cpnt.setAttribute(this.dataVisibile, 'false');
 		this.dimmed.className = this.dimmed.className;
 		this.cpnt.className = this.cpnt.className;
+		this.target.focus();
 	}
-}
+};
 	
 </script>
 <!-- //javacript -->

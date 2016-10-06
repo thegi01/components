@@ -11,8 +11,11 @@ $modal-content-padding : rem(15);
         overflow-y:auto;
     }
     &-dialog {
-        width:rem(600);
-        margin:rem(30) auto;
+        margin:rem(30) rem(20);
+        @media #{$media-m} {
+            width:rem(600);
+            margin:rem(30) auto;
+        }
     }
     &-content {
         @include box-shadow(0 rem(3) rem(9) rgba(0,0,0,.5));
@@ -79,9 +82,7 @@ $modal-content-padding : rem(15);
             }
         }
     }
-    
 }
-
 
 .dimmed {
     position: fixed; top:0; right:0; bottom:0; left:0; z-index: -1;
