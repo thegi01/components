@@ -2,7 +2,7 @@
 <html lang="ko">
 <head>
 	<meta charset="UTF-8">
-	<title>Nav</title>
+	<title>Tabs</title>
 	<meta name="viewport" content="width=device-width, user-scalable=no">
 	<meta name="robots" content="noindex,nofollow">
 	<meta name="googlebot" content="noindex,nofollow">
@@ -25,23 +25,22 @@
 <body>
 
 <div class="wrap ex">
-	<h1 class="h1">Navs</h1>
-	<h2 class="h2">Tabs</h2>
+	<h2 class="h1">Tabs</h2>
 	<h3 class="h3">Tabs Default</h3>
 	<div class="tabs" data-current="0">
 		<ul class="tabs-lst">
-			<li class="tabs-item" data-idx="0"><a href="#href" class="tabs-item__a">tab1</a></li>
-			<li class="tabs-item" data-idx="1"><a href="#href" class="tabs-item__a">tab2</a></li>
-			<li class="tabs-item" data-idx="2"><a href="#href" class="tabs-item__a">tab3</a></li>
+			<li class="tabs-item" data-idx="0"><a href="#href" class="tabs-item__a" onclick="return false;">tab1</a></li>
+			<li class="tabs-item" data-idx="1"><a href="#href" class="tabs-item__a" onclick="return false;">tab2</a></li>
+			<li class="tabs-item" data-idx="2"><a href="#href" class="tabs-item__a" onclick="return false;">tab3</a></li>
 		</ul>
 	</div>
 
 	<h3 class="h3">Tabs Fill</h3>
 	<div class="tabs tabs--fill" data-current="0">
 		<ul class="tabs-lst">
-			<li class="tabs-item" data-idx="0"><a href="#href" class="tabs-item__a">tab1</a></li>
-			<li class="tabs-item" data-idx="1"><a href="#href" class="tabs-item__a">tab2</a></li>
-			<li class="tabs-item" data-idx="2"><a href="#href" class="tabs-item__a">tab3</a></li>
+			<li class="tabs-item" data-idx="0"><a href="#href" class="tabs-item__a" onclick="return false;">tab1</a></li>
+			<li class="tabs-item" data-idx="1"><a href="#href" class="tabs-item__a" onclick="return false;">tab2</a></li>
+			<li class="tabs-item" data-idx="2"><a href="#href" class="tabs-item__a" onclick="return false;">tab3</a></li>
 		</ul>
 	</div>
 	
@@ -50,9 +49,9 @@
 	<div class="block--box">
 		<div class="tabs tabs--horizon" data-current="0">
 			<ul class="tabs-lst">
-				<li class="tabs-item" data-idx="0"><a href="#href" class="tabs-item__a">tab1</a></li>
-				<li class="tabs-item" data-idx="1"><a href="#href" class="tabs-item__a">tab2</a></li>
-				<li class="tabs-item" data-idx="2"><a href="#href" class="tabs-item__a">tab3</a></li>
+				<li class="tabs-item" data-idx="0"><a href="#href" class="tabs-item__a" onclick="return false;">tab1</a></li>
+				<li class="tabs-item" data-idx="1"><a href="#href" class="tabs-item__a" onclick="return false;">tab2</a></li>
+				<li class="tabs-item" data-idx="2"><a href="#href" class="tabs-item__a" onclick="return false;">tab3</a></li>
 			</ul>
 		</div>
 	</div>
@@ -60,9 +59,9 @@
 	<div class="block--box">
 		<div class="tabs tabs--fill tabs--horizon" data-current="0">
 			<ul class="tabs-lst">
-				<li class="tabs-item" data-idx="0"><a href="#href" class="tabs-item__a">tab1</a></li>
-				<li class="tabs-item" data-idx="1"><a href="#href" class="tabs-item__a">tab2</a></li>
-				<li class="tabs-item" data-idx="2"><a href="#href" class="tabs-item__a">tab3</a></li>
+				<li class="tabs-item" data-idx="0"><a href="#href" class="tabs-item__a" onclick="return false;">tab1</a></li>
+				<li class="tabs-item" data-idx="1"><a href="#href" class="tabs-item__a" onclick="return false;">tab2</a></li>
+				<li class="tabs-item" data-idx="2"><a href="#href" class="tabs-item__a" onclick="return false;">tab3</a></li>
 			</ul>
 		</div>
 	</div>
@@ -71,7 +70,7 @@
 	<div class="tabs tabs--logical" data-current="0">
 		<div class="tabs-lst">
 			<div class="tabs-item" data-idx="0">
-				<a href="#href" class="tabs-item__a" onfocus="tabs(this);" onclick="tabs(this);">tab1</a>
+				<a href="#href" class="tabs-item__a" onfocus="tabs(this);" onclick="tabs(this); return false;">tab1</a>
 				<div class="tabs-cnts">
 					<h3 class="blind">tab1 contents</h3>
 					<a href="#href">tab1-cnts-lnk</a>
@@ -80,7 +79,7 @@
 				</div>
 			</div>
 			<div class="tabs-item" data-idx="1">
-				<a href="#href" class="tabs-item__a" onfocus="tabs(this);" onclick="tabs(this);">tab2</a>
+				<a href="#href" class="tabs-item__a" onfocus="tabs(this);" onclick="tabs(this); return false;">tab2</a>
 				<div class="tabs-cnts">
 					<h3 class="blind">tab2 contents</h3>
 					<a href="#href">tab2-cnts-lnk</a>
@@ -89,7 +88,7 @@
 				</div>
 			</div>
 			<div class="tabs-item" data-idx="2">
-				<a href="#href" class="tabs-item__a" onfocus="tabs(this);" onclick="tabs(this);">tab3</a>
+				<a href="#href" class="tabs-item__a" onfocus="tabs(this);" onclick="tabs(this); return false;">tab3</a>
 				<div class="tabs-cnts">
 					<h3 class="blind">tab3 contents</h3>
 					<a href="#href">tab3-cnts-lnk</a>
@@ -139,8 +138,6 @@
 		Tab key 순서가 맞지 않다. <br>
 		접근성 : wai-aria 적용해야 함.
 	</div>
-
-	
 
 </div>		
 
