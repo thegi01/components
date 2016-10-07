@@ -85,8 +85,8 @@
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#{$col1}', endColorstr='#{$col2}', GradientType=0); // ie6~9
 }
 // transform
-@mixin transition( $property, $duration, $ani ){
-    @include prefix(transition, $property $duration $ani, webkit moz o);
+@mixin transition( $prop ){
+    @include prefix(transition, $prop, webkit moz o);
     // -webkit-transition: $property $duration $ani; 
     // -moz-transition: $property $duration $ani; 
     // -o-transition: $property $duration $ani; 

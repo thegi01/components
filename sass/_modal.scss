@@ -64,26 +64,25 @@ $modal-content-padding : rem(15);
         border-top: 1px solid #e5e5e5;
         text-align:right;
     }
-    &--ani {
-        @include transition( opacity, .15s, linear );           // hide time
-        @include transition-delay(0s);                          
+    &--ani,
+    &[data-ani="true"] {
+        @include transition( opacity 0.15s linear );           // hide time
         .modal-dialog {
             @include tarnslate3d(0, -10%, 0);
-            @include transition( transform, .15s, ease-out );   // hide time
-            @include transition-delay(0s);               
+            @include transition( transform .15s ease-out );   // hide time
         }
         &[data-visible='true']{
-            transition-delay: 0.05s;                            // show time
-            transition-duration: 0.2s;
+           @include transition-delay(0.05s);                     // show time
             .modal-dialog {
                 @include tarnslate3d(0, 0, 0);
                 @include transition-delay(0.05s);               // show time
-                @include transition-duration(0.2s);
+                @include transition-duration(0.3s);
             }
         }
     }
-    &--middle {
-       &-block {
+    &--middle,
+    &[data-middle="true"] {
+       .modal--middle-block {
            display:table;
            width: 100%; height: 100%;
        }
@@ -100,6 +99,7 @@ $modal-content-padding : rem(15);
     }
 }
 
+/* dimmed */
 .dimmed {
     position: fixed; top:0; right:0; bottom:0; left:0; z-index: -1;
     background-color: #000;
@@ -108,12 +108,11 @@ $modal-content-padding : rem(15);
         z-index:1000;
         opacity: 0.5; filter:alpha(opacity=50); 
     }
-    &--ani {
-        @include transition( opacity, 0.2s, linear );
-        @include transition-delay(.05s);     // hide time
+    &--ani,
+    &[data-ani="true"] {
+        @include transition( opacity 0.15s linear 0.15s ); // hide 
         &[data-visible='true']{
-            @include transition-delay(0s);   // show time
-            @include transition-duration(0.15s);
+            @include transition-delay(0s);      // show delay time
         }
     }
 }

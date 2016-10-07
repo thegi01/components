@@ -138,32 +138,77 @@ var tabs = function( el ){
 	cpnt.className = cpnt.className; // ie8
 };
 
-/* Modal */
+/* classList : Get IE10, polyfill */
 var modal = {
-	show : function( btn, id ){
-		var dataVisibile = 'data-visible';
-		this.cpnt = document.getElementById(id);
-		if(id=='modalAni'){
-			this.dimmed = document.getElementById('dimmedAni');
-		} else {
-			this.dimmed = document.getElementById('dimmed');
+	cpnt : document.getElementById('modal'),
+	dimmed : document.getElementById('dimmed'),
+	show : function( btn, key ){
+		var dataVisibile = 'data-visible',
+			dataAni = 'data-ani',
+			dataMiddle = 'data-middle',
+			time = 0,
+			self = this;
+		if( key == 'ani' ){
+			this.cpnt.setAttribute(dataAni, 'true');
+			this.dimmed.setAttribute(dataAni, 'true');
+			time = 50;
+		};
+		if( key == 'middle' ){
+			var wrapper = document.createElement('div');
+			wrapper.className = 'modal--middle-block';
+			window.wrap( modal.cpnt.children[0], wrapper );
+			this.cpnt.setAttribute(dataMiddle, 'true');
 		};
 		this.dimmed.setAttribute(dataVisibile, 'true');
-		this.cpnt.setAttribute(dataVisibile, 'true');
-		this.dimmed.className = this.dimmed.className;
-		this.cpnt.className = this.cpnt.className;
+		this.polyfill();
+
+		setTimeout(function(){
+			self.cpnt.setAttribute(dataVisibile, 'true');
+			self.polyfill();
+		}, time);
 		this.cpnt.focus();
 		this.target = btn;
 	},
 	hide : function(){
-		var dataVisibile = 'data-visible';
-		this.dimmed.setAttribute(dataVisibile, 'false');
+		var dataVisibile = 'data-visible',
+			dataAni = 'data-ani',
+			dataMiddle = 'data-middle',
+			time = 0,
+			self = this;
+		if( this.cpnt.getAttribute(dataAni) == 'true' ){
+			time = 300;
+		};
+		if( this.cpnt.getAttribute(dataMiddle) == 'true' ){
+			window.unwrap( this.cpnt, this.cpnt.children[0] );
+			this.cpnt.setAttribute(dataMiddle, 'fasle');
+		};
+
 		this.cpnt.setAttribute(dataVisibile, 'false');
+		this.dimmed.setAttribute(dataVisibile, 'false');
+		this.polyfill();
+		
+		setTimeout(function(){
+			self.cpnt.setAttribute(dataAni, 'fasle');
+			self.dimmed.setAttribute(dataAni, 'false');
+			self.polyfill();
+		}, time);
+
+		this.target.focus();
+		this.target = null;
+	},
+	polyfill : function(){
 		this.dimmed.className = this.dimmed.className;
 		this.cpnt.className = this.cpnt.className;
-		this.target.focus();
-		this.cpnt = undefined;
-		this.dimmed = undefined;
-		this.target = undefined;
 	}
 };
+
+/* wrap */
+var wrap = function(el, wrapper){
+	el.parentNode.insertBefore(wrapper, el);
+	wrapper.appendChild(el);
+};
+var unwrap = function(el, wrapper) {
+    el.innerHTML = wrapper.innerHTML;
+};
+
+
