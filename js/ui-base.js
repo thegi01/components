@@ -34,14 +34,18 @@ if(!hasDataset) {
 	};
 };
 
-/* setCurrent */
+/* Variable data attribue */
+var dataVisible = 'visible',
+	dataAnimation = 'animation'
+
+/* Set element's current index */
 var setCurrent = function( id, idx ){
 	var el = document.getElementById(id);
 	dataset.set( el, 'current', idx);
 	dataset.repaint(el);
 };
 
-/* ToggleAttirbute */
+/* Toggle(true/false) element's attribute */
 var toggleAttirbute = function(attr, el){
 	if( el.getAttribute(attr) == 'true' ){
 		el.setAttribute(attr, 'false');
@@ -50,7 +54,7 @@ var toggleAttirbute = function(attr, el){
 	};
 };
 
-/* checkbox, radio */
+/* Checkbox, Radio */
 var checkboxCheck = function( el ){
 	toggleAttirbute('checked', el);
 };
@@ -154,14 +158,13 @@ var validation = {
 	passConfirm : function( pass1, pass2, viewEl ) {
 		viewEl = viewEl ? viewEl : pass2.nextElementSibling;
 		if( pass2.value && pass1.value != pass2.value){
-			dataset.set(viewEl, 'visible', 'true'); 
+			dataset.set(viewEl, dataVisible, 'true'); 
 			// viewEl.setAttribute('data-visible', 'true'); 
 			dataset.repaint(viewEl);
 			viewEl.textContent = 'Password and confirm password must be equal.'
 		};
 	},
 	view : function( el, type, viewEl ){
-		var dataVisible = 'visible';
 		viewEl = viewEl ? viewEl : el.nextElementSibling;
 		if( this[type]( el.value ) ){
 			dataset.set(viewEl, dataVisible, 'false'); 
@@ -174,60 +177,63 @@ var validation = {
 	}
 };
 
-/* Modal*/
+/* Modal */
+// Variable global
 var cpntModal = document.getElementById('modal'),
 	cpntDimmed = document.getElementById('dimmed'),
 	modalHideTarget = undefined;
+// Show
 var modalShow = function( el ){
-	dataset.set(cpntModal, 'visible', 'true');
-	dataset.set(cpntDimmed, 'visible', 'true');
+	dataset.set(cpntModal, dataVisible, 'true');
+	dataset.set(cpntDimmed, dataVisible, 'true');
 	modalHideTarget = el;
-	modalPolyfill();
+	dataset.repaint(cpntModal);
+	dataset.repaint(cpntDimmed);
 };
+// Show with animation
 var modalShowAnimate = function( el ){
 	// Animate pre appply
-	dataset.set(cpntModal, 'animation', 'true');
-	dataset.set(cpntDimmed, 'animation', 'true');
+	dataset.set(cpntModal, dataAnimation, 'true');
+	dataset.set(cpntDimmed, dataAnimation, 'true');
 	// CpntDimmed show
-	dataset.set(cpntDimmed, 'visible', 'true');
+	dataset.set(cpntDimmed, dataVisible, 'true');
 	// After cpntDimmed animatin end, cpntModal show
 	setTimeout(function(){	
-		dataset.set(cpntModal, 'visible', 'true');
+		dataset.set(cpntModal, dataVisible, 'true');
 	}, 150);
 	modalHideTarget = el;
 };
+// Vertical align middle
 var modalMiddle = function(){
 	dataset.set(cpntModal, 'middle', 'true');
 	var w = document.createElement('div');
 	w.className = 'modal--middle-block';
 	window.wrap( cpntModal.children[0], w );
 };
+// Hide
 var modalHide = function(){
-	dataset.set(cpntModal, 'visible', 'false');
-	dataset.set(cpntDimmed, 'visible', 'false');
+	dataset.set(cpntModal, dataVisible, 'false');
+	dataset.set(cpntDimmed, dataVisible, 'false');
 	modalHideTarget.focus();
 	modalHideTarget = undefined;
-	// If cpntModal vertical align middle
+	// If cpntModal has vertical align middle
 	if( dataset.get(cpntModal, 'middle') == 'true' ){
 		window.unwrap( cpntModal, cpntModal.children[0] );
 		cpntModal.dataset.middle = 'fasle';
 	};
 	// If cpntModal has animation
-	if( dataset.get(cpntModal, 'animation') == 'true'){
+	if( dataset.get(cpntModal, dataAnimation) == 'true'){
 		// Atter cpntDimmed animatin end, animation attribute set false;
 		setTimeout(function(){
-			dataset.set(cpntModal, 'animation', 'fasle');
-			dataset.set(cpntDimmed, 'animation', 'false');
+			dataset.set(cpntModal, dataAnimation, 'fasle');
+			dataset.set(cpntDimmed, dataAnimation, 'false');
 		}, 450);
 	};
-	modalPolyfill();
-};
-var modalPolyfill = function(){ 
 	dataset.repaint(cpntModal);
 	dataset.repaint(cpntDimmed);
 };
 
-/* wrap */
+/* Wrap */
 var wrap = function(el, wrapper){
 	el.parentNode.insertBefore(wrapper, el);
 	wrapper.appendChild(el);

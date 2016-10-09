@@ -505,7 +505,7 @@ input[data-role="button"]:checked + .btn { border-color: green; color: green; }
 /* dimmed */
 .dimmed { position: fixed; top: 0; right: 0; bottom: 0; left: 0; z-index: -1; background-color: #000; opacity: 0; filter: alpha(opacity=0); }
 .dimmed[data-visible='true'] { z-index: 1000; opacity: 0.5; filter: alpha(opacity=50); }
-.dimmed[data-animation="true"] { -webkit-transition: opa450city 0.15s linear; -moz-transition: opa450city 0.15s linear; -o-transition: opa450city 0.15s linear; transition: opa450city 0.15s linear; }
+.dimmed[data-animation="true"] { -webkit-transition: opacity 0.15s linear; -moz-transition: opacity 0.15s linear; -o-transition: opacity 0.15s linear; transition: opacity 0.15s linear; }
 .dimmed[data-animation="true"][data-visible='false'] { -webkit-transition-delay: 0.3s; -moz-transition-delay: 0.3s; -o-transition-delay: 0.3s; transition-delay: 0.3s; }
 .dimmed[data-animation="true"][data-visible='true'] { -webkit-transition-delay: 0s; -moz-transition-delay: 0s; -o-transition-delay: 0s; transition-delay: 0s; }
 

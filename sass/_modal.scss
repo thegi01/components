@@ -106,7 +106,7 @@ $modal-content-padding : rem(15);
         opacity: 0.5; filter:alpha(opacity=50); 
     }
     &[data-animation="true"] {
-        @include transition( opa450city 0.15s linear ); // hide
+        @include transition( opacity 0.15s linear ); // hide
         &[data-visible='false']{
             @include transition-delay(0.3s);              // hide delay time
         }
