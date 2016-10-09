@@ -25,17 +25,19 @@
 	<h1 class="h1">Modal</h1>
 	
 	
-	<button type="button" class="btn btn--default btn--m" onclick="modal.show(this)">Default</button>
+	<a href="#modal" class="btn btn--default btn--m" onclick="modalShow(this);">Default</a>
 	
-	<button type="button" class="btn btn--default btn--m" onclick="modal.show(this, 'ani')">Animation</button>
+	<a href="#modal" class="btn btn--default btn--m" onclick="modalShow(this); modalMiddle();">Middle</a>
 	
-	<button type="button" class="btn btn--default btn--m" onclick="modal.show(this, 'middle')">Middle</button>
+	<a href="#modal" class="btn btn--default btn--m" onclick="modalShowAnimate(this);">Animation</a>
+
+	<a href="#modal" class="btn btn--default btn--m" onclick="modalShowAnimate(this); modalMiddle();">Animation, Middle</a>
 
 	<div class="modal" id="modal" tabindex="-1" data-visible="false"> 
 		<div class="modal-dialog">
 			<div class="modal-content">
 				<div class="modal-header">
-					<button type="button" class="btn btn-clse" onclick="modal.hide()"> <span class="blind">Close</span> x </button>
+					<button type="button" class="btn btn-clse" onclick="modalHide()"> <span class="blind">Close</span> x </button>
 					<h3 class="modal-title">Modal Title</h3>
 				</div>
 				<div class="modal-body">
@@ -59,7 +61,7 @@
 						Sed vel ligula ornare, posuere velit ornare, consectetur erat.</p>
 				</div>
 				<div class="modal-footer">
-					<button type="button" class="btn btn--default btn--m" onclick="modal.hide()">Close</button>
+					<button type="button" class="btn btn--default btn--m" onclick="modalHide()">Close</button>
 				</div>
 			</div>
 		</div>

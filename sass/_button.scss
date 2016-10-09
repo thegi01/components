@@ -56,7 +56,7 @@ a.btn {
     // &:active {
     //     @include btn--default--pressed;
     // }
-    &[ aria-pressed="true" ] {
+    &[ data-pressed="true" ] {
         @include btn--default--pressed;
     }
 }
@@ -185,10 +185,10 @@ input[data-role="button"] {
             cursor : not-allowed;
         }
     }
-    &__btn[aria-expanded="true"] + &-menu {
+    &__btn[data-expanded="true"] + &-menu {
         display: block;
     }
-    &__btn[aria-expanded="false"] + &-menu {
+    &__btn[data-expanded="false"] + &-menu {
         display: none;
     }
     &--up {

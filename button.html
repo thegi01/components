@@ -85,7 +85,7 @@
 
 	<h2 class="h2">Pressed</h2>
 	<div class="row block--box">
-		<button type="button" class="btn btn--default btn--m" id="btnPressd" aria-pressed="false"> Button </button>
+		<button type="button" class="btn btn--default btn--m" id="btnPressd" data-pressed="false"> Button </button>
 	</div>
 
 	<h2 class="h2">Size</h2>
@@ -129,11 +129,10 @@
 	<h3 class="h3">Dropdown</h3>
 	<div class="block--box">
 		<div class="dropdown">
-			<!-- <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Dropdown <span class="caret"></span> </button> -->
-			<button type="button" class="btn btn--default btn--m dropdown__btn" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="false" onclick="dropdown.toggle(this)">
+			<button type="button" class="btn btn--default btn--m dropdown__btn" id="dropdownMenu1" data-toggle="dropdown" data-expanded="false" onclick="dropdown.toggle(this);">
 				Dropdown <span class="ico"></span>
 			</button>
-			<ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+			<ul class="dropdown-menu">
 				<li class="dropdown-header">Dropdown header 1</li>
 				<li class="dropdown-item"><a href="#href" class="dropdown__a">Dropdown 1</a></li>
 				<li class="dropdown-item"><a href="#href" class="dropdown__a">Dropdown 2</a></li>
@@ -146,10 +145,10 @@
 			</ul>
 		</div>
 		<div class="dropdown">
-			<button type="button" class="btn btn--default btn--m dropdown__btn" id="dropdownMenu2" data-toggle="dropdown" aria-expanded="false" onclick="dropdown.toggle(this)">
+			<button type="button" class="btn btn--default btn--m dropdown__btn" id="dropdownMenu2" data-toggle="dropdown" data-expanded="false" onclick="dropdown.toggle(this);">
 				Dropdown right <span class="ico"></span>
 			</button>
-			<ul class="dropdown-menu dropdown-menu--right" aria-labelledby="dropdownMenu2">
+			<ul class="dropdown-menu dropdown-menu--right">
 				<li class="dropdown-header">Dropdown header 1</li>
 				<li class="dropdown-item"><a href="#href" class="dropdown__a">Dropdown 1</a></li>
 				<li class="dropdown-item"><a href="#href" class="dropdown__a">Dropdown 2</a></li>
@@ -165,10 +164,10 @@
 	<h3 class="h3">Dropup</h3>
 	<div class="block--box">
 		<div class="dropdown dropdown--up">
-			<button type="button" class="btn btn--default btn--m dropdown__btn" id="dropdownMenu3" data-toggle="dropdown" aria-expanded="false" onclick="dropdown.toggle(this)">
+			<button type="button" class="btn btn--default btn--m dropdown__btn" id="dropdownMenu3" data-toggle="dropdown" data-expanded="false" onclick="dropdown.toggle(this);">
 				Dropup <span class="ico"></span>
 			</button>
-			<ul class="dropdown-menu" aria-labelledby="dropdownMenu3">
+			<ul class="dropdown-menu">
 				<li class="dropdown-header">Dropdown header 1</li>
 				<li class="dropdown-item"><a href="#href" class="dropdown__a">Dropdown 1</a></li>
 				<li class="dropdown-item"><a href="#href" class="dropdown__a">Dropdown 2</a></li>
@@ -181,10 +180,10 @@
 			</ul>
 		</div>
 		<div class="dropdown dropdown--up">
-			<button type="button" class="btn btn--default btn--m dropdown__btn" id="dropdownMenu4" data-toggle="dropdown" aria-expanded="false" onclick="dropdown.toggle(this)">
+			<button type="button" class="btn btn--default btn--m dropdown__btn" id="dropdownMenu4" data-toggle="dropdown" data-expanded="false" onclick="dropdown.toggle(this);">
 				Dropup right <span class="ico"></span>
 			</button>
-			<ul class="dropdown-menu dropdown-menu--right" aria-labelledby="dropdownMenu4">
+			<ul class="dropdown-menu dropdown-menu--right">
 				<li class="dropdown-header">Dropdown header 1</li>
 				<li class="dropdown-item"><a href="#href" class="dropdown__a">Dropdown 1</a></li>
 				<li class="dropdown-item"><a href="#href" class="dropdown__a">Dropdown 2</a></li>
@@ -200,11 +199,11 @@
 	<h3 class="h3">Get Item</h3>
 	<div class="block--box">
 		<div class="dropdown">
-			<button type="button" class="btn btn--default btn--m dropdown__btn" id="dropdownMenu5" data-toggle="dropdown" aria-expanded="false" onclick="dropdown.toggle(this)">
+			<button type="button" class="btn btn--default btn--m dropdown__btn" id="dropdownMenu5" data-toggle="dropdown" data-expanded="false" onclick="dropdown.toggle(this);">
 				Dropdown 
 				<span class="ico"></span>
 			</button>
-			<ul class="dropdown-menu" aria-labelledby="dropdownMenu5">
+			<ul class="dropdown-menu">
 				<li class="dropdown-item"><a href="#href" class="dropdown__a" onclick="dropdown.getItem(this); return false;">None</a></li>
 				<li class="dropdown-header">Dropdown header 1</li>
 				<li class="dropdown-item"><a href="#href" class="dropdown__a" onclick="dropdown.getItem(this); return false;">Dropdown 1</a></li>
@@ -297,12 +296,12 @@
 
 /* btnPressd */
 document.getElementById('btnPressd').onclick = function(){
-	var pressed = 'aria-pressed';
-	if( this.getAttribute(pressed) == 'true' ){
-		this.setAttribute(pressed, 'false');
+	var pressed = 'pressed';
+	if( dataset.get(this, pressed) == 'true' ){
+		dataset.set(this, pressed, 'false');
 		this.innerText = 'Button';
 	} else {
-		this.setAttribute(pressed, 'true');
+		dataset.set(this, pressed, 'true');
 		this.innerText = 'Button pressed';
 	}
 };

@@ -67,10 +67,10 @@
 	</div>
 	
 	<h2 class="h2">Tabs control - Logical</h2>
-	<div class="tabs tabs--logical" data-current="0">
+	<div class="tabs tabs--logical" id="tabsLogical" data-current="0">
 		<div class="tabs-lst">
 			<div class="tabs-item" data-idx="0">
-				<a href="#href" class="tabs-item__a" onfocus="tabs(this);" onclick="tabs(this); return false;">tab1</a>
+				<a href="#href" class="tabs-item__a" onfocus="tabs('tabsLogical', 0);" onclick="tabs('tabsLogical', 0); return false;">tab1</a>
 				<div class="tabs-cnts">
 					<h3 class="blind">tab1 contents</h3>
 					<a href="#href">tab1-cnts-lnk</a>
@@ -79,7 +79,7 @@
 				</div>
 			</div>
 			<div class="tabs-item" data-idx="1">
-				<a href="#href" class="tabs-item__a" onfocus="tabs(this);" onclick="tabs(this); return false;">tab2</a>
+				<a href="#href" class="tabs-item__a" onfocus="tabs('tabsLogical', 1);" onclick="tabs('tabsLogical', 1); return false;">tab2</a>
 				<div class="tabs-cnts">
 					<h3 class="blind">tab2 contents</h3>
 					<a href="#href">tab2-cnts-lnk</a>
@@ -88,7 +88,7 @@
 				</div>
 			</div>
 			<div class="tabs-item" data-idx="2">
-				<a href="#href" class="tabs-item__a" onfocus="tabs(this);" onclick="tabs(this); return false;">tab3</a>
+				<a href="#href" class="tabs-item__a" onfocus="tabs('tabsLogical', 2);" onclick="tabs('tabsLogical', 2); return false;">tab3</a>
 				<div class="tabs-cnts">
 					<h3 class="blind">tab3 contents</h3>
 					<a href="#href">tab3-cnts-lnk</a>
@@ -106,11 +106,11 @@
 	</div>
 
 	<h2 class="h2">Tabs control - nonLogical</h2>
-	<div class="tabs tabs--nonlogical" data-current="0">
+	<div class="tabs tabs--nonlogical" id="tabsNonLogical" data-current="0">
 		<ul class="tabs-lst">
-			<li class="tabs-item" data-idx="0"><a href="#tabs-1" class="tabs-item__a" onclick="tabs(this);">tab1</a></li>
-			<li class="tabs-item" data-idx="1"><a href="#tabs-2" class="tabs-item__a" onclick="tabs(this);">tab2</a></li>
-			<li class="tabs-item" data-idx="2"><a href="#tabs-3" class="tabs-item__a" onclick="tabs(this);">tab3</a></li>
+			<li class="tabs-item" data-idx="0"><a href="#tabs-1" class="tabs-item__a" onclick="tabs('tabsNonLogical', 0);">tab1</a></li>
+			<li class="tabs-item" data-idx="1"><a href="#tabs-2" class="tabs-item__a" onclick="tabs('tabsNonLogical', 1);">tab2</a></li>
+			<li class="tabs-item" data-idx="2"><a href="#tabs-3" class="tabs-item__a" onclick="tabs('tabsNonLogical', 2);">tab3</a></li>
 		</ul>
 		<div class="tabs-panel">
 			<div class="tabs-cnts" id="tabs-1" data-idx="0">
