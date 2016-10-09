@@ -178,6 +178,7 @@ var modalShow = function( el ){
 	dataset.set(cpntModal, 'visible', 'true');
 	dataset.set(cpntDimmed, 'visible', 'true');
 	modalHideTarget = el;
+	modalPolyfill();
 };
 var modalShowAnimate = function( el ){
 	// Animate pre appply
@@ -190,6 +191,7 @@ var modalShowAnimate = function( el ){
 		dataset.set(cpntModal, 'visible', 'true');
 	}, 150);
 	modalHideTarget = el;
+	modalPolyfill();
 };
 var modalMiddle = function(){
 	dataset.set(cpntModal, 'middle', 'true');
@@ -215,6 +217,11 @@ var modalHide = function(){
 			dataset.set(cpntDimmed, 'animation', 'false');
 		}, 450);
 	};
+	modalPolyfill();
+};
+var modalPolyfill = function(){ // Lte IE8
+	cpntModal.className = cpntModal.className 
+	cpntDimmed.className = cpntDimmed.className 
 };
 
 /* wrap */
