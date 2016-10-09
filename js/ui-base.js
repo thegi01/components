@@ -2,13 +2,13 @@
 
 /* dataset */
 var dataset = {
-	get: function( el, attr ){
+	get : function( el, attr ){
 		return el.dataset[attr];
 	},
 	set : function( el, attr, val ){
 		el.dataset[attr] = val;
 	},
-	del: function ( el, attr) {
+	del : function ( el, attr) {
 		delete el.dataset[attr];
 	},
 	repaint : function(){
@@ -25,21 +25,28 @@ if(!hasDataset) {
 		set : function( el, attr, val ){
 			el.setAttribute('data-' + attr, val)
 		},
-		del: function ( el, attr) {
+		del : function ( el, attr) {
 			el.removeAttribute('data-' + attr);
 		},
-		repaint: function( el ){
+		repaint : function( el ){
 			el.className = el.className;
 		}
 	};
 };
 
+/* setCurrent */
+var setCurrent = function( id, idx ){
+	var el = document.getElementById(id);
+	dataset.set( el, 'current', idx);
+	dataset.repaint(el);
+};
+
 /* ToggleAttirbute */
-var toggleAttirbute = function(attribute, el){
-	if( el.getAttribute(attribute) == 'true' ){
-		el.setAttribute(attribute, 'false');
+var toggleAttirbute = function(attr, el){
+	if( el.getAttribute(attr) == 'true' ){
+		el.setAttribute(attr, 'false');
 	} else {
-		el.setAttribute(attribute, 'true');
+		el.setAttribute(attr, 'true');
 	};
 };
 
@@ -62,23 +69,24 @@ var radio = {
 		this.current = idx;
 	}
 };
+
 /* Dropdown */
 var dropdown = {
 	expanedEl : undefined,
 	toggle : function( el ){
-		var dataAttribute = 'expanded';
+		var data = 'expanded';
 		if( this.expanedEl && this.expanedEl != el ) {
-			dataset.set(this.expanedEl, dataAttribute, 'false');
+			dataset.set(this.expanedEl, data, 'false');
 		};
-		if( dataset.get(el, dataAttribute) == 'true' ){
-			dataset.set(el, dataAttribute, 'false');
+		if( dataset.get(el, data) == 'true' ){
+			dataset.set(el, data, 'false');
 		} else {
-			dataset.set(el, dataAttribute, 'true');
+			dataset.set(el, data, 'true');
 			window.onclick = function( evt ) {
 				dropdown.outFocus(evt);
 			};
 		};
-		// toggleAttirbute(dataAttribute, el);
+		// toggleAttirbute(data, el);
 		dataset.repaint(el);
 		this.expanedEl = el;
 	},
@@ -166,16 +174,6 @@ var validation = {
 	}
 };
 
-/* Tabs */
-var tabs = function( idName, idx ){
-	// var item = el.parentElement,
-	// 	cpnt = item.parentElement.parentElement,
-	// 	idx = dataset.get(item, 'idx');
-	var cpnt = document.getElementById(idName);
-	dataset.set(cpnt, 'current', idx);
-	dataset.repaint(cpnt);
-};
-
 /* Modal*/
 var cpntModal = document.getElementById('modal'),
 	cpntDimmed = document.getElementById('dimmed'),
@@ -224,7 +222,7 @@ var modalHide = function(){
 	};
 	modalPolyfill();
 };
-var modalPolyfill = function(){ // Lte IE8
+var modalPolyfill = function(){ 
 	dataset.repaint(cpntModal);
 	dataset.repaint(cpntDimmed);
 };
