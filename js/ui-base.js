@@ -10,6 +10,9 @@ var dataset = {
 	},
 	del: function ( el, attr) {
 		delete el.dataset[attr];
+	},
+	repaint : function(){
+		return;
 	}
 };
 // dataset polyfill
@@ -24,6 +27,9 @@ if(!hasDataset) {
 		},
 		del: function ( el, attr) {
 			el.removeAttribute('data-' + attr);
+		},
+		repaint: function( el ){
+			el.className = el.className;
 		}
 	};
 };
@@ -52,7 +58,7 @@ var radio = {
 			el.form[el.name][this.current].setAttribute(attribute, 'false');
 		};
 		el.setAttribute(attribute, 'true');
-		el.className = el.className; // ie8
+		dataset.repaint(el);
 		this.current = idx;
 	}
 };
@@ -73,14 +79,14 @@ var dropdown = {
 			};
 		};
 		// toggleAttirbute(dataAttribute, el);
-		el.className = el.className; // ie8
+		dataset.repaint(el);
 		this.expanedEl = el;
 	},
 	outFocus : function( evt ){
 		var target = evt.target || evt.srcElement; // Support IE6-8
 		if( dataset.get(target, 'toggle') != 'dropdown' && this.expanedEl) {
 			dataset.set(dropdown.expanedEl, 'expanded', 'false');
-			dropdown.expanedEl.className = dropdown.expanedEl.className; // ie8
+			dataset.repaint(dropdown.expanedEl);
 			dropdown.expanedEl = undefined;
 		};
 	},
@@ -142,7 +148,7 @@ var validation = {
 		if( pass2.value && pass1.value != pass2.value){
 			dataset.set(viewEl, 'visible', 'true'); 
 			// viewEl.setAttribute('data-visible', 'true'); 
-			viewEl.className = viewEl.className; // ie8
+			dataset.repaint(viewEl);
 			viewEl.textContent = 'Password and confirm password must be equal.'
 		};
 	},
@@ -156,7 +162,7 @@ var validation = {
 			dataset.set(viewEl, dataVisible, 'true'); 
 			// viewEl.setAttribute(dataVisible, 'true'); 
 		};
-		viewEl.className = viewEl.className; // ie8
+		dataset.repaint(viewEl);
 	}
 };
 
@@ -167,7 +173,7 @@ var tabs = function( idName, idx ){
 	// 	idx = dataset.get(item, 'idx');
 	var cpnt = document.getElementById(idName);
 	dataset.set(cpnt, 'current', idx);
-	cpnt.className = cpnt.className; // ie8
+	dataset.repaint(cpnt);
 };
 
 /* Modal*/
@@ -191,7 +197,6 @@ var modalShowAnimate = function( el ){
 		dataset.set(cpntModal, 'visible', 'true');
 	}, 150);
 	modalHideTarget = el;
-	modalPolyfill();
 };
 var modalMiddle = function(){
 	dataset.set(cpntModal, 'middle', 'true');
@@ -220,8 +225,8 @@ var modalHide = function(){
 	modalPolyfill();
 };
 var modalPolyfill = function(){ // Lte IE8
-	cpntModal.className = cpntModal.className 
-	cpntDimmed.className = cpntDimmed.className 
+	dataset.repaint(cpntModal);
+	dataset.repaint(cpntDimmed);
 };
 
 /* wrap */
