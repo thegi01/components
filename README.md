@@ -9,6 +9,7 @@
 - To do 
 	- aria	
 
+
 ### Button 
 - [Url] : https://thegi01.github.io/components/button.html 
 - 네이밍 간소화 : modifier 빼고 속성 바로 적용
@@ -19,7 +20,7 @@
 - To do 
 	- 하위 버전 크로스 브라우징
 	- aria
-	- dropdown : js ie8이하 pollyfill
+
 
 ### Input
 - [Url] : https://thegi01.github.io/components/input.html
@@ -29,6 +30,7 @@
 	- not selector, last-child ie8 not supply --> js??
 	- 하위 버전 확인
 	- input group : margin 간격 정리
+
 
 ### Fieldset
 - [Url] : https://thegi01.github.io/components/fieldset.html
@@ -40,10 +42,9 @@
 - [Url] : https://thegi01.github.io/components/form.html
 - To do
 	- 하위 버전 확인
-	- validation : auto complete event ? (ie8)
-		- input event not support IE8
 	- validation : 상황별로 좀 더 개선할 것
 	- aria
+
 
 ### Tabs
 - [Url] : https://thegi01.github.io/components/tabs.html
@@ -51,6 +52,7 @@
 	- 하위 버전 확인
 	- 접근성 개선
 	- aria
+
 
 ### Modal
 - [Url] : https://thegi01.github.io/components/modal.html

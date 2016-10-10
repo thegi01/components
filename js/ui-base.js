@@ -8,7 +8,7 @@ var dataset = {
 	set : function( el, attr, val ){
 		el.dataset[attr] = val;
 	},
-	del : function ( el, attr) {
+	del : function ( el, attr ) {
 		delete el.dataset[attr];
 	},
 	repaint : function(){
@@ -25,7 +25,7 @@ if(!hasDataset) {
 		set : function( el, attr, val ){
 			el.setAttribute('data-' + attr, val)
 		},
-		del : function ( el, attr) {
+		del : function ( el, attr ) {
 			el.removeAttribute('data-' + attr);
 		},
 		repaint : function( el ){
@@ -96,9 +96,9 @@ var dropdown = {
 	outFocus : function( evt ){
 		var target = evt.target || evt.srcElement; // Support IE6-8
 		if( dataset.get(target, 'toggle') != 'dropdown' && this.toggler) {
-			dataset.set(dropdown.toggler, 'expanded', 'false');
-			dataset.repaint(dropdown.toggler);
-			dropdown.toggler = undefined;
+			dataset.set(this.toggler, 'expanded', 'false');
+			dataset.repaint(this.toggler);
+			this.toggler = undefined;
 		};
 	},
 	getItem : function( txt ){
