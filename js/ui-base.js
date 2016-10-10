@@ -35,8 +35,7 @@ if(!hasDataset) {
 };
 
 /* Variable data attribue */
-var dataVisible = 'visible',
-	dataAnimation = 'animation'
+var dataVisible = 'visible';
 
 /* Set element's current index */
 var setCurrent = function( id, idx ){
@@ -193,6 +192,7 @@ var modalShow = function( el ){
 };
 // Show with animation
 var modalShowAnimate = function( el ){
+	var dataAnimation = 'animation';
 	// Animate pre appply
 	dataset.set(cpntModal, dataAnimation, 'true');
 	dataset.set(cpntDimmed, dataAnimation, 'true');
@@ -213,6 +213,7 @@ var modalMiddle = function(){
 };
 // Hide
 var modalHide = function(){
+	var dataAnimation = 'animation';
 	dataset.set(cpntModal, dataVisible, 'false');
 	dataset.set(cpntDimmed, dataVisible, 'false');
 	modalHideTarget.focus();
