@@ -486,8 +486,8 @@ input[data-role="button"]:checked + .btn { border-color: green; color: green; }
 .tabs--logical[data-current="0"] .tabs-item[data-idx="0"] .tabs-cnts, .tabs--logical[data-current="1"] .tabs-item[data-idx="1"] .tabs-cnts, .tabs--logical[data-current="2"] .tabs-item[data-idx="2"] .tabs-cnts { display: block; }
 
 /* accordion */
-.accordion { clear: both; overflow: hidden; }
-.accordion-item { margin-bottom: 0.3125rem; border: 1px solid #ddd; -webkit-border-radius: 0.25rem; -moz-border-radius: 0.25rem; border-radius: 0.25rem; background-clip: padding-box; }
+.accordion { clear: both; }
+.accordion-item { overflow: hidden; margin-bottom: 0.3125rem; border: 1px solid #ddd; -webkit-border-radius: 0.25rem; -moz-border-radius: 0.25rem; border-radius: 0.25rem; background-clip: padding-box; }
 .accordion-title { margin: 0; }
 .accordion-item__a { display: block; padding: 0.625rem 0.9375rem; background-color: #f5f5f5; font-weight: 500; font-size: 1rem; color: #333; text-decoration: none; }
 .accordion-item__a:focus { outline: none; background-color: #e2e1e1; }
