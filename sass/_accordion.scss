@@ -32,9 +32,9 @@
         font-size: rem(14);
         line-height: 1.5;
     }
-    &[data-current="0"] &-item[data-idx="0"] &-item__a, 
-    &[data-current="1"] &-item[data-idx="1"] &-item__a, 
-    &[data-current="2"] &-item[data-idx="2"] &-item__a {
-        height: auto;
+    &[data-current="0"] &-item[data-idx="0"] &-panel, 
+    &[data-current="1"] &-item[data-idx="1"] &-panel, 
+    &[data-current="2"] &-item[data-idx="2"] &-panel {
+        // height: auto;
     }
 }

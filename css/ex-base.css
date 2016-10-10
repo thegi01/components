@@ -493,7 +493,6 @@ input[data-role="button"]:checked + .btn { border-color: green; color: green; }
 .accordion-item__a:focus { outline: none; background-color: #e2e1e1; }
 .accordion-panel { overflow: hidden; height: 0; -webkit-transition: height 0.3s linear; -moz-transition: height 0.3s linear; -o-transition: height 0.3s linear; transition: height 0.3s linear; }
 .accordion-cnts { padding: 0.9375rem; font-size: 0.875rem; line-height: 1.5; }
-.accordion[data-current="0"] .accordion-item[data-idx="0"] .accordion-item__a, .accordion[data-current="1"] .accordion-item[data-idx="1"] .accordion-item__a, .accordion[data-current="2"] .accordion-item[data-idx="2"] .accordion-item__a { height: auto; }
 
 /* modal */
 .modal { position: fixed; top: 0; right: 0; bottom: 0; left: 0; z-index: -1; opacity: 0; filter: alpha(opacity=0); overflow: hidden; }
