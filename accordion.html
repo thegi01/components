@@ -25,9 +25,9 @@
 	<div class="accordion" id="accordion" data-current="0">
 		<div class="accordion-item" data-idx="0">
 			<h4 class="accordion-title">
-				<a href="#none" class="accordion-item__a" onclick="accordion('accordion', 0, 'accordionBody0'); return false;">Accordion item 1</a>
+				<a href="#none" class="accordion-item__a" onclick="accordion('accordion', 0, 'accordionPanel0'); return false;">Accordion item 1</a>
 			</h4>
-			<div class="accordion-body" id="accordionBody0">
+			<div class="accordion-panel" id="accordionPanel0">
 				<div class="accordion-cnts">
 					Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
 				</div>
@@ -35,9 +35,9 @@
 		</div>
 		<div class="accordion-item" data-idx="1">
 			<h4 class="accordion-title">
-				<a href="#none" class="accordion-item__a" onclick="accordion('accordion', 1, 'accordionBody1'); return false;">Accordion item 2</a>
+				<a href="#none" class="accordion-item__a" onclick="accordion('accordion', 1, 'accordionPanel1'); return false;">Accordion item 2</a>
 			</h4>
-			<div class="accordion-body" id="accordionBody1">
+			<div class="accordion-panel" id="accordionPanel1">
 				<div class="accordion-cnts">
 					Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
 				</div>
@@ -45,9 +45,9 @@
 		</div>
 		<div class="accordion-item" data-idx="2">
 			<h4 class="accordion-title">
-				<a href="#none" class="accordion-item__a" onclick="accordion('accordion', 2, 'accordionBody2'); return false;">Accordion item 3</a>
+				<a href="#none" class="accordion-item__a" onclick="accordion('accordion', 2, 'accordionPanel2'); return false;">Accordion item 3</a>
 			</h4>
-			<div class="accordion-body" id="accordionBody2">
+			<div class="accordion-panel" id="accordionPanel2">
 				<div class="accordion-cnts">
 					Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
 				</div>
@@ -59,9 +59,9 @@
 	<div class="accordion" id="accordionSecond" data-current="0">
 		<div class="accordion-item" data-idx="0">
 			<h4 class="accordion-title">
-				<a href="#none" class="accordion-item__a" onclick="accordion('accordionSecond', 0, 'accordionBody20'); return false;">Accordion item 1</a>
+				<a href="#none" class="accordion-item__a" onclick="accordion('accordionSecond', 0, 'accordionPanel20'); return false;">Accordion item 1</a>
 			</h4>
-			<div class="accordion-body" id="accordionBody20">
+			<div class="accordion-panel" id="accordionPanel20">
 				<div class="accordion-cnts">
 					Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
 				</div>
@@ -69,9 +69,9 @@
 		</div>
 		<div class="accordion-item" data-idx="1">
 			<h4 class="accordion-title">
-				<a href="#none" class="accordion-item__a" onclick="accordion('accordionSecond', 1, 'accordionBody21'); return false;">Accordion item 2</a>
+				<a href="#none" class="accordion-item__a" onclick="accordion('accordionSecond', 1, 'accordionPanel21'); return false;">Accordion item 2</a>
 			</h4>
-			<div class="accordion-body" id="accordionBody21">
+			<div class="accordion-panel" id="accordionPanel21">
 				<div class="accordion-cnts">
 					Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
 				</div>
@@ -79,9 +79,9 @@
 		</div>
 		<div class="accordion-item" data-idx="2">
 			<h4 class="accordion-title">
-				<a href="#none" class="accordion-item__a" onclick="accordion('accordionSecond', 2, 'accordionBody22'); return false;">Accordion item 3</a>
+				<a href="#none" class="accordion-item__a" onclick="accordion('accordionSecond', 2, 'accordionPanel22'); return false;">Accordion item 3</a>
 			</h4>
-			<div class="accordion-body" id="accordionBody22">
+			<div class="accordion-panel" id="accordionPanel22">
 				<div class="accordion-cnts">
 					Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
 				</div>
@@ -94,8 +94,8 @@
 <script type="text/javascript" src="js/ui-base.js"></script>
 <script>
 	window.onload = function(){
-		accordionInit('accordion', 'accordionBody0');
-		accordionInit('accordionSecond', 'accordionBody20');
+		accordionInit('accordion', 'accordionPanel0');
+		accordionInit('accordionSecond', 'accordionPanel20');
 	};
 </script>
 <!-- //javacript -->

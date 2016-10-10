@@ -22,7 +22,7 @@
             background-color: #e2e1e1;
         }
     }
-    &-body {
+    &-panel {
         overflow: hidden;
         height:0;
         @include transition(height 0.3s linear);
