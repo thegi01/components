@@ -53,10 +53,10 @@
 	- aria
 
 ### Modal
-	- [Url] : https://thegi01.github.io/components/modal.html
-	- To do
-		- 하위 버전 확인
-		- aria
+- [Url] : https://thegi01.github.io/components/modal.html
+- To do
+	- 하위 버전 확인
+	- aria
 
 
 ### Wire Frame
