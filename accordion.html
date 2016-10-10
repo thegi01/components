@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>Accordion</title>
+	<meta name="viewport" content="width=device-width, user-scalable=no">
+	<meta name="robots" content="noindex,nofollow">
+	<meta name="googlebot" content="noindex,nofollow">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<!--[if (gt IE 8)|!(IE)]><!-->
+        <link rel="stylesheet" href="css/ex-base.css">
+    <!--<![endif]-->
+    <!--[if lte IE 8]>
+        <link rel="stylesheet" href="css/ex-base-ie.css">
+    <![endif]-->
+    <style>
+    </style>
+</head>
+<body>
+
+<div class="wrap ex">
+	<h2 class="h1">Accordion</h2>
+	
+	<h3 class="h3">Accordion</h3>
+	<div class="accordion" id="accordion" data-current="0">
+		<div class="accordion-item" data-idx="0">
+			<h4 class="accordion-title">
+				<a href="#none" class="accordion-item__a" onclick="accordion('accordion', 0, 'accordionBody0'); return false;">Accordion item 1</a>
+			</h4>
+			<div class="accordion-body" id="accordionBody0">
+				<div class="accordion-cnts">
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+				</div>
+			</div>
+		</div>
+		<div class="accordion-item" data-idx="1">
+			<h4 class="accordion-title">
+				<a href="#none" class="accordion-item__a" onclick="accordion('accordion', 1, 'accordionBody1'); return false;">Accordion item 2</a>
+			</h4>
+			<div class="accordion-body" id="accordionBody1">
+				<div class="accordion-cnts">
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+				</div>
+			</div>
+		</div>
+		<div class="accordion-item" data-idx="2">
+			<h4 class="accordion-title">
+				<a href="#none" class="accordion-item__a" onclick="accordion('accordion', 2, 'accordionBody2'); return false;">Accordion item 3</a>
+			</h4>
+			<div class="accordion-body" id="accordionBody2">
+				<div class="accordion-cnts">
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<h3 class="h3">Accordion second</h3>
+	<div class="accordion" id="accordionSecond" data-current="0">
+		<div class="accordion-item" data-idx="0">
+			<h4 class="accordion-title">
+				<a href="#none" class="accordion-item__a" onclick="accordion('accordionSecond', 0, 'accordionBody20'); return false;">Accordion item 1</a>
+			</h4>
+			<div class="accordion-body" id="accordionBody20">
+				<div class="accordion-cnts">
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+				</div>
+			</div>
+		</div>
+		<div class="accordion-item" data-idx="1">
+			<h4 class="accordion-title">
+				<a href="#none" class="accordion-item__a" onclick="accordion('accordionSecond', 1, 'accordionBody21'); return false;">Accordion item 2</a>
+			</h4>
+			<div class="accordion-body" id="accordionBody21">
+				<div class="accordion-cnts">
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+				</div>
+			</div>
+		</div>
+		<div class="accordion-item" data-idx="2">
+			<h4 class="accordion-title">
+				<a href="#none" class="accordion-item__a" onclick="accordion('accordionSecond', 2, 'accordionBody22'); return false;">Accordion item 3</a>
+			</h4>
+			<div class="accordion-body" id="accordionBody22">
+				<div class="accordion-cnts">
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- javacript -->
+<script type="text/javascript" src="js/ui-base.js"></script>
+<script>
+	window.onload = function(){
+		accordionInit('accordion', 'accordionBody0');
+		accordionInit('accordionSecond', 'accordionBody20');
+	};
+</script>
+<!-- //javacript -->
+
+</body>
+</html>

@@ -1,4 +1,4 @@
-/* nav */
+/* tabs */
 
 .tabs {
     &-lst {
@@ -24,7 +24,6 @@
             &:focus {
                 background-color: #eee;
             }
-
         }
     }
     &[data-current="0"] .tabs-item[data-idx="0"] .tabs-item__a,

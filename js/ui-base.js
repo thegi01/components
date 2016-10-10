@@ -109,6 +109,32 @@ var dropdown = {
 	dropdown.outFocus(evt);
 };*/
 
+/* Accordion */
+var accordionInit = function( id1, id2 ){
+	var cpnt = document.getElementById(id1),
+		cpntBody = document.getElementById(id2),
+		cpntCnts = cpntBody.childNodes[1];
+	cpntBody.style.height = cpntCnts.offsetHeight + 'px';
+	cpnt.collapsed = cpntBody;
+};
+var accordion = function( id1, idx, id2 ){
+	setCurrent(id1, idx);
+	var cpnt = document.getElementById(id1),
+		cpntBody = document.getElementById(id2),
+		cpntCnts = cpntBody.childNodes[1];
+	if(cpnt.collapsed == cpntBody) {
+		if(cpntBody.style.height == '0px'){
+			cpntBody.style.height = cpntCnts.offsetHeight + 'px';
+		} else {
+			cpntBody.style.height = '0';
+		};
+	} else {
+		cpnt.collapsed.style.height = '0';
+		cpntBody.style.height = cpntCnts.offsetHeight + 'px';
+		cpnt.collapsed = cpntBody;
+	};
+};
+
 /* File upload : handelFile */
 // lastElementChild, nextElementSibling : Gte IE9
 var handleFileSelect = function( evt ){

@@ -1,0 +1,40 @@
+/* accordion */
+
+.accordion {
+    clear:both;
+    overflow: hidden;
+    &-item{
+        margin-bottom: rem(5);
+        border: 1px solid #ddd;
+        @include border-radius(rem(4));
+    }
+    &-title {
+        margin:0;
+    }
+    &-item__a {
+        display: block;
+        padding : rem(10) rem(15);
+        background-color: #f5f5f5;
+        font-weight:500; font-size:rem(16); color: #333;
+        text-decoration: none;
+        &:focus {
+            outline:none;
+            background-color: #e2e1e1;
+        }
+    }
+    &-body {
+        overflow: hidden;
+        height:0;
+        @include transition(height 0.3s linear);
+    }
+    &-cnts {
+        padding: rem(15);
+        font-size: rem(14);
+        line-height: 1.5;
+    }
+    &[data-current="0"] &-item[data-idx="0"] &-item__a, 
+    &[data-current="1"] &-item[data-idx="1"] &-item__a, 
+    &[data-current="2"] &-item[data-idx="2"] &-item__a {
+        height: auto;
+    }
+}
