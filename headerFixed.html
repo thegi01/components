@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>Header Fix Layout</title>
+	<meta name="viewport" content="width=device-width, user-scalable=no">
+	<meta name="robots" content="noindex,nofollow">
+	<meta name="googlebot" content="noindex,nofollow">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<!--[if (gt IE 8)|!(IE)]><!-->
+        <link rel="stylesheet" href="css/ex-base.css">
+    <!--<![endif]-->
+    <!--[if lte IE 8]>
+        <link rel="stylesheet" href="css/ex-base-ie.css">
+    <![endif]-->
+    <style>
+    .header {
+		position: fixed; top: 0; right: 0; bottom:0; left:0; z-index: 1000;
+        height: 70px;
+        box-sizing : border-box;
+        padding: 20px;
+        border-bottom: solid 1px #eee;
+    	background-color: #f8f8f8;
+        transition : transform 0.15s linear;
+        transform : translate3d(0, 0, 0);
+    }
+    .header[data-visible='false'] {
+        transform : translate3d(0, -100%, 0);
+    }
+    .container {
+    	height: 3000px;
+    }
+    </style>
+</head>
+<body>
+<div id="header" class="header" data-visible="false">
+	header
+</div>
+<div class="container">
+	<div style="width: 50px; height:1000px; margin: 0 auto; background-color:gray; "></div>
+</div>
+	
+	<!-- http://1boon.daum.net/share/nobrandrevieww -->
+
+<!-- javacript -->
+<script type="text/javascript" src="js/ui-base.js"></script>
+<script>
+window.onscroll = function(){
+	var header = document.getElementById('header');
+	if(document.body.scrollTop > 0){
+		header.setAttribute('data-visible', 'true');
+	} else {
+		header.setAttribute('data-visible', 'false');
+	};
+};
+
+</script>
+<!-- //javacript -->
+</body>
+</html>
