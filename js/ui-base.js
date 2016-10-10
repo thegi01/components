@@ -76,34 +76,34 @@ var radio = {
 
 /* Dropdown */
 var dropdown = {
-	expanedEl : undefined,
+	toggler : undefined,
 	toggle : function( el ){
-		var data = 'expanded';
-		if( this.expanedEl && this.expanedEl != el ) {
-			dataset.set(this.expanedEl, data, 'false');
+		var dataExpanded = 'expanded';
+		if( this.toggler && this.toggler != el ) {
+			dataset.set(this.toggler, dataExpanded, 'false');
 		};
-		if( dataset.get(el, data) == 'true' ){
-			dataset.set(el, data, 'false');
+		if( dataset.get(el, dataExpanded) == 'true' ){
+			dataset.set(el, dataExpanded, 'false');
 		} else {
-			dataset.set(el, data, 'true');
+			dataset.set(el, dataExpanded, 'true');
 			window.onclick = function( evt ) {
 				dropdown.outFocus(evt);
 			};
 		};
 		// toggleAttirbute(data, el);
 		dataset.repaint(el);
-		this.expanedEl = el;
+		this.toggler = el;
 	},
 	outFocus : function( evt ){
 		var target = evt.target || evt.srcElement; // Support IE6-8
-		if( dataset.get(target, 'toggle') != 'dropdown' && this.expanedEl) {
-			dataset.set(dropdown.expanedEl, 'expanded', 'false');
-			dataset.repaint(dropdown.expanedEl);
-			dropdown.expanedEl = undefined;
+		if( dataset.get(target, 'toggle') != 'dropdown' && this.toggler) {
+			dataset.set(dropdown.toggler, 'expanded', 'false');
+			dataset.repaint(dropdown.toggler);
+			dropdown.toggler = undefined;
 		};
 	},
-	getItem : function( a ){
-		a.parentElement.parentElement.previousElementSibling.firstChild.textContent = a.innerText + ' '; // gte IE9
+	getItem : function( txt ){
+		this.toggler.firstChild.textContent = txt + ' '; 
 	}
 };
 /*window.onclick = function( evt ) {
@@ -111,6 +111,7 @@ var dropdown = {
 };*/
 
 /* File upload : handelFile */
+// lastElementChild, nextElementSibling : Gte IE9
 var handleFileSelect = function( evt ){
 	evt.stopPropagation();
 	evt.preventDefault();
@@ -119,7 +120,7 @@ var handleFileSelect = function( evt ){
 		files = evt.dataTransfer ? evt.dataTransfer.files : target.files,
 		filesLen = files.length,
 		item = [],
-		uploadFileLst = target.parentElement.lastElementChild; //ie9
+		uploadFileLst = target.parentElement.lastElementChild; 
 	tp = '<span class="fileUpload-txt">{name}</span>';
 	tp += '<button type="button" class="btn btn--default btn--xs" onclick="handleFileRemove(this)">Cancel</button>';
 	for(i=0; i<filesLen ; i++){
@@ -128,10 +129,10 @@ var handleFileSelect = function( evt ){
 					'</li>');
 	};
 	uploadFileLst.innerHTML += item.join('');
-	uploadFileLst.lastElementChild.getElementsByTagName('button')[0].focus(); // ie9
+	uploadFileLst.lastElementChild.getElementsByTagName('button')[0].focus(); 
 };
 var handleFileTrigger = function( btn ){
-	btn.nextElementSibling.click(); // input:file click()
+	btn.nextElementSibling.click(); 
 };
 var handleFileRemove = function( cancelBtn ){
 	cancelBtn.parentElement.remove();
