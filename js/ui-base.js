@@ -110,13 +110,6 @@ var dropdown = {
 };*/
 
 /* Accordion */
-var accordionInit = function( id1, id2 ){
-	var cpnt = document.getElementById(id1),
-		cpntPanel = document.getElementById(id2),
-		cpntCnts = cpntPanel.childNodes[1];
-	cpntPanel.style.height = cpntCnts.offsetHeight + 'px';
-	cpnt.collapsed = cpntPanel;
-};
 var accordion = function( id1, idx, id2 ){
 	setCurrent(id1, idx);
 	var cpnt = document.getElementById(id1),
@@ -129,7 +122,7 @@ var accordion = function( id1, idx, id2 ){
 			cpntPanel.style.height = '0';
 		};
 	} else {
-		cpnt.collapsed.style.height = '0';
+		if(cpnt.collapsed) cpnt.collapsed.style.height = '0';
 		cpntPanel.style.height = cpntCnts.offsetHeight + 'px';
 		cpnt.collapsed = cpntPanel;
 	};
