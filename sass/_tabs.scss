@@ -15,6 +15,7 @@
             border: solid 1px transparent; 
             @include border-radius-single('top', 'left', rem(4));
             @include border-radius-single('top', 'right', rem(4));
+            background-clip: padding-box;
             font-size: rem(14); color:#555;
             text-decoration: none;
             &:focus {

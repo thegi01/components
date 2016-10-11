@@ -261,10 +261,12 @@ input[data-role="button"] {
         .btn--default:nth-of-type(1) {
             @include border-radius-single(top, right, 0);
             @include border-radius-single(bottom, right, 0);
+            background-clip: padding-box;
         }
         .btn--default:last-child {
             @include border-radius-single(top, left, 0);
             @include border-radius-single(bottom, left, 0);
+            background-clip: padding-box;
         }
     }
 }

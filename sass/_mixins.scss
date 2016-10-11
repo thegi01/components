@@ -74,17 +74,18 @@
 	// -webkit-border-#{$pos1}-#{$pos2}-radius : $radius;
 	//    -moz-border-#{$pos1}-#{$pos2}-radius : $radius;
 	// 		border-#{$pos1}-#{$pos2}-radius : $radius;
-	background-clip: padding-box;  // stops bg color from leaking outside the border
+	// background-clip: padding-box;  // stops bg color from leaking outside the border
 }
 // gradient
 @mixin background-gradient( $col1, $col2 ){
     background-image: -webkit-linear-gradient(top, $col1 0%, $col2 100%);
     background-image: -o-linear-gradient(top, $col1 0%, $col2 100%);
+    background-image: -moz-linear-gradient(top, $col1 0%, $col2 100%);
     background-image: linear-gradient(to bottom, $col1 0%, $col2 100%);
     background-repeat: repeat-x;
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#{$col1}', endColorstr='#{$col2}', GradientType=0); // ie6~9
+    // filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#{$col1}', endColorstr='#{$col2}', GradientType=0); // ie6~9
 }
-// transform
+// transition
 @mixin transition( $prop ){
     @include prefix(transition, $prop, webkit moz o);
     // -webkit-transition: $property $duration $ani; 
@@ -106,16 +107,32 @@
     // -o-transition-duration : $time; 
     // transition-duration : $time;
 }
+// transform
+@mixin transform( $prop ){
+    @include prefix(transform, $prop, webkit moz ms o);
+}
 @mixin tarnslate3d($x, $y, $z){
-    @include prefix(transform, translate3d($x, $y, $z), webkit moz o);
+    @include prefix(transform, translate3d($x, $y, $z), webkit moz ms o);
     // -webkit-transform : translate3d($x, $y, $z);
     // -moz-transform : translate3d($x, $y, $z);
     // -o-transform : translate3d($x, $y, $z);
     // transform : translate3d($x, $y, $z);
 }
+// animation
+@mixin animation( $prop ){
+    @include prefix(animation, $prop, webkit moz o);
+}
+@mixin animation-iteration-count( $prop ){
+    @include prefix(animation-iteration-count, $prop, webkit moz o);
+}
 // flex
+@mixin box-flex( $val ){
+    -webkit-box-flex : $val;
+    -moz-box-flex : $val;
+    -ms-box-flex : $val;
+}
 @mixin flex( $val ){
-    @include prefix(flex, $val, webkit ms);
+    @include prefix(flex, $val, webkit moz ms);
     // -webkit-flex: $val; 
     // -ms-flex: $val; 
     // flex: $val;

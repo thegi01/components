@@ -8,7 +8,6 @@
 	@include border-radius(0.3rem);
 	background-color: #fff;
 	font-size:rem(14); color:#333;
-	vertical-align: middle;
 
 	// placeholder
 	&::-webkit-input-placeholder {
@@ -44,6 +43,7 @@
 	padding: rem(7) rem(12) rem(6);
 	// padding-top: rem(7); padding-bottom: rem(6);
 	line-height: 1.42;	
+	vertical-align: middle;
 	.col & {
 		width: 100%;
 	}
@@ -134,10 +134,12 @@
 		&:first-child {
 			@include border-radius-single(top, right, 0);
 			@include border-radius-single(bottom, right, 0);
+			background-clip: padding-box;
 		}
 		&:last-child{
 			@include border-radius-single(top, left, 0);
 			@include border-radius-single(bottom, left, 0);
+			background-clip: padding-box;
 		}
 		&:not(:first-child):not(:last-child){
 			@include border-radius(0);
@@ -151,10 +153,12 @@
 		&:first-child {
 			@include border-radius-single(top, right, 0);
 			@include border-radius-single(bottom, right, 0);
+			background-clip: padding-box;
 		}
 		&:last-child{
 			@include border-radius-single(top, left, 0);
 			@include border-radius-single(bottom, left, 0);
+			background-clip: padding-box;
 		}
 		&:not(:first-child) {
 			margin-left: -1px;
@@ -203,6 +207,7 @@
 	.input-group-addon:first-child {
 		@include border-radius-single(top, right, 0);
 		@include border-radius-single(bottom, right, 0);
+		background-clip: padding-box;
 	}
 	.input-group-addon:first-child {
 		border-right: none;
@@ -213,6 +218,7 @@
 	.input-group-addon:last-child {
 		@include border-radius-single(top, left, 0);
 		@include border-radius-single(bottom, left, 0);
+		background-clip: padding-box;
 	}
 	.input-group-addon:last-child {
 		border-left: none;
@@ -227,13 +233,13 @@
 .input-group--flex {
 	display: flex;
 	.input {
-		-webkit-box-flex: 1; 
+		@include box-flex(1);
 		@include flex(1 0 auto);
 		width:0; // small screen 
 	}
 	.btn,
 	.input-group-addon {
-		-webkit-box-flex: 0; 
+		@include box-flex(0);
 		@include flex(0 0 auto);
 	}
 	.input-group-addon {
@@ -257,6 +263,7 @@
 	.dropdown:first-child .dropdown__btn {
 		@include border-radius-single(top, right , 0);
 		@include border-radius-single(bottom, right , 0);
+		background-clip: padding-box;
 	}
 	.input:last-child,
 	.btn:last-child,
@@ -264,6 +271,7 @@
 	.dropdown:last-child .dropdown__btn {
 		@include border-radius-single(top, left , 0);
 		@include border-radius-single(bottom, left, 0);
+		background-clip: padding-box;
 	}
 }
 
@@ -285,6 +293,7 @@
 	height: 2.4em;
 	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075);
 	border-top-color: #d6d6d6; border-bottom-color: #c2c2c2;
+	vertical-align: middle;
 }
 .select {
 	@include select--base;

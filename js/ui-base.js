@@ -22,7 +22,7 @@ if(!hasDataset) {
 		return el.getAttribute('data-' + attr);
 	};
 	dataset.set = function( el, attr, val ){
-		el.setAttribute('data-' + attr, val)
+		el.setAttribute('data-' + attr, val);
 	};
 	dataset.del = function( el, attr ) {
 		el.removeAttribute('data-' + attr);
