@@ -46,7 +46,7 @@
 	- aria
 
 
-### Tabs(setCurrent function)
+### Tabs
 - [Url] : https://thegi01.github.io/components/tabs.html
 - Accordion 작업하면서 setCurrentToggle 함수 추가
 - To do
