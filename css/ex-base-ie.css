@@ -475,9 +475,10 @@ input[data-role="button"]:checked + .btn { border-color: green; color: green; }
 
 .tabs--nonlogical[data-current="0"] .tabs-cnts[data-idx="0"], .tabs--nonlogical[data-current="1"] .tabs-cnts[data-idx="1"], .tabs--nonlogical[data-current="2"] .tabs-cnts[data-idx="2"] { display: block; }
 
-.tabs--logical .tabs-lst { position: relative; }
-.tabs--logical .tabs-cnts { position: absolute; left: 0; right: 0; }
-.tabs--logical[data-current="0"] .tabs-item[data-idx="0"] .tabs-cnts, .tabs--logical[data-current="1"] .tabs-item[data-idx="1"] .tabs-cnts, .tabs--logical[data-current="2"] .tabs-item[data-idx="2"] .tabs-cnts { display: block; }
+.tabs--logical { position: relative; }
+.tabs--logical .tabs-item { margin-top: 0; font-weight: normal; }
+.tabs--logical .tabs-panel { position: absolute; top: 35px; right: 0; left: 0; }
+.tabs--logical[data-current="0"] .tabs-panel[data-idx="0"] .tabs-cnts, .tabs--logical[data-current="1"] .tabs-panel[data-idx="1"] .tabs-cnts, .tabs--logical[data-current="2"] .tabs-panel[data-idx="2"] .tabs-cnts { display: block; }
 
 /* accordion */
 .accordion { clear: both; }
