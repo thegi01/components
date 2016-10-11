@@ -34,7 +34,9 @@
     }
     &[data-current="0"] &-item[data-idx="0"] &-panel, 
     &[data-current="1"] &-item[data-idx="1"] &-panel, 
-    &[data-current="2"] &-item[data-idx="2"] &-panel {
-        // height: auto;
+    &[data-current="2"] &-item[data-idx="2"] &-panel, 
+    &[data-current="3"] &-item[data-idx="3"] &-panel, 
+    &[data-current="4"] &-item[data-idx="4"] &-panel {
+        height: auto;
     }
 }

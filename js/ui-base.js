@@ -110,11 +110,12 @@ var dropdown = {
 };*/
 
 /* Accordion */
-var accordion = function( id1, idx, id2 ){
-	var cpnt = document.getElementById(id1),
-		panel = document.getElementById(id2),
+var accordion = function( id, idx ){
+	var cpnt = document.getElementById(id),
+		panel = cpnt.childNodes[2*idx+1].childNodes[3],
+		// panel = el.parentElement.parentElement.childNodes[3],
 		cnts = panel.childNodes[1];
-	setCurrent(id1, idx);
+	setCurrent(id, idx);
 	if(cpnt.collapsed == panel) {
 		if(panel.style.height == '0px'){
 			panel.style.height = cnts.offsetHeight + 'px';
