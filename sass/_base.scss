@@ -52,28 +52,33 @@ table {
 // h
 .h {
    &1, &2, &3, &4, &5, &6 {
-       margin-top: 2em; margin-bottom: 1em;
-       color:#222; font-weight: 500; 
-       line-height: 1;
+      margin-bottom: 1em;
+      color:#222; font-weight: 500; 
+      line-height: 1;
    } 
    &1 {
-        margin-top: 0;
-        font-size: rem(42);
+      margin-top: 0;
+      font-size: rem(42);
    }
    &2 {
-       font-size: rem(24); 
+      margin-top: 3em;
+      font-size: rem(24); 
    }
    &3 {
-       font-size : rem(17.5);
+      margin-top: 2em;
+      font-size : rem(17.5);
    }
    &4 {
-       font-size: rem(14);
+      margin-top: 2em;
+      font-size: rem(14);
    }
    &5 {
-       font-size: rem(12);
+      margin-top: 2em;
+      font-size: rem(12);
    }
    &6 {
-       font-size: rem(11);
+      margin-top: 2em;
+      font-size: rem(11);
    }
 }
 
