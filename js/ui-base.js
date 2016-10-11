@@ -18,20 +18,18 @@ var dataset = {
 // dataset polyfill
 var hasDataset = 'dataset' in document.body;
 if(!hasDataset) {
-	dataset = {
-		get : function( el, attr ){
-			return el.getAttribute('data-' + attr);
-		},
-		set : function( el, attr, val ){
-			el.setAttribute('data-' + attr, val)
-		},
-		del : function ( el, attr ) {
-			el.removeAttribute('data-' + attr);
-		},
-		repaint : function( el ){
-			el.className = el.className;
-		}
-	}
+	dataset.get = function( el, attr ){
+		return el.getAttribute('data-' + attr);
+	};
+	dataset.set = function( el, attr, val ){
+		el.setAttribute('data-' + attr, val)
+	};
+	dataset.del = function( el, attr ) {
+		el.removeAttribute('data-' + attr);
+	};
+	dataset.repaint = function( el ){
+		el.className = el.className;
+	};
 };
 
 /* Variable data attribue */
@@ -41,6 +39,15 @@ var dataVisible = 'visible';
 var setCurrent = function( id, idx ){
 	var el = document.getElementById(id);
 	dataset.set( el, 'current', idx);
+	dataset.repaint(el);
+};
+var setCurrentToggle = function( id, idx){
+	var el = document.getElementById(id);
+	if(dataset.get(el, 'current') ==  idx){
+		dataset.del(el, 'current');
+	} else {
+		dataset.set( el, 'current', idx);
+	};
 	dataset.repaint(el);
 };
 
@@ -111,27 +118,27 @@ var dropdown = {
 
 /* Accordion */
 var accordion = function( id, idx, el ){
-	var cpnt = document.getElementById(id),
-		panel, cnts;
-	if(el) {	// onclick
-		panel = document.getElementById(el.getAttribute('href').split('#')[1]);
-	} else { 	// init
-		panel = cpnt.childNodes[2*idx+1].childNodes[3];
-	}
-	cnts = panel.childNodes[1];
+	setCurrentToggle(id, idx);
 
-	setCurrent(id, idx);
-	if(cpnt.collapsed == panel) {
-		if(panel.style.height == '0px'){
-			panel.style.height = cnts.offsetHeight + 'px';
-		} else {
+	var cpnt = document.getElementById(id);
+	if(dataset.get(cpnt, 'animation')=='true'){
+		var panel, cnts;
+		if(el) {	// onclick
+			panel = document.getElementById(el.getAttribute('href').split('#')[1]);
+		} else { 	// init
+			panel = cpnt.childNodes[2*idx+1].childNodes[3];
+		}
+		cnts = panel.childNodes[1];
+
+		if(cpnt.collapsed == panel) {
 			panel.style.height = '0';
+			cpnt.collapsed = undefined;
+		} else {
+			if(cpnt.collapsed) 
+				cpnt.collapsed.style.height = '0';
+			panel.style.height = cnts.offsetHeight + 'px';
+			cpnt.collapsed = panel;
 		};
-	} else {
-		if(cpnt.collapsed) 
-			cpnt.collapsed.style.height = '0';
-		panel.style.height = cnts.offsetHeight + 'px';
-		cpnt.collapsed = panel;
 	};
 };
 
