@@ -46,8 +46,9 @@
 	- aria
 
 
-### Tabs
+### Tabs(setCurrent function)
 - [Url] : https://thegi01.github.io/components/tabs.html
+- Accordion 작업하면서 setCurrentToggle 함수 추가
 - To do
 	- 하위 버전 확인
 	- 접근성 개선
@@ -56,6 +57,9 @@
 
 ### Accordion
 - [Url] : https://thegi01.github.io/components/accordion.html
+- Animation 적용인 경우 함수 호출 시 panel의 id를 argument로 전달하려 하였으나, 마크업시 귀찮아지는 이슈가 발생, 그래서 this의 href 속성으로 받도록 작업
+- 그러나 초기 실행시(init) this를 전달할 수 없어 idx 기준으로 찾아가도록 수정하니 if문이 추가되는 이슈 발행. 현재 이대로 작업되어 있음. 
+- Animation 적용을 위해 init 실행을 추가해야하는 번거로움도 있다.
 - To do
 	- 하위 버전 확인
 	- 접근성 개선
