@@ -35,6 +35,19 @@
 		.tabs-direction__next {
 
 		}
+		.tabs-control {
+			position: absolute; right: 0; bottom:0;
+		}
+		.tabs__btn-pause,
+		.tabs__btn-play {
+			display: none;
+		}
+		.tabs[data-control="pause"] .tabs__btn-play {
+			display: block;
+		}
+		.tabs[data-control="play"] .tabs__btn-pause {
+			display: block;
+		}
     </style>
 </head>
 <body>
@@ -42,7 +55,7 @@
 <div class="wrap ex">
 	<h1 class="h1">Tabs </h1>
 	<h2 class="h2">Direction</h2>
-	<div class="tabs tabs--logical" id="default" data-len="5" data-current="0">
+	<div class="tabs tabs--logical" id="default" data-len="5" data-current="0" data-control="pause" data-time="2000" data-direction="next">
 		<!-- tabs-lst -->
 		<div class="tabs-lst">
 			<h4 class="tabs-item" data-idx="0">
@@ -88,6 +101,12 @@
 			<button type="button" class="btn btn--default btn-xs tabs__btn-next" onclick="setCurrentNext('default')">next</button>
 		</div>
 		<!-- // tabs-direction -->
+		<!-- tabs-control -->
+		<div class="tabs-control">
+			<button type="button" class="btn btn--default btn-xs tabs__btn-play" onclick="setCurrentPlay('default')">Play</button>
+			<button type="button" class="btn btn--default btn-xs tabs__btn-pause" onclick="setCurrentPause('default')">Pause</button>
+		</div>
+		<!-- // tabs-control -->
 	</div>
 	
 
@@ -96,6 +115,8 @@
 <!-- javacript -->
 <script type="text/javascript" src="js/ui-base.js"></script>
 <script>
+	// Play Auto Init
+	setCurrentPlay('default');
 </script>
 <!-- //javacript -->
 

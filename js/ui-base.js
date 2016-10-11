@@ -39,12 +39,14 @@ var dataVisible = 'visible';
 * Current pattern
 * Component's data-current control
 */
-var setCurrent = function( id, idx ){
+// setCurrent
+var setCurrent = function(id, idx){
 	var el = document.getElementById(id);
 	dataset.set( el, 'current', idx);
 	dataset.repaint(el);
 };
-var setCurrentToggle = function( id, idx){
+// Toggle
+var setCurrentToggle = function(id, idx){
 	var el = document.getElementById(id);
 	if(dataset.get(el, 'current') ==  idx){
 		dataset.del(el, 'current');
@@ -53,6 +55,7 @@ var setCurrentToggle = function( id, idx){
 	};
 	dataset.repaint(el);
 };
+// Next
 var setCurrentNext = function(id){
 	var cpnt = document.getElementById(id),
 		idx = dataset.get(cpnt, 'current');
@@ -60,7 +63,12 @@ var setCurrentNext = function(id){
 		cpnt.len = getItemLen(cpnt);
 	idx = getIdxNext(idx, cpnt.len);
 	setCurrent(id, idx);
+
+	setCurrentClearPlay(id, cpnt);
+
+	dataset.set(cpnt, 'direction', 'next');
 };
+// Prev
 var setCurrentPrev = function(id){
 	var cpnt = document.getElementById(id),
 		idx = dataset.get(cpnt, 'current');
@@ -68,6 +76,34 @@ var setCurrentPrev = function(id){
 		cpnt.len = getItemLen(cpnt);
 	idx = getIdxPrev(idx, cpnt.len);
 	setCurrent(id, idx);
+
+	setCurrentClearPlay(id, cpnt);
+
+	dataset.set(cpnt, 'direction', 'prev');
+};
+// If data-control == 'play', previous clear interval and play
+var setCurrentClearPlay = function(id, cpnt){
+	if( dataset.get(cpnt, 'control')=='play' ) {
+		window.clearInterval( cpnt.interval );
+		setCurrentPlay(id);
+	};
+};
+// Play
+var setCurrentPlay = function(id){
+	var cpnt = document.getElementById(id);
+	dataset.set(cpnt, 'control', 'play');
+	cpnt.interval = setInterval(function(){
+		if(dataset.get(cpnt, 'direction')=='next') 
+			setCurrentNext(id);
+		else
+			setCurrentPrev(id);
+	}, dataset.get(cpnt, 'time') );
+};
+// Pause
+var setCurrentPause = function(id){
+	var cpnt = document.getElementById(id);
+	dataset.set(cpnt, 'control', 'pause');
+	window.clearInterval( cpnt.interval );
 };
 
 /* Get component's item length */
