@@ -31,7 +31,7 @@ if(!hasDataset) {
 		repaint : function( el ){
 			el.className = el.className;
 		}
-	};
+	}
 };
 
 /* Variable data attribue */
@@ -110,11 +110,16 @@ var dropdown = {
 };*/
 
 /* Accordion */
-var accordion = function( id, idx ){
+var accordion = function( id, idx, el ){
 	var cpnt = document.getElementById(id),
-		panel = cpnt.childNodes[2*idx+1].childNodes[3],
-		// panel = el.parentElement.parentElement.childNodes[3],
-		cnts = panel.childNodes[1];
+		panel, cnts;
+	if(el) {	// onclick
+		panel = document.getElementById(el.getAttribute('href').split('#')[1]);
+	} else { 	// init
+		panel = cpnt.childNodes[2*idx+1].childNodes[3];
+	}
+	cnts = panel.childNodes[1];
+
 	setCurrent(id, idx);
 	if(cpnt.collapsed == panel) {
 		if(panel.style.height == '0px'){
@@ -123,7 +128,8 @@ var accordion = function( id, idx ){
 			panel.style.height = '0';
 		};
 	} else {
-		if(cpnt.collapsed) cpnt.collapsed.style.height = '0';
+		if(cpnt.collapsed) 
+			cpnt.collapsed.style.height = '0';
 		panel.style.height = cnts.offsetHeight + 'px';
 		cpnt.collapsed = panel;
 	};
