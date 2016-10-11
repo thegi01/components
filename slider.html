@@ -40,52 +40,52 @@
 <body>
 
 <div class="wrap ex">
-	<h1 class="h1">Slider</h1>
-	<h2 class="h2">Default</h2>
-	<div class="tabs tabs--logical" id="default" data-current="0">
+	<h1 class="h1">Tabs </h1>
+	<h2 class="h2">Direction</h2>
+	<div class="tabs tabs--logical" id="default" data-len="5" data-current="0">
 		<!-- tabs-lst -->
 		<div class="tabs-lst">
 			<h4 class="tabs-item" data-idx="0">
 				<a href="#defaultPanel0" class="tabs-item__a" onfocus="setCurrent('default', 0);" onclick="setCurrent('default', 0); return false;">tab1</a>
 			</h4>
 			<div class="tabs-panel" id="defaultPanel0" data-idx="0">
-				Tab 1 Panel <br>
+				Tab1 Panel <br>
 				<a href="#href">Test link</a> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
 			</div>
 			<h4 class="tabs-item" data-idx="1">
 				<a href="#defaultPanel1" class="tabs-item__a" onfocus="setCurrent('default', 1);" onclick="setCurrent('default', 1); return false;">tab2</a>
 			</h4>
 			<div class="tabs-panel" id="defaultPanel1" data-idx="1">
-				Tab 2 Panel <br>
+				Tab2 Panel <br>
 				<a href="#href">Test link</a> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
 			</div>
 			<h4 class="tabs-item" data-idx="2">
 				<a href="#defaultPanel2" class="tabs-item__a" onfocus="setCurrent('default', 2);" onclick="setCurrent('default', 2); return false;">tab3</a>
 			</h4>
 			<div class="tabs-panel" id="defaultPanel2" data-idx="2">
-				Tab 3 Panel <br>
+				Tab3 Panel <br>
 				<a href="#href">Test link</a> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
 			</div>
 			<h4 class="tabs-item" data-idx="3">
 				<a href="#defaultPanel3" class="tabs-item__a" onfocus="setCurrent('default', 3);" onclick="setCurrent('default', 3); return false;">tab4</a>
 			</h4>
 			<div class="tabs-panel" id="defaultPanel3" data-idx="3">
-				Tab 4 Panel <br>
+				Tab4 Panel <br>
 				<a href="#href">Test link</a> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
 			</div>
 			<h4 class="tabs-item" data-idx="4">
 				<a href="#defaultPanel4" class="tabs-item__a" onfocus="setCurrent('default', 4);" onclick="setCurrent('default', 4); return false;">tab5</a>
 			</h4>
 			<div class="tabs-panel" id="defaultPanel4" data-idx="4">
-				Tab 5 Panel <br>
+				Tab5 Panel <br>
 				<a href="#href">Test link</a> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
 			</div>
 		</div>
 		<!-- // tabs-lst -->
 		<!-- tabs-direction -->
 		<div class="tabs-direction">
-			<button type="button" class="btn btn--default btn-xs tabs__prev" onclick="setCurrentPrev('default')">prev</button>
-			<button type="button" class="btn btn--default btn-xs tabs__next" onclick="setCurrentNext('default')">next</button>
+			<button type="button" class="btn btn--default btn-xs tabs__btn-prev" onclick="setCurrentPrev('default')">prev</button>
+			<button type="button" class="btn btn--default btn-xs tabs__btn-next" onclick="setCurrentNext('default')">next</button>
 		</div>
 		<!-- // tabs-direction -->
 	</div>
@@ -102,7 +102,7 @@
 		var cpnt = document.getElementById(id),
 			idx = dataset.get(cpnt, 'current');
 		if(!this.len)
-			this.len = getCurrentItemLen(cpnt);
+			this.len = getItemLen(cpnt);
 		idx = getIdxNext(idx, this.len);
 		setCurrent(id, idx);
 	};
@@ -110,15 +110,15 @@
 		var cpnt = document.getElementById(id),
 			idx = dataset.get(cpnt, 'current');
 		if(!this.len)
-			this.len = getCurrentItemLen(cpnt);
+			this.len = getItemLen(cpnt);
 		idx = getIdxPrev(idx, this.len);
 		setCurrent(id, idx);
 	};
-	var getCurrentItemLen = function(cpnt){
+	var getItemLen = function(cpnt, tagName){
 		if(dataset.get(cpnt, 'len')) 
 			return dataset.get(cpnt, 'len');
 		else
-			return cpnt.getElementsByTagName('h4').length;
+			return cpnt.getElementsByTagName(tagName).length;
 	};
 
 	/* Idx Control */
