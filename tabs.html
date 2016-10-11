@@ -29,18 +29,18 @@
 	<h2 class="h2">Tabs Default</h2>
 	<div class="tabs" data-current="0">
 		<ul class="tabs-lst">
-			<li class="tabs-item" data-idx="0"><a href="#" class="tabs-item__a" onclick="return false;">tab1</a></li>
-			<li class="tabs-item" data-idx="1"><a href="#" class="tabs-item__a" onclick="return false;">tab2</a></li>
-			<li class="tabs-item" data-idx="2"><a href="#" class="tabs-item__a" onclick="return false;">tab3</a></li>
+			<li class="tabs-item" data-idx="0"><a href="#href" class="tabs-item__a" onclick="return false;">tab1</a></li>
+			<li class="tabs-item" data-idx="1"><a href="#href" class="tabs-item__a" onclick="return false;">tab2</a></li>
+			<li class="tabs-item" data-idx="2"><a href="#href" class="tabs-item__a" onclick="return false;">tab3</a></li>
 		</ul>
 	</div>
 
 	<h2 class="h2">Tabs Fill</h2>
 	<div class="tabs tabs--fill" data-current="0">
 		<ul class="tabs-lst">
-			<li class="tabs-item" data-idx="0"><a href="#" class="tabs-item__a" onclick="return false;">tab1</a></li>
-			<li class="tabs-item" data-idx="1"><a href="#" class="tabs-item__a" onclick="return false;">tab2</a></li>
-			<li class="tabs-item" data-idx="2"><a href="#" class="tabs-item__a" onclick="return false;">tab3</a></li>
+			<li class="tabs-item" data-idx="0"><a href="#href" class="tabs-item__a" onclick="return false;">tab1</a></li>
+			<li class="tabs-item" data-idx="1"><a href="#href" class="tabs-item__a" onclick="return false;">tab2</a></li>
+			<li class="tabs-item" data-idx="2"><a href="#href" class="tabs-item__a" onclick="return false;">tab3</a></li>
 		</ul>
 	</div>
 	
@@ -49,9 +49,9 @@
 	<div class="block--box">
 		<div class="tabs tabs--horizon" data-current="0">
 			<ul class="tabs-lst">
-				<li class="tabs-item" data-idx="0"><a href="#" class="tabs-item__a" onclick="return false;">tab1</a></li>
-				<li class="tabs-item" data-idx="1"><a href="#" class="tabs-item__a" onclick="return false;">tab2</a></li>
-				<li class="tabs-item" data-idx="2"><a href="#" class="tabs-item__a" onclick="return false;">tab3</a></li>
+				<li class="tabs-item" data-idx="0"><a href="#href" class="tabs-item__a" onclick="return false;">tab1</a></li>
+				<li class="tabs-item" data-idx="1"><a href="#href" class="tabs-item__a" onclick="return false;">tab2</a></li>
+				<li class="tabs-item" data-idx="2"><a href="#href" class="tabs-item__a" onclick="return false;">tab3</a></li>
 			</ul>
 		</div>
 	</div>
@@ -59,9 +59,9 @@
 	<div class="block--box">
 		<div class="tabs tabs--fill tabs--horizon" data-current="0">
 			<ul class="tabs-lst">
-				<li class="tabs-item" data-idx="0"><a href="#" class="tabs-item__a" onclick="return false;">tab1</a></li>
-				<li class="tabs-item" data-idx="1"><a href="#" class="tabs-item__a" onclick="return false;">tab2</a></li>
-				<li class="tabs-item" data-idx="2"><a href="#" class="tabs-item__a" onclick="return false;">tab3</a></li>
+				<li class="tabs-item" data-idx="0"><a href="#href" class="tabs-item__a" onclick="return false;">tab1</a></li>
+				<li class="tabs-item" data-idx="1"><a href="#href" class="tabs-item__a" onclick="return false;">tab2</a></li>
+				<li class="tabs-item" data-idx="2"><a href="#href" class="tabs-item__a" onclick="return false;">tab3</a></li>
 			</ul>
 		</div>
 	</div>
@@ -70,42 +70,41 @@
 	<div class="tabs tabs--logical" id="tabsLogical" data-current="0">
 		<div class="tabs-lst">
 			<h4 class="tabs-item" data-idx="0">
-				<a href="#" class="tabs-item__a" onfocus="setCurrent('tabsLogical', 0);" onclick="setCurrent('tabsLogical', 0); return false;">tab1</a>
+				<a href="#tabsPanel0" class="tabs-item__a" onfocus="setCurrent('tabsLogical', 0);" onclick="setCurrent('tabsLogical', 0); return false;">tab1</a>
 			</h4>
-			<div class="tabs-panel" data-idx="0">
+			<div class="tabs-panel" id="tabsPanel0" data-idx="0">
 				<div class="tabs-cnts">
 					<h2 class="blind">tab1 contents</h2>
-					<a href="#">tab1-cnts-lnk</a>
-					<a href="#">tab1-cnts-lnk</a>
-					<a href="#">tab1-cnts-lnk</a>
+					<a href="#href">tab1-cnts-lnk</a>
+					<a href="#href">tab1-cnts-lnk</a>
+					<a href="#href">tab1-cnts-lnk</a>
 				</div>
 			</div>
 			<h4 class="tabs-item" data-idx="1">
-				<a href="#" class="tabs-item__a" onfocus="setCurrent('tabsLogical', 1);" onclick="setCurrent('tabsLogical', 1); return false;">tab2</a>
+				<a href="#tabsPanel1" class="tabs-item__a" onfocus="setCurrent('tabsLogical', 1);" onclick="setCurrent('tabsLogical', 1); return false;">tab2</a>
 			</h4>
-			<div class="tabs-panel" data-idx="1">
+			<div class="tabs-panel" id="tabsPanel1" data-idx="1">
 				<div class="tabs-cnts">
 					<h2 class="blind">tab2 contents</h2>
-					<a href="#">tab2-cnts-lnk</a>
-					<a href="#">tab2-cnts-lnk</a>
-					<a href="#">tab2-cnts-lnk</a>
+					<a href="#href">tab2-cnts-lnk</a>
+					<a href="#href">tab2-cnts-lnk</a>
+					<a href="#href">tab2-cnts-lnk</a>
 				</div>
 			</div>
 			<h4 class="tabs-item" data-idx="2">
-				<a href="#" class="tabs-item__a" onfocus="setCurrent('tabsLogical', 2);" onclick="setCurrent('tabsLogical', 2); return false;">tab3</a>
+				<a href="#tabsPanel2" class="tabs-item__a" onfocus="setCurrent('tabsLogical', 2);" onclick="setCurrent('tabsLogical', 2); return false;">tab3</a>
 			</h4>
-			<div class="tabs-panel" data-idx="2">
+			<div class="tabs-panel" id="tabsPanel2" data-idx="2">
 				<div class="tabs-cnts">
 					<h2 class="blind">tab3 contents</h2>
-					<a href="#">tab3-cnts-lnk</a>
-					<a href="#">tab3-cnts-lnk</a>
-					<a href="#">tab3-cnts-lnk</a>
+					<a href="#href">tab3-cnts-lnk</a>
+					<a href="#href">tab3-cnts-lnk</a>
+					<a href="#href">tab3-cnts-lnk</a>
 				</div>
 			</div>
 		</div>
 	</div>
 	<div class="ex__txt">
-		<!-- PC 적합. <br> -->
 		Tab key 순서가 맞다. <br>
 		Focus Event 적용이 부담이 없다. <br>
 		Height가 고정이어야함(component에 height나 padding-bottom 적용)
@@ -114,35 +113,33 @@
 	<h2 class="h2">Tabs control - nonLogical</h2>
 	<div class="tabs tabs--nonlogical" id="tabsNonLogical" data-current="0">
 		<ul class="tabs-lst">
-			<li class="tabs-item" data-idx="0"><a href="#tabs-1" class="tabs-item__a" onclick="setCurrent('tabsNonLogical', 0);">tab1</a></li>
-			<li class="tabs-item" data-idx="1"><a href="#tabs-2" class="tabs-item__a" onclick="setCurrent('tabsNonLogical', 1);">tab2</a></li>
-			<li class="tabs-item" data-idx="2"><a href="#tabs-3" class="tabs-item__a" onclick="setCurrent('tabsNonLogical', 2);">tab3</a></li>
+			<li class="tabs-item" data-idx="0"><a href="#tabs2Panel0" class="tabs-item__a" onclick="setCurrent('tabsNonLogical', 0);">tab1</a></li>
+			<li class="tabs-item" data-idx="1"><a href="#tabs2Panel1" class="tabs-item__a" onclick="setCurrent('tabsNonLogical', 1);">tab2</a></li>
+			<li class="tabs-item" data-idx="2"><a href="#tabs2Panel2" class="tabs-item__a" onclick="setCurrent('tabsNonLogical', 2);">tab3</a></li>
 		</ul>
 		<div class="tabs-panel">
-			<div class="tabs-cnts" id="tabs-1" data-idx="0">
+			<div class="tabs-cnts" id="tabs2Panel0" data-idx="0">
 				<h2 class="blind">tab1 contents</h2>
-				<a href="#">tab1-cnts-lnk</a>
-				<a href="#">tab1-cnts-lnk</a>
-				<a href="#">tab1-cnts-lnk</a>
+				<a href="#href">tab1-cnts-lnk</a>
+				<a href="#href">tab1-cnts-lnk</a>
+				<a href="#href">tab1-cnts-lnk</a>
 			</div>
-			<div class="tabs-cnts" id="tabs-2" data-idx="1">
+			<div class="tabs-cnts" id="tabs2Panel1" data-idx="1">
 				<h2 class="blind">tab2 contents</h2>
-				<a href="#">tab2-cnts-lnk</a>
-				<a href="#">tab2-cnts-lnk</a>
-				<a href="#">tab2-cnts-lnk</a>
+				<a href="#href">tab2-cnts-lnk</a>
+				<a href="#href">tab2-cnts-lnk</a>
+				<a href="#href">tab2-cnts-lnk</a>
 			</div>
-			<div class="tabs-cnts" id="tabs-3" data-idx="2">
+			<div class="tabs-cnts" id="tabs2Panel2" data-idx="2">
 				<h2 class="blind">tab3 contents</h2>
-				<a href="#">tab3-cnts-lnk</a>
-				<a href="#">tab3-cnts-lnk</a>
-				<a href="#">tab3-cnts-lnk</a>
+				<a href="#href">tab3-cnts-lnk</a>
+				<a href="#href">tab3-cnts-lnk</a>
+				<a href="#href">tab3-cnts-lnk</a>
 			</div>
 		</div>
 	</div>
 	<div class="ex__txt">
-		<!-- 모바일에 적합. <br> -->
-		Tab key 순서가 맞지 않다. <br>
-		접근성 : wai-aria 적용해야 함.
+		Tab key 순서가 완벽하지 않다. 
 	</div>
 
 </div>		
