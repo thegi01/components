@@ -94,7 +94,7 @@
 	</div>
 
 	<h3 class="h3">Accordion not apply animation == Use setCurrent Function</h3>
-	<div class="accordion" id="default" data-animation="false">
+	<div class="accordion" id="default" data-animation="false" data-current="2">
 		<div class="accordion-item" data-idx="0">
 			<h4 class="accordion-title">
 				<a href="#defaultPanel1" class="accordion-item__a" onclick="accordion('default', 0, this); return false;">Accordion item 1</a>
@@ -136,8 +136,8 @@
 <script>
 	window.onload = function(){
 		/* Accordion Init */
-		accordion('default', 0);
 		accordion('accordion', 0);
+		// accordion('default', 1);
 	};
 </script>
 <!-- //javacript -->
