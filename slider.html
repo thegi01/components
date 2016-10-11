@@ -96,40 +96,6 @@
 <!-- javacript -->
 <script type="text/javascript" src="js/ui-base.js"></script>
 <script>
-
-	/* Current pattern */
-	var setCurrentNext = function(id){
-		var cpnt = document.getElementById(id),
-			idx = dataset.get(cpnt, 'current');
-		if(!this.len)
-			this.len = getItemLen(cpnt);
-		idx = getIdxNext(idx, this.len);
-		setCurrent(id, idx);
-	};
-	var setCurrentPrev = function(id){
-		var cpnt = document.getElementById(id),
-			idx = dataset.get(cpnt, 'current');
-		if(!this.len)
-			this.len = getItemLen(cpnt);
-		idx = getIdxPrev(idx, this.len);
-		setCurrent(id, idx);
-	};
-	var getItemLen = function(cpnt, tagName){
-		if(dataset.get(cpnt, 'len')) 
-			return dataset.get(cpnt, 'len');
-		else
-			return cpnt.getElementsByTagName(tagName).length;
-	};
-
-	/* Idx Control */
-	var getIdxPrev = function(idx, len){
-		return (idx == 0) ? len-1 : Number(idx)-1;
-	};
-	var getIdxNext = function(idx, len){
-		return (idx == len-1) ? 0 : Number(idx)+1;
-	};
-
-
 </script>
 <!-- //javacript -->
 

@@ -35,7 +35,10 @@ if(!hasDataset) {
 /* Variable data attribue */
 var dataVisible = 'visible';
 
-/* Set element's current index */
+/* 
+* Current pattern
+* Component's data-current control
+*/
 var setCurrent = function( id, idx ){
 	var el = document.getElementById(id);
 	dataset.set( el, 'current', idx);
@@ -50,6 +53,36 @@ var setCurrentToggle = function( id, idx){
 	};
 	dataset.repaint(el);
 };
+var setCurrentNext = function(id){
+	var cpnt = document.getElementById(id),
+		idx = dataset.get(cpnt, 'current');
+	if(!this.len)
+		this.len = getItemLen(cpnt);
+	idx = getIdxNext(idx, this.len);
+	setCurrent(id, idx);
+};
+var setCurrentPrev = function(id){
+	var cpnt = document.getElementById(id),
+		idx = dataset.get(cpnt, 'current');
+	if(!this.len)
+		this.len = getItemLen(cpnt);
+	idx = getIdxPrev(idx, this.len);
+	setCurrent(id, idx);
+};
+var getItemLen = function(cpnt, tagName){
+	if(dataset.get(cpnt, 'len')) 
+		return dataset.get(cpnt, 'len');
+	else
+		return cpnt.getElementsByTagName(tagName).length;
+};
+
+/* Idx Control */
+var getIdxPrev = function(idx, len){
+	return (idx == 0) ? len-1 : Number(idx)-1;
+};
+var getIdxNext = function(idx, len){
+	return (idx == len-1) ? 0 : Number(idx)+1;
+};
 
 /* Toggle(true/false) element's attribute */
 var toggleAttirbute = function(attr, el){
@@ -57,6 +90,32 @@ var toggleAttirbute = function(attr, el){
 		el.setAttribute(attr, 'false');
 	} else {
 		el.setAttribute(attr, 'true');
+	};
+};
+
+/* Accordion */
+var accordion = function( id, idx, el ){
+	setCurrentToggle(id, idx);
+
+	var cpnt = document.getElementById(id);
+	if(dataset.get(cpnt, 'animation')=='true'){
+		var panel, cnts;
+		if(el) {	// onclick
+			panel = document.getElementById(el.getAttribute('href').split('#')[1]);
+		} else { 	// init
+			panel = cpnt.childNodes[2*idx+1].childNodes[3];
+		}
+		cnts = panel.childNodes[1];
+
+		if(cpnt.collapsed == panel) {
+			panel.style.height = '0';
+			cpnt.collapsed = undefined;
+		} else {
+			if(cpnt.collapsed) 
+				cpnt.collapsed.style.height = '0';
+			panel.style.height = cnts.offsetHeight + 'px';
+			cpnt.collapsed = panel;
+		};
 	};
 };
 
@@ -116,31 +175,6 @@ var dropdown = {
 	dropdown.outFocus(evt);
 };*/
 
-/* Accordion */
-var accordion = function( id, idx, el ){
-	setCurrentToggle(id, idx);
-
-	var cpnt = document.getElementById(id);
-	if(dataset.get(cpnt, 'animation')=='true'){
-		var panel, cnts;
-		if(el) {	// onclick
-			panel = document.getElementById(el.getAttribute('href').split('#')[1]);
-		} else { 	// init
-			panel = cpnt.childNodes[2*idx+1].childNodes[3];
-		}
-		cnts = panel.childNodes[1];
-
-		if(cpnt.collapsed == panel) {
-			panel.style.height = '0';
-			cpnt.collapsed = undefined;
-		} else {
-			if(cpnt.collapsed) 
-				cpnt.collapsed.style.height = '0';
-			panel.style.height = cnts.offsetHeight + 'px';
-			cpnt.collapsed = panel;
-		};
-	};
-};
 
 /* File upload : handelFile */
 // lastElementChild, nextElementSibling : Gte IE9
