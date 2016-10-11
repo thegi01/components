@@ -56,19 +56,21 @@ var setCurrentToggle = function( id, idx){
 var setCurrentNext = function(id){
 	var cpnt = document.getElementById(id),
 		idx = dataset.get(cpnt, 'current');
-	if(!this.len)
-		this.len = getItemLen(cpnt);
-	idx = getIdxNext(idx, this.len);
+	if(!cpnt.len)
+		cpnt.len = getItemLen(cpnt);
+	idx = getIdxNext(idx, cpnt.len);
 	setCurrent(id, idx);
 };
 var setCurrentPrev = function(id){
 	var cpnt = document.getElementById(id),
 		idx = dataset.get(cpnt, 'current');
-	if(!this.len)
-		this.len = getItemLen(cpnt);
-	idx = getIdxPrev(idx, this.len);
+	if(!cpnt.len)
+		cpnt.len = getItemLen(cpnt);
+	idx = getIdxPrev(idx, cpnt.len);
 	setCurrent(id, idx);
 };
+
+/* Get component's item length */
 var getItemLen = function(cpnt, tagName){
 	if(dataset.get(cpnt, 'len')) 
 		return dataset.get(cpnt, 'len');
