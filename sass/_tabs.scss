@@ -31,12 +31,7 @@
     &[data-current="1"] .tabs-item[data-idx="1"] .tabs-item__a,
     &[data-current="2"] .tabs-item[data-idx="2"] .tabs-item__a,
     &[data-current="3"] .tabs-item[data-idx="3"] .tabs-item__a,
-    &[data-current="4"] .tabs-item[data-idx="4"] .tabs-item__a,
-    &[data-current="5"] .tabs-item[data-idx="5"] .tabs-item__a,
-    &[data-current="6"] .tabs-item[data-idx="6"] .tabs-item__a,
-    &[data-current="7"] .tabs-item[data-idx="7"] .tabs-item__a,
-    &[data-current="8"] .tabs-item[data-idx="8"] .tabs-item__a,
-    &[data-current="9"] .tabs-item[data-idx="9"] .tabs-item__a {
+    &[data-current="4"] .tabs-item[data-idx="4"] .tabs-item__a {
         border-color: #ddd #ddd #fff;
         background-color: #fff;
         color:#337ab7;
@@ -68,12 +63,7 @@
     &[data-current="1"] .tabs-panel[data-idx="1"],
     &[data-current="2"] .tabs-panel[data-idx="2"],
     &[data-current="3"] .tabs-panel[data-idx="3"],
-    &[data-current="4"] .tabs-panel[data-idx="4"],
-    &[data-current="5"] .tabs-panel[data-idx="5"],
-    &[data-current="6"] .tabs-panel[data-idx="6"],
-    &[data-current="7"] .tabs-panel[data-idx="7"],
-    &[data-current="8"] .tabs-panel[data-idx="8"],
-    &[data-current="9"] .tabs-panel[data-idx="9"] {
+    &[data-current="4"] .tabs-panel[data-idx="4"] {
         display: block;
     }
     
@@ -92,12 +82,7 @@
     &[data-current="1"] .tabs-item[data-idx="1"] .tabs-item__a,
     &[data-current="2"] .tabs-item[data-idx="2"] .tabs-item__a,
     &[data-current="3"] .tabs-item[data-idx="3"] .tabs-item__a,
-    &[data-current="4"] .tabs-item[data-idx="4"] .tabs-item__a,
-    &[data-current="5"] .tabs-item[data-idx="5"] .tabs-item__a,
-    &[data-current="6"] .tabs-item[data-idx="6"] .tabs-item__a,
-    &[data-current="7"] .tabs-item[data-idx="7"] .tabs-item__a,
-    &[data-current="8"] .tabs-item[data-idx="8"] .tabs-item__a,
-    &[data-current="9"] .tabs-item[data-idx="9"] .tabs-item__a {
+    &[data-current="4"] .tabs-item[data-idx="4"] .tabs-item__a {
         border-color: transparent;
         background-color: #337ab7;
         color:#fff;
@@ -114,12 +99,7 @@
     &[data-current="1"] .tabs-item[data-idx="1"] .tabs-item__a,
     &[data-current="2"] .tabs-item[data-idx="2"] .tabs-item__a,
     &[data-current="3"] .tabs-item[data-idx="3"] .tabs-item__a,
-    &[data-current="4"] .tabs-item[data-idx="4"] .tabs-item__a,
-    &[data-current="5"] .tabs-item[data-idx="5"] .tabs-item__a,
-    &[data-current="6"] .tabs-item[data-idx="6"] .tabs-item__a,
-    &[data-current="7"] .tabs-item[data-idx="7"] .tabs-item__a,
-    &[data-current="8"] .tabs-item[data-idx="8"] .tabs-item__a,
-    &[data-current="9"] .tabs-item[data-idx="9"] .tabs-item__a {
+    &[data-current="4"] .tabs-item[data-idx="4"] .tabs-item__a {
         border-color: transparent;
     }
 }

@@ -77,12 +77,13 @@ var setCurrentPrev = function(id){
 	idx = getIdxPrev(idx, cpnt.len);
 	setCurrent(id, idx);
 
-	setCurrentClearPlay(id, cpnt);
+	setCurrentClearPlay(id);
 
 	dataset.set(cpnt, 'direction', 'prev');
 };
 // If data-control == 'play', previous clear interval and play
-var setCurrentClearPlay = function(id, cpnt){
+var setCurrentClearPlay = function(id){
+	var cpnt = document.getElementById(id);
 	if( dataset.get(cpnt, 'control')=='play' ) {
 		window.clearInterval( cpnt.interval );
 		setCurrentPlay(id);
@@ -104,6 +105,23 @@ var setCurrentPause = function(id){
 	var cpnt = document.getElementById(id);
 	dataset.set(cpnt, 'control', 'pause');
 	window.clearInterval( cpnt.interval );
+};
+// mouseover
+var setCurrentMouseOver = function(id){
+	var cpnt = document.getElementById(id);
+	if( dataset.get(cpnt, 'control') == 'play' ) {
+		setCurrentPause(id);
+		cpnt.controlled = 'play';
+	};
+};
+// mouseout
+var setCurrentMouseOut = function(id){
+	var cpnt = document.getElementById(id);
+	if(cpnt.controlled == 'play'){
+		setCurrentPlay(id);
+		cpnt.controlled = undefined;
+		// delete cpnt.controlled
+	};
 };
 
 /* Get component's item length */
