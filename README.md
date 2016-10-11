@@ -54,6 +54,14 @@
 	- aria
 
 
+### Accordion
+- [Url] : https://thegi01.github.io/components/accordion.html
+- To do
+	- 하위 버전 확인
+	- 접근성 개선
+	- aria
+
+
 ### Modal
 - [Url] : https://thegi01.github.io/components/modal.html
 - To do
