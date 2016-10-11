@@ -35,7 +35,7 @@
         color:#337ab7;
         cursor:default;
     }
-    &-cnts{
+    &-panel {
         display: none;
         margin-top: rem(10);
         padding: rem(10);
@@ -89,17 +89,6 @@
         border-color: transparent;
     }
 }
-.tabs--nonlogical {
-    .tabs-panel {
-    }
-    .tabs-cnts {
-    }
-    &[data-current="0"] .tabs-cnts[data-idx="0"],
-    &[data-current="1"] .tabs-cnts[data-idx="1"],
-    &[data-current="2"] .tabs-cnts[data-idx="2"] {
-        display: block;
-    }
-}
 
 .tabs--logical {
     position: relative;
@@ -113,12 +102,23 @@
     .tabs-panel {
         position: absolute; top:35px; right: 0;  left: 0;
     }
-    .tabs-cnts{
-        
-    }
-    &[data-current="0"] .tabs-panel[data-idx="0"] .tabs-cnts,
-    &[data-current="1"] .tabs-panel[data-idx="1"] .tabs-cnts,
-    &[data-current="2"] .tabs-panel[data-idx="2"] .tabs-cnts {
+    &[data-current="0"] .tabs-panel[data-idx="0"],
+    &[data-current="1"] .tabs-panel[data-idx="1"],
+    &[data-current="2"] .tabs-panel[data-idx="2"] {
         display: block;
     }
 }
+
+.tabs--nonlogical {
+    .tabs-panels {
+    }
+    .tabs-panel {
+    }
+    &[data-current="0"] .tabs-panel[data-idx="0"],
+    &[data-current="1"] .tabs-panel[data-idx="1"],
+    &[data-current="2"] .tabs-panel[data-idx="2"] {
+        display: block;
+    }
+}
+
+
