@@ -1,4 +1,4 @@
-'use strict';
+"use strict"
 
 /* dataset */
 var dataset = {
@@ -30,7 +30,7 @@ if(!hasDataset) {
 	dataset.repaint = function( el ){
 		el.className = el.className;
 	};
-};
+}
 
 /* Variable data attribue */
 var dataVisible = 'visible';
@@ -52,7 +52,7 @@ var setCurrentToggle = function(id, idx){
 		dataset.del(el, 'current');
 	} else {
 		dataset.set( el, 'current', idx);
-	};
+	}
 	dataset.repaint(el);
 };
 // Next
@@ -87,7 +87,7 @@ var setCurrentClearPlay = function(id){
 	if( dataset.get(cpnt, 'control')=='play' ) {
 		window.clearInterval( cpnt.interval );
 		setCurrentPlay(id);
-	};
+	}
 };
 // Play
 var setCurrentPlay = function(id){
@@ -112,7 +112,7 @@ var setCurrentMouseOver = function(id){
 	if( dataset.get(cpnt, 'control') == 'play' ) {
 		setCurrentPause(id);
 		cpnt.controlled = 'play';
-	};
+	}
 };
 // mouseout
 var setCurrentMouseOut = function(id){
@@ -121,7 +121,7 @@ var setCurrentMouseOut = function(id){
 		setCurrentPlay(id);
 		cpnt.controlled = undefined;
 		// delete cpnt.controlled
-	};
+	}
 };
 
 /* Get component's item length */
@@ -146,7 +146,7 @@ var toggleAttirbute = function(attr, el){
 		el.setAttribute(attr, 'false');
 	} else {
 		el.setAttribute(attr, 'true');
-	};
+	}
 };
 
 /* Accordion */
@@ -171,8 +171,8 @@ var accordion = function( id, idx, el ){
 				cpnt.collapsed.style.height = '0';
 			panel.style.height = cnts.offsetHeight + 'px';
 			cpnt.collapsed = panel;
-		};
-	};
+		}
+	}
 };
 
 /* Checkbox, Radio */
@@ -188,7 +188,7 @@ var radio = {
 		if(this.current){
 			el.form[el.name][this.current].setAttribute(attribute, 'false');
 			el.form[el.name][this.current].setAttribute(attribute, 'false');
-		};
+		}
 		el.setAttribute(attribute, 'true');
 		dataset.repaint(el);
 		this.current = idx;
@@ -202,7 +202,7 @@ var dropdown = {
 		var dataExpanded = 'expanded';
 		if( this.toggler && this.toggler != el ) {
 			dataset.set(this.toggler, dataExpanded, 'false');
-		};
+		}
 		if( dataset.get(el, dataExpanded) == 'true' ){
 			dataset.set(el, dataExpanded, 'false');
 		} else {
@@ -210,7 +210,7 @@ var dropdown = {
 			window.onclick = function( evt ) {
 				dropdown.outFocus(evt);
 			};
-		};
+		}
 		// toggleAttirbute(data, el);
 		dataset.repaint(el);
 		this.toggler = el;
@@ -221,7 +221,7 @@ var dropdown = {
 			dataset.set(this.toggler, 'expanded', 'false');
 			dataset.repaint(this.toggler);
 			this.toggler = undefined;
-		};
+		}
 	},
 	getItem : function( txt ){
 		this.toggler.firstChild.textContent = txt + ' '; 
@@ -249,7 +249,7 @@ var handleFileSelect = function( evt ){
 		item.push('<li class="fileUpload-item">', 
 					tp.replace( '{name}', escape(files[i].name) ), 
 					'</li>');
-	};
+	}
 	uploadFileLst.innerHTML += item.join('');
 	uploadFileLst.lastElementChild.getElementsByTagName('button')[0].focus(); 
 };
@@ -284,8 +284,8 @@ var validation = {
 			dataset.set(viewEl, dataVisible, 'true'); 
 			// viewEl.setAttribute('data-visible', 'true'); 
 			dataset.repaint(viewEl);
-			viewEl.textContent = 'Password and confirm password must be equal.'
-		};
+			viewEl.textContent = 'Password and confirm password must be equal.';
+		}
 	},
 	view : function( el, type, viewEl ){
 		viewEl = viewEl ? viewEl : el.nextElementSibling;
@@ -295,7 +295,7 @@ var validation = {
 		} else {
 			dataset.set(viewEl, dataVisible, 'true'); 
 			// viewEl.setAttribute(dataVisible, 'true'); 
-		};
+		}
 		dataset.repaint(viewEl);
 	}
 };
@@ -304,7 +304,7 @@ var validation = {
 // Variable global
 var cpntModal = document.getElementById('modal'),
 	cpntDimmed = document.getElementById('dimmed'),
-	modalHideTarget = undefined;
+	modalHideTarget;
 // Show
 var modalShow = function( el ){
 	dataset.set(cpntModal, dataVisible, 'true');
@@ -345,7 +345,7 @@ var modalHide = function(){
 	if( dataset.get(cpntModal, 'middle') == 'true' ){
 		window.unwrap( cpntModal, cpntModal.children[0] );
 		cpntModal.dataset.middle = 'fasle';
-	};
+	}
 	// If cpntModal has animation
 	if( dataset.get(cpntModal, dataAnimation) == 'true'){
 		// Atter cpntDimmed animatin end, animation attribute set false;
@@ -353,7 +353,7 @@ var modalHide = function(){
 			dataset.set(cpntModal, dataAnimation, 'fasle');
 			dataset.set(cpntDimmed, dataAnimation, 'false');
 		}, 450);
-	};
+	}
 	dataset.repaint(cpntModal);
 	dataset.repaint(cpntDimmed);
 };
@@ -366,5 +366,10 @@ var wrap = function(el, wrapper){
 var unwrap = function(el, wrapper) {
     el.innerHTML = wrapper.innerHTML;
 };
+
+
+
+
+
 
 
