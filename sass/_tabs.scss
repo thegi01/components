@@ -37,9 +37,11 @@
         color:#337ab7;
         cursor:default;
     }
+    &-panels {
+        padding-top: rem(10);
+    }
     &-panel {
         display: none;
-        margin-top: rem(10);
         padding: rem(10);
         border : solid 1px #ccc;
         @include border-radius(rem(4));
@@ -113,7 +115,7 @@
         font-weight: normal;
     }
     .tabs-panel {
-        position: absolute; top:35px; right: 0;  left: 0;
+        position: absolute; top:45px; right: 0;  left: 0;
     }
 }
 
