@@ -71,10 +71,7 @@ var setCurrentPrev = function(el, len){
 };
 
 
-/* set current module */
-/*var cpntCurrent = function(){
-	return new cpntCurrentModule();
-};*/
+/* Control data-current module */
 var CurrentModule = function(cpnt, direction, len, time){
 	this.cpnt = cpnt;
 	this.direction = direction;
@@ -144,7 +141,7 @@ var toggleAttirbute = function(attr, el){
 	}
 };
 
-/* Element focus */
+/* focus Element */
 var focusElem = function(el){
 	document.getElementById( el.getAttribute('href').split('#')[1] ).focus();
 };
