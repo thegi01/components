@@ -1,4 +1,4 @@
-"use strict"
+"use strict";
 
 /* dataset */
 var dataset = {
@@ -39,13 +39,15 @@ var dataVisible = 'visible';
 * Current pattern
 * Component's data-current control
 */
-// setCurrent
+
+// Set data-current index
 var setCurrent = function(id, idx){
 	var el = document.getElementById(id);
 	dataset.set( el, 'current', idx);
 	dataset.repaint(el);
 };
-// Toggle
+
+// Toggle data-current 
 var setCurrentToggle = function(id, idx){
 	var el = document.getElementById(id);
 	if(dataset.get(el, 'current') ==  idx){
@@ -59,9 +61,7 @@ var setCurrentToggle = function(id, idx){
 var setCurrentNext = function(id){
 	var cpnt = document.getElementById(id),
 		idx = dataset.get(cpnt, 'current');
-	if(!cpnt.len)
-		cpnt.len = getItemLen(cpnt);
-	idx = getIdxNext(idx, cpnt.len);
+	idx = getIdxNext(idx, getItemLen(cpnt));
 	setCurrent(id, idx);
 
 	setCurrentClearPlay(id, cpnt);
@@ -72,9 +72,7 @@ var setCurrentNext = function(id){
 var setCurrentPrev = function(id){
 	var cpnt = document.getElementById(id),
 		idx = dataset.get(cpnt, 'current');
-	if(!cpnt.len)
-		cpnt.len = getItemLen(cpnt);
-	idx = getIdxPrev(idx, cpnt.len);
+	idx = getIdxPrev(idx, getItemLen(cpnt));
 	setCurrent(id, idx);
 
 	setCurrentClearPlay(id);
@@ -84,7 +82,7 @@ var setCurrentPrev = function(id){
 // If data-control == 'play', previous clear interval and play
 var setCurrentClearPlay = function(id){
 	var cpnt = document.getElementById(id);
-	if( dataset.get(cpnt, 'control')=='play' ) {
+	if( dataset.get(cpnt, 'control') == 'play' ) {
 		window.clearInterval( cpnt.interval );
 		setCurrentPlay(id);
 	}
@@ -94,7 +92,7 @@ var setCurrentPlay = function(id){
 	var cpnt = document.getElementById(id);
 	dataset.set(cpnt, 'control', 'play');
 	cpnt.interval = setInterval(function(){
-		if(dataset.get(cpnt, 'direction')=='next') 
+		if(dataset.get(cpnt, 'direction') ==  'next') 
 			setCurrentNext(id);
 		else
 			setCurrentPrev(id);
@@ -117,10 +115,10 @@ var setCurrentMouseOver = function(id){
 // mouseout
 var setCurrentMouseOut = function(id){
 	var cpnt = document.getElementById(id);
-	if(cpnt.controlled == 'play'){
+	if( cpnt.controlled == 'play' ){
 		setCurrentPlay(id);
 		cpnt.controlled = undefined;
-		// delete cpnt.controlled
+		// delete cpnt.controlled;
 	}
 };
 
