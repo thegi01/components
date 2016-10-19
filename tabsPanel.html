@@ -311,7 +311,7 @@
 	);
 	var cpnt2SetCurrent = function(idx, el){
 		cpnt2Current.set(idx);
-		focusElem(el);
+		focusElByHref(el);
 	};
 	document.getElementById('cpnt2BtnPrev').onclick = function(){
 		cpnt2Current.prev();
@@ -334,7 +334,7 @@
 	var cpnt3ItemLen = 5;
 	var cpnt3SetCurrent = function(idx, el){
 		setCurrent(cpnt3, idx);
-		focusElem(el);
+		focusElByHref(el);
 	};
 	var cpnt3SetCurrentNext = function(){
 		setCurrentNext(cpnt3, cpnt3ItemLen);
@@ -347,7 +347,7 @@
 	var cpnt4ItemLen = 5;
 	var cpnt4SetCurrent = function(idx, el){
 		setCurrent(cpnt4, idx);
-		focusElem(el);
+		focusElByHref(el);
 	};
 	var cpnt4SetCurrentNext = function(){
 		setCurrentNext(cpnt4, cpnt4ItemLen);

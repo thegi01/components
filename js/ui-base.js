@@ -141,8 +141,8 @@ var toggleAttirbute = function(attr, el){
 	}
 };
 
-/* focus Element */
-var focusElem = function(el){
+/* focus Element by href attribute */
+var focusElByHref = function(el){
 	document.getElementById( el.getAttribute('href').split('#')[1] ).focus();
 };
 

@@ -109,24 +109,24 @@
 	<h2 class="h2">Tabs and Contents - Panels</h2>
 	<div class="tabs" id="cpnt2" data-current="0"> 
 		<ul class="tabs-lst">
-			<li class="tabs-item" data-idx="0"><a href="#cpnt2Panel0" class="tabs-item__a" onclick="cpnt2SetCurrent(0);">tab1</a></li>
-			<li class="tabs-item" data-idx="1"><a href="#cpnt2Panel1" class="tabs-item__a" onclick="cpnt2SetCurrent(1);">tab2</a></li>
-			<li class="tabs-item" data-idx="2"><a href="#cpnt2Panel2" class="tabs-item__a" onclick="cpnt2SetCurrent(2);">tab3</a></li>
+			<li class="tabs-item" data-idx="0"><a href="#cpnt2Panel0" class="tabs-item__a" onclick="cpnt2SetCurrent(0, this);">tab1</a></li>
+			<li class="tabs-item" data-idx="1"><a href="#cpnt2Panel1" class="tabs-item__a" onclick="cpnt2SetCurrent(1, this);">tab2</a></li>
+			<li class="tabs-item" data-idx="2"><a href="#cpnt2Panel2" class="tabs-item__a" onclick="cpnt2SetCurrent(2, this);">tab3</a></li>
 		</ul>
 		<div class="tabs-panels">
-			<div class="tabs-panel" id="tabsNonLogicalPanel0" data-idx="0">
+			<div class="tabs-panel" id="cpnt2Panel0" tabindex="-1" data-idx="0">
 				<h4 class="blind">tab1 contents</h4>
 				<a href="#href">tab1 link</a>
 				<a href="#href">tab1 link</a>
 				<a href="#href">tab1 link</a>
 			</div>
-			<div class="tabs-panel" id="tabsNonLogicalPanel1" data-idx="1">
+			<div class="tabs-panel" id="cpnt2Panel1" tabindex="-1" data-idx="1">
 				<h4 class="blind">tab2 contents</h4>
 				<a href="#href">tab2 link</a>
 				<a href="#href">tab2 link</a>
 				<a href="#href">tab2 link</a>
 			</div>
-			<div class="tabs-panel" id="tabsNonLogicalPanel2" data-idx="2">
+			<div class="tabs-panel" id="cpnt2Panel2" tabindex="-1" data-idx="2">
 				<h4 class="blind">tab3 contents</h4>
 				<a href="#href">tab3 link</a>
 				<a href="#href">tab3 link</a>
@@ -135,8 +135,9 @@
 		</div>
 	</div>
 	<script>
-		var cpnt2SetCurrent = function(idx){
+		var cpnt2SetCurrent = function(idx, el){
 			setCurrent(document.getElementById('cpnt2'), idx);
+			focusElByHref(el);
 		};
 	</script>
 	<div class="ex__txt">
