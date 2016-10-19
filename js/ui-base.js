@@ -36,13 +36,11 @@ if(!hasDataset) {
 * Current pattern
 * Component's data-current control
 */
-
 // Set data-current index
 var setCurrent = function(el, idx){
 	dataset.set( el, 'current', idx);
 	dataset.repaint(el);
 };
-
 // Toggle data-current 
 var setCurrentToggle = function(el, idx){
 	if(dataset.get(el, 'current') ==  idx){
@@ -52,14 +50,12 @@ var setCurrentToggle = function(el, idx){
 	}
 	dataset.repaint(el);
 };
-
 // Next
 var setCurrentNext = function(el, len){
 	var idx = dataset.get(el, 'current');
 	idx = getIdxNext(idx, len);
 	setCurrent(el, idx);
 };
-
 // Prev
 var setCurrentPrev = function(el, len){
 	var idx = dataset.get(el, 'current');
@@ -117,37 +113,6 @@ CurrentModule.prototype = {
 	}
 };
 
-
-/* Get component's item length */
-var getItemLen = function(ek, tagName){
-	if(dataset.get(ek, 'len')) 
-		return dataset.get(ek, 'len');
-	else
-		return ek.getElementsByTagName(tagName).length;
-};
-
-/* Idx Control */
-var getIdxPrev = function(idx, len){
-	return (idx == 0) ? len-1 : Number(idx)-1;
-};
-var getIdxNext = function(idx, len){
-	return (idx == len-1) ? 0 : Number(idx)+1;
-};
-
-/* Toggle(true/false) element's attribute */
-var toggleAttirbute = function(attr, el){
-	if( el.getAttribute(attr) == 'true' ){
-		el.setAttribute(attr, 'false');
-	} else {
-		el.setAttribute(attr, 'true');
-	}
-};
-
-/* focus Element by href attribute */
-var focusElByHref = function(el){
-	document.getElementById( el.getAttribute('href').split('#')[1] ).focus();
-};
-
 /* Accordion */
 var accordion = function( cpnt, idx, el ){
 	setCurrentToggle(cpnt, idx);
@@ -169,26 +134,6 @@ var accordion = function( cpnt, idx, el ){
 			panel.style.height = cnts.offsetHeight + 'px';
 			cpnt.collapsed = panel;
 		}
-	}
-};
-
-/* Checkbox, Radio */
-var checkboxCheck = function( el ){
-	toggleAttirbute('checked', el);
-};
-var radio = {
-	current : undefined,
-	check : function( el ){
-		var attribute = 'checked',
-			idx = dataset.get(el, 'idx');
-		if(this.current == idx ) return;
-		if(this.current){
-			el.form[el.name][this.current].setAttribute(attribute, 'false');
-			el.form[el.name][this.current].setAttribute(attribute, 'false');
-		}
-		el.setAttribute(attribute, 'true');
-		dataset.repaint(el);
-		this.current = idx;
 	}
 };
 
@@ -227,6 +172,58 @@ var dropdown = {
 /*window.onclick = function( evt ) {
 	dropdown.outFocus(evt);
 };*/
+
+
+/* Get component's item length */
+/*var getItemLen = function(ek, tagName){
+	if(dataset.get(ek, 'len')) 
+		return dataset.get(ek, 'len');
+	else
+		return ek.getElementsByTagName(tagName).length;
+};*/
+
+/* Idx Control */
+var getIdxPrev = function(idx, len){
+	return (idx == 0) ? len-1 : Number(idx)-1;
+};
+var getIdxNext = function(idx, len){
+	return (idx == len-1) ? 0 : Number(idx)+1;
+};
+
+/* Toggle(true/false) element's attribute */
+var toggleAttirbute = function(attr, el){
+	if( el.getAttribute(attr) == 'true' ){
+		el.setAttribute(attr, 'false');
+	} else {
+		el.setAttribute(attr, 'true');
+	}
+};
+
+/* focus Element by href attribute */
+var focusElByHref = function(el){
+	document.getElementById( el.getAttribute('href').split('#')[1] ).focus();
+};
+
+
+/* Checkbox, Radio */
+var checkboxCheck = function( el ){
+	toggleAttirbute('checked', el);
+};
+var radio = {
+	current : undefined,
+	check : function( el ){
+		var attribute = 'checked',
+			idx = dataset.get(el, 'idx');
+		if(this.current == idx ) return;
+		if(this.current){
+			el.form[el.name][this.current].setAttribute(attribute, 'false');
+			el.form[el.name][this.current].setAttribute(attribute, 'false');
+		}
+		el.setAttribute(attribute, 'true');
+		dataset.repaint(el);
+		this.current = idx;
+	}
+};
 
 
 /* File upload : handelFile */
