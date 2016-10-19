@@ -54,6 +54,13 @@
 	- 접근성 개선
 	- aria
 
+### Tabs and panels
+- [Url] : https://thegi01.github.io/components/tabsPanel.html
+- Tabs and panels control
+- To do
+	- 하위 버전 확인
+	- 접근성 개선
+	- aria
 
 ### Accordion
 - [Url] : https://thegi01.github.io/components/accordion.html
