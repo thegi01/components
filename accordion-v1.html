@@ -23,12 +23,12 @@
 	<h1 class="h1">Accordion</h1>
 
 	<h2 class="h2">Accordion default : Use setCurrent Function</h2>
-	<div class="accordion" id="base" data-animation="false" data-current="0">
+	<div class="accordion" id="accordionCurrent" data-animation="false" data-current="0">
 		<div class="accordion-item" data-idx="0">
 			<h4 class="accordion-title">
-				<a href="#basePanel1" class="accordion-item__a" onclick="baseSetCurrentToggle(0); return false;">Accordion item 1</a>
+				<a href="#accordionCurrentPanel1" class="accordion-item__a" onclick="setCurrentToggle('accordionCurrent', 0); return false;">Accordion item 1</a>
 			</h4>
-			<div class="accordion-panel" id="basePanel1">
+			<div class="accordion-panel" id="accordionCurrentPanel1">
 				<div class="accordion-cnts">
 					Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
 				</div>
@@ -36,9 +36,9 @@
 		</div>
 		<div class="accordion-item" data-idx="1">
 			<h4 class="accordion-title">
-				<a href="#basePanel2" class="accordion-item__a" onclick="baseSetCurrentToggle(1); return false;">Accordion item 2</a>
+				<a href="#accordionCurrentPanel2" class="accordion-item__a" onclick="setCurrentToggle('accordionCurrent', 1); return false;">Accordion item 2</a>
 			</h4>
-			<div class="accordion-panel" id="basePanel2">
+			<div class="accordion-panel" id="accordionCurrentPanel2">
 				<div class="accordion-cnts">
 					Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
 					Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
@@ -47,26 +47,21 @@
 		</div>
 		<div class="accordion-item" data-idx="2">
 			<h4 class="accordion-title">
-				<a href="#basePanel3" class="accordion-item__a" onclick="baseSetCurrentToggle(2); return false;">Accordion item 3</a>
+				<a href="#accordionCurrentPanel3" class="accordion-item__a" onclick="setCurrentToggle('accordionCurrent', 2); return false;">Accordion item 3</a>
 			</h4>
-			<div class="accordion-panel" id="basePanel3">
+			<div class="accordion-panel" id="accordionCurrentPanel3">
 				<div class="accordion-cnts">
 					Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
 				</div>
 			</div>
 		</div>
 	</div>
-	<script>
-		var baseSetCurrentToggle = function(idx){
-			setCurrentToggle( document.getElementById('base'), idx );
-		};
-	</script>
 
 	<h2 class="h2">Accordion animation</h2>
 	<div class="accordion" id="accordion" data-animation="true">
 		<div class="accordion-item" data-idx="0">
 			<h4 class="accordion-title">
-				<a href="#accordionPanel1" class="accordion-item__a" onclick="accordionAccordion(0, this); return false;">Accordion item 1</a>
+				<a href="#accordionPanel1" class="accordion-item__a" onclick="accordion('accordion', 0, this); return false;">Accordion item 1</a>
 			</h4>
 			<div class="accordion-panel" id="accordionPanel1">
 				<div class="accordion-cnts">
@@ -76,7 +71,7 @@
 		</div>
 		<div class="accordion-item" data-idx="1">
 			<h4 class="accordion-title">
-				<a href="#accordionPanel2" class="accordion-item__a" onclick="accordionAccordion(1, this); return false;">Accordion item 2</a>
+				<a href="#accordionPanel2" class="accordion-item__a" onclick="accordion('accordion', 1, this); return false;">Accordion item 2</a>
 			</h4>
 			<div class="accordion-panel" id="accordionPanel2">
 				<div class="accordion-cnts">
@@ -87,7 +82,7 @@
 		</div>
 		<div class="accordion-item" data-idx="2">
 			<h4 class="accordion-title">
-				<a href="#accordionPanel3" class="accordion-item__a" onclick="accordionAccordion(2, this); return false;">Accordion item 3</a>
+				<a href="#accordionPanel3" class="accordion-item__a" onclick="accordion('accordion', 2, this); return false;">Accordion item 3</a>
 			</h4>
 			<div class="accordion-panel" id="accordionPanel3">
 				<div class="accordion-cnts">
@@ -98,17 +93,12 @@
 			</div>
 		</div>
 	</div>
-	<script>
-		var accordionAccordion = function(idx, el){
-			accordion( document.getElementById('accordion'), idx, el )
-		};
-	</script>
 
 	<h2 class="h2">Accordion not apply animation == Use setCurrent Function</h2>
 	<div class="accordion" id="default" data-animation="false" data-current="2">
 		<div class="accordion-item" data-idx="0">
 			<h4 class="accordion-title">
-				<a href="#defaultPanel1" class="accordion-item__a" onclick="defaultnAccordion(0, this); return false;">Accordion item 1</a>
+				<a href="#defaultPanel1" class="accordion-item__a" onclick="accordion('default', 0, this); return false;">Accordion item 1</a>
 			</h4>
 			<div class="accordion-panel" id="defaultPanel1">
 				<div class="accordion-cnts">
@@ -118,7 +108,7 @@
 		</div>
 		<div class="accordion-item" data-idx="1">
 			<h4 class="accordion-title">
-				<a href="#defaultPanel2" class="accordion-item__a" onclick="defaultnAccordion(1, this); return false;">Accordion item 2</a>
+				<a href="#defaultPanel2" class="accordion-item__a" onclick="accordion('default', 1, this); return false;">Accordion item 2</a>
 			</h4>
 			<div class="accordion-panel" id="defaultPanel2">
 				<div class="accordion-cnts">
@@ -129,7 +119,7 @@
 		</div>
 		<div class="accordion-item" data-idx="2">
 			<h4 class="accordion-title">
-				<a href="#defaultPanel3" class="accordion-item__a" onclick="defaultnAccordion(2, this); return false;">Accordion item 3</a>
+				<a href="#defaultPanel3" class="accordion-item__a" onclick="accordion('default', 2, this); return false;">Accordion item 3</a>
 			</h4>
 			<div class="accordion-panel" id="defaultPanel3">
 				<div class="accordion-cnts">
@@ -138,20 +128,16 @@
 			</div>
 		</div>
 	</div>
-	<script>
-		var defaultnAccordion = function(idx, el){
-			accordion( document.getElementById('default'), idx, el )
-		};
-	</script>
+	
 	
 </div>
 
 <!-- javacript -->
-<script type="text/javascript" src="js/ui-base-v2.js"></script>
+<script type="text/javascript" src="js/ui-base-v1.js"></script>
 <script>
 	window.onload = function(){
 		/* Accordion Init */
-		accordion( document.getElementById('accordion'), 0 );
+		accordion('accordion', 0);
 	};
 </script>
 <!-- //javacript -->

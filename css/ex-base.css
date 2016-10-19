@@ -467,6 +467,7 @@ input[data-role="button"]:checked + .btn { border-color: green; color: green; }
 .tabs[data-current="0"] .tabs-item[data-idx="0"] .tabs-item__a, .tabs[data-current="1"] .tabs-item[data-idx="1"] .tabs-item__a, .tabs[data-current="2"] .tabs-item[data-idx="2"] .tabs-item__a, .tabs[data-current="3"] .tabs-item[data-idx="3"] .tabs-item__a, .tabs[data-current="4"] .tabs-item[data-idx="4"] .tabs-item__a { border-color: #ddd #ddd #fff; background-color: #fff; color: #337ab7; cursor: default; }
 .tabs-panels { padding-top: 0.625rem; }
 .tabs-panel { display: none; padding: 0.625rem; border: solid 1px #ccc; -webkit-border-radius: 0.25rem; -moz-border-radius: 0.25rem; border-radius: 0.25rem; background-clip: padding-box; font-size: 0.875rem; color: #666; line-height: 100%; vertical-align: middle; }
+.tabs-panel:focus { outline: none; }
 .tabs-panel a { display: inline-block; margin-right: 10px; font-size: 12px; color: #666; text-decoration: none; }
 .tabs-panel a:focus { outline: none; }
 .tabs-panel a:hover, .tabs-panel a:focus { text-decoration: underline; }

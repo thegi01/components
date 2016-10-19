@@ -41,13 +41,15 @@ var dataVisible = 'visible';
 */
 
 // Set data-current index
-var setCurrent = function(el, idx){
+var setCurrent = function(id, idx){
+	var el = document.getElementById(id);
 	dataset.set( el, 'current', idx);
 	dataset.repaint(el);
 };
 
 // Toggle data-current 
-var setCurrentToggle = function(el, idx){
+var setCurrentToggle = function(id, idx){
+	var el = document.getElementById(id);
 	if(dataset.get(el, 'current') ==  idx){
 		dataset.del(el, 'current');
 	} else {
@@ -55,76 +57,77 @@ var setCurrentToggle = function(el, idx){
 	}
 	dataset.repaint(el);
 };
-
 // Next
-var setCurrentNext = function(el, len){
-	var idx = dataset.get(el, 'current');
-	idx = getIdxNext(idx, len);
-	setCurrent(el, idx);
-};
+var setCurrentNext = function(id){
+	var cpnt = document.getElementById(id),
+		idx = dataset.get(cpnt, 'current');
+	idx = getIdxNext(idx, getItemLen(cpnt));
+	setCurrent(id, idx);
 
+	setCurrentClearPlay(id, cpnt);
+
+	dataset.set(cpnt, 'direction', 'next');
+};
 // Prev
-var setCurrentPrev = function(el, len){
-	var idx = dataset.get(el, 'current');
-	idx = getIdxPrev(idx,len);
-	setCurrent(el, idx);
-};
+var setCurrentPrev = function(id){
+	var cpnt = document.getElementById(id),
+		idx = dataset.get(cpnt, 'current');
+	idx = getIdxPrev(idx, getItemLen(cpnt));
+	setCurrent(id, idx);
 
+	setCurrentClearPlay(id);
 
-/* set current module */
-/*var cpntCurrent = function(){
-	return new cpntCurrentModule();
-};*/
-var CurrentModule = function(cpnt, direction, len, time){
-	this.cpnt = cpnt;
-	this.direction = direction;
-	this.len = len;
-	this.time = time;
+	dataset.set(cpnt, 'direction', 'prev');
 };
-CurrentModule.prototype = {
-	set : function(idx){
-		setCurrent( this.cpnt, idx );
-	},
-	next : function(){
-		setCurrentNext( this.cpnt, this.len);
-		this.clearPlay();
-		this.direction = 'next';
-	},
-	prev : function(){
-		setCurrentPrev( this.cpnt, this.len);
-		this.clearPlay();
-		this.direction = 'prev';
-	},
-	play : function(){
-		var self = this;
-		dataset.set( this.cpnt, 'control', 'play');
-		this.interval = setInterval(function(){
-			if( self.direction == 'next'){
-				self.next();
-			} else {
-				self.prev();
-			}
-		}, self.time);
-	},
-	pause : function(){
-		window.clearInterval( this.interval );
-		dataset.set( this.cpnt, 'control', 'pause');
-	},
-	clearPlay : function(){
-		if( dataset.get( this.cpnt, 'control') == 'play' ){
-			window.clearInterval( this.interval );
-			this.play();
-		}
+// If data-control == 'play', previous clear interval and play
+var setCurrentClearPlay = function(id){
+	var cpnt = document.getElementById(id);
+	if( dataset.get(cpnt, 'control') == 'play' ) {
+		window.clearInterval( cpnt.interval );
+		setCurrentPlay(id);
+	}
+};
+// Play
+var setCurrentPlay = function(id){
+	var cpnt = document.getElementById(id);
+	dataset.set(cpnt, 'control', 'play');
+	cpnt.interval = setInterval(function(){
+		if(dataset.get(cpnt, 'direction') ==  'next') 
+			setCurrentNext(id);
+		else
+			setCurrentPrev(id);
+	}, dataset.get(cpnt, 'time') );
+};
+// Pause
+var setCurrentPause = function(id){
+	var cpnt = document.getElementById(id);
+	dataset.set(cpnt, 'control', 'pause');
+	window.clearInterval( cpnt.interval );
+};
+// mouseover
+var setCurrentMouseOver = function(id){
+	var cpnt = document.getElementById(id);
+	if( dataset.get(cpnt, 'control') == 'play' ) {
+		setCurrentPause(id);
+		cpnt.controlled = 'play';
+	}
+};
+// mouseout
+var setCurrentMouseOut = function(id){
+	var cpnt = document.getElementById(id);
+	if( cpnt.controlled == 'play' ){
+		setCurrentPlay(id);
+		cpnt.controlled = undefined;
+		// delete cpnt.controlled;
 	}
 };
 
-
 /* Get component's item length */
-var getItemLen = function(ek, tagName){
-	if(dataset.get(ek, 'len')) 
-		return dataset.get(ek, 'len');
+var getItemLen = function(cpnt, tagName){
+	if(dataset.get(cpnt, 'len')) 
+		return dataset.get(cpnt, 'len');
 	else
-		return ek.getElementsByTagName(tagName).length;
+		return cpnt.getElementsByTagName(tagName).length;
 };
 
 /* Idx Control */
@@ -144,14 +147,11 @@ var toggleAttirbute = function(attr, el){
 	}
 };
 
-/* Element focus */
-var focusElem = function(el){
-	document.getElementById( el.getAttribute('href').split('#')[1] ).focus();
-};
-
 /* Accordion */
-var accordion = function( cpnt, idx, el ){
-	setCurrentToggle(cpnt, idx);
+var accordion = function( id, idx, el ){
+	setCurrentToggle(id, idx);
+
+	var cpnt = document.getElementById(id);
 	if(dataset.get(cpnt, 'animation')=='true'){
 		var panel, cnts;
 		if(el) {	// onclick

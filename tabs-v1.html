@@ -67,39 +67,34 @@
 	</div>
 	
 	<h2 class="h2">Tabs and Contents - Logical</h2>
-	<div class="tabs tabs--logical" id="cpnt1" data-current="0">
+	<div class="tabs tabs--logical" id="tabsLogical" data-current="0">
 		<div class="tabs-lst">
 			<h4 class="tabs-item" data-idx="0">
-				<a href="#cpnt1Panel0" class="tabs-item__a" onfocus="cpnt1SetCurrent(0);" onclick="cpnt1SetCurrent(0); return false;">tab1</a>
+				<a href="#tabsLogicalPanel0" class="tabs-item__a" onfocus="setCurrent('tabsLogical', 0);" onclick="setCurrent('tabsLogical', 0); return false;">tab1</a>
 			</h4>
-			<div class="tabs-panel" id="cpnt1Panel0" data-idx="0">
+			<div class="tabs-panel" id="tabsLogicalPanel0" data-idx="0">
 				<a href="#href">tab1 link</a>
 				<a href="#href">tab1 link</a>
 				<a href="#href">tab1 link</a>
 			</div>
 			<h4 class="tabs-item" data-idx="1">
-				<a href="#cpnt1Panel1" class="tabs-item__a" onfocus="cpnt1SetCurrent(1);" onclick="cpnt1SetCurrent(1); return false;">tab2</a>
+				<a href="#tabsLogicalPanel1" class="tabs-item__a" onfocus="setCurrent('tabsLogical', 1);" onclick="setCurrent('tabsLogical', 1); return false;">tab2</a>
 			</h4>
-			<div class="tabs-panel" id="cpnt1Panel1" data-idx="1">
+			<div class="tabs-panel" id="tabsLogicalPanel1" data-idx="1">
 				<a href="#href">tab2 link</a>
 				<a href="#href">tab2 link</a>
 				<a href="#href">tab2 link</a>
 			</div>
 			<h4 class="tabs-item" data-idx="2">
-				<a href="#cpnt1Panel2" class="tabs-item__a" onfocus="cpnt1SetCurrent(2);" onclick="cpnt1SetCurrent(2); return false;">tab3</a>
+				<a href="#tabsLogicalPanel2" class="tabs-item__a" onfocus="setCurrent('tabsLogical', 2);" onclick="setCurrent('tabsLogical', 2); return false;">tab3</a>
 			</h4>
-			<div class="tabs-panel" id="cpnt1Panel2" data-idx="2">
+			<div class="tabs-panel" id="tabsLogicalPanel2" data-idx="2">
 				<a href="#href">tab3 link</a>
 				<a href="#href">tab3 link</a>
 				<a href="#href">tab3 link</a>
 			</div>
 		</div>
 	</div>
-	<script>
-		var cpnt1SetCurrent = function(idx){
-			setCurrent(document.getElementById('cpnt1'), idx);
-		};
-	</script>
 	<div class="ex__txt">
 		Tab key 순서가 맞다. <br>
 		Focus Event 적용이 부담이 없다. <br>
@@ -107,11 +102,11 @@
 	</div>
 
 	<h2 class="h2">Tabs and Contents - Panels</h2>
-	<div class="tabs" id="cpnt2" data-current="0"> 
+	<div class="tabs" id="tabsNonLogical" data-current="0"> 
 		<ul class="tabs-lst">
-			<li class="tabs-item" data-idx="0"><a href="#cpnt2Panel0" class="tabs-item__a" onclick="cpnt2SetCurrent(0);">tab1</a></li>
-			<li class="tabs-item" data-idx="1"><a href="#cpnt2Panel1" class="tabs-item__a" onclick="cpnt2SetCurrent(1);">tab2</a></li>
-			<li class="tabs-item" data-idx="2"><a href="#cpnt2Panel2" class="tabs-item__a" onclick="cpnt2SetCurrent(2);">tab3</a></li>
+			<li class="tabs-item" data-idx="0"><a href="#tabsNonLogicalPanel0" class="tabs-item__a" onclick="setCurrent('tabsNonLogical', 0);">tab1</a></li>
+			<li class="tabs-item" data-idx="1"><a href="#tabsNonLogicalPanel1" class="tabs-item__a" onclick="setCurrent('tabsNonLogical', 1);">tab2</a></li>
+			<li class="tabs-item" data-idx="2"><a href="#tabsNonLogicalPanel2" class="tabs-item__a" onclick="setCurrent('tabsNonLogical', 2);">tab3</a></li>
 		</ul>
 		<div class="tabs-panels">
 			<div class="tabs-panel" id="tabsNonLogicalPanel0" data-idx="0">
@@ -134,18 +129,13 @@
 			</div>
 		</div>
 	</div>
-	<script>
-		var cpnt2SetCurrent = function(idx){
-			setCurrent(document.getElementById('cpnt2'), idx);
-		};
-	</script>
 	<div class="ex__txt">
 		Tab key 순서가 완벽하지 않다. 
 	</div>
 </div>		
 
 <!-- javacript -->
-<script type="text/javascript" src="js/ui-base.js"></script>
+<script type="text/javascript" src="js/ui-base-v1.js"></script>
 <script>
 </script>
 <!-- //javacript -->

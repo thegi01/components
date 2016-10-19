@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>Tabs and Panel</title>
+	<meta name="viewport" content="width=device-width, user-scalable=no">
+	<meta name="robots" content="noindex,nofollow">
+	<meta name="googlebot" content="noindex,nofollow">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<!--[if (gt IE 8)|!(IE)]><!-->
+        <link rel="stylesheet" href="css/ex-base.css">
+    <!--<![endif]-->
+    <!--[if lte IE 8]>
+        <link rel="stylesheet" href="css/ex-base-ie.css">
+    <![endif]-->
+    <style>
+    	.tabs--logical {
+    		height: 200px;
+    	}
+		.tabs-item {
+			width: 20%;
+		}
+		.tabs-item__a {
+			margin-right: 0;
+		}
+		.tabs-panel {
+			overflow: hidden;
+			line-height: 1.3;
+		}
+		.tabs--logical .tabs-panel {
+			height: 105px;
+		}
+		#cpnt2 .tabs-direction {
+			margin-top: 10px;
+		}
+		.tabs--logical .tabs-direction {
+			position: absolute; bottom: 0px;
+		}
+
+		.tabs-direction__prev {
+
+		}
+		.tabs-direction__next {
+
+		}
+		.tabs-control {
+			
+		}
+		.tabs--logical .tabs-control {
+			position: absolute; right: 0; bottom:0px;
+		}
+		#cpnt2 .tabs-control {
+			float: right; margin-top: -20px;
+		}
+		.tabs__btn-pause,
+		.tabs__btn-play {
+			display: none;
+		}
+		.tabs[data-control="pause"] .tabs__btn-play {
+			display: block;
+		}
+		.tabs[data-control="play"] .tabs__btn-pause {
+			display: block;
+		}
+		.ex__txt {
+			margin-top: 10px;
+			color: #888;
+		}
+    </style>
+</head>
+<body>
+
+<div class="wrap ex">
+	<h1 class="h1">Component's control</h1>
+
+	<h2 class="h2">Tabs(Logical) Control</h2>
+	<div class="tabs tabs--logical" id="cpnt1" data-control="pause" data-current="0">
+		<!-- tabs-lst -->
+		<div class="tabs-lst">
+			<h4 class="tabs-item" data-idx="0">
+				<a href="#cpnt1Panel0" class="tabs-item__a" onfocus="cpnt1ShowPanel(0);" onclick="cpnt1ShowPanel(0); return false;">tab1</a>
+			</h4>
+			<div class="tabs-panel" id="cpnt1Panel0" data-idx="0">
+				Tab1 Panel <br>
+				<a href="#href">Test link</a> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+			</div>
+			<h4 class="tabs-item" data-idx="1">
+				<a href="#cpnt1Panel1" class="tabs-item__a" onfocus="cpnt1ShowPanel(1);" onclick="cpnt1ShowPanel(1); return false;">tab2</a>
+			</h4>
+			<div class="tabs-panel" id="cpnt1Panel1" data-idx="1">
+				Tab2 Panel <br>
+				<a href="#href">Test link</a> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+			</div>
+			<h4 class="tabs-item" data-idx="2">
+				<a href="#cpnt1Panel2" class="tabs-item__a" onfocus="cpnt1ShowPanel(2);" onclick="cpnt1ShowPanel(2); return false;">tab3</a>
+			</h4>
+			<div class="tabs-panel" id="cpnt1Panel2" data-idx="2">
+				Tab3 Panel <br>
+				<a href="#href">Test link</a> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+			</div>
+			<h4 class="tabs-item" data-idx="3">
+				<a href="#cpnt1Panel3" class="tabs-item__a" onfocus="cpnt1ShowPanel(3);" onclick="cpnt1ShowPanel(3); return false;">tab4</a>
+			</h4>
+			<div class="tabs-panel" id="cpnt1Panel3" data-idx="3">
+				Tab4 Panel <br>
+				<a href="#href">Test link</a> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+			</div>
+			<h4 class="tabs-item" data-idx="4">
+				<a href="#cpnt1Panel4" class="tabs-item__a" onfocus="cpnt1ShowPanel(4);" onclick="cpnt1ShowPanel(4); return false;">tab5</a>
+			</h4>
+			<div class="tabs-panel" id="defaultPanel4" data-idx="4">
+				Tab5 Panel <br>
+				<a href="#href">Test link</a> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+			</div>
+		</div>
+		<!-- // tabs-lst -->
+		<!-- tabs-direction -->
+		<div class="tabs-direction">
+			<button type="button" class="btn btn--default btn-xs tabs__btn-prev" id="cpnt1BtnPrev">prev</button>
+			<button type="button" class="btn btn--default btn-xs tabs__btn-next" id="cpnt1BtnNext">next</button>
+		</div>
+		<!-- // tabs-direction -->
+		<!-- tabs-control -->
+		<div class="tabs-control">
+			<button type="button" class="btn btn--default btn-xs tabs__btn-play" id="cpnt1BtnPlay">Play</button>
+			<button type="button" class="btn btn--default btn-xs tabs__btn-pause" id="cpnt1BtnPause">Pause</button>
+		</div>
+		<!-- // tabs-control -->
+	</div>
+	<script>
+		
+	</script>
+	<div class="ex__txt">
+		Fixed height : tabs, tabs-panel
+	</div>
+	
+
+	<h2 class="h2">Tabs(Panels) </h2>
+	<div class="tabs" id="cpnt2" data-len="5" data-time="2000" data-control="pause" data-direction="next" data-current="0">
+		<ul class="tabs-lst">
+			<li class="tabs-item" data-idx="0"><a href="#cpnt2Panel0" class="tabs-item__a" onclick="cpnt2ShowPanel(0);">tab1</a></li>
+			<li class="tabs-item" data-idx="1"><a href="#cpnt2Panel1" class="tabs-item__a" onclick="cpnt2ShowPanel(1);">tab2</a></li>
+			<li class="tabs-item" data-idx="2"><a href="#cpnt2Panel2" class="tabs-item__a" onclick="cpnt2ShowPanel(2);">tab3</a></li>
+			<li class="tabs-item" data-idx="3"><a href="#cpnt2Panel3" class="tabs-item__a" onclick="cpnt2ShowPanel(3);">tab4</a></li>
+			<li class="tabs-item" data-idx="4"><a href="#cpnt2Panel4" class="tabs-item__a" onclick="cpnt2ShowPanel(4);">tab5</a></li>
+		</ul>
+		<div class="tabs-panels">
+			<div class="tabs-panel" id="cpnt2Panel0" data-idx="0">
+				<h4 class="blind">tab1 contents</h4>
+				Tab1 Panel <br>
+				<a href="#href">Test link</a> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+			</div>
+			<div class="tabs-panel" id="cpnt2Panel1" data-idx="1">
+				<h4 class="blind">tab2 contents</h4>
+				Tab2 Panel <br>
+				<a href="#href">Test link</a> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+			</div>
+			<div class="tabs-panel" id="cpnt2Panel2" data-idx="2">
+				<h4 class="blind">tab3 contents</h4>
+				Tab3 Panel <br>
+				<a href="#href">Test link</a> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+			</div>
+			<div class="tabs-panel" id="cpnt2Panel3" data-idx="3">
+				<h4 class="blind">tab4 contents</h4>
+				Tab4 Panel <br>
+				<a href="#href">Test link</a> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+			</div>
+			<div class="tabs-panel" id="cpnt2Panel4" data-idx="4">
+				<h4 class="blind">tab5 contents</h4>
+				Tab5 Panel <br>
+				<a href="#href">Test link</a> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+			</div>
+		</div>
+		<!-- tabs-direction -->
+		<div class="tabs-direction">
+			<button type="button" class="btn btn--default btn-xs tabs__btn-prev" id="cpnt2BtnPrev">prev</button>
+			<button type="button" class="btn btn--default btn-xs tabs__btn-next" id="cpnt2BtnNext">next</button>
+		</div>
+		<!-- // tabs-direction -->
+		<!-- tabs-control -->
+		<div class="tabs-control">
+			<button type="button" class="btn btn--default btn-xs tabs__btn-play" id="cpnt2BtnPlay">Play</button>
+			<button type="button" class="btn btn--default btn-xs tabs__btn-pause" id="cpnt2BtnPause">Pause</button>
+		</div>
+		<!-- // tabs-control -->
+	</div>
+
+	<h2 class="h2">Tabs3 : not apply play and stop</h2>
+	<div class="tabs" id="cpnt3" data-len="5" data-time="2000" data-control="pause" data-direction="next" data-current="0">
+		<ul class="tabs-lst">
+			<li class="tabs-item" data-idx="0"><a href="#cpnt3Panel0" class="tabs-item__a" onclick="cpnt3SetCurrent(0);">tab1</a></li>
+			<li class="tabs-item" data-idx="1"><a href="#cpnt3Panel1" class="tabs-item__a" onclick="cpnt3SetCurrent(1);">tab2</a></li>
+			<li class="tabs-item" data-idx="2"><a href="#cpnt3Panel2" class="tabs-item__a" onclick="cpnt3SetCurrent(2);">tab3</a></li>
+			<li class="tabs-item" data-idx="3"><a href="#cpnt3Panel3" class="tabs-item__a" onclick="cpnt3SetCurrent(3);">tab4</a></li>
+			<li class="tabs-item" data-idx="4"><a href="#cpnt3Panel4" class="tabs-item__a" onclick="cpnt3SetCurrent(4);">tab5</a></li>
+		</ul>
+		<div class="tabs-panels">
+			<div class="tabs-panel" id="cpnt3Panel0" data-idx="0">
+				<h4 class="blind">tab1 contents</h4>
+				Tab1 Panel <br>
+				<a href="#href">Test link</a> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+			</div>
+			<div class="tabs-panel" id="cpnt3Panel1" data-idx="1">
+				<h4 class="blind">tab2 contents</h4>
+				Tab2 Panel <br>
+				<a href="#href">Test link</a> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+			</div>
+			<div class="tabs-panel" id="cpnt3Panel2" data-idx="2">
+				<h4 class="blind">tab3 contents</h4>
+				Tab3 Panel <br>
+				<a href="#href">Test link</a> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+			</div>
+			<div class="tabs-panel" id="cpnt3Panel3" data-idx="3">
+				<h4 class="blind">tab4 contents</h4>
+				Tab4 Panel <br>
+				<a href="#href">Test link</a> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+			</div>
+			<div class="tabs-panel" id="cpnt3Panel4" data-idx="4">
+				<h4 class="blind">tab5 contents</h4>
+				Tab5 Panel <br>
+				<a href="#href">Test link</a> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+			</div>
+		</div>
+		<!-- tabs-direction -->
+		<div class="tabs-direction">
+			<button type="button" class="btn btn--default btn-xs tabs__btn-prev" onclick="cpnt3SetCurrentPrev()">prev</button>
+			<button type="button" class="btn btn--default btn-xs tabs__btn-next" onclick="cpnt3SetCurrentNext()">next</button>
+		</div>
+		<!-- // tabs-direction -->
+	</div>
+	
+	<h2 class="h2">Tabs4 : not apply play and stop</h2>
+	<div class="tabs" id="cpnt4" data-len="5" data-time="2000" data-control="pause" data-direction="next" data-current="0">
+		<ul class="tabs-lst">
+			<li class="tabs-item" data-idx="0"><a href="#cpnt4Panel0" class="tabs-item__a" onclick="cpnt4SetCurrent(0);">tab1</a></li>
+			<li class="tabs-item" data-idx="1"><a href="#cpnt4Panel1" class="tabs-item__a" onclick="cpnt4SetCurrent(1);">tab2</a></li>
+			<li class="tabs-item" data-idx="2"><a href="#cpnt4Panel2" class="tabs-item__a" onclick="cpnt4SetCurrent(2);">tab3</a></li>
+			<li class="tabs-item" data-idx="3"><a href="#cpnt4Panel3" class="tabs-item__a" onclick="cpnt4SetCurrent(3);">tab4</a></li>
+			<li class="tabs-item" data-idx="4"><a href="#cpnt4Panel4" class="tabs-item__a" onclick="cpnt4SetCurrent(4);">tab5</a></li>
+		</ul>
+		<div class="tabs-panels">
+			<div class="tabs-panel" id="cpnt4Panel0" data-idx="0">
+				<h4 class="blind">tab1 contents</h4>
+				Tab1 Panel <br>
+				<a href="#href">Test link</a> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+			</div>
+			<div class="tabs-panel" id="cpnt4Panel1" data-idx="1">
+				<h4 class="blind">tab2 contents</h4>
+				Tab2 Panel <br>
+				<a href="#href">Test link</a> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+			</div>
+			<div class="tabs-panel" id="cpnt4Panel2" data-idx="2">
+				<h4 class="blind">tab3 contents</h4>
+				Tab3 Panel <br>
+				<a href="#href">Test link</a> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+			</div>
+			<div class="tabs-panel" id="cpnt4Panel3" data-idx="3">
+				<h4 class="blind">tab4 contents</h4>
+				Tab4 Panel <br>
+				<a href="#href">Test link</a> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+			</div>
+			<div class="tabs-panel" id="cpnt4Panel4" data-idx="4">
+				<h4 class="blind">tab5 contents</h4>
+				Tab5 Panel <br>
+				<a href="#href">Test link</a> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+			</div>
+		</div>
+		<!-- tabs-direction -->
+		<div class="tabs-direction">
+			<button type="button" class="btn btn--default btn-xs tabs__btn-prev" onclick="cpnt4SetCurrentPrev()">prev</button>
+			<button type="button" class="btn btn--default btn-xs tabs__btn-next" onclick="cpnt4SetCurrentNext()">next</button>
+		</div>
+		<!-- // tabs-direction -->
+	</div>
+
+</div>		
+
+<!-- javacript -->
+<script type="text/javascript" src="js/ui-base-v2.js"></script>
+<script>
+	var currentObj = {
+		cpnt1 : {
+			id : 'cpnt1',
+			direction : 'next',
+			len : 5,
+			time : 1000,
+			btn : {
+				prev : 'cpnt1BtnPrev',
+				next : 'cpnt1BtnNext',
+				play : 'cpnt1BtnPlay',
+				pause : 'cpnt1BtnPause'
+			}
+		},
+		cpnt2 : {
+			id : 'cpnt2',
+			direction : 'next',
+			len : 5,
+			time : 1000,
+			btn : {
+				prev : 'cpnt2BtnPrev',
+				next : 'cpnt2BtnNext',
+				play : 'cpnt2BtnPlay',
+				pause : 'cpnt2BtnPause'
+			}
+		}
+	};
+
+	var Tabs = function(cpnt){
+		var self = this;
+		this.current = new CurrentModule(
+			document.getElementById(cpnt.id), 
+			cpnt.direction, 
+			cpnt.len, 
+			cpnt.time
+		);
+		document.getElementById(cpnt.btn.prev).onclick = function(){
+		 	self.current.prev();
+		};
+		document.getElementById(cpnt.btn.next).onclick = function(){
+		 	self.current.next();
+		};
+		document.getElementById(cpnt.btn.play).onclick = function(){
+			self.current.play();
+		};
+		document.getElementById(cpnt.btn.pause).onclick = function(){
+		 	self.current.pause();
+		};
+		/*for(var key in cpnt.btn){
+			document.getElementById(cpnt.btn[key]).onclick = function(){
+			 	self.current[key]();
+			};
+		}*/
+	};
+	Tabs.prototype.showPanel = function(idx){
+		this.current.set(idx);
+	};
+
+	for(var key in currentObj){
+		currentObj[key].tabsView = new Tabs(currentObj[key]);			// instance 생성
+		window[ currentObj[key].id +'ShowPanel'] = function(idx){		// tab click function
+			currentObj[key].showPanel.call( currentObj[key].tabsView, idx);
+		};
+	}
+	
+
+
+	
+	/*var cpnt1Current = new currentFn(currentObj.cpnt1);
+	var cpnt1SetCurrent = function(idx){
+		cpnt1Current.setCurrent.call(cpnt1Current, idx);
+	};
+
+	var cpnt2Current = new currentFn(currentObj.cpnt2);
+	var cpnt2SetCurrent = function(idx){
+		cpnt2Current.setCurrent.call(cpnt2Current, idx);
+	};*/
+
+
+	/* Tabs > prev, next 
+	 * not apply play and stop
+	*/
+	cpnt3 = document.getElementById('cpnt3');
+	var cpnt3ItemLen = 5;
+	var cpnt3SetCurrent = function(idx){
+		setCurrent(cpnt3, idx);
+	};
+	var cpnt3SetCurrentNext = function(){
+		setCurrentNext(cpnt3, cpnt3ItemLen);
+	};
+	var cpnt3SetCurrentPrev = function(){
+		setCurrentPrev(cpnt3, cpnt3ItemLen);
+	};
+
+	cpnt4 = document.getElementById('cpnt4');
+	var cpnt4ItemLen = 5;
+	var cpnt4SetCurrent = function(idx){
+		setCurrent(cpnt4, idx);
+	};
+	var cpnt4SetCurrentNext = function(){
+		setCurrentNext(cpnt4, cpnt4ItemLen);
+	};
+	var cpnt4SetCurrentPrev = function(){
+		setCurrentPrev(cpnt4, cpnt4ItemLen);
+	};
+
+
+</script>
+<script>
+	/*var cpnt2 = document.getElementById('cpnt2'); 
+
+	if ( cpnt2 ) {
+		setIntervalCpnt2(); 
+	}*/
+
+</script>
+
+</body>
+</html>
