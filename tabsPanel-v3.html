@@ -340,7 +340,9 @@
 
 	// Instance of Tabs
 	for(var key in tabsData){
-		tabsData[key].tabsView = new Tabs(tabsData[key]);
+		if(tabsData.hasOwnProperty(key)){
+			tabsData[key].tabsView = new Tabs(tabsData[key]);
+		}
 	}
 	var cpnt1ShowPanel = function(idx, el){
 		tabsData.cpnt1.tabsView.showPanel.call( tabsData.cpnt1.tabsView, idx, el );
@@ -379,14 +381,6 @@
 		setCurrentPrev(cpnt4, cpnt4ItemLen);
 	};
 
-
-</script>
-<script>
-	/*var cpnt2 = document.getElementById('cpnt2'); 
-
-	if ( cpnt2 ) {
-		setIntervalCpnt2(); 
-	}*/
 
 </script>
 
