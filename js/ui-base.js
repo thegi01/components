@@ -32,9 +32,6 @@ if(!hasDataset) {
 	};
 }
 
-/* Variable data attribue */
-var dataVisible = 'visible';
-
 /* 
 * Current pattern
 * Component's data-current control
@@ -71,7 +68,12 @@ var setCurrentPrev = function(el, len){
 };
 
 
-/* Control data-current module */
+/* Control data-current module 
+ * @param [Element] cpnt 
+ * @param [String] direction, 'next' and 'prev'
+ * @param [Number] len, item's length
+ * @param [Number] time, auto play interval time
+ */
 var CurrentModule = function(cpnt, direction, len, time){
 	this.cpnt = cpnt;
 	this.direction = direction;
@@ -276,7 +278,7 @@ var validation = {
 	passConfirm : function( pass1, pass2, viewEl ) {
 		viewEl = viewEl ? viewEl : pass2.nextElementSibling;
 		if( pass2.value && pass1.value != pass2.value){
-			dataset.set(viewEl, dataVisible, 'true'); 
+			dataset.set(viewEl, 'visible', 'true'); 
 			// viewEl.setAttribute('data-visible', 'true'); 
 			dataset.repaint(viewEl);
 			viewEl.textContent = 'Password and confirm password must be equal.';
@@ -285,11 +287,11 @@ var validation = {
 	view : function( el, type, viewEl ){
 		viewEl = viewEl ? viewEl : el.nextElementSibling;
 		if( this[type]( el.value ) ){
-			dataset.set(viewEl, dataVisible, 'false'); 
-			// viewEl.setAttribute(dataVisible, 'false'); 
+			dataset.set(viewEl, 'visible', 'false'); 
+			// viewEl.setAttribute('visible', 'false'); 
 		} else {
-			dataset.set(viewEl, dataVisible, 'true'); 
-			// viewEl.setAttribute(dataVisible, 'true'); 
+			dataset.set(viewEl, 'visible', 'true'); 
+			// viewEl.setAttribute('visible', 'true'); 
 		}
 		dataset.repaint(viewEl);
 	}
@@ -302,8 +304,8 @@ var cpntModal = document.getElementById('modal'),
 	modalHideTarget;
 // Show
 var modalShow = function( el ){
-	dataset.set(cpntModal, dataVisible, 'true');
-	dataset.set(cpntDimmed, dataVisible, 'true');
+	dataset.set(cpntModal, 'visible', 'true');
+	dataset.set(cpntDimmed, 'visible', 'true');
 	modalHideTarget = el;
 	dataset.repaint(cpntModal);
 	dataset.repaint(cpntDimmed);
@@ -315,10 +317,10 @@ var modalShowAnimate = function( el ){
 	dataset.set(cpntModal, dataAnimation, 'true');
 	dataset.set(cpntDimmed, dataAnimation, 'true');
 	// CpntDimmed show
-	dataset.set(cpntDimmed, dataVisible, 'true');
+	dataset.set(cpntDimmed, 'visible', 'true');
 	// After cpntDimmed animatin end, cpntModal show
 	setTimeout(function(){	
-		dataset.set(cpntModal, dataVisible, 'true');
+		dataset.set(cpntModal, 'visible', 'true');
 	}, 150);
 	modalHideTarget = el;
 };
@@ -332,8 +334,8 @@ var modalMiddle = function(){
 // Hide
 var modalHide = function(){
 	var dataAnimation = 'animation';
-	dataset.set(cpntModal, dataVisible, 'false');
-	dataset.set(cpntDimmed, dataVisible, 'false');
+	dataset.set(cpntModal, 'visible', 'false');
+	dataset.set(cpntDimmed, 'visible', 'false');
 	modalHideTarget.focus();
 	modalHideTarget = undefined;
 	// If cpntModal has vertical align middle
