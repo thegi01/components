@@ -81,35 +81,35 @@
 		<!-- tabs-lst -->
 		<div class="tabs-lst">
 			<h4 class="tabs-item" data-idx="0">
-				<a href="#cpnt1Panel0" class="tabs-item__a" onfocus="cpnt1SetCurrent(0);" onclick="cpnt1SetCurrent(0); return false;">tab1</a>
+				<a href="#cpnt1Panel0" class="tabs-item__a" onfocus="cpnt1ShowPanel(0);" onclick="cpnt1ShowPanel(0); return false;">tab1</a>
 			</h4>
 			<div class="tabs-panel" id="cpnt1Panel0" data-idx="0">
 				Tab1 Panel <br>
 				<a href="#href">Test link</a> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
 			</div>
 			<h4 class="tabs-item" data-idx="1">
-				<a href="#cpnt1Panel1" class="tabs-item__a" onfocus="cpnt1SetCurrent(1);" onclick="cpnt1SetCurrent(1); return false;">tab2</a>
+				<a href="#cpnt1Panel1" class="tabs-item__a" onfocus="cpnt1ShowPanel(1);" onclick="cpnt1ShowPanel(1); return false;">tab2</a>
 			</h4>
 			<div class="tabs-panel" id="cpnt1Panel1" data-idx="1">
 				Tab2 Panel <br>
 				<a href="#href">Test link</a> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
 			</div>
 			<h4 class="tabs-item" data-idx="2">
-				<a href="#cpnt1Panel2" class="tabs-item__a" onfocus="cpnt1SetCurrent(2);" onclick="cpnt1SetCurrent(2); return false;">tab3</a>
+				<a href="#cpnt1Panel2" class="tabs-item__a" onfocus="cpnt1ShowPanel(2);" onclick="cpnt1ShowPanel(2); return false;">tab3</a>
 			</h4>
 			<div class="tabs-panel" id="cpnt1Panel2" data-idx="2">
 				Tab3 Panel <br>
 				<a href="#href">Test link</a> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
 			</div>
 			<h4 class="tabs-item" data-idx="3">
-				<a href="#cpnt1Panel3" class="tabs-item__a" onfocus="cpnt1SetCurrent(3);" onclick="cpnt1SetCurrent(3); return false;">tab4</a>
+				<a href="#cpnt1Panel3" class="tabs-item__a" onfocus="cpnt1ShowPanel(3);" onclick="cpnt1ShowPanel(3); return false;">tab4</a>
 			</h4>
 			<div class="tabs-panel" id="cpnt1Panel3" data-idx="3">
 				Tab4 Panel <br>
 				<a href="#href">Test link</a> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
 			</div>
 			<h4 class="tabs-item" data-idx="4">
-				<a href="#cpnt1Panel4" class="tabs-item__a" onfocus="cpnt1SetCurrent(4);" onclick="cpnt1SetCurrent(4); return false;">tab5</a>
+				<a href="#cpnt1Panel4" class="tabs-item__a" onfocus="cpnt1ShowPanel(4);" onclick="cpnt1ShowPanel(4); return false;">tab5</a>
 			</h4>
 			<div class="tabs-panel" id="defaultPanel4" data-idx="4">
 				Tab5 Panel <br>
@@ -136,13 +136,13 @@
 	
 
 	<h2 class="h2">Tabs2(Panels) </h2>
-	<div class="tabs" id="cpnt2" data-len="5" data-time="2000" data-control="pause" data-direction="next" data-current="0">
+	<div class="tabs" id="cpnt2" data-control="pause" data-current="0">
 		<ul class="tabs-lst">
-			<li class="tabs-item" data-idx="0"><a href="#cpnt2Panel0" class="tabs-item__a" onclick="cpnt2SetCurrent(0, this); return false;">tab1</a></li>
-			<li class="tabs-item" data-idx="1"><a href="#cpnt2Panel1" class="tabs-item__a" onclick="cpnt2SetCurrent(1, this); return false;">tab2</a></li>
-			<li class="tabs-item" data-idx="2"><a href="#cpnt2Panel2" class="tabs-item__a" onclick="cpnt2SetCurrent(2, this); return false;">tab3</a></li>
-			<li class="tabs-item" data-idx="3"><a href="#cpnt2Panel3" class="tabs-item__a" onclick="cpnt2SetCurrent(3, this); return false;">tab4</a></li>
-			<li class="tabs-item" data-idx="4"><a href="#cpnt2Panel4" class="tabs-item__a" onclick="cpnt2SetCurrent(4, this); return false;">tab5</a></li>
+			<li class="tabs-item" data-idx="0"><a href="#cpnt2Panel0" class="tabs-item__a" onclick="cpnts2ShowPanel(0, this); return false;">tab1</a></li>
+			<li class="tabs-item" data-idx="1"><a href="#cpnt2Panel1" class="tabs-item__a" onclick="cpnts2ShowPanel(1, this); return false;">tab2</a></li>
+			<li class="tabs-item" data-idx="2"><a href="#cpnt2Panel2" class="tabs-item__a" onclick="cpnts2ShowPanel(2, this); return false;">tab3</a></li>
+			<li class="tabs-item" data-idx="3"><a href="#cpnt2Panel3" class="tabs-item__a" onclick="cpnts2ShowPanel(3, this); return false;">tab4</a></li>
+			<li class="tabs-item" data-idx="4"><a href="#cpnt2Panel4" class="tabs-item__a" onclick="cpnts2ShowPanel(4, this); return false;">tab5</a></li>
 		</ul>
 		<div class="tabs-panels">
 			<div class="tabs-panel" id="cpnt2Panel0" tabindex="-1" data-idx="0">
@@ -186,13 +186,13 @@
 	</div>
 
 	<h2 class="h2">Tabs3 : not apply play and stop</h2>
-	<div class="tabs" id="cpnt3" data-len="5" data-time="2000" data-control="pause" data-direction="next" data-current="0">
+	<div class="tabs" id="cpnt3" data-current="0">
 		<ul class="tabs-lst">
-			<li class="tabs-item" data-idx="0"><a href="#cpnt3Panel0" class="tabs-item__a" onclick="cpnt3SetCurrent(0, this); return false;">tab1</a></li>
-			<li class="tabs-item" data-idx="1"><a href="#cpnt3Panel1" class="tabs-item__a" onclick="cpnt3SetCurrent(1, this); return false;">tab2</a></li>
-			<li class="tabs-item" data-idx="2"><a href="#cpnt3Panel2" class="tabs-item__a" onclick="cpnt3SetCurrent(2, this); return false;">tab3</a></li>
-			<li class="tabs-item" data-idx="3"><a href="#cpnt3Panel3" class="tabs-item__a" onclick="cpnt3SetCurrent(3, this); return false;">tab4</a></li>
-			<li class="tabs-item" data-idx="4"><a href="#cpnt3Panel4" class="tabs-item__a" onclick="cpnt3SetCurrent(4, this); return false;">tab5</a></li>
+			<li class="tabs-item" data-idx="0"><a href="#cpnt3Panel0" class="tabs-item__a" onclick="cpnt3ShowPanel(0, this); return false;">tab1</a></li>
+			<li class="tabs-item" data-idx="1"><a href="#cpnt3Panel1" class="tabs-item__a" onclick="cpnt3ShowPanel(1, this); return false;">tab2</a></li>
+			<li class="tabs-item" data-idx="2"><a href="#cpnt3Panel2" class="tabs-item__a" onclick="cpnt3ShowPanel(2, this); return false;">tab3</a></li>
+			<li class="tabs-item" data-idx="3"><a href="#cpnt3Panel3" class="tabs-item__a" onclick="cpnt3ShowPanel(3, this); return false;">tab4</a></li>
+			<li class="tabs-item" data-idx="4"><a href="#cpnt3Panel4" class="tabs-item__a" onclick="cpnt3ShowPanel(4, this); return false;">tab5</a></li>
 		</ul>
 		<div class="tabs-panels">
 			<div class="tabs-panel" id="cpnt3Panel0" tabindex="-1" data-idx="0">
@@ -230,13 +230,13 @@
 	</div>
 	
 	<h2 class="h2">Tabs4 : not apply play and stop</h2>
-	<div class="tabs" id="cpnt4" data-len="5" data-time="2000" data-control="pause" data-direction="next" data-current="0">
+	<div class="tabs" id="cpnt4" data-current="0">
 		<ul class="tabs-lst">
-			<li class="tabs-item" data-idx="0"><a href="#cpnt4Panel0" class="tabs-item__a" onclick="cpnt4SetCurrent(0, this); return false;">tab1</a></li>
-			<li class="tabs-item" data-idx="1"><a href="#cpnt4Panel1" class="tabs-item__a" onclick="cpnt4SetCurrent(1, this); return false;">tab2</a></li>
-			<li class="tabs-item" data-idx="2"><a href="#cpnt4Panel2" class="tabs-item__a" onclick="cpnt4SetCurrent(2, this); return false;">tab3</a></li>
-			<li class="tabs-item" data-idx="3"><a href="#cpnt4Panel3" class="tabs-item__a" onclick="cpnt4SetCurrent(3, this); return false;">tab4</a></li>
-			<li class="tabs-item" data-idx="4"><a href="#cpnt4Panel4" class="tabs-item__a" onclick="cpnt4SetCurrent(4, this); return false;">tab5</a></li>
+			<li class="tabs-item" data-idx="0"><a href="#cpnt4Panel0" class="tabs-item__a" onclick="cpnt4ShowPanel(0, this); return false;">tab1</a></li>
+			<li class="tabs-item" data-idx="1"><a href="#cpnt4Panel1" class="tabs-item__a" onclick="cpnt4ShowPanel(1, this); return false;">tab2</a></li>
+			<li class="tabs-item" data-idx="2"><a href="#cpnt4Panel2" class="tabs-item__a" onclick="cpnt4ShowPanel(2, this); return false;">tab3</a></li>
+			<li class="tabs-item" data-idx="3"><a href="#cpnt4Panel3" class="tabs-item__a" onclick="cpnt4ShowPanel(3, this); return false;">tab4</a></li>
+			<li class="tabs-item" data-idx="4"><a href="#cpnt4Panel4" class="tabs-item__a" onclick="cpnt4ShowPanel(4, this); return false;">tab5</a></li>
 		</ul>
 		<div class="tabs-panels">
 			<div class="tabs-panel" id="cpnt4Panel0" tabindex="-1" data-idx="0">
@@ -280,50 +280,50 @@
 <script>
 	
 	/* CurrentModule Instance : cpnt, direciton, len, time */
-	var cpnt1Current = new CurrentModule(
+	var cpnt1Tabs = new CurrentModule(
 		document.getElementById('cpnt1'),
 		'next', 
 		5, 
 		1000
 	);
-	var cpnt1SetCurrent = function(idx){
-		cpnt1Current.set(idx);
+	var cpnt1ShowPanel = function(idx){
+		cpnt1Tabs.set(idx);
 	};
 	document.getElementById('cpnt1BtnPrev').onclick = function(){
-		cpnt1Current.prev();
+		cpnt1Tabs.prev();
 	};
 	document.getElementById('cpnt1BtnNext').onclick = function(){
-		cpnt1Current.next();
+		cpnt1Tabs.next();
 	};
 	document.getElementById('cpnt1BtnPlay').onclick = function(){
-		cpnt1Current.play();
+		cpnt1Tabs.play();
 	};
 	document.getElementById('cpnt1BtnPause').onclick = function(){
-		cpnt1Current.pause();
+		cpnt1Tabs.pause();
 	};
 
 	/* CurrentModule Instance : cpnt, direciton, len, time */
-	var cpnt2Current = new CurrentModule(
+	var cpnt2Tabs = new CurrentModule(
 		document.getElementById('cpnt2'), 
 		'next', 
 		5, 
 		1000 
 	);
-	var cpnt2SetCurrent = function(idx, el){
-		cpnt2Current.set(idx);
+	var cpnts2ShowPanel = function(idx, el){
+		cpnt2Tabs.set(idx);
 		focusElByHref(el);
 	};
 	document.getElementById('cpnt2BtnPrev').onclick = function(){
-		cpnt2Current.prev();
+		cpnt2Tabs.prev();
 	};
 	document.getElementById('cpnt2BtnNext').onclick = function(){
-		cpnt2Current.next();
+		cpnt2Tabs.next();
 	};
 	document.getElementById('cpnt2BtnPlay').onclick = function(){
-		cpnt2Current.play();
+		cpnt2Tabs.play();
 	};
 	document.getElementById('cpnt2BtnPause').onclick = function(){
-		cpnt2Current.pause();
+		cpnt2Tabs.pause();
 	};
 
 
@@ -332,7 +332,7 @@
 	*/
 	cpnt3 = document.getElementById('cpnt3');
 	var cpnt3ItemLen = 5;
-	var cpnt3SetCurrent = function(idx, el){
+	var cpnt3ShowPanel = function(idx, el){
 		setCurrent(cpnt3, idx);
 		focusElByHref(el);
 	};
@@ -345,7 +345,7 @@
 
 	cpnt4 = document.getElementById('cpnt4');
 	var cpnt4ItemLen = 5;
-	var cpnt4SetCurrent = function(idx, el){
+	var cpnt4ShowPanel = function(idx, el){
 		setCurrent(cpnt4, idx);
 		focusElByHref(el);
 	};
