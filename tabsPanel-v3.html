@@ -139,7 +139,7 @@
 	
 
 	<h2 class="h2">Tabs(Panels) </h2>
-	<div class="tabs" id="cpnt2" data-len="5" data-time="2000" data-control="pause" data-direction="next" data-current="0">
+	<div class="tabs" id="cpnt2" data-control="pause" data-current="0">
 		<ul class="tabs-lst">
 			<li class="tabs-item" data-idx="0"><a href="#cpnt2Panel0" class="tabs-item__a" onclick="cpnt2ShowPanel(0, this); return false;">tab1</a></li>
 			<li class="tabs-item" data-idx="1"><a href="#cpnt2Panel1" class="tabs-item__a" onclick="cpnt2ShowPanel(1, this); return false;">tab2</a></li>
@@ -189,7 +189,7 @@
 	</div>
 
 	<h2 class="h2">Tabs3 : not apply play and stop</h2>
-	<div class="tabs" id="cpnt3" data-len="5" data-time="2000" data-control="pause" data-direction="next" data-current="0">
+	<div class="tabs" id="cpnt3" data-current="0">
 		<ul class="tabs-lst">
 			<li class="tabs-item" data-idx="0"><a href="#cpnt3Panel0" class="tabs-item__a" onclick="cpnt3SetCurrent(0, this); return false;">tab1</a></li>
 			<li class="tabs-item" data-idx="1"><a href="#cpnt3Panel1" class="tabs-item__a" onclick="cpnt3SetCurrent(1, this); return false;">tab2</a></li>
@@ -233,7 +233,7 @@
 	</div>
 	
 	<h2 class="h2">Tabs4 : not apply play and stop</h2>
-	<div class="tabs" id="cpnt4" data-len="5" data-time="2000" data-control="pause" data-direction="next" data-current="0">
+	<div class="tabs" id="cpnt4" data-current="0">
 		<ul class="tabs-lst">
 			<li class="tabs-item" data-idx="0"><a href="#cpnt4Panel0" class="tabs-item__a" onclick="cpnt4SetCurrent(0, this); return false;">tab1</a></li>
 			<li class="tabs-item" data-idx="1"><a href="#cpnt4Panel1" class="tabs-item__a" onclick="cpnt4SetCurrent(1, this); return false;">tab2</a></li>
@@ -282,8 +282,9 @@
 <script type="text/javascript" src="js/ui-base.js"></script>
 <script>
 
-	// Tabs and panels control multiple
-	var currentData = {
+	/* Tabs and panels control */
+	// Set tab data
+	var tabsData = {
 		cpnt1 : {
 			id : 'cpnt1',
 			direction : 'next',
@@ -309,6 +310,7 @@
 			}
 		}
 	};
+	// Tabs 생성자 함수
 	var Tabs = function(cpnt){
 		var self = this;
 		this.current = new CurrentModule(
@@ -329,22 +331,23 @@
 		document.getElementById(cpnt.btn.pause).onclick = function(){
 		 	self.current.pause();
 		};
-		/*for(var key in cpnt.btn){
-			document.getElementById(cpnt.btn[key]).onclick = function(){
-			 	self.current[key]();
-			};
-		}*/
+
 	};
 	Tabs.prototype.showPanel = function(idx, el){
 		this.current.set(idx);
 		if(el) focusElByHref(el);
 	};
-	for(var key in currentData){
-		currentData[key].tabsView = new Tabs(currentData[key]);				// instance 생성
-		window[ currentData[key].id +'ShowPanel'] = function(idx, el){		// tab click function
-			currentData[key].tabsView.showPanel.call( currentData[key].tabsView, idx, el);
-		};
+
+	// Instance of Tabs
+	for(var key in tabsData){
+		tabsData[key].tabsView = new Tabs(tabsData[key]);
 	}
+	var cpnt1ShowPanel = function(idx, el){
+		tabsData.cpnt1.tabsView.showPanel.call( tabsData.cpnt1.tabsView, idx, el );
+	};
+	var cpnt2ShowPanel = function(idx, el){
+		tabsData.cpnt2.tabsView.showPanel.call( tabsData.cpnt2.tabsView, idx, el );
+	};
 
 
 	/* Tabs > prev, next 
