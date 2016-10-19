@@ -223,8 +223,8 @@
 		</div>
 		<!-- tabs-direction -->
 		<div class="tabs-direction">
-			<button type="button" class="btn btn--default btn-xs tabs__btn-prev" onclick="cpnt3SetCurrentPrev()">prev</button>
-			<button type="button" class="btn btn--default btn-xs tabs__btn-next" onclick="cpnt3SetCurrentNext()">next</button>
+			<button type="button" class="btn btn--default btn-xs tabs__btn-prev" id="cpnt3BtnPrev">prev</button>
+			<button type="button" class="btn btn--default btn-xs tabs__btn-next" id="cpnt3BtnNext" >next</button>
 		</div>
 		<!-- // tabs-direction -->
 	</div>
@@ -267,8 +267,8 @@
 		</div>
 		<!-- tabs-direction -->
 		<div class="tabs-direction">
-			<button type="button" class="btn btn--default btn-xs tabs__btn-prev" onclick="cpnt4SetCurrentPrev()">prev</button>
-			<button type="button" class="btn btn--default btn-xs tabs__btn-next" onclick="cpnt4SetCurrentNext()">next</button>
+			<button type="button" class="btn btn--default btn-xs tabs__btn-prev" id="cpnt4BtnPrev">prev</button>
+			<button type="button" class="btn btn--default btn-xs tabs__btn-next" id="cpnt4BtnNext">next</button>
 		</div>
 		<!-- // tabs-direction -->
 	</div>
@@ -336,10 +336,10 @@
 		setCurrent(cpnt3, idx);
 		focusElByHref(el);
 	};
-	var cpnt3SetCurrentNext = function(){
+	document.getElementById('cpnt3BtnNext').onclick = function(){
 		setCurrentNext(cpnt3, cpnt3ItemLen);
 	};
-	var cpnt3SetCurrentPrev = function(){
+	document.getElementById('cpnt3BtnPrev').onclick = function(){
 		setCurrentPrev(cpnt3, cpnt3ItemLen);
 	};
 
@@ -349,10 +349,10 @@
 		setCurrent(cpnt4, idx);
 		focusElByHref(el);
 	};
-	var cpnt4SetCurrentNext = function(){
+	document.getElementById('cpnt4BtnNext').onclick = function(){
 		setCurrentNext(cpnt4, cpnt4ItemLen);
 	};
-	var cpnt4SetCurrentPrev = function(){
+	document.getElementById('cpnt4BtnPrev').onclick = function(){
 		setCurrentPrev(cpnt4, cpnt4ItemLen);
 	};
 
