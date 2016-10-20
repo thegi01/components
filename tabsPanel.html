@@ -279,83 +279,30 @@
 <script type="text/javascript" src="js/ui-base.js"></script>
 <script>
 
-
 	/* new CurrentModule : cpnt, direciton, len, time */
+	// Cpnt1 tabs
 	var cpnt1Tabs = new CurrentModule(
 		document.getElementById('cpnt1'),
 		'next', 
 		5, 
 		1000
 	);
-	var cpnt1ShowPanel = function(idx){
-		cpnt1Tabs.set(idx);
-	};
-	document.getElementById('cpnt1BtnPrev').onclick = function(){
-		cpnt1Tabs.prev();
-	};
-	document.getElementById('cpnt1BtnNext').onclick = function(){
-		cpnt1Tabs.next();
-	};
-	document.getElementById('cpnt1BtnPlay').onclick = function(){
-		cpnt1Tabs.play();
-	};
-	document.getElementById('cpnt1BtnPause').onclick = function(){
-		cpnt1Tabs.pause();
-	};
-
-	/* CurrentModule Instance : cpnt, direciton, len, time */
+	tabsWithPlay(cpnt1Tabs, 'cpnt1ShowPanel', 'cpnt1BtnNext', 'cpnt1BtnPrev', 'cpnt1BtnPlay', 'cpnt1BtnPause');
+	
+	// Cpnt2 tabs
 	var cpnt2Tabs = new CurrentModule(
 		document.getElementById('cpnt2'), 
 		'next', 
 		5, 
 		1000 
 	);
-	var cpnt2ShowPanel = function(idx, el){
-		cpnt2Tabs.set(idx);
-		focusElByHref(el);
-	};
-	document.getElementById('cpnt2BtnPrev').onclick = function(){
-		cpnt2Tabs.prev();
-	};
-	document.getElementById('cpnt2BtnNext').onclick = function(){
-		cpnt2Tabs.next();
-	};
-	document.getElementById('cpnt2BtnPlay').onclick = function(){
-		cpnt2Tabs.play();
-	};
-	document.getElementById('cpnt2BtnPause').onclick = function(){
-		cpnt2Tabs.pause();
-	};
+	tabsWithPlay(cpnt2Tabs, 'cpnt2ShowPanel', 'cpnt2BtnNext', 'cpnt2BtnPrev', 'cpnt2BtnPlay', 'cpnt2BtnPause');
+	
+	/* Cpnt3 and Cpnt4 tabs */
+	tabs(cpnt3, 'cpnt3ShowPanel', 'cpnt3BtnNext', 'cpnt3BtnPrev', 5);
+	tabs(cpnt4, 'cpnt4ShowPanel', 'cpnt4BtnNext', 'cpnt4BtnPrev', 5);
 
 
-	/* Tabs > prev, next 
-	 * not apply play and stop
-	*/
-	cpnt3 = document.getElementById('cpnt3');
-	var cpnt3ItemLen = 5;
-	var cpnt3ShowPanel = function(idx, el){
-		setCurrent(cpnt3, idx);
-		focusElByHref(el);
-	};
-	document.getElementById('cpnt3BtnNext').onclick = function(){
-		setCurrentNext(cpnt3, cpnt3ItemLen);
-	};
-	document.getElementById('cpnt3BtnPrev').onclick = function(){
-		setCurrentPrev(cpnt3, cpnt3ItemLen);
-	};
-
-	cpnt4 = document.getElementById('cpnt4');
-	var cpnt4ItemLen = 5;
-	var cpnt4ShowPanel = function(idx, el){
-		setCurrent(cpnt4, idx);
-		focusElByHref(el);
-	};
-	document.getElementById('cpnt4BtnNext').onclick = function(){
-		setCurrentNext(cpnt4, cpnt4ItemLen);
-	};
-	document.getElementById('cpnt4BtnPrev').onclick = function(){
-		setCurrentPrev(cpnt4, cpnt4ItemLen);
-	};
 
 
 /////////

@@ -113,6 +113,56 @@ CurrentModule.prototype = {
 	}
 };
 
+
+/* Tabs simple 
+ * prev and next only, not apply play and stop
+ */
+var tabs = function(cpnt, showpanel, btnNext, btnPrev, len){
+	window[showpanel] = function(idx, el){
+		setCurrent(cpnt, idx);
+		if(el) focusElByHref(el);
+	};
+	if(btnNext){
+		document.getElementById(btnNext).onclick = function(){
+			setCurrentNext(cpnt, len);
+		};
+	}
+	if(btnPrev){
+		document.getElementById(btnPrev).onclick = function(){
+			setCurrentPrev(cpnt, len);
+		};
+	}
+};	
+
+/* tab width play and stop */
+var tabsWithPlay = function(cpnt, showpanel, btnNext, btnPrev, btnPlay, btnPause){
+	window[showpanel] = function(idx, el){
+		cpnt.set(idx);
+		if(el) focusElByHref(el);
+	};
+	if(btnNext){
+		document.getElementById(btnNext).onclick = function(){
+			cpnt.next();
+		};
+	}
+	if(btnPrev){
+		document.getElementById(btnPrev).onclick = function(){
+			cpnt.prev();
+		};
+	}
+	if(btnPlay){
+		document.getElementById(btnPlay).onclick = function(){
+			cpnt.play();
+		};
+	}
+	if(btnPause){
+		document.getElementById(btnPause).onclick = function(){
+			cpnt.pause();
+		};
+	}
+};
+
+
 /* Accordion */
 var accordion = function( cpnt, idx, el ){
 	setCurrentToggle(cpnt, idx);
