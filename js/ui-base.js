@@ -134,7 +134,7 @@ var tabs = function(cpnt, showpanel, btnNext, btnPrev, len){
 	}
 };	
 
-/* tab width play and stop */
+/* Tab with play and stop */
 var tabsWithPlay = function(cpnt, showpanel, btnNext, btnPrev, btnPlay, btnPause){
 	window[showpanel] = function(idx, el){
 		cpnt.set(idx);
