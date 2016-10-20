@@ -134,8 +134,8 @@ var tabs = function(cpnt, showpanel, btnNext, btnPrev, len){
 	}
 };	
 
-/* Tab with play and stop */
-var tabsWithPlay = function(cpnt, showpanel, btnNext, btnPrev, btnPlay, btnPause, auto){
+/* Tabs with play and stop */
+var tabsModule = function(cpnt, showpanel, btnNext, btnPrev, btnPlay, btnPause, auto){
 	window[showpanel] = function(idx, el){
 		cpnt.set(idx);
 		if(el) focusElByHref(el);

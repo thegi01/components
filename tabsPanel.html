@@ -287,8 +287,8 @@
 		5, 
 		1000
 	);
-	tabsWithPlay(
-		cpnt1Tabs, 
+	tabsModule(
+		cpnt1Tabs, 	
 		'cpnt1ShowPanel', 
 		'cpnt1BtnNext', 
 		'cpnt1BtnPrev', 
@@ -296,7 +296,6 @@
 		'cpnt1BtnPause',
 		'auto'
 	);
-	
 
 	// Cpnt2 tabs
 	var cpnt2Tabs = new CurrentModule(
@@ -305,7 +304,7 @@
 		5, 
 		1000 
 	);
-	tabsWithPlay(
+	tabsModule(
 		cpnt2Tabs, 
 		'cpnt2ShowPanel', 
 		'cpnt2BtnNext', 
@@ -314,11 +313,22 @@
 		'cpnt2BtnPause'
 	);
 	
-
-
-	/* Cpnt3 and Cpnt4 tabs */
-	tabs(cpnt3, 'cpnt3ShowPanel', 'cpnt3BtnNext', 'cpnt3BtnPrev', 5);
-	tabs(cpnt4, 'cpnt4ShowPanel', 'cpnt4BtnNext', 'cpnt4BtnPrev', 5);
+	/* Cpnt3 tabs */
+	tabs(
+		cpnt3, 
+		'cpnt3ShowPanel', 
+		'cpnt3BtnNext', 
+		'cpnt3BtnPrev', 
+		5
+	);
+	/* Cpnt4 tabs */
+	tabs(
+		cpnt4, 
+		'cpnt4ShowPanel', 
+		'cpnt4BtnNext', 
+		'cpnt4BtnPrev', 
+		5
+	);
 
 
 
