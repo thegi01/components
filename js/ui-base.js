@@ -135,7 +135,7 @@ var tabs = function(cpnt, showpanel, btnNext, btnPrev, len){
 };	
 
 /* Tab with play and stop */
-var tabsWithPlay = function(cpnt, showpanel, btnNext, btnPrev, btnPlay, btnPause){
+var tabsWithPlay = function(cpnt, showpanel, btnNext, btnPrev, btnPlay, btnPause, auto){
 	window[showpanel] = function(idx, el){
 		cpnt.set(idx);
 		if(el) focusElByHref(el);
@@ -159,6 +159,9 @@ var tabsWithPlay = function(cpnt, showpanel, btnNext, btnPrev, btnPlay, btnPause
 		document.getElementById(btnPause).onclick = function(){
 			cpnt.pause();
 		};
+	}
+	if(auto){
+		cpnt.play();
 	}
 };
 
