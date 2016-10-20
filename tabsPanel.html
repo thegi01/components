@@ -279,7 +279,7 @@
 <script type="text/javascript" src="js/ui-base.js"></script>
 <script>
 
-	/* new CurrentModule : cpnt, direciton, len, time */
+	/* instance CurrentModule */
 	// Cpnt1 tabs
 	var cpnt1Tabs = new CurrentModule(
 		document.getElementById('cpnt1'),
@@ -287,6 +287,8 @@
 		5, 
 		1000
 	);
+	// Tabs with play and stop
+	var cpnt1ShowPanel;
 	tabsModule(
 		cpnt1Tabs, 	
 		'cpnt1ShowPanel', 
@@ -294,7 +296,7 @@
 		'cpnt1BtnPrev', 
 		'cpnt1BtnPlay', 
 		'cpnt1BtnPause',
-		'auto'
+		true
 	);
 
 	// Cpnt2 tabs
@@ -304,6 +306,8 @@
 		5, 
 		1000 
 	);
+	// Tabs with play and stop
+	var cpnt2ShowPanel;
 	tabsModule(
 		cpnt2Tabs, 
 		'cpnt2ShowPanel', 
@@ -313,7 +317,9 @@
 		'cpnt2BtnPause'
 	);
 	
-	/* Cpnt3 tabs */
+	/* Tabs simple */
+	// Cpnt3 tabs
+	var cpnt3ShowPanel;
 	tabs(
 		cpnt3, 
 		'cpnt3ShowPanel', 
@@ -321,7 +327,9 @@
 		'cpnt3BtnPrev', 
 		5
 	);
-	/* Cpnt4 tabs */
+
+	// Cpnt4 tabs 
+	var cpnt4ShowPanel;
 	tabs(
 		cpnt4, 
 		'cpnt4ShowPanel', 

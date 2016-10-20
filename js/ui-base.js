@@ -114,8 +114,13 @@ CurrentModule.prototype = {
 };
 
 
-/* Tabs simple 
- * prev and next only, not apply play and stop
+/* Tabs simple, prev and next only, not apply play and stop
+ * Use SetCurrent function
+ * @param [String] cpnt, tab contents id 
+ * @param [String] showpanel, tab item click function name
+ * @param [String] btnNext, button next id 
+ * @param [String] btnPrev, button prev id 
+ * @param [Number] len, tab item's length
  */
 var tabs = function(cpnt, showpanel, btnNext, btnPrev, len){
 	window[showpanel] = function(idx, el){
@@ -134,8 +139,17 @@ var tabs = function(cpnt, showpanel, btnNext, btnPrev, len){
 	}
 };	
 
-/* Tabs with play and stop */
-var tabsModule = function(cpnt, showpanel, btnNext, btnPrev, btnPlay, btnPause, auto){
+/* Tabs with play and stop 
+ * use CurrentModule
+ * @param [String] cpnt, tab contents id 
+ * @param [String] showpanel, tab item click function name
+ * @param [String] btnNext, button next id 
+ * @param [String] btnPrev, button prev id 
+ * @param [String] btnPlay, button play id 
+ * @param [String] btnPause, button pause id 
+ * @param [Boolean] autoPlay, tabs auto play
+ */
+var tabsModule = function(cpnt, showpanel, btnNext, btnPrev, btnPlay, btnPause, autoPlay){
 	window[showpanel] = function(idx, el){
 		cpnt.set(idx);
 		if(el) focusElByHref(el);
@@ -160,7 +174,7 @@ var tabsModule = function(cpnt, showpanel, btnNext, btnPrev, btnPlay, btnPause, 
 			cpnt.pause();
 		};
 	}
-	if(auto){
+	if(autoPlay){
 		cpnt.play();
 	}
 };
