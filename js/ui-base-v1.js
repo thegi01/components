@@ -11,7 +11,7 @@ var dataset = {
 	del : function ( el, attr ) {
 		delete el.dataset[attr];
 	},
-	repaint : function(){
+	polyfill : function(){
 		return;
 	}
 };
@@ -27,8 +27,8 @@ if(!hasDataset) {
 	dataset.del = function( el, attr ) {
 		el.removeAttribute('data-' + attr);
 	};
-	dataset.repaint = function( el ){
-		el.className = el.className;
+	dataset.polyfill = function( el ){
+		return;
 	};
 }
 
@@ -44,7 +44,7 @@ var dataVisible = 'visible';
 var setCurrent = function(id, idx){
 	var el = document.getElementById(id);
 	dataset.set( el, 'current', idx);
-	dataset.repaint(el);
+	dataset.polyfill(el);
 };
 
 // Toggle data-current 
@@ -55,7 +55,7 @@ var setCurrentToggle = function(id, idx){
 	} else {
 		dataset.set( el, 'current', idx);
 	}
-	dataset.repaint(el);
+	dataset.polyfill(el);
 };
 // Next
 var setCurrentNext = function(id){
@@ -188,7 +188,7 @@ var radio = {
 			el.form[el.name][this.current].setAttribute(attribute, 'false');
 		}
 		el.setAttribute(attribute, 'true');
-		dataset.repaint(el);
+		dataset.polyfill(el);
 		this.current = idx;
 	}
 };
@@ -210,14 +210,14 @@ var dropdown = {
 			};
 		}
 		// toggleAttirbute(data, el);
-		dataset.repaint(el);
+		dataset.polyfill(el);
 		this.toggler = el;
 	},
 	outFocus : function( evt ){
 		var target = evt.target || evt.srcElement; // Support IE6-8
 		if( dataset.get(target, 'toggle') != 'dropdown' && this.toggler) {
 			dataset.set(this.toggler, 'expanded', 'false');
-			dataset.repaint(this.toggler);
+			dataset.polyfill(this.toggler);
 			this.toggler = undefined;
 		}
 	},
@@ -281,7 +281,7 @@ var validation = {
 		if( pass2.value && pass1.value != pass2.value){
 			dataset.set(viewEl, dataVisible, 'true'); 
 			// viewEl.setAttribute('data-visible', 'true'); 
-			dataset.repaint(viewEl);
+			dataset.polyfill(viewEl);
 			viewEl.textContent = 'Password and confirm password must be equal.';
 		}
 	},
@@ -294,7 +294,7 @@ var validation = {
 			dataset.set(viewEl, dataVisible, 'true'); 
 			// viewEl.setAttribute(dataVisible, 'true'); 
 		}
-		dataset.repaint(viewEl);
+		dataset.polyfill(viewEl);
 	}
 };
 
@@ -308,8 +308,8 @@ var modalShow = function( el ){
 	dataset.set(cpntModal, dataVisible, 'true');
 	dataset.set(cpntDimmed, dataVisible, 'true');
 	modalHideTarget = el;
-	dataset.repaint(cpntModal);
-	dataset.repaint(cpntDimmed);
+	dataset.polyfill(cpntModal);
+	dataset.polyfill(cpntDimmed);
 };
 // Show with animation
 var modalShowAnimate = function( el ){
@@ -352,8 +352,8 @@ var modalHide = function(){
 			dataset.set(cpntDimmed, dataAnimation, 'false');
 		}, 450);
 	}
-	dataset.repaint(cpntModal);
-	dataset.repaint(cpntDimmed);
+	dataset.polyfill(cpntModal);
+	dataset.polyfill(cpntDimmed);
 };
 
 /* Wrap */

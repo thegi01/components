@@ -55,7 +55,7 @@
 	- aria
 
 ### Tabs and panels
-- [Url] : https://thegi01.github.io/components/tabsPanel.html
+- [Url] : https://thegi01.github.io/components/tabsPanels.html
 - Tabs and panels control
 - To do
 	- 하위 버전 확인
