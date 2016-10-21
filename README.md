@@ -92,16 +92,66 @@
 - reset 확인
 - 접근성 타겟 적용(참조 hmp wireframe)
 - ico 정리
-- id 등 속성 값 문자 규칙(camel case, -) ? --> camel case로 결정
-- Navs, Modal, Breadcrumbs, Pagination, Pager, Labels, Bades, Thumbnails, Alerts, List, 말풍선
-- 기능 관련 클래스 네이밍 ---> is로 변경
-- css 검사 후 오류 수정
+- Navs, Breadcrumbs, Pagination, Pager, Labels, Bades, Thumbnails, Alerts, List, 말풍선
+
+
+
+## 생각 정리
+
+### Coding Rule
+- 한 개의 언어로 표기한다. 
+	- 가능한 영어로 이해하기 쉽도록 작성하는 습관을 들인다.
+- reset.css
+	- reset의 중복 적용을 하지 않도록 필요한 코드만 작성한다.
+
+### 작업 후 검사
+- html, css validation
+- css lint : http://csslint.net
+- http://jshint.com
+- 접근성 검사
+
+
+### Naming
+- BEM
+- id, 속성 : camel case
+- ie 하위버전에서 --로 시작하는 클래스명은 인식하지 못한다.
+- 네이밍이 너무 길면 안되므로 누구나 인지할 수 있는 정도면 가능한 간소화 한다.
+	- 예 : btn--theme-default --> btn--default
+- 네이밍의 간소화. 누구나 인지할 수 있는 3자리~5자리로 사용
+	- 예외 : 레이아웃은 full naming 사용
+	- 예 : title --> tit, components --> cpnt
+- 기능 관련 class 네이밍 규칙 : bem과 is중 어느 것이 효율적인가?
+	- bem으로 하면 네이밍이 길어진다.
+	- 기능 관련 클래스 네이밍이 통일 되면 관리가 편하다.
+	- 따라서 is가 더 효율적이란 생각
+	- is-> data 속성으로 사용
+- 단순하게 구현할 수 있는 js를 공통화하기 위해 복잡하게 구현할 필요가 있을까?
+	- 유지 보수 차원에서 공통화가 많으면 수정한 후 확인하는데 시간이 너무 오래 걸린다.
+	- 코드를 단순하게 작성하면 신규 구현 후 후임자가 코드를 수정하기가 쉽다.
+	- 예 : Wire Frame.html의 lnb, today, themeCast의 경우..조금씩 다 다르다.
+	- 공통화 기준을 3줄 이상이 동일한 코드인 경우로 기준을 잡자.
+- form 속성 순서 
+	- input : type, class, name, id, pattern, placeholder, disabled, data, aria
+	- selelct : class, name, id
+	- label : class, for	
+
+### form
+- label, input 동시 사용 시 
+	- label의 for와 input의 id의 스펠링이 틀릴 경우 name 셀렉트가 되지 않는다.
+
+### sass
+-  조건문에서 ''를 인식한다. 'true'와 true는 다르다.
+
+
+### Responsive
+- 반응형은 최신 브라우져에서만 적용(모바일, 테블릿은 최신 브라우저만 사용)
+	- ie8에서는 반응형을 적용할 필요가 없다. pc만 구현.
 
 
 *** 
 
 
-### 의문 사항
+## 의문 사항
 - input type button과 button의 차이는?
 - tab key의 focus시 스타일
 - 마크업내의 onclick과 script 내의 onclick의 차이
@@ -109,35 +159,10 @@
 
 
 ### 추가 내용 정리
-- ie 하위버전에서 --로 시작하는 클래스명은 인식하지 못한다.
-- sass 조건문에서 ''를 인식한다. 'true'와 true는 다르다.
-- 하위 버전(ie8)에서 data 속성 변경시 css가 적용되지 않을 경우 클래스명을 다시 지정하면 된다.
-- 반응형은 최신 브라우져에서만 적용(모바일, 테블릿은 최신 브라우저만 사용)
-	- ie8에서는 반응형을 적용할 필요가 없다. pc만 구현.
-- 단순하게 구현할 수 있는 js를 공통화하기 위해 복잡하게 구현할 필요가 있을까?
-	- 유지 보수 차원에서 공통화가 많으면 수정한 후 확인하는데 시간이 너무 오래 걸린다.
-	- 코드를 단순하게 작성하면 신규 구현 후 후임자가 코드를 수정하기가 쉽다.
-	- 예 : Wire Frame.html의 lnb, today, themeCast의 경우..조금씩 다 다르다.
-	- 공통화 기준을 3줄 이상이 동일한 코드인 경우로 기준을 잡자.
-- 네이밍이 너무 길면 안되므로 누구나 인지할 수 있는 정도면 가능한 간소화 한다.
-	- 예 : btn--theme-default --> btn--default
-- 네이밍의 간소화. 누구나 인지할 수 있는 3자리~5자리로 사용
-	- 예외 : 레이아웃은 full naming 사용
-	- 예 : title --> tit, components --> cpnt
-- 한 개의 언어로 표기한다. 
-	- 가능한 영어로 이해하기 쉽도록 작성하는 습관을 들인다.
-- reset 
-	- reset의 중복 적용을 하지 않도록 필요한 코드만 작성한다.
-- form 속성 순서 
-	- input : type, class, name, id, pattern, placeholder, disabled, data, aria
-	- selelct : class, name, id
-	- label : class, for
-- label, input 동시 사용 시 
-	- label의 for와 input의 id의 스펠링이 틀릴 경우 name 셀렉트가 되지 않는다.
-- 기능 관련 class 네이밍 규칙 : bem과 is중 어느 것이 효율적인가?
-	- bem으로 하면 네이밍이 길어진다.
-	- 기능 관련 클래스 네이밍이 통일 되면 관리가 편하다.
-	- 따라서 is가 더 효율적이란 생각
+
+
+
+
 	
 
 
