@@ -1,8 +1,6 @@
 # Components
 
-## 코딩 기준 : BEM 
-	block-name__elem-name--mod-name
-
+## Components list
 
 ### Grid
 - [Url] : https://thegi01.github.io/components/grid.html
@@ -87,7 +85,8 @@
 	- 반응형 > font 확인
 	- aria
 
-*** 
+
+
 
 ## To do
 - reset 확인
@@ -95,11 +94,14 @@
 - ico 정리
 - Navs, Breadcrumbs, Pagination, Pager, Labels, Bades, Thumbnails, Alerts, List, 말풍선
 
-*** 
+
+
 
 ## 생각 정리
 
 ### Coding Rule
+- Base : BEM 
+	- block-name__elem-name--mod-name
 - 한 개의 언어로 표기한다. 
 	- 가능한 영어로 이해하기 쉽도록 작성하는 습관을 들인다.
 - reset.css
@@ -149,7 +151,7 @@
 	- ie8에서는 반응형을 적용할 필요가 없다. pc만 구현.
 
 
-*** 
+
 
 
 ## 의문 사항
@@ -159,15 +161,11 @@
 - github으로 확인시 scss 코드가 보이지 않는다.
 
 
-### 추가 내용 정리
-
-
-
 
 	
 
 
-### 참조
+## 참조
 - [BEM] : https://en.bem.info/libs/bem-components/v3.0.0/desktop/button/
 - [BEM] : http://getbem.com
 - Grid : http://materializecss.com/grid.html
