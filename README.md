@@ -87,14 +87,15 @@
 	- 반응형 > font 확인
 	- aria
 
+*** 
 
-### To do
+## To do
 - reset 확인
 - 접근성 타겟 적용(참조 hmp wireframe)
 - ico 정리
 - Navs, Breadcrumbs, Pagination, Pager, Labels, Bades, Thumbnails, Alerts, List, 말풍선
 
-
+*** 
 
 ## 생각 정리
 
