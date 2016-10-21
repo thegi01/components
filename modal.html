@@ -33,45 +33,49 @@
 
 	<a href="#modal" class="btn btn--default btn--m" onclick="modalShowAnimate(this); modalMiddle();">Animation, Middle</a>
 
-	<div class="modal" id="modal" tabindex="-1" data-visible="false"> 
-		<div class="modal-dialog">
-			<div class="modal-content">
-				<div class="modal-header">
-					<button type="button" class="btn btn-clse" onclick="modalHide()"> <span class="blind">Close</span> x </button>
-					<h3 class="modal-title">Modal Title</h3>
-				</div>
-				<div class="modal-body">
-					<h4>Title in a modal</h4>
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-						Ut commodo at felis vitae facilisis. 
-						Cras volutpat fringilla nunc vitae hendrerit. 
-						Donec porta id augue quis sodales. 
-						<a href="#href" class="btn btn--default btn--xs">button</a>
-						Sed sit amet metus ornare, mattis sem at, dignissim arcu. Cras rhoncus ornare mollis. 
-						Ut tempor augue mi, sed luctus neque luctus non. 
-						Vestibulum mollis tristique blandit.</p>
-					<hr>
-					<h4>Title in a modal another</h4>
-					<p>
-						Sed posuere, est at eleifend suscipit, erat ante pretium turpis, eget semper ex risus nec dolor. 
-						Etiam pellentesque nulla neque, ut ullamcorper purus facilisis at. 
-						Nam imperdiet arcu felis, eu placerat risus dapibus sit amet. 
-						Praesent at justo at lectus scelerisque mollis. 
-						Mauris molestie mattis tellus ut facilisis. 
-						Sed vel ligula ornare, posuere velit ornare, consectetur erat.</p>
-				</div>
-				<div class="modal-footer">
-					<button type="button" class="btn btn--default btn--m" onclick="modalHide()">Close</button>
-				</div>
-			</div>
-		</div>
-	</div>
+	
 
 
 </div>	
 <!-- // wrap -->
+<!-- Modal -->
+<div class="modal" id="modal" tabindex="-1" data-visible="false"> 
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="btn btn-clse" onclick="modalHide()"> <span class="blind">Close</span> x </button>
+				<h3 class="modal-title">Modal Title</h3>
+			</div>
+			<div class="modal-body">
+				<h4>Title in a modal</h4>
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+					Ut commodo at felis vitae facilisis. 
+					Cras volutpat fringilla nunc vitae hendrerit. 
+					Donec porta id augue quis sodales. 
+					<a href="#href" class="btn btn--default btn--xs">button</a>
+					Sed sit amet metus ornare, mattis sem at, dignissim arcu. Cras rhoncus ornare mollis. 
+					Ut tempor augue mi, sed luctus neque luctus non. 
+					Vestibulum mollis tristique blandit.</p>
+				<hr>
+				<h4>Title in a modal another</h4>
+				<p>
+					Sed posuere, est at eleifend suscipit, erat ante pretium turpis, eget semper ex risus nec dolor. 
+					Etiam pellentesque nulla neque, ut ullamcorper purus facilisis at. 
+					Nam imperdiet arcu felis, eu placerat risus dapibus sit amet. 
+					Praesent at justo at lectus scelerisque mollis. 
+					Mauris molestie mattis tellus ut facilisis. 
+					Sed vel ligula ornare, posuere velit ornare, consectetur erat.</p>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn--default btn--m" onclick="modalHide()">Close</button>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- // Modal -->
+<!-- Dimmed -->
 <div class="dimmed" id="dimmed" data-visible="false"></div>
-
+<!-- // Dimmed -->
 
 <!-- javacript -->
 <script type="text/javascript" src="js/ui-base.js"></script>
