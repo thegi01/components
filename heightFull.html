@@ -82,10 +82,21 @@
 			background-color: #f8f8f8;
 		}
 		.footer-inner {
-			margin:0 auto; padding-top:20px; 
+			margin:0 auto; 
 		}
-		h1, h2 {
+		h1 {
 			margin: 0;
+		}
+		.wrap a,
+		.footer a {
+			display: block;
+			padding : 10px;
+			text-decoration: none;
+			color: green;
+		}
+		.wrap a:hover,
+		.footer a:hover {
+			text-decoration: underline;
 		}
     </style>
 </head>
@@ -97,21 +108,18 @@
 <div class="wrap clearfix">
 	<div class="wrap-inner">
 		<div class="header clearfix">
-			<h1>header</h1>
-			<p><a href="#">Test</a></p>
+			<h1><a href="#">header</a></h1>
 		</div>
 		<div class="container clearfix">
-			<div id="contents" class="contents" tabindex="0">
-				<h2>contents</h2>
-				<p><a href="#">Test</a></p>
+			<div class="contents" id="contents" tabindex="0">
+				<p><a href="#">contents</a></p>
 			</div>
 		</div>
 	</div>
 </div>
 <div class="footer">
 	<div class="footer-inner">
-		<h2>footer</h2>
-		<p><a href="#">Test</a></p>
+		<p><a href="#">footer</a></p>
 	</div>
 </div>
 
