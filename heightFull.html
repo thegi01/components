@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>Height full layout</title>
+	<meta name="viewport" content="width=device-width, user-scalable=no">
+	<meta name="robots" content="noindex,nofollow">
+	<meta name="googlebot" content="noindex,nofollow">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<!--[if (gt IE 8)|!(IE)]><!-->
+        <link rel="stylesheet" href="css/ex-base.css">
+    <!--<![endif]-->
+    <!--[if lte IE 8]>
+        <link rel="stylesheet" href="css/ex-base-ie.css">
+    <![endif]-->
+    <style>
+    	html {
+    		height: 100%;
+    	}
+    	body {
+    		height: 100%; 
+    	}
+    	.skipMenu {
+    		position: absolute; top:0; left: 0; z-index:1000;
+    		width:100%;
+    	}
+    	.skipMenu__a {
+    		display: block;
+    		overflow: hidden;
+    		width:1px; height:1px;
+    		margin-bottom: -1px;
+    		text-align: center;
+    		white-space: nowrap;
+    	}
+    	.skipMenu__a:active,
+    	.skipMenu__a:focus {
+    		width:auto; height:auto;
+    		padding:2px 6px; 
+    		background:#000; 
+    		font-weight:bold; font-size:12px; color:#fff; 
+    		line-height:26px; text-decoration:none; 
+    		cursor:pointer;
+    	}
+    	.clearfix:after {
+    		content:'';
+    		display:block; 
+    		clear:both; 
+    	}
+		.wrap {
+			position:relative; z-index:500; 
+			min-height:100%; 
+			margin:0 auto -100px auto;
+		}
+		.wrap-inner {
+			overflow:hidden; 
+			padding-bottom:100px;
+		}
+		.header {
+			position:relative; z-index:500; 
+			height: 100px; 
+			border-bottom: solid 1px #eee;
+			background-color: #f8f8f8;
+			/*margin-bottom: 20px;*/
+		}
+		.container {
+			/*height: 1000px;*/
+			padding-top: 20px; padding-bottom: 50px;
+			/*background-color: gray;*/
+			zoom:1; /* ie7 */
+		}
+		.contents {
+			float:left; 
+			width:660px; 
+			margin-left:20px;
+			}
+			.contents:focus {
+				outline: none;
+			}
+		.footer {
+			clear:both; 
+			width:100%; height:100px; 
+			border-top:1px solid #ddd;
+			background-color: #f8f8f8;
+		}
+		.footer-inner {
+			/* position:relative; */ 
+			width:990px; 
+			margin:0 auto; padding-top:29px; 
+			color:#a5b2b8;
+		}
+		h1 {
+			margin: 0;
+		}
+		
+
+    </style>
+</head>
+<body>
+<div class="skipMenu">
+	<a href="#contents" class="skipMenu__a">본문 바로가기</a>
+</div>
+
+<div class="wrap clearfix">
+	<div class="wrap-inner">
+		<div class="header">
+			<h1>header</h1>
+			<p><a href="#">Test</a></p>
+		</div>
+		<div class="container clearfix">
+			<div id="contents" class="contents" tabindex="0">
+				<h2>contents</h2>
+				<p><a href="#">Test</a></p>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="footer">
+	<div class="footer-inner">
+		<h2>footer</h2>
+		<p><a href="#">Test</a></p>
+	</div>
+</div>
+
+<!-- javacript -->
+<script type="text/javascript" src="js/ui-base.js"></script>
+<!-- //javacript -->
+
+</body>
+</html>
