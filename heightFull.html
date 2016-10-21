@@ -20,84 +20,90 @@
     	body {
     		height: 100%; 
     	}
-    	.skipMenu {
-    		position: absolute; top:0; left: 0; z-index:1000;
-    		width:100%;
-    	}
-    	.skipMenu__a {
-    		display: block;
-    		overflow: hidden;
-    		width:1px; height:1px;
-    		margin-bottom: -1px;
-    		text-align: center;
-    		white-space: nowrap;
-    	}
-    	.skipMenu__a:active,
-    	.skipMenu__a:focus {
-    		width:auto; height:auto;
-    		padding:2px 6px; 
-    		background:#000; 
-    		font-weight:bold; font-size:12px; color:#fff; 
-    		line-height:26px; text-decoration:none; 
-    		cursor:pointer;
+    	h1 {
+    		margin: 0;
     	}
     	.clearfix:after {
     		content:'';
     		display:block; 
     		clear:both; 
     	}
+    	.skipMenu {
+    		position: absolute; top:0; left: 0; z-index:1000;
+    		width:100%;
+	    	}
+	    	.skipMenu__a {
+	    		display: block;
+	    		overflow: hidden;
+	    		width:1px; height:1px;
+	    		margin-bottom: -1px;
+	    		text-align: center;
+	    		white-space: nowrap;
+	    	}
+	    	.skipMenu__a:active,
+	    	.skipMenu__a:focus {
+	    		width:auto; height:auto;
+	    		padding:2px 6px; 
+	    		background:#000; 
+	    		font-weight:bold; font-size:12px; color:#fff; 
+	    		line-height:26px; text-decoration:none; 
+	    		cursor:pointer;
+	    	}
 		.wrap {
-			position:relative; z-index:500; 
+			/*position:relative; z-index:500; */
 			min-height:100%; 
 			margin:0 auto -100px auto;
-		}
-		.wrap-inner {
-			overflow:hidden; 
-			padding-bottom:100px;
-		}
+			}
+			.wrap-inner {
+				/*overflow:hidden; */
+				padding-bottom:100px;
+			}
 		.header {
-			position:relative; z-index:500; 
+			/*position:relative; z-index:500; */
 			height: 100px; 
 			border-bottom: solid 1px #eee;
 			background-color: #f8f8f8;
 			/*margin-bottom: 20px;*/
-		}
+			}
 		.container {
-			/*height: 1000px;*/
 			padding-top: 20px; padding-bottom: 50px;
-			/*background-color: green;*/
-			zoom:1; /* ie7 */
+			/*zoom:1;  ie7 */
 		}
 		.contents {
-			float:left; 
-			width:660px;/* height: 1000px;*/
-			margin-left:20px;
 			}
 			.contents:focus {
 				outline: none;
 			}
 		.footer {
-			width:100%; height:100px; 
+			height:100px; 
 			border-top:1px solid #ddd;
 			background-color: #f8f8f8;
-		}
-		.footer-inner {
-			margin:0 auto; 
-		}
-		h1 {
-			margin: 0;
-		}
+			}
 		.wrap a,
 		.footer a {
 			display: block;
 			padding : 10px;
 			text-decoration: none;
 			color: green;
+			}
+			.wrap a:hover,
+			.footer a:hover {
+				text-decoration: underline;
+			}
+
+
+		.layout-block  {
+			max-width : 500px;
+			margin:0 auto; 
+			border: dashed 1px #888;
 		}
-		.wrap a:hover,
-		.footer a:hover {
-			text-decoration: underline;
+
+		/*.container {
+			background-color: #999;
 		}
+		.contents {
+			height: 1000px;
+		}*/
     </style>
 </head>
 <body>
@@ -108,17 +114,19 @@
 <div class="wrap clearfix">
 	<div class="wrap-inner">
 		<div class="header clearfix">
-			<h1><a href="#">header</a></h1>
+			<div class="layout-block ">
+				<h1><a href="#">header</a></h1>
+			</div>
 		</div>
 		<div class="container clearfix">
-			<div class="contents" id="contents" tabindex="0">
+			<div class="contents layout-block " id="contents" tabindex="0">
 				<p><a href="#">contents</a></p>
 			</div>
 		</div>
 	</div>
 </div>
 <div class="footer">
-	<div class="footer-inner">
+	<div class="layout-block ">
 		<p><a href="#">footer</a></p>
 	</div>
 </div>
