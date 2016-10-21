@@ -136,11 +136,11 @@
 	- selelct : class, name, id
 	- label : class, for	
 
-### form
+### Form
 - label, input 동시 사용 시 
 	- label의 for와 input의 id의 스펠링이 틀릴 경우 name 셀렉트가 되지 않는다.
 
-### sass
+### Sass
 -  조건문에서 ''를 인식한다. 'true'와 true는 다르다.
 
 
