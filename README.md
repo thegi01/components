@@ -184,6 +184,4 @@
 - Nav
 	- tabs aria : http://accessibility.athena-ict.com/aria/examples/tabpanel2.shtml
 - polyfills : https://github.com/Alhadis/Snippets/tree/master/js/polyfills
-
-### Sass 함수 참조
-- https://web-design-weekly.com/2013/05/12/handy-sass-mixins/
+- Sass 함수 참조 : https://web-design-weekly.com/2013/05/12/handy-sass-mixins/
