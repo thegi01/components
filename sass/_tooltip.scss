@@ -14,8 +14,7 @@
         border-style: solid;
         border-color: transparent;
     }
-    &[data-place="left"],
-    &--left {
+    &[data-place="left"]{
         .tooltip-txt {
             margin-right: rem(5);
         }
@@ -26,8 +25,7 @@
             border-left-color: #000;
         }
     }
-    &[data-place="right"],
-    &--right {
+    &[data-place="right"]{
         .tooltip-txt {
             margin-left: rem(5);
         }
@@ -38,8 +36,7 @@
             border-right-color: #000;
         }
     }
-    &[data-place="top"],
-    &--top {
+    &[data-place="top"]{
         .tooltip-txt {
             margin-bottom: rem(5);
         }
@@ -50,8 +47,7 @@
             border-top-color: #000;
         }
     }
-    &[data-place="bottom"],
-    &--bottom {
+    &[data-place="bottom"]{
         .tooltip-txt {
             margin-top: rem(5);
         }

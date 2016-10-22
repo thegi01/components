@@ -26,22 +26,22 @@
 	<h1 class="h1">Tooltip</h1>
 	
 	<div class="ex-view">
-		<button class="btn btn--default btn--m" data-tooltip="Tooltip on the left" onmouseover="tooltip.show(this, 'left');" onmouseout="tooltip.hide();">
+		<button class="btn btn--default btn--m" data-tooltip="Tooltip on the left" onfocus="tooltip.show(this, 'left');" onblur="tooltip.hide();" onmouseover="tooltip.show(this, 'left');" onmouseout="tooltip.hide();">
 			Tooltip on the left
 		</button>
 	</div>
 	<div class="ex-view">
-		<button class="btn btn--default btn--m" data-tooltip="Tooltip on the right" onmouseover="tooltip.show(this, 'right');" onmouseout="tooltip.hide();">
+		<button class="btn btn--default btn--m" data-tooltip="Tooltip on the right" onfocus="tooltip.show(this, 'right');" onblur="tooltip.hide();" onmouseover="tooltip.show(this, 'right');" onmouseout="tooltip.hide();">
 			Tooltip on the right
 		</button>
 	</div>
 	<div class="ex-view">
-		<button class="btn btn--default btn--m" data-tooltip="Tooltip on the top" onmouseover="tooltip.show(this, 'top');" onmouseout="tooltip.hide();">
+		<button class="btn btn--default btn--m" data-tooltip="Tooltip on the top" onfocus="tooltip.show(this, 'top');" onblur="tooltip.hide();" onmouseover="tooltip.show(this, 'top');" onmouseout="tooltip.hide();">
 			Tooltip on the top
 		</button>
 	</div>
 	<div class="ex-view">
-		<button class="btn btn--default btn--m" data-tooltip="Tooltip on the bottom" onmouseover="tooltip.show(this, 'bottom');" onmouseout="tooltip.hide();">
+		<button class="btn btn--default btn--m" data-tooltip="Tooltip on the bottom" onfocus="tooltip.show(this, 'bottom');" onblur="tooltip.hide();" onmouseover="tooltip.show(this, 'bottom');" onmouseout="tooltip.hide();">
 			Tooltip on the bottom
 		</button>
 	</div>
@@ -53,90 +53,10 @@
 	</div>
 	<!-- // Tooltip -->
 
-
-	<!-- Tooltip markup -->
-	<!-- <div class="ex-view">
-		<div class="tooltip tooltip--left"> 
-			<div class="tooltip-txt">Tooltip on the left</div>
-			<div class="tooltip-ico"></div>
-		</div>
-	</div>
-	<div class="ex-view">
-		<div class="tooltip tooltip--right"> 
-			<div class="tooltip-txt">Tooltip on the right</div>
-			<div class="tooltip-ico"></div>
-		</div>
-	</div>
-	<div class="ex-view">
-		<div class="tooltip tooltip--top"> 
-			<div class="tooltip-txt">Tooltip on the top</div>
-			<div class="tooltip-ico"></div>
-		</div>
-	</div>
-	<div class="ex-view">
-		<div class="tooltip tooltip--bottom"> 
-			<div class="tooltip-txt">Tooltip on the bottom</div>
-			<div class="tooltip-ico"></div>
-		</div>
-	</div> -->
-	<!-- // Tooltip view -->
 </div>		
 
 <!-- javacript -->
 <script type="text/javascript" src="js/ui-base.js"></script>
-<script>
-
-	var tooltip = {
-		cpnt : document.getElementById('tooltip'),
-		placed : undefined,
-		show : function(el, place){
-			var cpnt = this.cpnt;
-			if( dataset.get(cpnt, 'visible')=='true' && this.placed === place ) {
-				dataset.set(cpnt, 'visible', 'false');
-			} else {
-				cpnt.childNodes[1].innerText = dataset.get(el, 'tooltip') ; // temp
-
-				dataset.set(cpnt, 'place', place);
-				if( dataset.get(cpnt, 'visible') == 'false')
-					dataset.set(cpnt, 'visible', 'true');
-
-				switch(place){
-					case 'left' : 
-						cpnt.style.top = (el.offsetTop + el.offsetHeight/2 - cpnt.offsetHeight/2)  + 'px';
-						cpnt.style.left = (el.offsetLeft - cpnt.offsetWidth - 5) + 'px';
-						break;
-					case 'right' :
-						cpnt.style.top = (el.offsetTop + el.offsetHeight/2 - cpnt.offsetHeight/2)  + 'px';
-						cpnt.style.left = (el.offsetLeft + el.offsetWidth + 5) + 'px';
-						break;
-					case 'top' :
-						cpnt.style.top = (el.offsetTop - cpnt.offsetHeight - 5)  + 'px';
-						cpnt.style.left = el.offsetLeft + el.offsetWidth/2 - cpnt.offsetWidth/2 + 'px';
-						break;
-					case 'bottom' :
-						cpnt.style.top = (el.offsetTop + el.offsetHeight + 5)  + 'px';
-						cpnt.style.left = el.offsetLeft + el.offsetWidth/2 - cpnt.offsetWidth/2 + 'px';
-						break;
-				}
-			}
-			this.placed = place;
-		},
-		hide : function(){
-			dataset.set( this.cpnt, 'visible', 'false');
-		}
-	}
-	/*window.onclick = function(evt){
-		if( dataset.get(document.getElementById('tooltip'), 'visible') == 'false' )
-			return;
-		var target = evt.target || evt.srcElement;
-		if( !target.onclick || target.onclick.toString().indexOf('tooltip') < 0 ){
-			dataset.set(document.getElementById('tooltip'), 'visible', 'false');
-		}
-	};
-*/
-	// resize시 재실행?
-	
-</script>
 <!-- // javacript -->
 </body>
 </html>
