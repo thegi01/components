@@ -253,7 +253,8 @@ var tooltip = {
 			dataset.set(cpnt, 'visible', 'false');
 		} else {
 			cpnt.childNodes[1].innerText = dataset.get(el, 'tooltip') ; // Get text on data-tooltip
-			dataset.set(cpnt, 'place', place);
+			if(this.placed != place) 
+				dataset.set(cpnt, 'place', place);
 			if( dataset.get(cpnt, 'visible') == 'false')
 				dataset.set(cpnt, 'visible', 'true');
 			switch(place){
@@ -267,18 +268,18 @@ var tooltip = {
 					break;
 				case 'top' :
 					cpnt.style.top = (el.offsetTop - cpnt.offsetHeight - 5)  + 'px';
-					cpnt.style.left = el.offsetLeft + el.offsetWidth/2 - cpnt.offsetWidth/2 + 'px';
+					cpnt.style.left = (el.offsetLeft + el.offsetWidth/2 - cpnt.offsetWidth/2) + 'px';
 					break;
 				case 'bottom' :
 					cpnt.style.top = (el.offsetTop + el.offsetHeight + 5)  + 'px';
-					cpnt.style.left = el.offsetLeft + el.offsetWidth/2 - cpnt.offsetWidth/2 + 'px';
+					cpnt.style.left = (el.offsetLeft + el.offsetWidth/2 - cpnt.offsetWidth/2) + 'px';
 					break;
 			}
 		}
 		this.placed = place;
 	},
 	hide : function(){
-		dataset.set( this.cpnt, 'visible', 'false');
+		dataset.set( this.cpnt, 'visible', 'false' );
 	}
 };
 
