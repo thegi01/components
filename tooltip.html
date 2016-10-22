@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>Tooltip</title>
+	<meta name="viewport" content="width=device-width, user-scalable=no">
+	<meta name="robots" content="noindex,nofollow">
+	<meta name="googlebot" content="noindex,nofollow">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<!--[if (gt IE 8)|!(IE)]><!-->
+        <link rel="stylesheet" href="css/ex-base.css">
+    <!--<![endif]-->
+    <!--[if lte IE 8]>
+        <link rel="stylesheet" href="css/ex-base-ie.css">
+    <![endif]-->
+    <style>
+    	.ex-view {
+    		margin-top: 20px;
+    		text-align: center;
+    	}
+    </style>
+</head>
+<body>
+
+<div class="wrap ex">
+	<h1 class="h1">Tooltip</h1>
+	
+	<div class="ex-view">
+		<button class="btn btn--default btn--m" data-tooltip="Tooltip on the left" onmouseover="tooltip.show(this, 'left');" onmouseout="tooltip.hide();">
+			Tooltip on the left
+		</button>
+	</div>
+	<div class="ex-view">
+		<button class="btn btn--default btn--m" data-tooltip="Tooltip on the right" onmouseover="tooltip.show(this, 'right');" onmouseout="tooltip.hide();">
+			Tooltip on the right
+		</button>
+	</div>
+	<div class="ex-view">
+		<button class="btn btn--default btn--m" data-tooltip="Tooltip on the top" onmouseover="tooltip.show(this, 'top');" onmouseout="tooltip.hide();">
+			Tooltip on the top
+		</button>
+	</div>
+	<div class="ex-view">
+		<button class="btn btn--default btn--m" data-tooltip="Tooltip on the bottom" onmouseover="tooltip.show(this, 'bottom');" onmouseout="tooltip.hide();">
+			Tooltip on the bottom
+		</button>
+	</div>
+	
+	<!-- Tooltip -->
+	<div id="tooltip" class="tooltip" data-visible="false">
+		<div class="tooltip-txt">Tooltip text</div>
+		<div class="tooltip-ico"></div>
+	</div>
+	<!-- // Tooltip -->
+
+
+	<!-- Tooltip markup -->
+	<!-- <div class="ex-view">
+		<div class="tooltip tooltip--left"> 
+			<div class="tooltip-txt">Tooltip on the left</div>
+			<div class="tooltip-ico"></div>
+		</div>
+	</div>
+	<div class="ex-view">
+		<div class="tooltip tooltip--right"> 
+			<div class="tooltip-txt">Tooltip on the right</div>
+			<div class="tooltip-ico"></div>
+		</div>
+	</div>
+	<div class="ex-view">
+		<div class="tooltip tooltip--top"> 
+			<div class="tooltip-txt">Tooltip on the top</div>
+			<div class="tooltip-ico"></div>
+		</div>
+	</div>
+	<div class="ex-view">
+		<div class="tooltip tooltip--bottom"> 
+			<div class="tooltip-txt">Tooltip on the bottom</div>
+			<div class="tooltip-ico"></div>
+		</div>
+	</div> -->
+	<!-- // Tooltip view -->
+</div>		
+
+<!-- javacript -->
+<script type="text/javascript" src="js/ui-base.js"></script>
+<script>
+
+	var tooltip = {
+		cpnt : document.getElementById('tooltip'),
+		placed : undefined,
+		show : function(el, place){
+			var cpnt = this.cpnt;
+			if( dataset.get(cpnt, 'visible')=='true' && this.placed === place ) {
+				dataset.set(cpnt, 'visible', 'false');
+			} else {
+				cpnt.childNodes[1].innerText = dataset.get(el, 'tooltip') ; // temp
+
+				dataset.set(cpnt, 'place', place);
+				if( dataset.get(cpnt, 'visible') == 'false')
+					dataset.set(cpnt, 'visible', 'true');
+
+				switch(place){
+					case 'left' : 
+						cpnt.style.top = (el.offsetTop + el.offsetHeight/2 - cpnt.offsetHeight/2)  + 'px';
+						cpnt.style.left = (el.offsetLeft - cpnt.offsetWidth - 5) + 'px';
+						break;
+					case 'right' :
+						cpnt.style.top = (el.offsetTop + el.offsetHeight/2 - cpnt.offsetHeight/2)  + 'px';
+						cpnt.style.left = (el.offsetLeft + el.offsetWidth + 5) + 'px';
+						break;
+					case 'top' :
+						cpnt.style.top = (el.offsetTop - cpnt.offsetHeight - 5)  + 'px';
+						cpnt.style.left = el.offsetLeft + el.offsetWidth/2 - cpnt.offsetWidth/2 + 'px';
+						break;
+					case 'bottom' :
+						cpnt.style.top = (el.offsetTop + el.offsetHeight + 5)  + 'px';
+						cpnt.style.left = el.offsetLeft + el.offsetWidth/2 - cpnt.offsetWidth/2 + 'px';
+						break;
+				}
+			}
+			this.placed = place;
+		},
+		hide : function(){
+			dataset.set( this.cpnt, 'visible', 'false');
+		}
+	}
+	/*window.onclick = function(evt){
+		if( dataset.get(document.getElementById('tooltip'), 'visible') == 'false' )
+			return;
+		var target = evt.target || evt.srcElement;
+		if( !target.onclick || target.onclick.toString().indexOf('tooltip') < 0 ){
+			dataset.set(document.getElementById('tooltip'), 'visible', 'false');
+		}
+	};
+*/
+	// resize시 재실행?
+	
+</script>
+<!-- // javacript -->
+</body>
+</html>

@@ -486,6 +486,20 @@ input[data-role="button"]:checked + .btn { border-color: green; color: green; }
 .tabs--logical .tabs-item { margin-top: 0; font-weight: normal; }
 .tabs--logical .tabs-panel { position: absolute; top: 45px; right: 0; left: 0; }
 
+/* tooltip */
+.tooltip { position: absolute; display: inline-block; }
+.tooltip-txt { padding: 0.1875rem 0.5rem; -webkit-border-radius: 0.25rem; -moz-border-radius: 0.25rem; border-radius: 0.25rem; background-clip: padding-box; background-color: #000; font-size: 0.75rem; color: #fff; text-align: center; }
+.tooltip-ico { position: absolute; width: 0; height: 0; border-style: solid; border-color: transparent; }
+.tooltip[data-place="left"] .tooltip-txt, .tooltip--left .tooltip-txt { margin-right: 0.3125rem; }
+.tooltip[data-place="left"] .tooltip-ico, .tooltip--left .tooltip-ico { top: 50%; right: 0; margin-top: -0.3125rem; border-width: 0.3125rem 0 0.3125rem 0.3125rem; border-left-color: #000; }
+.tooltip[data-place="right"] .tooltip-txt, .tooltip--right .tooltip-txt { margin-left: 0.3125rem; }
+.tooltip[data-place="right"] .tooltip-ico, .tooltip--right .tooltip-ico { top: 50%; left: 0; margin-top: -0.3125rem; border-width: 0.3125rem 0.3125rem 0.3125rem 0; border-right-color: #000; }
+.tooltip[data-place="top"] .tooltip-txt, .tooltip--top .tooltip-txt { margin-bottom: 0.3125rem; }
+.tooltip[data-place="top"] .tooltip-ico, .tooltip--top .tooltip-ico { bottom: 0; left: 50%; margin-left: -0.3125rem; border-width: 0.3125rem 0.3125rem 0; border-top-color: #000; }
+.tooltip[data-place="bottom"] .tooltip-txt, .tooltip--bottom .tooltip-txt { margin-top: 0.3125rem; }
+.tooltip[data-place="bottom"] .tooltip-ico, .tooltip--bottom .tooltip-ico { top: 0; left: 50%; margin-left: -0.3125rem; border-width: 0 0.3125rem 0.3125rem; border-bottom-color: #000; }
+.tooltip[data-visible="false"] { visibility: hidden; }
+
 /* accordion */
 .accordion { clear: both; }
 .accordion-item { overflow: hidden; margin-bottom: 0.3125rem; border: 1px solid #ddd; -webkit-border-radius: 0.25rem; -moz-border-radius: 0.25rem; border-radius: 0.25rem; background-clip: padding-box; }

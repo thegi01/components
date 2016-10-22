@@ -1,0 +1,68 @@
+/* tooltip */
+.tooltip {
+    position: absolute;
+    display: inline-block;
+    &-txt {
+        padding:rem(3) rem(8);
+        @include border-radius(rem(4));
+        background-color: #000;
+        font-size:rem(12); color:#fff; text-align:center;
+    }
+    &-ico {
+        position: absolute; 
+        width: 0; height: 0;
+        border-style: solid;
+        border-color: transparent;
+    }
+    &[data-place="left"],
+    &--left {
+        .tooltip-txt {
+            margin-right: rem(5);
+        }
+        .tooltip-ico {
+            top:50%; right:0;
+            margin-top: rem(-5);
+            border-width: rem(5) 0 rem(5) rem(5);
+            border-left-color: #000;
+        }
+    }
+    &[data-place="right"],
+    &--right {
+        .tooltip-txt {
+            margin-left: rem(5);
+        }
+        .tooltip-ico {
+            top:50%; left:0;
+            margin-top: rem(-5);
+            border-width: rem(5) rem(5) rem(5) 0;
+            border-right-color: #000;
+        }
+    }
+    &[data-place="top"],
+    &--top {
+        .tooltip-txt {
+            margin-bottom: rem(5);
+        }
+        .tooltip-ico {
+            bottom:0; left:50%;
+            margin-left: rem(-5);
+            border-width: rem(5) rem(5) 0;
+            border-top-color: #000;
+        }
+    }
+    &[data-place="bottom"],
+    &--bottom {
+        .tooltip-txt {
+            margin-top: rem(5);
+        }
+        .tooltip-ico {
+            top:0; left:50%;
+            margin-left: rem(-5);
+            border-width: 0 rem(5) rem(5);
+            border-bottom-color: #000;
+        }
+    }
+    &[data-visible="false"]{
+        visibility: hidden;
+    }
+}
