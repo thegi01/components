@@ -2,7 +2,7 @@
 <html lang="ko">
 <head>
 	<meta charset="UTF-8">
-	<title>Tabs and Panel</title>
+	<title>Tabs and Panels</title>
 	<meta name="viewport" content="width=device-width, user-scalable=no">
 	<meta name="robots" content="noindex,nofollow">
 	<meta name="googlebot" content="noindex,nofollow">
@@ -34,6 +34,9 @@
 		.tabs--logical .tabs-direction {
 			position: absolute; bottom: 0px;
 		}
+		.tabs-direction {
+			margin-top: 10px;
+		}
 		.tabs-direction__prev {
 
 		}
@@ -60,13 +63,8 @@
 			margin-top: 10px;
 			color: #888;
 		}
-
-		#cpnt2 .tabs-direction,
-		#cpnt3 .tabs-direction,
-		#cpnt4 .tabs-direction {
-			margin-top: 10px;
-		}
-		#cpnt2 .tabs-control {
+		
+		#cpnt4 .tabs-control {
 			float: right; margin-top: -20px;
 		}
     </style>
@@ -74,69 +72,55 @@
 <body>
 
 <div class="wrap ex">
-	<h1 class="h1">Component's control</h1>
-
-	<h2 class="h2">Tabs1(Logical) Control</h2>
-	<div class="tabs tabs--logical" id="cpnt1" data-control="pause" data-current="0">
-		<!-- tabs-lst -->
-		<div class="tabs-lst">
-			<h4 class="tabs-item" data-idx="0">
-				<a href="#cpnt1Panel0" class="tabs-item__a" onfocus="cpnt1ShowPanel(0);" onclick="cpnt1ShowPanel(0); return false;">tab1</a>
-			</h4>
-			<div class="tabs-panel" id="cpnt1Panel0" data-idx="0">
+	<h1 class="h1">Tabs control</h1>
+	
+	<h2 class="h2">Set Current apply</h2>
+	<h3 class="h3">Tabs1 : not apply play and stop</h3>
+	<div class="tabs" id="cpnt1" data-current="0">
+		<ul class="tabs-lst">
+			<li class="tabs-item" data-idx="0"><a href="#cpnt1Panel0" class="tabs-item__a" onclick="cpnt1ShowPanel(0, this); return false;">tab1</a></li>
+			<li class="tabs-item" data-idx="1"><a href="#cpnt1Panel1" class="tabs-item__a" onclick="cpnt1ShowPanel(1, this); return false;">tab2</a></li>
+			<li class="tabs-item" data-idx="2"><a href="#cpnt1Panel2" class="tabs-item__a" onclick="cpnt1ShowPanel(2, this); return false;">tab3</a></li>
+			<li class="tabs-item" data-idx="3"><a href="#cpnt1Panel3" class="tabs-item__a" onclick="cpnt1ShowPanel(3, this); return false;">tab4</a></li>
+			<li class="tabs-item" data-idx="4"><a href="#cpnt1Panel4" class="tabs-item__a" onclick="cpnt1ShowPanel(4, this); return false;">tab5</a></li>
+		</ul>
+		<div class="tabs-panels">
+			<div class="tabs-panel" id="cpnt1Panel0" tabindex="-1" data-idx="0">
+				<h4 class="blind">tab1 contents</h4>
 				Tab1 Panel <br>
 				<a href="#href">Test link</a> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
 			</div>
-			<h4 class="tabs-item" data-idx="1">
-				<a href="#cpnt1Panel1" class="tabs-item__a" onfocus="cpnt1ShowPanel(1);" onclick="cpnt1ShowPanel(1); return false;">tab2</a>
-			</h4>
-			<div class="tabs-panel" id="cpnt1Panel1" data-idx="1">
+			<div class="tabs-panel" id="cpnt1Panel1" tabindex="-1" data-idx="1">
+				<h4 class="blind">tab2 contents</h4>
 				Tab2 Panel <br>
 				<a href="#href">Test link</a> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
 			</div>
-			<h4 class="tabs-item" data-idx="2">
-				<a href="#cpnt1Panel2" class="tabs-item__a" onfocus="cpnt1ShowPanel(2);" onclick="cpnt1ShowPanel(2); return false;">tab3</a>
-			</h4>
-			<div class="tabs-panel" id="cpnt1Panel2" data-idx="2">
+			<div class="tabs-panel" id="cpnt1Panel2" tabindex="-1" data-idx="2">
+				<h4 class="blind">tab3 contents</h4>
 				Tab3 Panel <br>
 				<a href="#href">Test link</a> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
 			</div>
-			<h4 class="tabs-item" data-idx="3">
-				<a href="#cpnt1Panel3" class="tabs-item__a" onfocus="cpnt1ShowPanel(3);" onclick="cpnt1ShowPanel(3); return false;">tab4</a>
-			</h4>
-			<div class="tabs-panel" id="cpnt1Panel3" data-idx="3">
+			<div class="tabs-panel" id="cpnt1Panel3" tabindex="-1" data-idx="3">
+				<h4 class="blind">tab4 contents</h4>
 				Tab4 Panel <br>
 				<a href="#href">Test link</a> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
 			</div>
-			<h4 class="tabs-item" data-idx="4">
-				<a href="#cpnt1Panel4" class="tabs-item__a" onfocus="cpnt1ShowPanel(4);" onclick="cpnt1ShowPanel(4); return false;">tab5</a>
-			</h4>
-			<div class="tabs-panel" id="defaultPanel4" data-idx="4">
+			<div class="tabs-panel" id="cpnt1Panel4" tabindex="-1" data-idx="4">
+				<h4 class="blind">tab5 contents</h4>
 				Tab5 Panel <br>
 				<a href="#href">Test link</a> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
 			</div>
 		</div>
-		<!-- // tabs-lst -->
 		<!-- tabs-direction -->
 		<div class="tabs-direction">
 			<button type="button" class="btn btn--default btn-xs tabs__btn-prev" id="cpnt1BtnPrev">prev</button>
-			<button type="button" class="btn btn--default btn-xs tabs__btn-next" id="cpnt1BtnNext">next</button>
+			<button type="button" class="btn btn--default btn-xs tabs__btn-next" id="cpnt1BtnNext" >next</button>
 		</div>
 		<!-- // tabs-direction -->
-		<!-- tabs-control -->
-		<div class="tabs-control">
-			<button type="button" class="btn btn--default btn-xs tabs__btn-play" id="cpnt1BtnPlay">Play</button>
-			<button type="button" class="btn btn--default btn-xs tabs__btn-pause" id="cpnt1BtnPause">Pause</button>
-		</div>
-		<!-- // tabs-control -->
-	</div>
-	<div class="ex__txt">
-		Fixed height : tabs, tabs-panel
 	</div>
 	
-
-	<h2 class="h2">Tabs2(Panels) </h2>
-	<div class="tabs" id="cpnt2" data-control="pause" data-current="0">
+	<h3 class="h3">Tabs2 : not apply play and stop</h3>
+	<div class="tabs" id="cpnt2" data-current="0">
 		<ul class="tabs-lst">
 			<li class="tabs-item" data-idx="0"><a href="#cpnt2Panel0" class="tabs-item__a" onclick="cpnt2ShowPanel(0, this); return false;">tab1</a></li>
 			<li class="tabs-item" data-idx="1"><a href="#cpnt2Panel1" class="tabs-item__a" onclick="cpnt2ShowPanel(1, this); return false;">tab2</a></li>
@@ -177,60 +161,69 @@
 			<button type="button" class="btn btn--default btn-xs tabs__btn-next" id="cpnt2BtnNext">next</button>
 		</div>
 		<!-- // tabs-direction -->
-		<!-- tabs-control -->
-		<div class="tabs-control">
-			<button type="button" class="btn btn--default btn-xs tabs__btn-play" id="cpnt2BtnPlay">Play</button>
-			<button type="button" class="btn btn--default btn-xs tabs__btn-pause" id="cpnt2BtnPause">Pause</button>
-		</div>
-		<!-- // tabs-control -->
 	</div>
 
-	<h2 class="h2">Tabs3 : not apply play and stop</h2>
-	<div class="tabs" id="cpnt3" data-current="0">
-		<ul class="tabs-lst">
-			<li class="tabs-item" data-idx="0"><a href="#cpnt3Panel0" class="tabs-item__a" onclick="cpnt3ShowPanel(0, this); return false;">tab1</a></li>
-			<li class="tabs-item" data-idx="1"><a href="#cpnt3Panel1" class="tabs-item__a" onclick="cpnt3ShowPanel(1, this); return false;">tab2</a></li>
-			<li class="tabs-item" data-idx="2"><a href="#cpnt3Panel2" class="tabs-item__a" onclick="cpnt3ShowPanel(2, this); return false;">tab3</a></li>
-			<li class="tabs-item" data-idx="3"><a href="#cpnt3Panel3" class="tabs-item__a" onclick="cpnt3ShowPanel(3, this); return false;">tab4</a></li>
-			<li class="tabs-item" data-idx="4"><a href="#cpnt3Panel4" class="tabs-item__a" onclick="cpnt3ShowPanel(4, this); return false;">tab5</a></li>
-		</ul>
-		<div class="tabs-panels">
-			<div class="tabs-panel" id="cpnt3Panel0" tabindex="-1" data-idx="0">
-				<h4 class="blind">tab1 contents</h4>
+	<h2 class="h2">TabsModule apply</h2>
+	<h3 class="h3">Tabs3(Logical) Control</h3>
+	<div class="tabs tabs--logical" id="cpnt3" data-control="pause" data-current="0">
+		<!-- tabs-lst -->
+		<div class="tabs-lst">
+			<h4 class="tabs-item" data-idx="0">
+				<a href="#cpnt3Panel0" class="tabs-item__a" onfocus="cpnt3ShowPanel(0);" onclick="cpnt3ShowPanel(0); return false;">tab1</a>
+			</h4>
+			<div class="tabs-panel" id="cpnt3Panel0" data-idx="0">
 				Tab1 Panel <br>
 				<a href="#href">Test link</a> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
 			</div>
-			<div class="tabs-panel" id="cpnt3Panel1" tabindex="-1" data-idx="1">
-				<h4 class="blind">tab2 contents</h4>
+			<h4 class="tabs-item" data-idx="1">
+				<a href="#cpnt3Panel1" class="tabs-item__a" onfocus="cpnt3ShowPanel(1);" onclick="cpnt3ShowPanel(1); return false;">tab2</a>
+			</h4>
+			<div class="tabs-panel" id="cpnt3Panel1" data-idx="1">
 				Tab2 Panel <br>
 				<a href="#href">Test link</a> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
 			</div>
-			<div class="tabs-panel" id="cpnt3Panel2" tabindex="-1" data-idx="2">
-				<h4 class="blind">tab3 contents</h4>
+			<h4 class="tabs-item" data-idx="2">
+				<a href="#cpnt3Panel2" class="tabs-item__a" onfocus="cpnt3ShowPanel(2);" onclick="cpnt3ShowPanel(2); return false;">tab3</a>
+			</h4>
+			<div class="tabs-panel" id="cpnt3Panel2" data-idx="2">
 				Tab3 Panel <br>
 				<a href="#href">Test link</a> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
 			</div>
-			<div class="tabs-panel" id="cpnt3Panel3" tabindex="-1" data-idx="3">
-				<h4 class="blind">tab4 contents</h4>
+			<h4 class="tabs-item" data-idx="3">
+				<a href="#cpnt3Panel3" class="tabs-item__a" onfocus="cpnt3ShowPanel(3);" onclick="cpnt3ShowPanel(3); return false;">tab4</a>
+			</h4>
+			<div class="tabs-panel" id="cpnt3Panel3" data-idx="3">
 				Tab4 Panel <br>
 				<a href="#href">Test link</a> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
 			</div>
-			<div class="tabs-panel" id="cpnt3Panel4" tabindex="-1" data-idx="4">
-				<h4 class="blind">tab5 contents</h4>
+			<h4 class="tabs-item" data-idx="4">
+				<a href="#cpnt3Panel4" class="tabs-item__a" onfocus="cpnt3ShowPanel(4);" onclick="cpnt3ShowPanel(4); return false;">tab5</a>
+			</h4>
+			<div class="tabs-panel" id="defaultPanel4" data-idx="4">
 				Tab5 Panel <br>
 				<a href="#href">Test link</a> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
 			</div>
 		</div>
+		<!-- // tabs-lst -->
 		<!-- tabs-direction -->
 		<div class="tabs-direction">
 			<button type="button" class="btn btn--default btn-xs tabs__btn-prev" id="cpnt3BtnPrev">prev</button>
-			<button type="button" class="btn btn--default btn-xs tabs__btn-next" id="cpnt3BtnNext" >next</button>
+			<button type="button" class="btn btn--default btn-xs tabs__btn-next" id="cpnt3BtnNext">next</button>
 		</div>
 		<!-- // tabs-direction -->
+		<!-- tabs-control -->
+		<div class="tabs-control">
+			<button type="button" class="btn btn--default btn-xs tabs__btn-play" id="cpnt3BtnPlay">Play</button>
+			<button type="button" class="btn btn--default btn-xs tabs__btn-pause" id="cpnt3BtnPause">Pause</button>
+		</div>
+		<!-- // tabs-control -->
 	</div>
-	
-	<h2 class="h2">Tabs4 : not apply play and stop</h2>
-	<div class="tabs" id="cpnt4" data-current="0">
+	<div class="ex__txt">
+		Fixed height : tabs, tabs-panel
+	</div>
+
+	<h3 class="h3">Tabs4(Panels) </h3>
+	<div class="tabs" id="cpnt4" data-control="pause" data-current="0">
 		<ul class="tabs-lst">
 			<li class="tabs-item" data-idx="0"><a href="#cpnt4Panel0" class="tabs-item__a" onclick="cpnt4ShowPanel(0, this); return false;">tab1</a></li>
 			<li class="tabs-item" data-idx="1"><a href="#cpnt4Panel1" class="tabs-item__a" onclick="cpnt4ShowPanel(1, this); return false;">tab2</a></li>
@@ -271,74 +264,79 @@
 			<button type="button" class="btn btn--default btn-xs tabs__btn-next" id="cpnt4BtnNext">next</button>
 		</div>
 		<!-- // tabs-direction -->
+		<!-- tabs-control -->
+		<div class="tabs-control">
+			<button type="button" class="btn btn--default btn-xs tabs__btn-play" id="cpnt4BtnPlay">Play</button>
+			<button type="button" class="btn btn--default btn-xs tabs__btn-pause" id="cpnt4BtnPause">Pause</button>
+		</div>
+		<!-- // tabs-control -->
 	</div>
-
 </div>		
 
 <!-- javacript -->
 <script type="text/javascript" src="js/ui-base.js"></script>
 <script>
+	/* Tabs simple */
+	// Cpnt1 tabs
+	var cpnt1ShowPanel;
+	tabs(
+		cpnt1, 
+		'cpnt1ShowPanel', 
+		'cpnt1BtnNext', 
+		'cpnt1BtnPrev', 
+		5
+	);
+
+	// Cpnt2 tabs 
+	var cpnt2ShowPanel;
+	tabs(
+		cpnt2, 
+		'cpnt2ShowPanel', 
+		'cpnt2BtnNext', 
+		'cpnt2BtnPrev', 
+		5
+	);
+
+
+
 
 	/* instance CurrentModule */
-	// Cpnt1 tabs
-	var cpnt1Tabs = new CurrentModule(
-		document.getElementById('cpnt1'),
+	// Cpnt3 tabs
+	var cpnt3Tabs = new CurrentModule(
+		document.getElementById('cpnt3'),
 		'next', 
 		5, 
 		1000
 	);
 	// Tabs with play and stop
-	var cpnt1ShowPanel;
+	var cpnt3ShowPanel;
 	tabsModule(
-		cpnt1Tabs, 	
-		'cpnt1ShowPanel', 
-		'cpnt1BtnNext', 
-		'cpnt1BtnPrev', 
-		'cpnt1BtnPlay', 
-		'cpnt1BtnPause',
-		true
+		cpnt3Tabs, 	
+		'cpnt3ShowPanel', 
+		'cpnt3BtnNext', 
+		'cpnt3BtnPrev', 
+		'cpnt3BtnPlay', 
+		'cpnt3BtnPause',
+		false
 	);
 
-	// Cpnt2 tabs
-	var cpnt2Tabs = new CurrentModule(
-		document.getElementById('cpnt2'), 
+	// Cpnt4 tabs
+	var cpnt4Tabs = new CurrentModule(
+		document.getElementById('cpnt4'), 
 		'next', 
 		5, 
 		1000 
 	);
 	// Tabs with play and stop
-	var cpnt2ShowPanel;
-	tabsModule(
-		cpnt2Tabs, 
-		'cpnt2ShowPanel', 
-		'cpnt2BtnNext', 
-		'cpnt2BtnPrev', 
-		'cpnt2BtnPlay', 
-		'cpnt2BtnPause'
-	);
-	
-	/* Tabs simple */
-	// Cpnt3 tabs
-	var cpnt3ShowPanel;
-	tabs(
-		cpnt3, 
-		'cpnt3ShowPanel', 
-		'cpnt3BtnNext', 
-		'cpnt3BtnPrev', 
-		5
-	);
-
-	// Cpnt4 tabs 
 	var cpnt4ShowPanel;
-	tabs(
-		cpnt4, 
+	tabsModule(
+		cpnt4Tabs, 
 		'cpnt4ShowPanel', 
 		'cpnt4BtnNext', 
 		'cpnt4BtnPrev', 
-		5
+		'cpnt4BtnPlay', 
+		'cpnt4BtnPause'
 	);
-
-
 
 
 /////////

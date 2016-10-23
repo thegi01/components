@@ -116,7 +116,7 @@ CurrentModule.prototype = {
 
 /* Tabs simple, prev and next only, not apply play and stop
  * Use SetCurrent function
- * @param [String] cpnt, tab contents id 
+ * @param [Element] cpnt
  * @param [String] showpanel, tab item click function name
  * @param [String] btnNext, button next id 
  * @param [String] btnPrev, button prev id 
@@ -141,7 +141,7 @@ var tabs = function(cpnt, showpanel, btnNext, btnPrev, len){
 
 /* Tabs with play and stop 
  * use CurrentModule
- * @param [String] cpnt, tab contents id 
+ * @param [String] instance name of currentModule
  * @param [String] showpanel, tab item click function name
  * @param [String] btnNext, button next id 
  * @param [String] btnPrev, button prev id 
@@ -177,6 +177,29 @@ var tabsModule = function(cpnt, showpanel, btnNext, btnPrev, btnPlay, btnPause, 
 	if(autoPlay){
 		cpnt.play();
 	}
+};
+
+/* Slider 
+ * @param [Element] cpnt
+ * @param [String] btnNext, button next id 
+ * @param [String] btnPrev, button prev id 
+ * @param [Number] len, slider item's length
+ * @param [Number] nth, slider item's shift unit
+ * getElementsByClassName pollyfill 추가해야 함.
+ */
+var slider = function(cpnt, btnNext, btnPrev, len, nth){
+	var _w = Math.round(len/nth) * 100;
+	cpnt.getElementsByClassName('slider-lst')[0].style.width = _w + '%';
+	document.getElementById(btnNext).onclick = function(){
+		var idx = dataset.get(cpnt, 'current');
+		idx = getIdxNext(idx, len, nth);
+		setCurrent(cpnt, idx);
+	};
+	document.getElementById(btnPrev).onclick = function(){
+		var idx = dataset.get(cpnt, 'current');
+		idx = getIdxPrev(idx, len, nth);
+		setCurrent(cpnt, idx);
+	};
 };
 
 
@@ -241,7 +264,7 @@ var dropdown = {
 };*/
 
 /* Tooltip 
- * @param [Element] el, element of call tolltip
+ * @param [Element] el, element of call tooltip
  * @param [String] place, left, right, top, bottom
  */
 var tooltip = {
@@ -293,11 +316,13 @@ var tooltip = {
 };*/
 
 /* Idx Control */
-var getIdxPrev = function(idx, len){
-	return (idx == 0) ? len-1 : Number(idx)-1;
+var getIdxPrev = function(idx, len, nth){
+	nth = nth || 1;
+	return (Number(idx) - nth) < 0 ? Math.round(len/nth) * nth - nth : Number(idx) - nth;
 };
-var getIdxNext = function(idx, len){
-	return (idx == len-1) ? 0 : Number(idx)+1;
+var getIdxNext = function(idx, len, nth){
+	nth = nth || 1;
+	return (Number(idx) + nth) >= len ? 0 : Number(idx) +  nth;
 };
 
 /* Toggle(true/false) element's attribute */

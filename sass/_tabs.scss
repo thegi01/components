@@ -1,6 +1,7 @@
 /* tabs */
 
 .tabs {
+    overflow: hidden;
     &-lst {
         @include clearfix;
         border-bottom: solid 1px #ddd;
@@ -39,6 +40,7 @@
     }
     &-panels {
         padding-top: rem(10);
+        @include clearfix;
     }
     &-panel {
         display: none;
@@ -47,6 +49,7 @@
         @include border-radius(rem(4));
         font-size: rem(14); color: #666;
         line-height: 100%; vertical-align: middle;
+        @include box-sizing(border-box);
         &:focus {
             outline:none;
         }
@@ -126,6 +129,19 @@
     .tabs-panels {
     }
     .tabs-panel {
+    }
+}
+
+.slider {
+    &-panel{
+        overflow: hidden;
+    }
+    &-lst {
+        position: relative;
+    }
+    &-item {
+        float:left;
+        box-sizing: border-box;
     }
 }
 

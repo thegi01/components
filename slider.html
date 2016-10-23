@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>Tabs and Panels</title>
+	<meta name="viewport" content="width=device-width, user-scalable=no">
+	<meta name="robots" content="noindex,nofollow">
+	<meta name="googlebot" content="noindex,nofollow">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<!--[if (gt IE 8)|!(IE)]><!-->
+        <link rel="stylesheet" href="css/ex-base.css">
+    <!--<![endif]-->
+    <!--[if lte IE 8]>
+        <link rel="stylesheet" href="css/ex-base-ie.css">
+    <![endif]-->
+    <style>
+	    #cpnt1 {
+	    	position: relative;
+	    }
+	    #cpnt1 .slider-panel {
+	    	margin-left: 40px; margin-right:40px;
+	    }
+	    #cpnt1 .slider-lst {
+	    	width: 300%; height: 50px;
+	    	line-height: 50px; 
+	    	text-align:center; vertical-align: middle;
+	    }
+	    #cpnt1 .slider-item {
+	    	width: 16.666666%; height: 100%;
+	    	border: solid 1px #eee;
+	    	background-color: #f8f8f8;
+	    }
+	    #cpnt1 .slider__btn-prev, 
+	    #cpnt1 .slider__btn-next {
+	    	position: absolute; top:50%; 
+	    	margin-top: -9.5px;
+	    }
+	    #cpnt1 .slider__btn-prev {
+	    	left:0;
+	    }
+	    #cpnt1 .slider__btn-next {
+	    	right: 0;
+	    }
+	    #cpnt1[data-current="1"] .slider-lst { left: -50%; }
+	    #cpnt1[data-current="2"] .slider-lst { left: -100%; }
+	    #cpnt1[data-current="3"] .slider-lst { left: -150%; }
+	    #cpnt1[data-current="4"] .slider-lst { left: -200%; }
+	    #cpnt1[data-current="5"] .slider-lst { left: -250%; }
+
+    	#cpnt2 {
+    		margin-top: 20px;
+    	}
+    	#cpnt2 .slider-lst {
+    		width: 300%; height: 50px;
+    		line-height: 50px; 
+    		text-align:center; vertical-align: middle;
+    	}
+    	#cpnt2 .slider-item {
+    		width: 11.111111%; height: 100%;
+    		border: solid 1px #eee;
+    		background-color: #f8f8f8;
+    	}
+    	#cpnt2 .slider-direction {
+    		margin-top: 10px;
+    		text-align: center;
+    	}
+    	#cpnt2[data-current="0"] .slider-lst {}
+    	#cpnt2[data-current="1"] .slider-lst { left: -33.333333%; }
+    	#cpnt2[data-current="2"] .slider-lst { left: -66.666666%; }
+    	#cpnt2[data-current="3"] .slider-lst { left: -100%; }
+    	#cpnt2[data-current="4"] .slider-lst { left: -133.333333%; }
+    	#cpnt2[data-current="5"] .slider-lst { left: -166.666666%; }
+    	#cpnt2[data-current="6"] .slider-lst { left: -200%; }
+    	#cpnt2[data-current="7"] .slider-lst { left: -233.333333%; }
+    	/*#cpnt2[data-current="8"] .slider-lst { left: -266.666666%; }*/
+    </style>
+</head>
+<body>
+
+<div class="wrap ex">
+	
+	<h1 class="h1">Slider</h1>
+	
+	<h2 class="h2">Slider : Nth shift</h2>
+
+	<!-- cpnt1 -->
+	<div class="slider" id="cpnt1" data-current="0">
+		<div class="slider-panel">
+			<div class="slider-lst">
+				<div class="slider-item" data-idx="0"> item 1 </div>
+				<div class="slider-item" data-idx="1"> item 2 </div>
+				<div class="slider-item" data-idx="2"> item 3 </div>
+				<div class="slider-item" data-idx="3"> item 4 </div>
+				<div class="slider-item" data-idx="4"> item 5 </div>
+				<div class="slider-item" data-idx="5"> item 6 </div>
+			</div>
+		</div>
+		<div class="slider-direction">
+			<button type="button" class="btn btn--default btn-xs slider__btn-prev" id="cpnt1BtnPrev">prev</button>
+			<button type="button" class="btn btn--default btn-xs slider__btn-next" id="cpnt1BtnNext">next</button>
+		</div>
+	</div>
+	<!-- //cpnt1 -->
+
+	<!-- cpnt2 -->
+	<div class="slider" id="cpnt2" data-current="0">
+		<div class="slider-panel">
+			<div class="slider-lst">
+				<div class="slider-item" data-idx="0"> item 1 </div>
+				<div class="slider-item" data-idx="1"> item 2 </div>
+				<div class="slider-item" data-idx="2"> item 3 </div>
+				<div class="slider-item" data-idx="3"> item 4 </div>
+				<div class="slider-item" data-idx="4"> item 5 </div>
+				<div class="slider-item" data-idx="5"> item 6 </div>
+				<div class="slider-item" data-idx="6"> item 7 </div>
+				<div class="slider-item" data-idx="7"> item 8 </div>
+				<!-- <div class="slider-item" data-idx="8"> item 9 </div> -->
+			</div>
+		</div>
+		<div class="slider-direction">
+			<button type="button" class="btn btn--default btn-xs slider__btn-prev" id="cpnt2BtnPrev">prev</button>
+			<button type="button" class="btn btn--default btn-xs slider__btn-next" id="cpnt2BtnNext">next</button>
+		</div>
+	</div>
+	<!-- //cpnt2 -->
+	
+</div>		
+
+<!-- javacript -->
+<script type="text/javascript" src="js/ui-base.js"></script>
+<script>
+	
+	slider(document.getElementById('cpnt1'), 'cpnt1BtnNext', 'cpnt1BtnPrev', 6, 2);
+	slider(document.getElementById('cpnt2'), 'cpnt2BtnNext', 'cpnt2BtnPrev', 8, 3);
+
+	/* Slider */
+	/*
+	var cpnt1 = document.getElementById('cpnt1');
+	var cpnt1Len = 6;
+	var cpnt1Nth = 2;
+	var cpnt1PanelWidth = Math.round(cpnt1Len / cpnt1Nth) * 100;
+	cpnt1.getElementsByClassName('slider-lst')[0].style.width = cpnt1PanelWidth + '%';
+	document.getElementById('cpnt1BtnNext').onclick = function(){
+		var idx = dataset.get(cpnt1, 'current');
+		idx = getIdxNext(idx, cpnt1Len, cpnt1Nth);
+		setCurrent(cpnt1, idx);
+	};
+	document.getElementById('cpnt1BtnPrev').onclick = function(){
+		var idx = dataset.get(cpnt1, 'current');
+		idx = getIdxPrev(idx, cpnt1Len, cpnt1Nth);
+		setCurrent(cpnt1, idx);
+	};
+
+	var cpnt2 = document.getElementById('cpnt2');
+	var cpnt2Len = 8;
+	var cpnt2Nth = 3;
+	var cpnt2PanelWidth = Math.round(cpnt2Len / cpnt2Nth) * 100;
+	cpnt2.getElementsByClassName('slider-lst')[0].style.width = cpnt2PanelWidth + '%';
+	document.getElementById('cpnt2BtnNext').onclick = function(){
+		var idx = dataset.get(cpnt2, 'current');
+		idx = getIdxNext(idx, cpnt2Len, cpnt2Nth);
+		setCurrent(cpnt2, idx);
+	};
+	document.getElementById('cpnt2BtnPrev').onclick = function(){
+		var idx = dataset.get(cpnt2, 'current');
+		idx = getIdxPrev(idx, cpnt2Len, cpnt2Nth);
+		setCurrent(cpnt2, idx);
+	};
+	*/
+
+</script>
+
+</body>
+</html>
