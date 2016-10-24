@@ -59,30 +59,30 @@
 
 
 #cpnt2 {
-	$nth : 3;
-	$len : 9;	// item's full length
-	$itemWidth : 100% / $len; // 11.111111%; 
+	// $nth : 3;
+	/* $len : 9;	// item's full length
+	$itemWidth : 100% / $len; // 11.111111%;  */
 
-	.slider-panel {
+	/* .slider-panel {
 		width: $len/$nth * 100%; // 300%;
 	}
 	.slider-item {
 		width: $itemWidth; // 11.111111%; 
-	}
+	} */
 	.slider-direction {
 		margin-top: 10px;
 		text-align: center;
 	}
-	@for $i from 0 through $len - 1 {
-		&[data-animation="false"][data-current="#{$i}"] .slider-panel {
-			left: -100%/$nth * $i; // -33.33333% * $i; 
-		}
-	}
-	@for $i from 0 through $len - 1 {
-		&[data-animation="true"][data-current="#{$i}"] .slider-panel {
-			@include translate3d(-$itemWidth * $i, 0, 0);
-		}
-	}
+	// @for $i from 0 through $len - 1 {
+	// 	&[data-animation="false"][data-current="#{$i}"] .slider-panel {
+	// 		left: -100%/$nth * $i; // -33.33333% * $i; 
+	// 	}
+	// }
+	// @for $i from 0 through $len - 1 {
+	// 	&[data-animation="true"][data-current="#{$i}"] .slider-panel {
+	// 		@include translate3d(-$itemWidth * $i, 0, 0);
+	// 	}
+	// }
 }
 
 

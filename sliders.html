@@ -172,9 +172,9 @@
 
 	<h1 class="h1">Slider</h1>
 	
-	<h2 class="h2">Slider : Nth shift</h2>
 
 	<!-- cpnt1 -->
+	<h2 class="h2">Nth 2, static data</h2>
 	<div class="slider" id="cpnt1" data-animation="true" data-current="0">
 		<div class="slider-panels">
 			<div class="slider-panel">
@@ -194,6 +194,7 @@
 	<!-- //cpnt1 -->
 
 	<!-- cpnt2 -->
+	<h2 class="h2">Nth 3, random data </h2>
 	<div class="slider" id="cpnt2" data-animation="true" data-current="0">
 		<div class="slider-panels">
 			<div class="slider-panel" id="cpnt2Panel">
@@ -215,6 +216,7 @@
 	<!-- //cpnt2 -->
 
 	<!-- cpnt3 -->
+	<h2 class="h2">Nth3, static data, control</h2>
 	<div class="slider" id="cpnt3" data-animation="true" data-control="pause" data-current="0">
 		<div class="slider-panels">
 			<div class="slider-panel" id="cpnt3Panel">
@@ -240,6 +242,7 @@
 	<!-- //cpnt3 -->
 
 	<!-- cpnt4 -->
+	<h2 class="h2">Nth4, random data, control</h2>
 	<div class="slider" id="cpnt4" data-animation="true" data-control="pause" data-current="0">
 		<div class="slider-panels">
 			<div class="slider-panel" id="cpnt4Panel">
@@ -275,8 +278,79 @@
 
 	// cpnt1
 	slider(document.getElementById('cpnt1'), undefined, 'cpnt1BtnNext', 'cpnt1BtnPrev', 6, 2);
+
 	// cpnt2
-	slider(document.getElementById('cpnt2'), 'cpnt2Panel', 'cpnt2BtnNext', 'cpnt2BtnPrev', 8, 3);
+	// slider(document.getElementById('cpnt2'), 'cpnt2Panel', 'cpnt2BtnNext', 'cpnt2BtnPrev', 8, 3);
+
+	/* cpnt2, rando data */
+	
+	// cpnt2, btn click, set css
+	var cpnt = document.getElementById('cpnt2');
+	var cpntPanel = document.getElementById('cpnt2Panel');
+	var nth = 3;
+	var len = 9; // item's full length 
+	var styleNode = document.createElement('style');
+	var cssText = [];
+	var itemWidth = 100 / len;
+
+	// panel width
+	cpntPanel.style.width = Math.ceil(len/nth) * 100 + '%';
+
+	// panel item width
+	cssText.push( '\n#' + cpnt.id + ' .slider-item {width: ' + itemWidth + '%;}\n' );
+	styleNode.type = "text/css";
+	styleNode.appendChild( document.createTextNode(cssText.join('')) );
+	document.getElementById('cpnt2Panel').appendChild(styleNode);
+
+	// btn next click -> panel css set
+	document.getElementById('cpnt2BtnNext').onclick = function(){
+		var idx = dataset.get(cpnt, 'current');
+		idx = getIdxNext(idx, len, nth);
+		setCurrent(cpnt, idx);
+		if( dataset.get(cpnt, 'animation') == 'true' ){
+			cpntPanel.style[getTransformProperty(cpntPanel)] = 'translate3d(' + -itemWidth * idx + '%, 0, 0)';
+		} else {
+			cpntPanel.style.left = -100/nth * idx + '%';
+		}
+	};
+	// btn prev click -> panel css set
+	document.getElementById('cpnt2BtnPrev').onclick = function(){
+		var idx = dataset.get(cpnt, 'current');
+		idx = getIdxPrev(idx, len, nth);
+		setCurrent(cpnt, idx);
+		if( dataset.get(cpnt, 'animation') == 'true' ){
+			cpntPanel.style[getTransformProperty(cpntPanel)] = 'translate3d(' + -itemWidth * idx + '%, 0, 0)';
+		} else {
+			cpntPanel.style.left = -100/nth * idx + '%';
+		}
+	};
+
+
+	// cpnt2 pre set css - loading 부담이 가중된다. 비효율적이란 생각
+	/*
+	var cpntId = 'cpnt2';
+	var cpnt = document.getElementById(cpntId);
+	var nth = 3;
+	var len = 9; // item's full length 
+	var styleNode = document.createElement('style');
+	var cssText = [];
+	var itemWidth = 100 / len;
+	cssText.push( '#' + cpntId + ' .slider-item {width: ' + itemWidth + '%;}\n' );
+	if(dataset.get(cpnt, 'animation') == 'true'){
+		for(var i=0; i<len ; i++){
+			cssText.push('#' + cpntId + '[data-current="'+ i + '"] .slider-panel {transform: translate3d(' + -itemWidth * i +'% , 0, 0)}\n');
+		}
+	} else {
+		for(var i=0; i<len ; i++){
+			cssText.push('#' + cpntId + '[data-current="'+ i + '"] .slider-panel {left: ' + -100/nth * i + '%} \n');
+		}
+	}
+	styleNode.type = "text/css";
+	styleNode.appendChild( document.createTextNode(cssText.join('')) );
+	document.getElementById('cpnt2Panel').appendChild(styleNode);
+	*/
+
+
 
 	// cpnt3
 	var cpnt3Slider = new CurrentModule(

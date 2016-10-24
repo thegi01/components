@@ -547,6 +547,26 @@ var unwrap = function(el, wrapper) {
 
 
 
+/* tranform property */
+var getTransformProperty = function(node) {
+    var properties = [
+        'transform',
+        'WebkitTransform',
+        'msTransform',
+        'MozTransform',
+        'OTransform'
+    ];
+    var p;
+    while (p = properties.shift()) {
+        if (typeof node.style[p] != 'undefined') {
+            return p;
+        }
+    }
+    return false;
+};
+
+
+
 
 
 
