@@ -60,6 +60,15 @@
 	- 접근성 개선
 	- aria
 
+
+### Tooltip
+- [Url] : https://thegi01.github.io/components/tooltip.html
+- To do
+	- 하위 버전 확인
+	- 접근성 개선
+		- aria
+
+
 ### Accordion
 - [Url] : https://thegi01.github.io/components/accordion.html
 - Animation 적용인 경우 함수 호출 시 panel의 id를 argument로 전달하려 하였으나, 마크업시 귀찮아지는 이슈가 발생, 그래서 this의 href 속성으로 받도록 작업
