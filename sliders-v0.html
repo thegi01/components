@@ -81,7 +81,7 @@
     	#cpnt3 {
     	}
     	#cpnt3 .slider-panel {
-    		/*width : 300%;*/
+    		width : 300%;
     	}
     	#cpnt3 .slider-item {
     		width: 11.111111%; 
@@ -184,32 +184,96 @@
 <!-- javacript -->
 <script type="text/javascript" src="js/ui-base.js"></script>
 <script>
+
+
+
+
+	/* Slider */
 	
-	/* slider */
+	var cpnt1 = document.getElementById('cpnt1');
+	var cpnt1Len = 6;
+	var cpnt1Nth = 2;
+	var cpnt1PanelWidth = Math.round(cpnt1Len / cpnt1Nth) * 100;
+	cpnt1.getElementsByClassName('slider-panel')[0].style.width = cpnt1PanelWidth + '%';
+	document.getElementById('cpnt1BtnNext').onclick = function(){
+		var idx = dataset.get(cpnt1, 'current');
+		idx = getIdxNext(idx, cpnt1Len, cpnt1Nth);
+		setCurrent(cpnt1, idx);
+	};
+	document.getElementById('cpnt1BtnPrev').onclick = function(){
+		var idx = dataset.get(cpnt1, 'current');
+		idx = getIdxPrev(idx, cpnt1Len, cpnt1Nth);
+		setCurrent(cpnt1, idx);
+	};
 
-	// cpnt1
-	slider(document.getElementById('cpnt1'), undefined, 'cpnt1BtnNext', 'cpnt1BtnPrev', 6, 2);
-	// cpnt2
-	slider(document.getElementById('cpnt2'), 'cpnt2Panel', 'cpnt2BtnNext', 'cpnt2BtnPrev', 8, 3);
+	var cpnt2 = document.getElementById('cpnt2');
+	var cpnt2Len = 8;
+	var cpnt2Nth = 3;
+	var cpnt2PanelWidth = Math.round(cpnt2Len / cpnt2Nth) * 100;
+	cpnt2.getElementsByClassName('slider-panel')[0].style.width = cpnt2PanelWidth + '%';
+	document.getElementById('cpnt2BtnNext').onclick = function(){
+		var idx = dataset.get(cpnt2, 'current');
+		idx = getIdxNext(idx, cpnt2Len, cpnt2Nth);
+		setCurrent(cpnt2, idx);
+	};
+	document.getElementById('cpnt2BtnPrev').onclick = function(){
+		var idx = dataset.get(cpnt2, 'current');
+		idx = getIdxPrev(idx, cpnt2Len, cpnt2Nth);
+		setCurrent(cpnt2, idx);
+	};
+	
 
-	// cpnt3
-	var cpnt3Slider = new CurrentModule(
-		document.getElementById('cpnt3'),
-		'next',
-		8,
-		1000,
-		3
-	);
-	sliderModule(
-		cpnt3Slider, 
-		'cpnt3Panel', 
-		'cpnt3BtnNext', 
-		'cpnt3BtnPrev', 
-		'cpnt3BtnPlay', 
-		'cpnt3BtnPause',
-		false
-	);
+	
+	var cpnt = document.getElementById('cpnt3');
+	var len = 8;
+	var nth = 3;
+	var interval;
+	var time = 1000;
+	var direction = 'next';
 
+	var next = function(){
+		setCurrentNext(cpnt, len, nth);
+		clearPlay();
+		direction = 'next';
+	};
+	var prev = function(){
+		setCurrentPrev(cpnt, len, nth);
+		clearPlay();
+		direction = 'prev';
+	};
+	var play = function(){
+		dataset.set( cpnt, 'control', 'play');
+		interval = setInterval(function(){
+			if(direction == 'next'){
+				next();
+			} else {
+				prev();
+			}
+		}, time);
+	};
+	var pause = function(){
+		window.clearInterval(interval);
+		dataset.set( cpnt, 'control', 'pause');
+	};
+	var clearPlay = function(){
+		if( dataset.get( cpnt, 'control') == 'play' ){
+			window.clearInterval( interval );
+			play();
+		}
+	};
+
+	document.getElementById('cpnt3BtnNext').onclick = function(){
+		next();
+	};
+	document.getElementById('cpnt3BtnPrev').onclick = function(){
+		prev();
+	};
+	document.getElementById('cpnt3BtnPlay').onclick = function(){
+		play();
+	};
+	document.getElementById('cpnt3BtnPause').onclick = function(){
+		pause();
+	};
 </script>
 
 </body>
