@@ -74,7 +74,12 @@
     &[data-current="4"] .tabs-panel[data-idx="4"] {
         display: block;
     }
-    
+    &[data-control="pause"] &__btn-pause {
+        display: none;
+    }
+    &[data-control="play"] &__btn-play {
+        display: none;
+    }
 }
 .tabs--fill {
     .tabs-lst {
@@ -133,15 +138,21 @@
 }
 
 .slider {
-    &-panel{
+    &-panels{
         overflow: hidden;
     }
-    &-lst {
+    &-panel {
         position: relative;
     }
     &-item {
         float:left;
         box-sizing: border-box;
+    }
+    &[data-control="pause"] &__btn-pause {
+        display: none;
+    }
+    &[data-control="play"] &__btn-play {
+        display: none;
     }
 }
 

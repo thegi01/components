@@ -51,15 +51,17 @@ var setCurrentToggle = function(el, idx){
 	dataset.polyfill(el);
 };
 // Next
-var setCurrentNext = function(el, len){
+var setCurrentNext = function(el, len, nth){
 	var idx = dataset.get(el, 'current');
-	idx = getIdxNext(idx, len);
+	nth = nth || 1;
+	idx = getIdxNext(idx, len, nth);
 	setCurrent(el, idx);
 };
 // Prev
-var setCurrentPrev = function(el, len){
+var setCurrentPrev = function(el, len, nth){
 	var idx = dataset.get(el, 'current');
-	idx = getIdxPrev(idx,len);
+	nth = nth || 1;
+	idx = getIdxPrev(idx, len, nth);
 	setCurrent(el, idx);
 };
 
@@ -69,24 +71,26 @@ var setCurrentPrev = function(el, len){
  * @param [String] direction, 'next' and 'prev'
  * @param [Number] len, item's length
  * @param [Number] time, auto play interval time
+ * @param [Number] nth, shift item's unit
  */
-var CurrentModule = function(cpnt, direction, len, time){
+var CurrentModule = function(cpnt, direction, len, time, nth){
 	this.cpnt = cpnt;
 	this.direction = direction;
 	this.len = len;
 	this.time = time;
+	this.nth = nth;
 };
 CurrentModule.prototype = {
 	set : function(idx){
 		setCurrent( this.cpnt, idx );
 	},
 	next : function(){
-		setCurrentNext( this.cpnt, this.len);
+		setCurrentNext( this.cpnt, this.len, this.nth);
 		this.clearPlay();
 		this.direction = 'next';
 	},
 	prev : function(){
-		setCurrentPrev( this.cpnt, this.len);
+		setCurrentPrev( this.cpnt, this.len, this.nth);
 		this.clearPlay();
 		this.direction = 'prev';
 	},
@@ -115,25 +119,27 @@ CurrentModule.prototype = {
 
 
 /* Tabs simple, prev and next only, not apply play and stop
- * Use SetCurrent function
+ * Use SetCurrent 
  * @param [Element] cpnt
  * @param [String] showpanel, tab item click function name
- * @param [String] btnNext, button next id 
- * @param [String] btnPrev, button prev id 
+ * @param [String] btnNextId, button next id 
+ * @param [String] btnPrevId, button prev id 
  * @param [Number] len, tab item's length
  */
-var tabs = function(cpnt, showpanel, btnNext, btnPrev, len){
-	window[showpanel] = function(idx, el){
-		setCurrent(cpnt, idx);
-		if(el) focusElByHref(el);
-	};
-	if(btnNext){
-		document.getElementById(btnNext).onclick = function(){
+var tabs = function(cpnt, showpanel, btnNextId, btnPrevId, len){
+	if(showpanel){
+		window[showpanel] = function(idx, el){
+			setCurrent(cpnt, idx);
+			if(el) focusElByHref(el);
+		};
+	}
+	if(btnNextId){
+		document.getElementById(btnNextId).onclick = function(){
 			setCurrentNext(cpnt, len);
 		};
 	}
-	if(btnPrev){
-		document.getElementById(btnPrev).onclick = function(){
+	if(btnPrevId){
+		document.getElementById(btnPrevId).onclick = function(){
 			setCurrentPrev(cpnt, len);
 		};
 	}
@@ -141,65 +147,44 @@ var tabs = function(cpnt, showpanel, btnNext, btnPrev, len){
 
 /* Tabs with play and stop 
  * use CurrentModule
- * @param [String] instance name of currentModule
+ * @param [Object] instance of currentModule
  * @param [String] showpanel, tab item click function name
- * @param [String] btnNext, button next id 
- * @param [String] btnPrev, button prev id 
- * @param [String] btnPlay, button play id 
- * @param [String] btnPause, button pause id 
+ * @param [String] btnNextId, button next id 
+ * @param [String] btnPrevId, button prev id 
+ * @param [String] btnPlayId, button play id 
+ * @param [String] btnPauseId, button pause id 
  * @param [Boolean] autoPlay, tabs auto play
  */
-var tabsModule = function(cpnt, showpanel, btnNext, btnPrev, btnPlay, btnPause, autoPlay){
-	window[showpanel] = function(idx, el){
-		cpnt.set(idx);
-		if(el) focusElByHref(el);
-	};
-	if(btnNext){
-		document.getElementById(btnNext).onclick = function(){
+var tabsModule = function(cpnt, showpanel, btnNextId, btnPrevId, btnPlayId, btnPauseId, autoPlay){
+	if(showpanel){
+		window[showpanel] = function(idx, el){
+			cpnt.set(idx);
+			if(el) focusElByHref(el);
+		};
+	}
+	if(btnNextId){
+		document.getElementById(btnNextId).onclick = function(){
 			cpnt.next();
 		};
 	}
-	if(btnPrev){
-		document.getElementById(btnPrev).onclick = function(){
+	if(btnPrevId){
+		document.getElementById(btnPrevId).onclick = function(){
 			cpnt.prev();
 		};
 	}
-	if(btnPlay){
-		document.getElementById(btnPlay).onclick = function(){
+	if(btnPlayId){
+		document.getElementById(btnPlayId).onclick = function(){
 			cpnt.play();
 		};
 	}
-	if(btnPause){
-		document.getElementById(btnPause).onclick = function(){
+	if(btnPauseId){
+		document.getElementById(btnPauseId).onclick = function(){
 			cpnt.pause();
 		};
 	}
 	if(autoPlay){
 		cpnt.play();
 	}
-};
-
-/* Slider 
- * @param [Element] cpnt
- * @param [String] btnNext, button next id 
- * @param [String] btnPrev, button prev id 
- * @param [Number] len, slider item's length
- * @param [Number] nth, slider item's shift unit
- * getElementsByClassName pollyfill 추가해야 함.
- */
-var slider = function(cpnt, btnNext, btnPrev, len, nth){
-	var _w = Math.round(len/nth) * 100;
-	cpnt.getElementsByClassName('slider-lst')[0].style.width = _w + '%';
-	document.getElementById(btnNext).onclick = function(){
-		var idx = dataset.get(cpnt, 'current');
-		idx = getIdxNext(idx, len, nth);
-		setCurrent(cpnt, idx);
-	};
-	document.getElementById(btnPrev).onclick = function(){
-		var idx = dataset.get(cpnt, 'current');
-		idx = getIdxPrev(idx, len, nth);
-		setCurrent(cpnt, idx);
-	};
 };
 
 

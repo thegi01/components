@@ -14,21 +14,31 @@
         <link rel="stylesheet" href="css/ex-base-ie.css">
     <![endif]-->
     <style>
+    	.slider {
+    		margin-top: 50px;
+    	}
+    	.slider-panel {
+    		height: 50px;
+    		line-height: 50px; 
+    		text-align:center; vertical-align: middle;
+    	}
+    	.slider-item {
+    		height: 100%;
+	    	border: solid 1px #eee;
+	    	background-color: #f8f8f8;
+    	}
+
 	    #cpnt1 {
 	    	position: relative;
 	    }
-	    #cpnt1 .slider-panel {
+	    #cpnt1 .slider-panels {
 	    	margin-left: 40px; margin-right:40px;
 	    }
-	    #cpnt1 .slider-lst {
-	    	width: 300%; height: 50px;
-	    	line-height: 50px; 
-	    	text-align:center; vertical-align: middle;
+	    #cpnt1 .slider-panel {
+	    	width: 300%; 
 	    }
 	    #cpnt1 .slider-item {
-	    	width: 16.666666%; height: 100%;
-	    	border: solid 1px #eee;
-	    	background-color: #f8f8f8;
+	    	width: 16.666666%; 
 	    }
 	    #cpnt1 .slider__btn-prev, 
 	    #cpnt1 .slider__btn-next {
@@ -41,38 +51,57 @@
 	    #cpnt1 .slider__btn-next {
 	    	right: 0;
 	    }
-	    #cpnt1[data-current="1"] .slider-lst { left: -50%; }
-	    #cpnt1[data-current="2"] .slider-lst { left: -100%; }
-	    #cpnt1[data-current="3"] .slider-lst { left: -150%; }
-	    #cpnt1[data-current="4"] .slider-lst { left: -200%; }
-	    #cpnt1[data-current="5"] .slider-lst { left: -250%; }
+	    #cpnt1[data-current="1"] .slider-panel { left: -50%; }
+	    #cpnt1[data-current="2"] .slider-panel { left: -100%; }
+	    #cpnt1[data-current="3"] .slider-panel { left: -150%; }
+	    #cpnt1[data-current="4"] .slider-panel { left: -200%; }
+	    #cpnt1[data-current="5"] .slider-panel { left: -250%; }
 
-    	#cpnt2 {
-    		margin-top: 20px;
-    	}
-    	#cpnt2 .slider-lst {
-    		width: 300%; height: 50px;
-    		line-height: 50px; 
-    		text-align:center; vertical-align: middle;
+    	
+    	#cpnt2 .slider-panel {
+    		/*width: 300%; */
     	}
     	#cpnt2 .slider-item {
-    		width: 11.111111%; height: 100%;
-    		border: solid 1px #eee;
-    		background-color: #f8f8f8;
+    		width: 11.111111%; 
     	}
     	#cpnt2 .slider-direction {
     		margin-top: 10px;
     		text-align: center;
     	}
-    	#cpnt2[data-current="0"] .slider-lst {}
-    	#cpnt2[data-current="1"] .slider-lst { left: -33.333333%; }
-    	#cpnt2[data-current="2"] .slider-lst { left: -66.666666%; }
-    	#cpnt2[data-current="3"] .slider-lst { left: -100%; }
-    	#cpnt2[data-current="4"] .slider-lst { left: -133.333333%; }
-    	#cpnt2[data-current="5"] .slider-lst { left: -166.666666%; }
-    	#cpnt2[data-current="6"] .slider-lst { left: -200%; }
-    	#cpnt2[data-current="7"] .slider-lst { left: -233.333333%; }
-    	/*#cpnt2[data-current="8"] .slider-lst { left: -266.666666%; }*/
+    	#cpnt2[data-current="0"] .slider-panel {}
+    	#cpnt2[data-current="1"] .slider-panel { left: -33.333333%; }
+    	#cpnt2[data-current="2"] .slider-panel { left: -66.666666%; }
+    	#cpnt2[data-current="3"] .slider-panel { left: -100%; }
+    	#cpnt2[data-current="4"] .slider-panel { left: -133.333333%; }
+    	#cpnt2[data-current="5"] .slider-panel { left: -166.666666%; }
+    	#cpnt2[data-current="6"] .slider-panel { left: -200%; }
+    	#cpnt2[data-current="7"] .slider-panel { left: -233.333333%; }
+    	/*#cpnt2[data-current="8"] .slider-panel { left: -266.666666%; }*/
+
+    	#cpnt3 {
+    	}
+    	#cpnt3 .slider-panel {
+    		/*width : 300%;*/
+    	}
+    	#cpnt3 .slider-item {
+    		width: 11.111111%; 
+    	}
+    	#cpnt3 .slider-direction {
+    		float: left;
+    		margin-top: 10px;
+    	}
+    	#cpnt3 .slider-control {
+    		float: right;
+    		margin-top: 10px;
+    	}
+    	#cpnt3[data-current="0"] .slider-panel {}
+    	#cpnt3[data-current="1"] .slider-panel { left: -33.333333%; }
+    	#cpnt3[data-current="2"] .slider-panel { left: -66.666666%; }
+    	#cpnt3[data-current="3"] .slider-panel { left: -100%; }
+    	#cpnt3[data-current="4"] .slider-panel { left: -133.333333%; }
+    	#cpnt3[data-current="5"] .slider-panel { left: -166.666666%; }
+    	#cpnt3[data-current="6"] .slider-panel { left: -200%; }
+    	#cpnt3[data-current="7"] .slider-panel { left: -233.333333%; }
     </style>
 </head>
 <body>
@@ -85,8 +114,8 @@
 
 	<!-- cpnt1 -->
 	<div class="slider" id="cpnt1" data-current="0">
-		<div class="slider-panel">
-			<div class="slider-lst">
+		<div class="slider-panels">
+			<div class="slider-panel">
 				<div class="slider-item" data-idx="0"> item 1 </div>
 				<div class="slider-item" data-idx="1"> item 2 </div>
 				<div class="slider-item" data-idx="2"> item 3 </div>
@@ -104,8 +133,8 @@
 
 	<!-- cpnt2 -->
 	<div class="slider" id="cpnt2" data-current="0">
-		<div class="slider-panel">
-			<div class="slider-lst">
+		<div class="slider-panels">
+			<div class="slider-panel" id="cpnt2Panel">
 				<div class="slider-item" data-idx="0"> item 1 </div>
 				<div class="slider-item" data-idx="1"> item 2 </div>
 				<div class="slider-item" data-idx="2"> item 3 </div>
@@ -123,6 +152,32 @@
 		</div>
 	</div>
 	<!-- //cpnt2 -->
+
+	<!-- cpnt3 -->
+	<div class="slider" id="cpnt3" data-control="pause" data-current="0">
+		<div class="slider-panels">
+			<div class="slider-panel" id="cpnt3Panel">
+				<div class="slider-item" data-idx="0"> item 1 </div>
+				<div class="slider-item" data-idx="1"> item 2 </div>
+				<div class="slider-item" data-idx="2"> item 3 </div>
+				<div class="slider-item" data-idx="3"> item 4 </div>
+				<div class="slider-item" data-idx="4"> item 5 </div>
+				<div class="slider-item" data-idx="5"> item 6 </div>
+				<div class="slider-item" data-idx="6"> item 7 </div>
+				<div class="slider-item" data-idx="7"> item 8 </div>
+				<!-- <div class="slider-item" data-idx="8"> item 9 </div> -->
+			</div>
+		</div>
+		<div class="slider-direction">
+			<button type="button" class="btn btn--default btn-xs slider__btn-prev" id="cpnt3BtnPrev">prev</button>
+			<button type="button" class="btn btn--default btn-xs slider__btn-next" id="cpnt3BtnNext">next</button>
+		</div>
+		<div class="slider-control">
+			<button type="button" class="btn btn--default btn-xs slider__btn-play" id="cpnt3BtnPlay">Play</button>
+			<button type="button" class="btn btn--default btn-xs slider__btn-pause" id="cpnt3BtnPause">Pause</button>
+		</div>
+	</div>
+	<!-- //cpnt3 -->
 	
 </div>		
 
@@ -130,8 +185,98 @@
 <script type="text/javascript" src="js/ui-base.js"></script>
 <script>
 	
-	slider(document.getElementById('cpnt1'), 'cpnt1BtnNext', 'cpnt1BtnPrev', 6, 2);
-	slider(document.getElementById('cpnt2'), 'cpnt2BtnNext', 'cpnt2BtnPrev', 8, 3);
+	/* Slider 
+	 * @param [Element] cpnt
+	 * @param [Boolean] is set width panel
+	 * @param [String] btnNextId, button next id 
+	 * @param [String] btnPrevId, button prev id 
+	 * @param [Number] len, slider item's length
+	 * @param [Number] nth, slider item's shift unit
+	 * getElementsByClassName pollyfill 추가해야 함.
+	 */
+	var slider = function(cpnt, panel, btnNextId, btnPrevId, len, nth){
+		if(panel){
+			document.getElementById(panel).style.width = Math.round(len/nth) * 100 + '%';
+		}
+		if(btnNextId){
+			document.getElementById(btnNextId).onclick = function(){
+				setCurrentNext(cpnt, len, nth);
+			};
+		}
+		if(btnPrevId){
+			document.getElementById(btnPrevId).onclick = function(){
+				setCurrentPrev(cpnt, len, nth);
+			};
+		}
+	};
+	slider(document.getElementById('cpnt1'), undefined, 'cpnt1BtnNext', 'cpnt1BtnPrev', 6, 2);
+	slider(document.getElementById('cpnt2'), 'cpnt2Panel', 'cpnt2BtnNext', 'cpnt2BtnPrev', 8, 3);
+
+
+	/* Slider play and pause */
+	var sliderModule = function(cpnt, panel, btnNextId, btnPrevId, btnPlayId, btnPauseId, autoPlay){
+		if(panel){
+			document.getElementById(panel).style.width = Math.round(cpnt.len/cpnt.nth) * 100 + '%';
+		}
+		if(btnNextId){
+			document.getElementById(btnNextId).onclick = function(){
+				cpnt.next();
+			};
+		}
+		if(btnPrevId){
+			document.getElementById(btnPrevId).onclick = function(){
+				cpnt.prev();
+			};
+		}
+		if(btnPlayId){
+			document.getElementById(btnPlayId).onclick = function(){
+				cpnt.play();
+			};
+		}
+		if(btnPauseId){
+			document.getElementById(btnPauseId).onclick = function(){
+				cpnt.pause();
+			};
+		}
+		if(autoPlay){
+			cpnt.play();
+		}
+	};
+	var cpnt3Slider = new CurrentModule(
+		document.getElementById('cpnt3'),
+		'next',
+		8,
+		1000,
+		3
+	);
+	console.log(typeof(cpnt3Slider));
+	sliderModule(
+		cpnt3Slider, 
+		'cpnt3Panel', 
+		'cpnt3BtnNext', 
+		'cpnt3BtnPrev', 
+		'cpnt3BtnPlay', 
+		'cpnt3BtnPause',
+		false
+	);
+
+
+	/*
+	document.getElementById('cpnt3BtnNext').onclick = function(){
+		cpnt3Slider.next();
+	};
+	document.getElementById('cpnt3BtnPrev').onclick = function(){
+		cpnt3Slider.prev();
+	};
+	document.getElementById('cpnt3BtnPlay').onclick = function(){
+		cpnt3Slider.play();
+	};
+	document.getElementById('cpnt3BtnPause').onclick = function(){
+		cpnt3Slider.pause();
+	};*/
+
+
+
 
 	/* Slider */
 	/*
@@ -139,7 +284,7 @@
 	var cpnt1Len = 6;
 	var cpnt1Nth = 2;
 	var cpnt1PanelWidth = Math.round(cpnt1Len / cpnt1Nth) * 100;
-	cpnt1.getElementsByClassName('slider-lst')[0].style.width = cpnt1PanelWidth + '%';
+	cpnt1.getElementsByClassName('slider-panel')[0].style.width = cpnt1PanelWidth + '%';
 	document.getElementById('cpnt1BtnNext').onclick = function(){
 		var idx = dataset.get(cpnt1, 'current');
 		idx = getIdxNext(idx, cpnt1Len, cpnt1Nth);
@@ -155,7 +300,7 @@
 	var cpnt2Len = 8;
 	var cpnt2Nth = 3;
 	var cpnt2PanelWidth = Math.round(cpnt2Len / cpnt2Nth) * 100;
-	cpnt2.getElementsByClassName('slider-lst')[0].style.width = cpnt2PanelWidth + '%';
+	cpnt2.getElementsByClassName('slider-panel')[0].style.width = cpnt2PanelWidth + '%';
 	document.getElementById('cpnt2BtnNext').onclick = function(){
 		var idx = dataset.get(cpnt2, 'current');
 		idx = getIdxNext(idx, cpnt2Len, cpnt2Nth);
@@ -168,6 +313,57 @@
 	};
 	*/
 
+	/*
+	var cpnt = document.getElementById('cpnt3');
+	var len = 8;
+	var nth = 3;
+	var interval;
+	var time = 1000;
+	var direction = 'next';
+
+	var next = function(){
+		setCurrentNext(cpnt, len, nth);
+		clearPlay();
+		direction = 'next';
+	};
+	var prev = function(){
+		setCurrentPrev(cpnt, len, nth);
+		clearPlay();
+		direction = 'prev';
+	};
+	var play = function(){
+		dataset.set( cpnt, 'control', 'play');
+		interval = setInterval(function(){
+			if(direction == 'next'){
+				next();
+			} else {
+				prev();
+			}
+		}, time);
+	};
+	var pause = function(){
+		window.clearInterval(interval);
+		dataset.set( cpnt, 'control', 'pause');
+	};
+	var clearPlay = function(){
+		if( dataset.get( cpnt, 'control') == 'play' ){
+			window.clearInterval( interval );
+			play();
+		}
+	};
+
+	document.getElementById('cpnt3BtnNext').onclick = function(){
+		next();
+	};
+	document.getElementById('cpnt3BtnPrev').onclick = function(){
+		prev();
+	};
+	document.getElementById('cpnt3BtnPlay').onclick = function(){
+		play();
+	};
+	document.getElementById('cpnt3BtnPause').onclick = function(){
+		pause();
+	};*/
 </script>
 
 </body>
