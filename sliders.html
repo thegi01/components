@@ -274,33 +274,95 @@
 <script type="text/javascript" src="js/ui-base.js"></script>
 <script>
 	
-	/* slider */
-
+	
 	/* Slider 
 	 * @param [Element] cpnt
-	 * @param [String] btnNextId, button next id 
-	 * @param [String] btnPrevId, button prev id 
+	 * @param [Element] btnNext, button next id 
+	 * @param [Element] btnPrev, button prev id 
 	 * @param [Number] len, slider item's length
 	 * @param [Number] nth, slider item's shift unit
 	 */
-	var slider = function(cpnt, btnNextId, btnPrevId, len, nth){
-		if(btnNextId){
-			document.getElementById(btnNextId).onclick = function(){
+	var slider = function(cpnt, btnNext, btnPrev, len, nth){
+		if(btnNext){
+			btnNext.onclick = function(){
 				setCurrentNext(cpnt, len, nth);
 			};
 		}
-		if(btnPrevId){
-			document.getElementById(btnPrevId).onclick = function(){
+		if(btnPrev){
+			btnPrev.onclick = function(){
 				setCurrentPrev(cpnt, len, nth);
 			};
 		}
 	};
 
 	/* cpnt1 */
-	slider(document.getElementById('cpnt1'), 'cpnt1BtnNext', 'cpnt1BtnPrev', 6, 2);
+	// static data
+	slider(
+		document.getElementById('cpnt1'), 
+		document.getElementById('cpnt1BtnNext'), 
+		document.getElementById('cpnt1BtnPrev'), 
+		6, 
+		2
+	);
 
-	/* cpnt2, rando data */
+
+	/* Slider Random
+	 * len and nth is random data
+	 * @param [Element] cpnt
+	 * @param [Element] panel, cpnt's panel
+	 * @param [Element] btnNext, button next id 
+	 * @param [Element] btnPrev, button prev id 
+	 * @param [Number] len, slider item's length
+	 * @param [Number] nth, slider item's shift unit
+	 */
+	var sliderRandom = function(cpnt, panel, btnNext, btnPrev, len, nth){
+		var cssText = [];
+		var styleNode = document.createElement('style');
+		var itemWidth = 100 / len;
+		var idx;
+
+		// set panel width 
+		panel.style.width = Math.ceil(len/nth) * 100 + '%';
+
+		// set panel item's width 
+		cssText.push( '\n#' + cpnt.id + ' .slider-item {width: ' + itemWidth + '%;}\n' );
+		styleNode.type = "text/css";
+		styleNode.appendChild( document.createTextNode(cssText.join('')) );
+		document.getElementById('cpnt2Panel').appendChild(styleNode);
+
+		// btn next click -> set panel position
+		btnNext.onclick = function(){
+			idx = setCurrentNext(cpnt, len, nth);
+			if( dataset.get(cpnt, 'animation') == 'true' ){
+				panel.style[getTransformProperty(panel)] = 'translate3d(' + -itemWidth * idx + '%, 0, 0)';
+			} else {
+				panel.style.left = -100/nth * idx + '%';
+			}
+		};
+
+		// btn prev click -> set panel position
+		btnPrev.onclick = function(){
+			idx = setCurrentPrev(cpnt, len, nth);
+			if( dataset.get(cpnt, 'animation') == 'true' ){
+				panel.style[getTransformProperty(panel)] = 'translate3d(' + -itemWidth * idx + '%, 0, 0)';
+			} else {
+				panel.style.left = -100/nth * idx + '%';
+			}
+		};
+	};
+	
+	/* cpnt2, random data */
+	sliderRandom(
+		document.getElementById('cpnt2'), 
+		document.getElementById('cpnt2Panel'), 
+		document.getElementById('cpnt2BtnNext'), 
+		document.getElementById('cpnt2BtnPrev'), 
+		9, 
+		3
+	);
+	
 	// cpnt2, btn click, set css
+	/*
 	var cpnt = document.getElementById('cpnt2');
 	var cpntPanel = document.getElementById('cpnt2Panel');
 	var nth = 3;
@@ -320,9 +382,7 @@
 
 	// btn next click -> panel css set
 	document.getElementById('cpnt2BtnNext').onclick = function(){
-		var idx = dataset.get(cpnt, 'current');
-		idx = getIdxNext(idx, len, nth);
-		setCurrent(cpnt, idx);
+		var idx = setCurrentNext(cpnt, len, nth);
 		if( dataset.get(cpnt, 'animation') == 'true' ){
 			cpntPanel.style[getTransformProperty(cpntPanel)] = 'translate3d(' + -itemWidth * idx + '%, 0, 0)';
 		} else {
@@ -331,16 +391,14 @@
 	};
 	// btn prev click -> panel css set
 	document.getElementById('cpnt2BtnPrev').onclick = function(){
-		var idx = dataset.get(cpnt, 'current');
-		idx = getIdxPrev(idx, len, nth);
-		setCurrent(cpnt, idx);
+		var idx = setCurrentPrev(cpnt, len, nth);
 		if( dataset.get(cpnt, 'animation') == 'true' ){
 			cpntPanel.style[getTransformProperty(cpntPanel)] = 'translate3d(' + -itemWidth * idx + '%, 0, 0)';
 		} else {
 			cpntPanel.style.left = -100/nth * idx + '%';
 		}
 	};
-
+	*/
 
 	// cpnt2 pre set css - loading 부담이 가중된다. 비효율적이란 생각
 	/*

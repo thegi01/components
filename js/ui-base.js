@@ -56,6 +56,7 @@ var setCurrentNext = function(el, len, nth){
 	nth = nth || 1;
 	idx = getIdxNext(idx, len, nth);
 	setCurrent(el, idx);
+	return idx;
 };
 // Prev
 var setCurrentPrev = function(el, len, nth){
@@ -63,6 +64,7 @@ var setCurrentPrev = function(el, len, nth){
 	nth = nth || 1;
 	idx = getIdxPrev(idx, len, nth);
 	setCurrent(el, idx);
+	return idx;
 };
 
 
