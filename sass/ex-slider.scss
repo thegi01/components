@@ -124,7 +124,7 @@
 	$len : 12;	// item's full length
 	$itemWidth : 100% / $len; // 8.33%
 	.slider-panel {
-		width : $itemWidth;
+		width : $len/$nth * 100%;
 	}
 	.slider-item {
 		width: $itemWidth; // 8.33333%; 

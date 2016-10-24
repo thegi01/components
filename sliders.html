@@ -174,7 +174,7 @@
 	
 
 	<!-- cpnt1 -->
-	<h2 class="h2">Nth 2, static data</h2>
+	<h2 class="h2">Nth 2, setCurrent, static data</h2>
 	<div class="slider" id="cpnt1" data-animation="true" data-current="0">
 		<div class="slider-panels">
 			<div class="slider-panel">
@@ -194,7 +194,7 @@
 	<!-- //cpnt1 -->
 
 	<!-- cpnt2 -->
-	<h2 class="h2">Nth 3, random data </h2>
+	<h2 class="h2">Nth 3, setCurrent, random data </h2>
 	<div class="slider" id="cpnt2" data-animation="true" data-current="0">
 		<div class="slider-panels">
 			<div class="slider-panel" id="cpnt2Panel">
@@ -216,7 +216,7 @@
 	<!-- //cpnt2 -->
 
 	<!-- cpnt3 -->
-	<h2 class="h2">Nth3, static data, control</h2>
+	<h2 class="h2">Nth3, currentModule, static data, control</h2>
 	<div class="slider" id="cpnt3" data-animation="true" data-control="pause" data-current="0">
 		<div class="slider-panels">
 			<div class="slider-panel" id="cpnt3Panel">
@@ -242,7 +242,7 @@
 	<!-- //cpnt3 -->
 
 	<!-- cpnt4 -->
-	<h2 class="h2">Nth4, random data, control</h2>
+	<h2 class="h2">Nth4, currentModule, random data, control</h2>
 	<div class="slider" id="cpnt4" data-animation="true" data-control="pause" data-current="0">
 		<div class="slider-panels">
 			<div class="slider-panel" id="cpnt4Panel">
@@ -276,14 +276,30 @@
 	
 	/* slider */
 
-	// cpnt1
-	slider(document.getElementById('cpnt1'), undefined, 'cpnt1BtnNext', 'cpnt1BtnPrev', 6, 2);
+	/* Slider 
+	 * @param [Element] cpnt
+	 * @param [String] btnNextId, button next id 
+	 * @param [String] btnPrevId, button prev id 
+	 * @param [Number] len, slider item's length
+	 * @param [Number] nth, slider item's shift unit
+	 */
+	var slider = function(cpnt, btnNextId, btnPrevId, len, nth){
+		if(btnNextId){
+			document.getElementById(btnNextId).onclick = function(){
+				setCurrentNext(cpnt, len, nth);
+			};
+		}
+		if(btnPrevId){
+			document.getElementById(btnPrevId).onclick = function(){
+				setCurrentPrev(cpnt, len, nth);
+			};
+		}
+	};
 
-	// cpnt2
-	// slider(document.getElementById('cpnt2'), 'cpnt2Panel', 'cpnt2BtnNext', 'cpnt2BtnPrev', 8, 3);
+	/* cpnt1 */
+	slider(document.getElementById('cpnt1'), 'cpnt1BtnNext', 'cpnt1BtnPrev', 6, 2);
 
 	/* cpnt2, rando data */
-	
 	// cpnt2, btn click, set css
 	var cpnt = document.getElementById('cpnt2');
 	var cpntPanel = document.getElementById('cpnt2Panel');
@@ -350,9 +366,46 @@
 	document.getElementById('cpnt2Panel').appendChild(styleNode);
 	*/
 
+	/* Slider with play and stop 
+	 * use CurrentModule
+	 * @param [Object] instance of currentModule
+	 * @param [String] btnNextId, button next id 
+	 * @param [String] btnPrevId, button prev id 
+	 * @param [String] btnPlayId, button play id 
+	 * @param [String] btnPauseId, button pause id 
+	 * @param [Boolean] autoPlay, tabs auto play
+	 */
+	var sliderModule = function(cpnt, btnNextId, btnPrevId, btnPlayId, btnPauseId, autoPlay){
+		/*if(panelId){
+			document.getElementById(panelId).style.width = Math.ceil(cpnt.len/cpnt.nth) * 100 + '%';
+		}*/
+		if(btnNextId){
+			document.getElementById(btnNextId).onclick = function(){
+				cpnt.next();
+			};
+		}
+		if(btnPrevId){
+			document.getElementById(btnPrevId).onclick = function(){
+				cpnt.prev();
+			};
+		}
+		if(btnPlayId){
+			document.getElementById(btnPlayId).onclick = function(){
+				cpnt.play();
+			};
+		}
+		if(btnPauseId){
+			document.getElementById(btnPauseId).onclick = function(){
+				cpnt.pause();
+			};
+		}
+		if(autoPlay){
+			cpnt.play();
+		}
+	};
 
 
-	// cpnt3
+	/* cpnt3 */
 	var cpnt3Slider = new CurrentModule(
 		document.getElementById('cpnt3'),
 		'next',
@@ -362,7 +415,6 @@
 	);
 	sliderModule(
 		cpnt3Slider, 
-		'cpnt3Panel', 
 		'cpnt3BtnNext', 
 		'cpnt3BtnPrev', 
 		'cpnt3BtnPlay', 
@@ -370,7 +422,7 @@
 		false
 	);
 
-	// cpnt4
+	/* cpnt4 */
 	var cpnt4Slider = new CurrentModule(
 		document.getElementById('cpnt4'),
 		'next',
@@ -380,7 +432,6 @@
 	);
 	sliderModule(
 		cpnt4Slider, 
-		 'cpnt4Panel', 
 		'cpnt4BtnNext', 
 		'cpnt4BtnPrev', 
 		'cpnt4BtnPlay', 
