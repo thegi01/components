@@ -187,16 +187,16 @@
 	
 	/* Slider 
 	 * @param [Element] cpnt
-	 * @param [Boolean] is set width panel
+	 * @param [Boolean] is set width panelId
 	 * @param [String] btnNextId, button next id 
 	 * @param [String] btnPrevId, button prev id 
 	 * @param [Number] len, slider item's length
 	 * @param [Number] nth, slider item's shift unit
 	 * getElementsByClassName pollyfill 추가해야 함.
 	 */
-	var slider = function(cpnt, panel, btnNextId, btnPrevId, len, nth){
-		if(panel){
-			document.getElementById(panel).style.width = Math.round(len/nth) * 100 + '%';
+	var slider = function(cpnt, panelId, btnNextId, btnPrevId, len, nth){
+		if(panelId){
+			document.getElementById(panelId).style.width = Math.round(len/nth) * 100 + '%';
 		}
 		if(btnNextId){
 			document.getElementById(btnNextId).onclick = function(){
@@ -214,9 +214,9 @@
 
 
 	/* Slider play and pause */
-	var sliderModule = function(cpnt, panel, btnNextId, btnPrevId, btnPlayId, btnPauseId, autoPlay){
-		if(panel){
-			document.getElementById(panel).style.width = Math.round(cpnt.len/cpnt.nth) * 100 + '%';
+	var sliderModule = function(cpnt, panelId, btnNextId, btnPrevId, btnPlayId, btnPauseId, autoPlay){
+		if(panelId){
+			document.getElementById(panelId).style.width = Math.round(cpnt.len/cpnt.nth) * 100 + '%';
 		}
 		if(btnNextId){
 			document.getElementById(btnNextId).onclick = function(){
@@ -249,7 +249,6 @@
 		1000,
 		3
 	);
-	console.log(typeof(cpnt3Slider));
 	sliderModule(
 		cpnt3Slider, 
 		'cpnt3Panel', 
