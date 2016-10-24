@@ -82,13 +82,13 @@ $modal-content-padding : rem(15);
     &[data-animation="true"] {
         @include transition( opacity 0.15s linear );           // hide time
         .modal-dialog {
-            @include tarnslate3d(0, -10%, 0);
+            @include translate3d(0, -10%, 0);
             @include transition( transform 0.3s ease-out);   // hide time
         }
         &[data-visible='true']{
            @include transition-delay(0.05s);                     // show time
             .modal-dialog {
-                @include tarnslate3d(0, 0, 0);
+                @include translate3d(0, 0, 0);
                 @include transition-delay(0.05s);               // show time
             }
         }

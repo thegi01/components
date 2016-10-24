@@ -197,7 +197,7 @@ var tabsModule = function(cpnt, showpanel, btnNextId, btnPrevId, btnPlayId, btnP
  */
 var slider = function(cpnt, panelId, btnNextId, btnPrevId, len, nth){
 	if(panelId){
-		document.getElementById(panelId).style.width = Math.round(len/nth) * 100 + '%';
+		document.getElementById(panelId).style.width = Math.ceil(len/nth) * 100 + '%';
 	}
 	if(btnNextId){
 		document.getElementById(btnNextId).onclick = function(){
@@ -223,7 +223,7 @@ var slider = function(cpnt, panelId, btnNextId, btnPrevId, len, nth){
  */
 var sliderModule = function(cpnt, panelId, btnNextId, btnPrevId, btnPlayId, btnPauseId, autoPlay){
 	if(panelId){
-		document.getElementById(panelId).style.width = Math.round(cpnt.len/cpnt.nth) * 100 + '%';
+		document.getElementById(panelId).style.width = Math.ceil(cpnt.len/cpnt.nth) * 100 + '%';
 	}
 	if(btnNextId){
 		document.getElementById(btnNextId).onclick = function(){
@@ -367,7 +367,7 @@ var tooltip = {
 /* Idx Control */
 var getIdxPrev = function(idx, len, nth){
 	nth = nth || 1;
-	return (Number(idx) - nth) < 0 ? Math.round(len/nth) * nth - nth : Number(idx) - nth;
+	return (Number(idx) - nth) < 0 ? Math.ceil(len/nth) * nth - nth : Number(idx) - nth;
 };
 var getIdxNext = function(idx, len, nth){
 	nth = nth || 1;

@@ -167,9 +167,9 @@ $themeCast--idx-last : 5;
 .side {
     position : absolute; left: 0; right: 0; top: 0; bottom: 0; z-index: 10000;
     @include transition-duration();
-    @include tarnslate3d(-100%, 0, 0);
+    @include translate3d(-100%, 0, 0);
     &[data-visible='true'] {
-        @include tarnslate3d(0, 0, 0);
+        @include translate3d(0, 0, 0);
     }
     @media #{$media-m}{
         &{

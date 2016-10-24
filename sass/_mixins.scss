@@ -111,7 +111,7 @@
 @mixin transform( $prop ){
     @include prefix(transform, $prop, webkit moz ms o);
 }
-@mixin tarnslate3d($x, $y, $z){
+@mixin translate3d($x, $y, $z){
     @include prefix(transform, translate3d($x, $y, $z), webkit moz ms o);
     // -webkit-transform : translate3d($x, $y, $z);
     // -moz-transform : translate3d($x, $y, $z);

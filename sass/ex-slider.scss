@@ -1,0 +1,152 @@
+
+// import
+@import "ex-base.scss";
+
+.slider {
+	margin-top: 50px;
+	&-panel {
+		height: 50px;
+		line-height: 50px; 
+		text-align:center; vertical-align: middle;
+	}
+	&-item {
+		height: 100%;
+		border: solid 1px #eee;
+		background-color: #f8f8f8;
+	}
+}
+
+#cpnt1 {
+	$nth : 2;
+	$len : 6;	// item's full length, static data
+	$itemWidth : 100% / $len;
+
+	position: relative;
+
+	.slider-panels {
+		margin-left: 40px; margin-right:40px;
+	}
+	.slider-panel {
+		width: $len/$nth * 100%; // 300%;
+	}
+	.slider-item {
+		width : $itemWidth; // 16.666666%; 
+	}
+	.slider__btn-prev, 
+	.slider__btn-next {
+		position: absolute; top:50%; 
+		margin-top: -9.5px;
+	}
+	.slider__btn-prev {
+		left:0;
+	}
+	.slider__btn-next {
+		right: 0;
+	}
+
+	@for $i from 0 through $len - 1 {
+		&[data-animation="false"][data-current="#{$i}"] .slider-panel { 
+			left: -100%/$nth * $i;  // -50% * Si
+		}
+	}
+	@for $i from 0 through $len - 1 {
+		&[data-animation="true"][data-current="#{$i}"] .slider-panel {
+			@include translate3d(-$itemWidth * $i, 0, 0);
+		}
+	}
+}
+
+
+
+#cpnt2 {
+	$nth : 3;
+	$len : 9;	// item's full length
+	$itemWidth : 100% / $len; // 11.111111%; 
+
+	.slider-panel {
+		width: $len/$nth * 100%; // 300%;
+	}
+	.slider-item {
+		width: $itemWidth; // 11.111111%; 
+	}
+	.slider-direction {
+		margin-top: 10px;
+		text-align: center;
+	}
+	@for $i from 0 through $len - 1 {
+		&[data-animation="false"][data-current="#{$i}"] .slider-panel {
+			left: -100%/$nth * $i; // -33.33333% * $i; 
+		}
+	}
+	@for $i from 0 through $len - 1 {
+		&[data-animation="true"][data-current="#{$i}"] .slider-panel {
+			@include translate3d(-$itemWidth * $i, 0, 0);
+		}
+	}
+}
+
+
+
+#cpnt3 {
+	$nth : 3;
+	$len : 9;	// item's full length
+	$itemWidth : 100% / $len; // 11.111111%; 
+
+	.slider-panel {
+		width: $len/$nth * 100%; // 300%;
+	}
+	.slider-item {
+		width: $itemWidth; // 11.111111%; 
+	}
+	.slider-direction {
+		float: left;
+		margin-top: 10px;
+	}
+	.slider-control {
+		float: right;
+		margin-top: 10px;
+	}
+	@for $i from 0 through $len - 1 {
+		&[data-animation="false"][data-current="#{$i}"] .slider-panel {
+			left: -100%/$nth * $i;  // -33.33333% * $i; 
+		}
+	}
+	@for $i from 0 through $len - 1 {
+		&[data-animation="true"][data-current="#{$i}"] .slider-panel {
+			@include translate3d(-$itemWidth * $i, 0, 0);
+		}
+	}
+}
+
+
+#cpnt4 {
+	$nth : 4;
+	$len : 12;	// item's full length
+	$itemWidth : 100% / $len; // 8.33%
+	.slider-panel {
+		width : $itemWidth;
+	}
+	.slider-item {
+		width: $itemWidth; // 8.33333%; 
+	}
+	.slider-direction {
+		float: left;
+		margin-top: 10px;
+	}
+	.slider-control {
+		float: right;
+		margin-top: 10px;
+	}
+	@for $i from 0 through $len - 1 {
+		&[data-animation="false"][data-current="#{$i}"] .slider-panel {
+			left: -100%/$nth * $i;  // -33.33333% * $i; 
+		}
+	}
+	@for $i from 0 through $len - 1 {
+		&[data-animation="true"][data-current="#{$i}"] .slider-panel {
+			@include translate3d(-$itemWidth * $i, 0, 0);
+		}
+	}
+}
+
+

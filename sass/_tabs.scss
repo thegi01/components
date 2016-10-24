@@ -154,6 +154,13 @@
     &[data-control="play"] &__btn-play {
         display: none;
     }
+    &[data-animation="true"] &-panel {
+        @include transition(transform 0.5s ease-out);
+    }
+  
+
+
+    
 }
 
 
