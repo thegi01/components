@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Display table</title>
+    <style>
+        body {
+            margin: 30px;
+            font-size: 12px;
+        }
+        .table {
+            display: table;
+            width: 100%;
+            border-collapse: collapse; /* separate */
+            background: #f8f8f8;
+        }
+        .row {
+           display: table-row; 
+        }
+        .cell {
+            display: table-cell;
+            width: 10px; height: 10px;
+            background-color: #fff;
+            border: 1px solid #ccc;
+        }
+        .ellipsis {
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+    </style>
+</head>
+<body>
+    <!-- <h1>Display table</h1> -->
+
+    <p>
+        display: table, display: table-row, display: table-cell
+    </p>
+
+    <p>
+        Table model values (CSS 2.1)
+    </p>
+
+    <br>
+
+    <div class="table">
+        <div class="cell"></div> 우리 아이 M클럽 우리 아이 M클럽우리 아이 M클럽 우리 아이 M클럽 우리 아이 M클럽 우리 아이 M클럽우리 아이 M클럽 우리 아이 M클럽 
+    </div>
+
+    <br>
+
+    <div class="table">
+        <div class="cell"></div> 
+        <div class="cell" style="padding: 10px;">
+            우리 아이 M클럽 우리 아이 M클럽우리 아이 M클럽 우리 아이 M클럽 우리 아이 M클럽 우리 아이 M클럽우리 아이 M클럽 우리 아이 M클럽     
+        </div>
+    </div>
+
+    <br>
+
+    <div class="table">
+        <div class="cell" style="width: 1%; padding: 5px; white-space: nowrap;">ico</div> 
+        <div class="cell" style="padding: 10px;">
+            우리 아이 M클럽 우리 아이 M클럽우리 아이 M클럽 우리 아이 M클럽 우리 아이 M클럽 우리 아이 M클럽우리 아이 M클럽 우리 아이 M클럽     
+        </div>
+    </div>
+    
+    <br>
+
+    <div class="table">
+        <div class="cell" style="width: 1%; padding: 0 5px; white-space: nowrap; vertical-align: middle;">middle</div> 
+        <div class="cell" style="padding: 10px;">
+            우리 아이 M클럽 우리 아이 M클럽우리 아이 M클럽 우리 아이 M클럽 우리 아이 M클럽 우리 아이 M클럽우리 아이 M클럽 우리 아이 M클럽
+        </div>
+    </div>
+    
+    <br>
+
+    <div class="table">
+        <div class="row">
+            <div class="cell" style="width: 1%; padding: 5px; white-space: nowrap;">row 1</div> 
+            <div class="cell" style="padding: 10px;">
+                우리 아이 M클럽 우리 아이 M클럽우리 아이 M클럽 우리 아이 M클럽 우리 아이 M클럽 우리 아이 M클럽우리 아이 M클럽 우리 아이 M클럽     
+            </div>
+        </div>
+        <div class="row">
+            <div class="cell" style="width: 1%; padding: 5px; white-space: nowrap;">row2 cell</div> 
+            <div class="cell" style="padding: 10px;">
+                우리 아이 M클럽 우리 아이 M클럽우리 아이 M클럽 우리 아이 M클럽 우리 아이 M클럽 우리 아이 M클럽우리 아이 M클럽 우리 아이 M클럽     
+            </div>
+        </div>
+    </div>
+</body>
+</html>
