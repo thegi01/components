@@ -13,15 +13,27 @@
             width: 100%;
             border-collapse: collapse; /* separate */
             background: #f8f8f8;
+            border-spacing: 0;
         }
-        .row {
+        .table--fixed {
+            table-layout: fixed;
+        }
+        .table-row {
            display: table-row; 
         }
         .cell {
             display: table-cell;
-            width: 10px; height: 10px;
             background-color: #fff;
             border: 1px solid #ccc;
+            word-wrap: break-word;
+            box-sizing: border-box;
+        }
+        .cell--min {
+            width: 1%;
+            white-space: nowrap;
+        }
+        .cell--max {
+            width: 100%;
         }
         .ellipsis {
             overflow: hidden;
@@ -44,13 +56,13 @@
     <br>
 
     <div class="table">
-        <div class="cell"></div> 우리 아이 M클럽 우리 아이 M클럽우리 아이 M클럽 우리 아이 M클럽 우리 아이 M클럽 우리 아이 M클럽우리 아이 M클럽 우리 아이 M클럽 
+        <div class="cell" style="width: 10px;"></div> 우리 아이 M클럽 우리 아이 M클럽우리 아이 M클럽 우리 아이 M클럽 우리 아이 M클럽 우리 아이 M클럽우리 아이 M클럽 우리 아이 M클럽 
     </div>
 
     <br>
 
     <div class="table">
-        <div class="cell"></div> 
+        <div class="cell" style="width: 10px;"></div> 
         <div class="cell" style="padding: 10px;">
             우리 아이 M클럽 우리 아이 M클럽우리 아이 M클럽 우리 아이 M클럽 우리 아이 M클럽 우리 아이 M클럽우리 아이 M클럽 우리 아이 M클럽     
         </div>
@@ -59,7 +71,7 @@
     <br>
 
     <div class="table">
-        <div class="cell" style="width: 1%; padding: 5px; white-space: nowrap;">ico</div> 
+        <div class="cell cell--min" style="padding: 5px;">ico</div> 
         <div class="cell" style="padding: 10px;">
             우리 아이 M클럽 우리 아이 M클럽우리 아이 M클럽 우리 아이 M클럽 우리 아이 M클럽 우리 아이 M클럽우리 아이 M클럽 우리 아이 M클럽     
         </div>
@@ -68,7 +80,7 @@
     <br>
 
     <div class="table">
-        <div class="cell" style="width: 1%; padding: 0 5px; white-space: nowrap; vertical-align: middle;">middle</div> 
+        <div class="cell cell--min" style="padding: 0 5px; vertical-align: middle;">middle</div> 
         <div class="cell" style="padding: 10px;">
             우리 아이 M클럽 우리 아이 M클럽우리 아이 M클럽 우리 아이 M클럽 우리 아이 M클럽 우리 아이 M클럽우리 아이 M클럽 우리 아이 M클럽
         </div>
@@ -77,18 +89,23 @@
     <br>
 
     <div class="table">
-        <div class="row">
-            <div class="cell" style="width: 1%; padding: 5px; white-space: nowrap;">row 1</div> 
-            <div class="cell" style="padding: 10px;">
-                우리 아이 M클럽 우리 아이 M클럽우리 아이 M클럽 우리 아이 M클럽 우리 아이 M클럽 우리 아이 M클럽우리 아이 M클럽 우리 아이 M클럽     
-            </div>
+        <div class="table-row">
+            <div class="cell cell--min" style="padding: 10px;">row 1</div> 
+            <div class="cell" style="padding: 10px;"> row 1 </div>
         </div>
-        <div class="row">
-            <div class="cell" style="width: 1%; padding: 5px; white-space: nowrap;">row2 cell</div> 
-            <div class="cell" style="padding: 10px;">
-                우리 아이 M클럽 우리 아이 M클럽우리 아이 M클럽 우리 아이 M클럽 우리 아이 M클럽 우리 아이 M클럽우리 아이 M클럽 우리 아이 M클럽     
-            </div>
+        <div class="table-row">
+            <div class="cell cell--min" style="padding: 10px;">row 2</div> 
+            <div class="cell" style="padding: 10px;"> row 2 </div>
         </div>
     </div>
+
+    <br>
+
+    <div class="table table--fixed" style="text-align: center;">
+        <div class="cell" style="width: auto; padding: 10px;">equal width</div> 
+        <div class="cell" style="width: auto; padding: 10px;">equal width</div>
+        <div class="cell" style="width: auto; padding: 10px;">equal width</div>
+    </div>
+
 </body>
 </html>
