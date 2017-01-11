@@ -1,0 +1,137 @@
+<!Doctype html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>svg test</title>
+    <link rel="stylesheet" type="text/css" href="../css/reset.css"> 
+    <link rel="stylesheet" type="text/css" href="../css/default.css"> 
+    <script
+      src="https://code.jquery.com/jquery-3.1.1.min.js"
+      integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+      crossorigin="anonymous"></script>
+    <style>
+        
+        #svg {
+          transition: transform 0s;  
+          transform: rotate(-90deg);
+        }
+        #svg circle {
+          stroke-dashoffset: 0;
+          transition: stroke-dashoffset 0.5s linear;
+          stroke: #fff;
+          stroke-width: 6px;
+        }
+        #svg #bar {
+          stroke: #bae800;
+        }
+        #cpnt {
+          display: block;
+          position: relative;
+          width: 200px; height: 200px;
+          margin: 2em auto;
+          border-radius: 100%;
+        }
+        #cpnt:after {
+          position: absolute;
+          display: block;
+          height: 160px;
+          width: 160px;
+          left: 50%;
+          top: 50%;
+          content: attr(data-percent)"%";
+          margin-top: -80px;
+          margin-left: -80px;
+          border-radius: 100%;
+          line-height: 160px;
+          font-size: 2em;
+        }
+
+        input {
+          color: #000;
+        }
+
+        /* Make things perty */
+        html {  height: 100%;}
+        body { font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif; background: #666; color: #fff; height: 100%; padding-top: 2em; text-align: center;}
+        h1, h2{ margin: 0; text-transform: uppercase;text-shadow: 0 0 0.5em black;}
+        h2 { font-weight: 300}
+        input { border: 1px solid #666; background: #333; color: #fff; padding: 0.5em; box-shadow: none; outline: none !important; margin: 1em  auto; text-align: center;}
+
+    </style>
+</head>
+<body>
+   <h1>SVG Circle Progress</h1>
+   <h2>Based off of CSS3 circle progress bars</h2>
+
+   <div id="cpnt" data-percent="100">
+       <svg width="200" height="200" viewPort="0 0 100 100" version="1.1" xmlns="http://www.w3.org/2000/svg" id="svg">
+         <circle r="90" cx="100" cy="100" fill="transparent" stroke-dasharray="565.48" stroke-dashoffset="0"></circle>
+         <circle r="90" cx="100" cy="100" fill="transparent" stroke-dasharray="565.48" stroke-dashoffset="0" id="bar"></circle>
+       </svg>
+   </div>
+
+   <label for="percent">Type a percent!</label>
+   <input id="percent" name="percent" onchange="setPercentCircleGraph( this.value, document.getElementById('bar'), document.getElementById('cpnt') );">
+    
+    <!-- https://codepen.io/JMChristensen/pen/Ablch -->
+<script>
+var setPercentCircleGraph = function( value, el, cpnt ){
+    var r = el.getAttribute('r');
+    var c = Math.PI*(r*2);
+    var percent;
+
+    if( isNaN(value) ) value = 100;
+    if( value<0 ) value = 0;
+    if( value>100 ) value = 100;
+
+    percent = ((100-value)/100)*c;
+
+    el.style.strokeDashoffset = percent;
+    cpnt.dataset.percent = value;
+};
+setPercentCircleGraph( 50, document.getElementById('bar'), document.getElementById('cpnt') );
+
+/*$('#percent').on('change', function(){
+
+    var val = this.value;
+    var $bar = document.getElementById('bar');
+
+    if( isNaN(val) ) {
+        val = 100;
+    } else {
+        var r = $bar.getAttribute('r');
+        var c = Math.PI*(r*2);
+
+        if( val<0 ) val = 0;
+        if( val>100 ) val = 100;
+
+        var percent = ((100-val)/100)*c;
+        $bar.style.strokeDashoffset = percent;
+
+        document.getElementById('cpnt').dataset.percent = val;
+    }
+
+  // var val = parseInt($(this).val());
+  // var $circle = $('#svg #bar');
+  
+  // if (isNaN(val)) {
+  //  val = 100; 
+  // }
+  // else{
+  //   var r = $circle.attr('r');
+  //   var c = Math.PI*(r*2);
+   
+  //   if (val < 0) { val = 0;}
+  //   if (val > 100) { val = 100;}
+    
+  //   var pct = ((100-val)/100)*c;
+    
+  //   $circle.css({ strokeDashoffset: pct});
+    
+  //   $('#cpnt').attr('data-percent',val);
+  // }
+});*/
+</script>
+</body>
+</html>
