@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<meta charset="UTF-8">
+<title>장바구니 옵션 열기/닫기 | Pattern</title>
+
+<head>
+    <meta name="viewport" content="width=device-width">
+    <meta name="robots" content="noindex,nofollow">
+    <meta name="googlebot" content="noindex,nofollow">
+    <meta name="format-detection" content="telephone=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+   <link rel="stylesheet" href="/resources/sandbox/style/front/reset.css">
+    
+    <script src="/resources/common/script/cc.js"></script>
+
+    <style>
+        fieldset {
+            margin: 0;
+            padding: 0;
+            border: 0; 
+        }
+        legend{ display : none;}
+
+        *[data-role="button"], button{
+            display: inline-block;
+            padding: 0;
+            margin: 0;
+            border: 0 none;
+            box-sizing: border-box;
+            text-align: center;
+            background: transparent;
+        }
+        
+
+    /* text / color / border / colorset */
+        *[data-role="button"]{
+            padding: 0 12px;
+        }
+        *[data-color="btn-disable"]{
+           color: #a6a6a6;
+        }
+
+        *[data-color="btn-line-a"]{
+            border: 1px solid #d9d9d9;
+            color: #434343;
+            background: #fff;
+        }
+
+        *[data-color="btn-line-b"]{
+            border: 1px solid #d9e0e7;
+            color: #434343;
+            background: #fff;
+        }
+
+        *[data-color="btn-line-c"]{
+            border: 1px solid #b5bdc6;
+            color: #7b8086;
+            background: #fff;
+        }
+
+
+
+        *[data-color="btn-color-a"]{
+            background: #00adac;
+            color: #fff;
+        }
+
+        *[data-color="btn-color-b"]{
+            background: #b5bdc6;
+            color: #fff;
+        }
+
+        *[data-color="btn-color-c"]{
+            background: #7b8086;
+            color: #fff;
+        }
+
+            
+        /*
+        *[data-size="btn-xs"]{
+            height: 20px;
+            line-height: 20px;
+            font-size: 12px;
+        }
+
+        *[data-size="btn-s"]{
+            height: 28px;
+            line-height: 28px;
+            font-size: 12px;
+        }
+
+        *[data-size="btn-m"]{
+            height: 30px;
+            line-height: 30px;
+            font-size: 14px;
+        }
+
+        *[data-size="btn-l"]{
+            height: 40px;
+            line-height: 40px;
+            font-size: 14px;
+        }
+
+        *[data-size="btn-xl"]{
+            height: 50px;
+            line-height: 50px;
+            font-size: 18px;
+        }
+        */
+        
+       
+        .div-button-option{
+            float: right;
+        }
+
+        .div-button-option .button-option{
+            height: 20px;
+            line-height: 20px;
+            font-size: 12px;
+        }
+
+        .div-button-option .button-option .ico-arrow{
+            display: inline-block;
+            width: 12px;
+            height: 6px;
+        }
+
+        .div-button-option .button-option  .ico-arrow img{
+            width: 100%;
+            height: 100%;
+            vertical-align: top;
+            margin-top: 7px;
+            margin-left: 4px;
+            display: none;
+        }
+
+        .div-button-option .button-option[data-hidden="true"] .ico-down{
+            display: inline-block;
+        }
+
+        .div-button-option .button-option[data-hidden="false"] .ico-up{
+            display: inline-block;
+        }
+
+        
+        .div-basket-option[data-hidden="true"]{
+            display: none;
+        }
+        .div-basket-option[data-hidden="false"]{
+            display: block;
+        }
+
+        .div-basket-option{ 
+           float: left;
+           width: 100%;
+           background: #fff;
+           /* margin-top: -20px;  pc */
+          
+         }
+
+        .inner-basket-option{
+            position: relative;
+            border-top: 1px solid #d9d9d9;
+            background: #f8f8f8;
+            min-height: 300px;
+         }
+        
+
+        .inner-basket-option .div-close{
+            position: absolute;
+            right: 0;
+            top: 0;
+        }
+
+        .inner-basket-option .button-close{
+            width: 11px;
+            height: 11px;
+        }
+
+        .inner-basket-option .button-close img{
+            width: 100%;
+            height: 100%;
+        }
+        
+
+        .div-basket-option .fs-cal {
+            float: right;
+        }
+            
+        .div-basket-option .fm-button-group {
+            clear: both;
+            width: 100%;
+            text-align: center;
+        }
+        
+        .div-basket-option .fm-button-group  button{
+            height: 28px;
+            line-height: 28px;
+            font-size: 12px;
+        }
+        .div-basket-option .btn-submit,
+        .div-basket-option .btn-cancel{ 
+            width: 70px;
+            margin-left: 8px;
+        }
+
+
+    </style>
+
+    <style>
+        .fs-cal{}
+        .fs-cal:after{ zoom: 1;}
+        .fs-cal:after{ 
+            content:'';
+            clear: both;
+            display: block;
+        }
+        
+        .fs-cal label{ 
+            float: left; 
+            font-size: 12px; 
+            line-height: 28px;
+            margin-right: 10px;
+        }
+        
+        .fs-cal .div-spinner{
+            float: left;
+            width: 120px;
+            height: 28px;
+            border: 1px solid #c3c7c8;
+            box-sizing: border-box;
+        }
+        
+        .fs-cal .inner-spinner { position: relative; }
+
+        .fs-cal .inner-spinner .num-text{
+            position: absolute;
+            left: 28px;
+            top: 0;
+        }
+        
+        .fs-cal .inner-spinner  button{ 
+            position: absolute; 
+            top: -1px;
+            width: 28px;
+            height: 28px;
+        }
+
+        .fs-cal .inner-spinner  button img{ 
+            width: 100%;
+            height: 100%;
+        }
+
+
+        .fs-cal .inner-spinner .button-down{ left: -1px; }
+        .fs-cal .inner-spinner .button-up{ right: -1px; }
+
+        .fs-cal .input-number{ 
+            width: 64px; 
+            height: 26px;
+            text-align: center;
+            font-size: 12px;
+            border: 0;
+            padding: 0;
+        }
+    </style>
+
+    <script title="addLoadEvent">
+        function addLoadEvent( func ) {
+            var oldonload = window.onload;
+
+            if ( typeof window.onload != 'function' ) {
+                window.onload = func;
+            } else {
+                window.onload = function() {
+                    if (oldonload) {
+                        oldonload();
+                    }
+
+                    func();
+                };
+            }
+        }
+    </script>
+</head>
+<body>
+    
+ 
+
+
+<!-- 옵션 버튼 -->
+<div class="div-button-option">
+    <button 
+        class="button-option" 
+        id="elOpen1" 
+        data-role="button" 
+        data-color="btn-line-c" 
+        data-hidden ="true" 
+        >옵션/수량
+        <span class="ico-arrow">
+            <img src="/resources/front/image/ico_down@2x.png" class="ico-down" alt="열기">
+            <img src="/resources/front/image/ico_up@2x.png" class="ico-up" alt="닫기">
+        </span>
+    </button>
+</div>
+
+
+<!-- 옵션/수량 변경 박스 -->
+<div class="div-basket-option basket-option" id="elCompnt1" data-hidden="true" > 
+    <div class="inner-basket-option">
+        <h3>옵션/수량 변경</h3>
+            
+            <!-- 옵션/포장/인쇄 있는 경우 노출 -->
+            <div class="div-cmpnt-options">
+                <div class="inner-cmpnt-options">
+                    
+                    옵션 셀렉트 리스트 자리 ......
+
+              
+                </div>
+            </div>
+
+
+            <fieldset class="fs-cal">
+                <legend>수량 계산</legend>
+                <label>수량<span>(판매단위 <strong>10</strong>개)</span></label>
+                <div class="div-spinner">
+                    <div class="inner-spinner">
+
+                        <div class="num-text">
+                            <input type="number" name="quantity" class="input-number" value="" />
+                        </div>
+                        <div class="num-control">
+                            <button type="button" class="button-down" title="감소"><img src="/resources/front/image/ico_minus@2x.png" alt=""></button>
+                            <button type="button" class="button-up"  title="증가"><img src="/resources/front/image/ico_plus@2x.png" alt=""></button>
+                        </div>
+                    
+                    </div>    
+                </div>
+            </fieldset>
+
+            <div class="fm-button-group">
+                <button type="button" class="btn-submit" data-role="button" data-color="btn-color-c" data-size="btn-s">변경</button>
+                <button type="button" id="elCancel1" class="btn-cancel" data-role="button" data-color="btn-line-b" data-size="btn-s">취소</button>
+            </div>
+        
+           
+            <div class="div-close">
+                <button type="button" id="elClose1" class="button-close"> <img src="/resources/front/image/ico_close@2x.png" alt="옵션/수량 변경 닫기"></button>
+            </div>
+
+    
+    </div>
+</div>
+    
+
+ 
+<script>
+    addLoadEvent(function() {
+        cc.addModel({
+            elMap: [
+                'elCompnt',
+                'elOpen', 
+                'elClose',
+                'elCancel'
+            ], 
+            current: 0, 
+            id: '1',
+            hidden: true
+        });
+
+        
+        elOpen1.onclick = function() {
+            patternCurrentEventHandler('1', '$basket-option-window');
+
+        };
+
+        elClose1.onclick = function() {
+            patternCurrentEventHandler('1', '$basket-option-window');
+        };
+
+        elCancel1.onclick = function() {
+            patternCurrentEventHandler('1', '$basket-option-window');
+        };
+    });
+   
+</script>
+
+
+
+    
+</body>
+</html>    
+
