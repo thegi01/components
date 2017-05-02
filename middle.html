@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<meta charset="UTF-8">
+<title>Align | Pattern</title>
+
+<meta name="viewport" content="width=device-width">
+<meta name="robots" content="noindex,nofollow">
+<meta name="googlebot" content="noindex,nofollow">
+<meta name="format-detection" content="telephone=no">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+<style>
+    /* for visual purposes */
+    body {
+        margin: 50px;
+    }
+    h1, h2 {
+        font-size: 18px;
+    }
+    h2 {
+        margin-top: 50px;
+    }
+    p {
+        margin: 0;
+    }
+    .box {
+      width: 400px; height: 100px;
+      padding: 0 20px;
+      border: 1px solid #ddd;
+      text-align: center;
+    }
+</style>
+
+<h1>Vertical middle</h1>
+
+<h2>line height</h2>
+<style>
+    .parent {
+        width: 400px; height: 100px;
+        border: 1px solid #ddd;
+        text-align: center;
+    }
+    .parent .child {
+        line-height: 100px;
+    }
+
+    /* for visual purposes */
+    .parent {
+        border: 1px solid #ddd;
+    }
+</style>
+<div class="parent">
+    <span class="child">I'm vertically/horizontally centered!</span>
+</div>
+
+
+<h2>Contains image</h2>
+<style>
+    .column-content {
+      display: inline-block;
+    }
+    .column-content img {
+      vertical-align: middle;
+    }
+    .column-content span {
+      display: inline-block;
+      vertical-align: middle;
+    }
+
+    /* for visual purposes */
+    .column-content {
+      border: 1px solid #ddd;
+      position: relative;
+    }
+</style>
+<div class="column-content">
+  <img src="http://i.imgur.com/WxW4B.png">
+  <span><strong>1234</strong>
+    yet another text content that should be centered vertically</span>
+</div>
+
+
+<h2>middleEl</h2>
+<style>
+    .middleEl {
+        display: inline-block; 
+        width: 0px; height: 100%; 
+        vertical-align: middle;
+    }
+    .middleEl-sibling {
+        display: inline-block; 
+        width: 90%; height: 50px;
+        vertical-align: middle;
+    }
+
+    /* for visual purposes */
+    .middleEl-sibling {
+        background-color: gray;
+    }
+</style>
+<!--[If lte IE 7]>
+    <style>
+        .middleEl,
+        .middleEl-sibling {
+            display:inline; zoom:1;
+        }
+    </style>
+<![endif]-->
+<div class="box">
+    <span class="middleEl"></span>
+    <div class="middleEl-sibling">I'm vertically/horizontally centered!</div>
+</div>
+
+
+<h2>Table cell middle</h2>
+<style>
+    .table {
+        display: table;
+        width: 400px; height: 100px;
+    }
+    .table-cell {
+        display: table-cell;
+        vertical-align: middle;
+        text-align: center;
+    }
+    .inner {
+        
+    }
+    /* for visual purposes */
+    .table {
+        border: 1px solid #ddd;
+    }
+</style>
+<div class="table">
+  <div class="table-cell">
+    <div class="inner">
+      <h1>The Content</h1>
+      <p>Once upon a midnight dreary</p>
+    </div>
+  </div>
+</div>
+
+<h2>Absolute middle</h2>
+<style>
+    .box {
+        position: relative;
+    }
+    .absoluteMiddle {
+        position: absolute; top: 50%; left: 0;
+        width: 100%; 
+        margin-top: -25px;
+    }
+    .absoluteMiddle-inner {
+        width: 100px; height: 50px;
+        margin-left: auto; margin-right: auto;
+    }
+    /* for visual purposes */
+    .absoluteMiddle-inner {
+        background-color: gray;
+    }
+</style>
+<div class="box">
+    <div class="absoluteMiddle">
+        <p class="absoluteMiddle-inner"></p>
+    </div>
+</div>
+
+
+<h2>Flex middle</h2>
+<style>
+    .box.modern {
+        display: flex;
+        justify-content: center; /* align horizontal */
+        align-items: center; /* align vertical */
+    }
+</style>
+<div class="box modern"> Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh </div>
+
+
+
+
+
+
+
+
+
+
+
