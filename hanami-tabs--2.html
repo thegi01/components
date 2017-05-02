@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<meta charset="UTF-8">
+<title>Tabs | Pattern</title>
+
+<meta name="viewport" content="width=device-width">
+<meta name="robots" content="noindex,nofollow">
+<meta name="googlebot" content="noindex,nofollow">
+<meta name="format-detection" content="telephone=no">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+<style>
+    body {
+        margin: 30px;
+    }
+    ul {
+        margin: 0; padding: 0;
+    }
+    li {
+        list-style: none;
+    }
+    a {
+        text-decoration: none;
+    }
+    .div-compnt {
+        margin-bottom: 20px;
+    }
+    .compnt-title {
+        font-size: 15px; font-weight: bold; color: #333;
+    }
+
+    /* tabs */
+    .tabs {
+        zoom: 1;
+    }
+    .tabs:after {
+        content: " "; display: block; clear: both;
+    }
+    .tab {
+        float: left;
+        cursor: pointer;
+    }
+    .tab .inner-tab {
+        display: block;
+        height: 50px; 
+        padding-left: 60px; padding-right: 60px;
+        border: 1px solid #d9e0e7; border-left-width: 0;
+        background-color: #fff;
+        line-height: 50px;
+        text-align: center;
+    }
+    .tab:first-child .inner-tab{
+        border-left-width: 1px;
+    }
+    .tab .inner-tab .textContent {
+        font-size: 13px; color:#434343;  line-height: 2.5; 
+    }
+    .tab .inner-tab .qty {
+        font-weight: bold; font-style: normal; 
+        font-size: 13px; color: #ff5f22;
+    }
+
+    /* js */
+    .div-compnt[data-current="0"] .tab[data-index="0"],
+    .div-compnt[data-current="1"] .tab[data-index="1"],
+    .div-compnt[data-current="2"] .tab[data-index="2"],
+    .div-compnt[data-current="3"] .tab[data-index="3"],
+    .div-compnt[data-current="4"] .tab[data-index="4"],
+    .div-compnt[data-current="5"] .tab[data-index="5"],
+    .div-compnt[data-current="6"] .tab[data-index="6"],
+    .div-compnt[data-current="7"] .tab[data-index="7"],
+    .div-compnt[data-current="8"] .tab[data-index="8"],
+    .div-compnt[data-current="9"] .tab[data-index="9"] {
+        position: relative;
+        cursor: default;
+    }
+    .div-compnt[data-current="0"] .tab[data-index="0"] .inner-tab,
+    .div-compnt[data-current="1"] .tab[data-index="1"] .inner-tab,
+    .div-compnt[data-current="2"] .tab[data-index="2"] .inner-tab,
+    .div-compnt[data-current="3"] .tab[data-index="3"] .inner-tab,
+    .div-compnt[data-current="4"] .tab[data-index="4"] .inner-tab,
+    .div-compnt[data-current="5"] .tab[data-index="5"] .inner-tab,
+    .div-compnt[data-current="6"] .tab[data-index="6"] .inner-tab,
+    .div-compnt[data-current="7"] .tab[data-index="7"] .inner-tab,
+    .div-compnt[data-current="8"] .tab[data-index="8"] .inner-tab,
+    .div-compnt[data-current="9"] .tab[data-index="9"] .inner-tab {
+        margin-left: -1px;
+        border-color: #00adac; border-left-width: 1px;
+        background-color: #fff;
+    }
+    .div-compnt[data-current="0"] .tab[data-index="0"] .inner-tab {
+        margin-left: 0;   
+    }
+    .div-compnt[data-current="0"] .tab[data-index="0"] .textContent,
+    .div-compnt[data-current="1"] .tab[data-index="1"] .textContent,
+    .div-compnt[data-current="2"] .tab[data-index="2"] .textContent,
+    .div-compnt[data-current="3"] .tab[data-index="3"] .textContent,
+    .div-compnt[data-current="4"] .tab[data-index="4"] .textContent,
+    .div-compnt[data-current="5"] .tab[data-index="5"] .textContent,
+    .div-compnt[data-current="6"] .tab[data-index="6"] .textContent,
+    .div-compnt[data-current="7"] .tab[data-index="7"] .textContent,
+    .div-compnt[data-current="8"] .tab[data-index="8"] .textContent,
+    .div-compnt[data-current="9"] .tab[data-index="9"] .textContent {
+       
+    }
+
+</style>
+
+
+<div class="div-compnt div-compnt--1" data-current="1">
+    <div class="inner-compnt">
+        <div class="div-header">
+            <h1 class="compnt-title">Tabs Column 2</h1>
+        </div>
+        <div class="tablist">
+            <div class="tabs">
+                <span class="tab" data-index="0">
+                    <span class="inner-tab">
+                        <span class="textContent">Tab Menu1</span><em class="qty">(99)</em>
+                    </span>
+                </span>
+                <span class="tab" data-index="1">
+                    <span class="inner-tab">
+                        <span class="textContent">Tab Menu2</span><em class="qty">(99)</em>
+                    </span>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="div-compnt div-compnt--2" data-current="1" id="elCompnt2">
+    <div class="inner-compnt">
+        <div class="div-header">
+            <h1 class="compnt-title">Tabs Column 3</h1>
+        </div>
+        <div class="tablist">
+            <ul class="tabs">
+                <li class="tab" data-index="0" onclick="tabsChange(0); return false;">
+                    <span class="inner-tab">
+                        <a href="">
+                            <span class="textContent">Tab Menu1</span><em class="qty">(99)</em>
+                        </a>
+                    </span>
+                </li>
+                <li class="tab" data-index="1" onclick="tabsChange(1); return false;">
+                    <span class="inner-tab">
+                        <a href="">
+                            <span class="textContent">Tab Menu2</span><em class="qty">(99)</em>
+                        </a>
+                    </span>
+                </li>
+                <li class="tab" data-index="2" onclick="tabsChange(2); return false;">
+                    <span class="inner-tab">
+                        <a href="">
+                            <span class="textContent">Tab Menu2</span><em class="qty">(99)</em>
+                        </a>
+                    </span>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <script>
+        var tabsChange = function( idx ){
+            var cpnt = document.getElementById('elCompnt2');
+            cpnt.setAttribute('data-current', idx);
+            cpnt.className = cpnt.className;
+        };
+    </script>
+</div>
